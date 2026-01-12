@@ -36,6 +36,13 @@
 #include "eggsmclient.h"
 #include "eggdesktopfile.h"
 
+/* BASELINE: Timing instrumentation macros */
+#define BASELINE_START(name) \
+    gint64 __baseline_##name##_start = g_get_monotonic_time()
+#define BASELINE_END(name) \
+    g_debug("BASELINE: %s took %.2f ms", #name, \
+            (g_get_monotonic_time() - __baseline_##name##_start) / 1000.0)
+
 static gchar   *ev_page_label;
 static gchar   *ev_find_string;
 static gint     ev_page_index = 0;
@@ -229,11 +236,16 @@ main (int argc, char *argv[])
 	GError         *error = NULL;
     int             status;
 
+	BASELINE_START(main_total);
+	BASELINE_START(i18n_init);
+	
 	/* Initialize the i18n stuff */
 	bindtextdomain (GETTEXT_PACKAGE, XREADER_LOCALE_DIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
+	BASELINE_END(i18n_init);
 
+	BASELINE_START(gdk_init);
 	gdk_set_allowed_backends ("x11");
 
 	context = g_option_context_new (N_("Document Viewer"));
@@ -241,7 +253,9 @@ main (int argc, char *argv[])
 	g_option_context_add_main_entries (context, goption_options, GETTEXT_PACKAGE);
 	g_option_context_add_group (context, egg_sm_client_get_option_group ());
 	g_option_context_add_group (context, gtk_get_option_group (TRUE));
+	BASELINE_END(gdk_init);
 
+	BASELINE_START(option_parse);
 	if (!g_option_context_parse (context, &argc, &argv, &error)) {
 		g_printerr ("Cannot parse arguments: %s\n", error->message);
 		g_error_free (error);
@@ -250,6 +264,7 @@ main (int argc, char *argv[])
 		return 1;
 	}
 	g_option_context_free (context);
+	BASELINE_END(option_parse);
 
 	if (preview_mode) {
 		gboolean retval;
@@ -259,30 +274,41 @@ main (int argc, char *argv[])
 		return retval ? 0 : 1;
 	}
 
+        BASELINE_START(ev_init);
         if (!ev_init ())
                 return 1;
 
 	ev_stock_icons_init ();
+	BASELINE_END(ev_init);
 
+	BASELINE_START(gtk_init);
 	gtk_window_set_default_icon_name ("accessories-document-viewer");
 	g_set_application_name (_("Document Viewer"));
 
     application = ev_application_new ();
+    BASELINE_END(gtk_init);
+    
+    BASELINE_START(app_register);
     if (!g_application_register (G_APPLICATION (application), NULL, &error)) {
         g_printerr ("Failed to register: %s\n", error->message);
         g_error_free (error);
         status = 1;
         goto done;
     }
+	BASELINE_END(app_register);
 
+	BASELINE_START(session_load);
 	ev_application_load_session (application);
 	load_files (file_arguments);
+	BASELINE_END(session_load);
 
 	/* Change directory so we don't prevent unmounting in case the initial cwd
 	 * is on an external device (see bug #575436)
 	 */
 	g_chdir (g_get_home_dir ());
 
+	BASELINE_END(main_total);
+	g_debug("BASELINE: === Starting main loop ===");
 	status = g_application_run (G_APPLICATION (application), 0, NULL);
 
     done:

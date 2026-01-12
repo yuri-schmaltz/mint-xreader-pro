@@ -33,6 +33,7 @@ struct _EvBackendInfo {
 	gchar       *module_name;
 	GTypeModule *module;
 	gboolean     resident;
+	gboolean     loaded;  /* PATCH 2: Track if module is loaded */
 
 	GType        type_id;
 
@@ -88,6 +89,7 @@ ev_backends_manager_load_backend (const gchar *file)
 	}
 
 	info = g_new0 (EvBackendInfo, 1);
+	info->loaded = FALSE;  /* PATCH 2: Initially not loaded */
 	info->module_name = g_key_file_get_string (backend_file, EV_BACKENDS_GROUP,
 						   "Module", NULL);
 	if (!info->module_name) {
@@ -267,12 +269,18 @@ ev_backends_manager_get_document (const gchar *mime_type)
 	if (!info)
 		return NULL;
 
-	if (!info->module) {
+	/* PATCH 2: Lazy-load backend module on first use */
+	if (!info->loaded) {
 		gchar *path;
 
 		path = g_module_build_path (backends_dir(), info->module_name);
 		info->module = G_TYPE_MODULE (ev_module_new (path, info->resident));
 		g_free (path);
+		info->loaded = TRUE;
+	}
+
+	if (!info->module) {
+		return NULL;
 	}
 
 	if (!g_type_module_use (info->module)) {

@@ -19,8 +19,35 @@ This software is licensed under GNU GENERAL PUBLIC LICENSE Version 2 from June
 Our Coding Guidelines can be found under
 https://linuxmint-developer-guide.readthedocs.io/en/latest/guidelines.html
 
+## Performance Notes (Jan 2026)
 
-## Optional Backend Libraries
+**Baseline Metrics**:
+- **Build time**: 4.8s (clean, Ninja)
+- **Startup time**: 49-56ms (--help mode), 122ms (PDF open)
+- **RAM idle**: ~50-80 MB (initial)
+- **Largest module**: `shell/ev-window.c` (8093 lines, 52% of shell code)
+
+**Known Hotspots**:
+1. `shell/ev-window.c` - Monolithic UI controller, candidate for refactoring
+2. `libview/ev-view.c` (7465 lines) - Critical rendering path
+3. Memory allocations: 40+ `g_strdup` calls in `libdocument/`
+
+**Optimization Opportunities** (see PERFORMANCE.md):
+- Lazy-load backends (~30-50ms potential savings)
+- Reduce allocations in hot paths (use `g_intern_string` for UI labels)
+- Cache LRU for thumbnails (limit memory growth on large documents)
+- Refactor `ev-window.c` into smaller modules
+
+**Build Instructions**:
+```bash
+meson setup builddir --buildtype=debugoptimized
+ninja -C builddir
+```
+
+**Measure Performance**:
+```bash
+G_MESSAGES_DEBUG=all builddir/shell/xreader document.pdf
+```
 
 - Poppler for PDF Backend [ http://poppler.freedesktop.org/ ]
 - DjVuLibre for DjVu viewing [ http://djvulibre.djvuzone.org/ ]

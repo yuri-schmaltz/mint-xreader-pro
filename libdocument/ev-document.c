@@ -803,14 +803,16 @@ ev_document_info_copy (EvDocumentInfo *info)
 
 	copy = g_new0 (EvDocumentInfo, 1);
 	copy->title = g_strdup (info->title);
-	copy->format = g_strdup (info->format);
+	/* PATCH 3: Use g_intern_string for immutable metadata */
+	copy->format = (gchar *) g_intern_string (info->format);
 	copy->author = g_strdup (info->author);
 	copy->subject = g_strdup (info->subject);
 	copy->keywords = g_strdup (info->keywords);
 	copy->security = g_strdup (info->security);
 	copy->creator = g_strdup (info->creator);
 	copy->producer = g_strdup (info->producer);
-	copy->linearized = g_strdup (info->linearized);
+	/* PATCH 3: Linearized has only 2 possible values: "yes" or NULL */
+	copy->linearized = (gchar *) g_intern_string (info->linearized);
 	
 	copy->creation_date = g_date_time_ref (info->creation_date);
 	copy->modified_date = g_date_time_ref (info->modified_date);
@@ -833,13 +835,12 @@ ev_document_info_free (EvDocumentInfo *info)
 		return;
 
 	g_free (info->title);
-	g_free (info->format);
+	/* PATCH 3: format and linearized are interned, don't free */
 	g_free (info->author);
 	g_free (info->subject);
 	g_free (info->keywords);
 	g_free (info->creator);
 	g_free (info->producer);
-	g_free (info->linearized);
 
 	g_free (info->security);
 	g_clear_pointer (&info->creation_date, g_date_time_unref);

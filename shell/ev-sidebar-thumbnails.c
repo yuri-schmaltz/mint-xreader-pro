@@ -45,6 +45,9 @@
 #define THUMBNAIL_STEP_WIDTH    20
 #define THUMBNAIL_DEFAULT_WIDTH 100
 
+/* PATCH 4: Cache management for large documents */
+#define THUMBNAIL_CACHE_THRESHOLD 200  /* Start managing cache above this page count */
+
 /* The IconView doesn't scale nearly as well as the TreeView, so we arbitrarily
  * limit its use */
 #define MAX_ICON_VIEW_PAGE_COUNT 1500
@@ -602,6 +605,77 @@ add_range (EvSidebarThumbnails *sidebar_thumbnails,
 	gtk_tree_path_free (path);
 }
 
+/* PATCH 4: Clear pixbufs outside visible range for large documents */
+static void
+clear_pixbufs_outside_range (EvSidebarThumbnails *sidebar_thumbnails,
+			     gint                 start_page,
+			     gint                 end_page)
+{
+	EvSidebarThumbnailsPrivate *priv = sidebar_thumbnails->priv;
+	GtkTreePath *path;
+	GtkTreeIter iter;
+	gint page;
+
+	/* Only manage cache for large documents */
+	if (priv->n_pages < THUMBNAIL_CACHE_THRESHOLD)
+		return;
+
+	/* Clear pixbufs before visible range */
+	for (page = 0; page < start_page; page++) {
+		path = gtk_tree_path_new_from_indices (page, -1);
+		if (gtk_tree_model_get_iter (GTK_TREE_MODEL (priv->list_store), &iter, path)) {
+			gboolean thumbnail_set;
+			gtk_tree_model_get (GTK_TREE_MODEL (priv->list_store), &iter,
+					    COLUMN_THUMBNAIL_SET, &thumbnail_set,
+					    -1);
+			/* Only clear if thumbnail was loaded */
+			if (thumbnail_set) {
+				GdkPixbuf *loading_icon;
+				gint width, height;
+				ev_thumbnails_size_cache_get_size (priv->size_cache, page,
+								  priv->rotation,
+								  &width, &height);
+				height = (gint) ceil((double)(height) * priv->thumbnail_width / width);
+				width = priv->thumbnail_width;
+				loading_icon = ev_sidebar_thumbnails_get_loading_icon (sidebar_thumbnails,
+										       width, height);
+				gtk_list_store_set (priv->list_store, &iter,
+						    COLUMN_PIXBUF, loading_icon,
+						    COLUMN_THUMBNAIL_SET, FALSE,
+						    -1);
+			}
+		}
+		gtk_tree_path_free (path);
+	}
+
+	/* Clear pixbufs after visible range */
+	for (page = end_page + 1; page < priv->n_pages; page++) {
+		path = gtk_tree_path_new_from_indices (page, -1);
+		if (gtk_tree_model_get_iter (GTK_TREE_MODEL (priv->list_store), &iter, path)) {
+			gboolean thumbnail_set;
+			gtk_tree_model_get (GTK_TREE_MODEL (priv->list_store), &iter,
+					    COLUMN_THUMBNAIL_SET, &thumbnail_set,
+					    -1);
+			if (thumbnail_set) {
+				GdkPixbuf *loading_icon;
+				gint width, height;
+				ev_thumbnails_size_cache_get_size (priv->size_cache, page,
+								  priv->rotation,
+								  &width, &height);
+				height = (gint) ceil((double)(height) * priv->thumbnail_width / width);
+				width = priv->thumbnail_width;
+				loading_icon = ev_sidebar_thumbnails_get_loading_icon (sidebar_thumbnails,
+										       width, height);
+				gtk_list_store_set (priv->list_store, &iter,
+						    COLUMN_PIXBUF, loading_icon,
+						    COLUMN_THUMBNAIL_SET, FALSE,
+						    -1);
+			}
+		}
+		gtk_tree_path_free (path);
+	}
+}
+
 /* This modifies start */
 static void
 update_visible_range (EvSidebarThumbnails *sidebar_thumbnails,
@@ -637,6 +711,9 @@ update_visible_range (EvSidebarThumbnails *sidebar_thumbnails,
 
 	priv->start_page = start_page;
 	priv->end_page = end_page;
+
+	/* PATCH 4: Clear pixbufs outside visible range for memory efficiency */
+	clear_pixbufs_outside_range (sidebar_thumbnails, start_page, end_page);
 }
 
 static void

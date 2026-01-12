@@ -1945,6 +1945,8 @@ pdf_selection_get_selected_text (EvSelection     *selection,
 					       (PopplerRectangle *)points);
 }
 
+/* PATCH 5: Only compile this function for old Poppler versions */
+#if !POPPLER_CHECK_VERSION(22, 2, 0)
 static cairo_region_t *
 create_region_from_poppler_region (GList *region, gdouble scale)
 {
@@ -1970,6 +1972,7 @@ create_region_from_poppler_region (GList *region, gdouble scale)
 
 	return retval;
 }
+#endif /* !POPPLER_CHECK_VERSION(22, 2, 0) */
 
 static cairo_region_t *
 pdf_selection_get_selection_region (EvSelection     *selection,
@@ -1979,15 +1982,23 @@ pdf_selection_get_selection_region (EvSelection     *selection,
 {
 	PopplerPage    *poppler_page;
 	cairo_region_t *retval;
-	GList          *region;
 
 	poppler_page = POPPLER_PAGE (rc->page->backend_page);
-	region = poppler_page_get_selection_region (poppler_page,
-						    1.0,
+
+	/* PATCH 5: Use new API to avoid deprecation warnings */
+#if POPPLER_CHECK_VERSION(22, 2, 0)
+	retval = poppler_page_get_selected_region (poppler_page,
+						    rc->scale,
 						    (PopplerSelectionStyle)style,
 						    (PopplerRectangle *) points);
+#else
+	GList *region = poppler_page_get_selection_region (poppler_page,
+							   1.0,
+							   (PopplerSelectionStyle)style,
+							   (PopplerRectangle *) points);
 	retval = create_region_from_poppler_region (region, rc->scale);
 	g_list_free (region);
+#endif
 
 	return retval;
 }
@@ -2008,8 +2019,10 @@ pdf_document_text_get_text_mapping (EvDocumentText *document_text,
 {
 	PopplerPage *poppler_page;
 	PopplerRectangle points;
-	GList *region;
 	cairo_region_t *retval;
+#if !POPPLER_CHECK_VERSION(22, 2, 0)
+	GList *region;
+#endif
 
 	g_return_val_if_fail (POPPLER_IS_PAGE (page->backend_page), NULL);
 
@@ -2019,11 +2032,18 @@ pdf_document_text_get_text_mapping (EvDocumentText *document_text,
 	points.y1 = 0.0;
 	poppler_page_get_size (poppler_page, &(points.x2), &(points.y2));
 
+	/* PATCH 5: Use new API to avoid deprecation warnings */
+#if POPPLER_CHECK_VERSION(22, 2, 0)
+	retval = poppler_page_get_selected_region (poppler_page, 1.0,
+						    POPPLER_SELECTION_GLYPH,
+						    &points);
+#else
 	region = poppler_page_get_selection_region (poppler_page, 1.0,
 						    POPPLER_SELECTION_GLYPH,
 						    &points);
 	retval = create_region_from_poppler_region (region, 1.0);
 	g_list_free (region);
+#endif
 
 	return retval;
 }
@@ -2979,12 +2999,14 @@ get_quads_for_area (PopplerPage      *page,
 		    EvRectangle      *area,
 		    PopplerRectangle *bbox)
 {
-	GList  *rects, *l;
 	guint   n_rects;
 	guint   i;
 	GArray *quads;
 	gdouble height;
+#if !POPPLER_CHECK_VERSION(22, 2, 0)
+	GList  *rects, *l;
 	gdouble max_x, max_y, min_x, min_y;
+#endif
 
 	if (bbox) {
 		bbox->x1 = G_MAXDOUBLE;
@@ -2995,6 +3017,42 @@ get_quads_for_area (PopplerPage      *page,
 
 	poppler_page_get_size (page, NULL, &height);
 
+	/* PATCH 5: Use new API to avoid deprecation warnings */
+#if POPPLER_CHECK_VERSION(22, 2, 0)
+	cairo_region_t *region_cairo = poppler_page_get_selected_region (page, 1.0,
+									POPPLER_SELECTION_GLYPH,
+									(PopplerRectangle *)area);
+	n_rects = cairo_region_num_rectangles (region_cairo);
+
+	quads = g_array_sized_new (TRUE, TRUE,
+				   sizeof (PopplerQuadrilateral),
+				   n_rects);
+	g_array_set_size (quads, MAX (1, n_rects));
+
+	for (i = 0; i < n_rects; i++) {
+		cairo_rectangle_int_t rect;
+		PopplerQuadrilateral *quad = &g_array_index (quads, PopplerQuadrilateral, i);
+
+		cairo_region_get_rectangle (region_cairo, i, &rect);
+
+		quad->p1.x = rect.x;
+		quad->p1.y = height - rect.y;
+		quad->p2.x = rect.x + rect.width;
+		quad->p2.y = height - rect.y;
+		quad->p3.x = rect.x;
+		quad->p3.y = height - (rect.y + rect.height);
+		quad->p4.x = rect.x + rect.width;
+		quad->p4.y = height - (rect.y + rect.height);
+
+		if (bbox) {
+			bbox->x1 = MIN (bbox->x1, quad->p1.x);
+			bbox->y1 = MIN (bbox->y1, quad->p1.y);
+			bbox->x2 = MAX (bbox->x2, quad->p1.x);
+			bbox->y2 = MAX (bbox->y2, quad->p1.y);
+		}
+	}
+	cairo_region_destroy (region_cairo);
+#else
 	rects = poppler_page_get_selection_region (page, 1.0, POPPLER_SELECTION_GLYPH,
 						   (PopplerRectangle *)area);
 	n_rects = g_list_length (rects);
@@ -3036,6 +3094,7 @@ get_quads_for_area (PopplerPage      *page,
 			bbox->y2 = max_y;
 	}
 	g_list_free (rects);
+#endif
 
 	if (n_rects == 0 && bbox) {
 		bbox->x1 = 0;
