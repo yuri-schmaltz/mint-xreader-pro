@@ -89,6 +89,7 @@
 #include "ev-view-type-builtins.h"
 #include "ev-window.h"
 #include "ev-window-title.h"
+#include "ev-tabs.h"
 #include "ev-print-operation.h"
 #include "ev-progress-message-area.h"
 #include "ev-annotation-properties-dialog.h"
@@ -129,6 +130,8 @@ typedef enum {
 } EvMenubarAction;
 
 struct _EvWindowPrivate {
+#if ENABLE_EPUB
+#endif
     /* UI */
     EvChrome chrome;
 
@@ -154,6 +157,7 @@ struct _EvWindowPrivate {
 #if ENABLE_EPUB
     GtkWidget *webview;
 #endif
+    GtkWidget *notebook; // Adicionado para suporte a múltiplas abas
     /* Settings */
     GSettings *settings;
     GSettings *default_settings;
@@ -539,7 +543,8 @@ ev_window_update_actions (EvWindow *ev_window)
     }
     can_find_in_page = (ev_window->priv->find_job && ev_job_find_has_results (EV_JOB_FIND (ev_window->priv->find_job)));
     if (view) {
-        ev_window_set_action_sensitive (ev_window, "EditCopy", has_pages && ev_view_get_has_selection (view));
+        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        ev_window_set_action_sensitive (ev_window, "EditCopy", has_pages && ev_view_get_has_selection (tab_data ? tab_data->view : view));
     }
 #if ENABLE_EPUB
     else if (webview) {
@@ -558,10 +563,11 @@ ev_window_update_actions (EvWindow *ev_window)
     presentation_mode = EV_WINDOW_IS_PRESENTATION (ev_window);
 
     if (ev_window->priv->document && ev_window->priv->document->iswebdocument == FALSE ) {
+        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
         ev_window_set_action_sensitive (ev_window, "ViewZoomIn",
-                                        has_pages && ev_view_can_zoom_in (view) && !presentation_mode);
+                        has_pages && ev_view_can_zoom_in (tab_data ? tab_data->view : view) && !presentation_mode);
         ev_window_set_action_sensitive (ev_window, "ViewZoomOut",
-                                        has_pages && ev_view_can_zoom_out (view) && !presentation_mode);
+                        has_pages && ev_view_can_zoom_out (tab_data ? tab_data->view : view) && !presentation_mode);
         ev_window_set_action_sensitive (ev_window, "ViewZoomReset", has_pages && !presentation_mode);
     }
     /* Go menu */
@@ -931,7 +937,8 @@ static void
 view_selection_changed_cb (EvView   *view,
                            EvWindow *window)
 {
-    ev_window_set_action_sensitive (window, "EditCopy", ev_view_get_has_selection (view));
+    EvTabData *tab_data = ev_window_get_current_tab(window);
+    ev_window_set_action_sensitive (window, "EditCopy", ev_view_get_has_selection (tab_data ? tab_data->view : view));
 }
 
 static void
@@ -1625,7 +1632,8 @@ ev_window_handle_link (EvWindow *ev_window,
 
         link_action = ev_link_action_new_dest (dest);
         link = ev_link_new (NULL, link_action);
-        ev_view_handle_link (EV_VIEW (ev_window->priv->view), link);
+        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), link);
         g_object_unref (link);
     }
 }
@@ -1648,7 +1656,8 @@ ev_window_load_job_cb (EvJob *job,
 
     g_assert (job_load->uri);
 
-    ev_view_set_loading (EV_VIEW (ev_window->priv->view), FALSE);
+    EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+    ev_view_set_loading (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), FALSE);
     /* Success! */
     if (!ev_job_is_failed (job)) {
         ev_document_model_set_document (ev_window->priv->model, document);
@@ -1893,7 +1902,8 @@ ev_window_load_remote_failed (EvWindow *ev_window,
 {
     if ( !ev_window->priv->view ) return;
 
-    ev_view_set_loading (EV_VIEW (ev_window->priv->view), FALSE);
+    EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+    ev_view_set_loading (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), FALSE);
     ev_window->priv->in_reload = FALSE;
     ev_window_error_message (ev_window, error,
             "%s", _("Unable to open document"));
@@ -1985,7 +1995,8 @@ window_open_file_copy_ready_cb (GFile        *source,
         ev_window->priv->uri = NULL;
         g_object_unref (source);
 
-        ev_view_set_loading (EV_VIEW (ev_window->priv->view), FALSE);
+        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        ev_view_set_loading (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), FALSE);
     } else {
         ev_window_load_remote_failed (ev_window, error);
         g_object_unref (source);
@@ -2149,7 +2160,8 @@ ev_window_open_uri (EvWindow       *ev_window,
     if (!g_file_is_native (source_file) && !ev_window->priv->local_uri) {
         ev_window_load_file_remote (ev_window, source_file);
     } else {
-        ev_view_set_loading (EV_VIEW (ev_window->priv->view), TRUE);
+        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        ev_view_set_loading (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), TRUE);
         g_object_unref (source_file);
         ev_job_scheduler_push_job (ev_window->priv->load_job, EV_JOB_PRIORITY_NONE);
     }
@@ -2189,7 +2201,8 @@ ev_window_open_document (EvWindow       *ev_window,
 
         link_action = ev_link_action_new_dest (dest);
         link = ev_link_new (NULL, link_action);
-        ev_view_handle_link (EV_VIEW (ev_window->priv->view), link);
+        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), link);
         g_object_unref (link_action);
         g_object_unref (link);
     }
@@ -2277,81 +2290,11 @@ reload_remote_copy_ready_cb (GFile        *remote,
         g_error_free (error);
     } else {
         ev_window_reload_local (ev_window);
-    }
-
-    g_object_unref (remote);
-}
-
-static void
-reload_remote_copy_progress_cb (goffset   n_bytes,
-                                goffset   total_bytes,
-                                EvWindow *ev_window)
-{
-    gchar *status;
-    gdouble fraction;
-
-    if (!ev_window->priv->message_area)
-        return;
-
-    if (total_bytes <= 0)
-        return;
-
-    fraction = n_bytes / (gdouble)total_bytes;
-    status = g_strdup_printf (_("Downloading document (%d%%)"),
-            (gint)(fraction * 100));
-
-    ev_progress_message_area_set_status (EV_PROGRESS_MESSAGE_AREA (ev_window->priv->message_area),
-            status);
-    ev_progress_message_area_set_fraction (EV_PROGRESS_MESSAGE_AREA (ev_window->priv->message_area),
-            fraction);
-
-    g_free (status);
-}
-
-static void
-query_remote_uri_mtime_cb (GFile        *remote,
-                           GAsyncResult *async_result,
-                           EvWindow     *ev_window)
-{
-    GFileInfo *info;
-    GTimeVal   mtime;
-    GError    *error = NULL;
-
-    info = g_file_query_info_finish (remote, async_result, &error);
-    if (error) {
-        g_error_free (error);
-        g_object_unref (remote);
-        ev_window_reload_local (ev_window);
-
-        return;
-    }
-
-    g_file_info_get_modification_time (info, &mtime);
-    if (ev_window->priv->uri_mtime != mtime.tv_sec) {
-        GFile *target_file;
-
-        /* Remote file has changed */
-        ev_window->priv->uri_mtime = mtime.tv_sec;
-
-        ev_window_reset_progress_cancellable (ev_window);
-
-        target_file = g_file_new_for_uri (ev_window->priv->local_uri);
-        g_file_copy_async (remote, target_file,
-                G_FILE_COPY_OVERWRITE,
-                G_PRIORITY_DEFAULT,
-                ev_window->priv->progress_cancellable,
-                (GFileProgressCallback)reload_remote_copy_progress_cb,
-                ev_window,
-                (GAsyncReadyCallback)reload_remote_copy_ready_cb,
-                ev_window);
-        g_object_unref (target_file);
-        ev_window_show_progress_message (ev_window, 1,
-                (GSourceFunc)show_reloading_progress);
-    } else {
-        g_object_unref (remote);
-        ev_window_reload_local (ev_window);
-    }
-
+            // Cria uma nova aba para o documento
+            int tab_idx = ev_window_add_tab(ev_window, uri);
+            EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+            // O restante da lógica de carregamento do documento deve ser adaptada para usar tab_data->view, tab_data->scrolled_window, etc.
+            // ... (adaptação futura: carregar documento na view da aba)
     g_object_unref (info);
 }
 
@@ -6485,7 +6428,8 @@ sidebar_links_link_activated_cb (EvSidebarLinks *sidebar_links,
                                  EvWindow       *window)
 {
     if (window->priv->document->iswebdocument == FALSE ) {
-        ev_view_handle_link (EV_VIEW (window->priv->view), link);
+        EvTabData *tab_data = ev_window_get_current_tab(window);
+        ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : window->priv->view), link);
     }
 #if ENABLE_EPUB
     else {
@@ -6507,7 +6451,8 @@ activate_link_cb (GObject  *object,
                   EvWindow *window)
 {
     if (window->priv->view) {
-        ev_view_handle_link (EV_VIEW (window->priv->view), link);
+        EvTabData *tab_data = ev_window_get_current_tab(window);
+        ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : window->priv->view), link);
         gtk_widget_grab_focus (window->priv->view);
     }
 #if ENABLE_EPUB
@@ -7011,7 +6956,8 @@ ev_view_popup_cmd_open_link (GtkAction *action,
                              EvWindow  *window)
 {
     if (window->priv->document->iswebdocument == TRUE ) return;
-    ev_view_handle_link (EV_VIEW (window->priv->view), window->priv->link);
+    EvTabData *tab_data = ev_window_get_current_tab(window);
+    ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : window->priv->view), window->priv->link);
 }
 
 static void
