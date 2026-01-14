@@ -4,7 +4,8 @@ data_dir = include_directories('.')
 
 install_data(
     'xreader.1',
-    install_dir : join_paths(get_option('prefix'), get_option('mandir'), 'man1')
+    install_dir : join_paths(get_option('prefix'), get_option('mandir'), 'man1'),
+    install_tag : 'man'
 )
 
 service_conf = configuration_data()
@@ -14,12 +15,14 @@ configure_file(
     input: 'org.x.reader.Daemon.service.in',
     output: 'org.x.reader.Daemon.service',
     configuration: service_conf,
-    install_dir: join_paths(datadir, 'dbus-1', 'services')
+    install_dir: join_paths(datadir, 'dbus-1', 'services'),
+    install_tag : 'runtime'
 )
 
 schema_file = install_data(
     'org.x.reader.gschema.xml',
-    install_dir: join_paths(datadir, 'glib-2.0', 'schemas')
+    install_dir: join_paths(datadir, 'glib-2.0', 'schemas'),
+    install_tag : 'runtime'
 )
 
 desktop_conf = configuration_data()
@@ -38,6 +41,7 @@ custom_target(
     command: [intltool_merge, '-d', '-u', po_dir, '@INPUT@', '@OUTPUT@'],
     install: true,
     install_dir: desktopdir,
+    install_tag : 'runtime'
 )
 
 appdata = custom_target(
@@ -47,9 +51,11 @@ appdata = custom_target(
     command: [intltool_merge, '-x', '-u', po_dir, '@INPUT@', '@OUTPUT@'],
     install: true,
     install_dir: join_paths(datadir, 'metainfo'),
+    install_tag : 'runtime'
 )
 
 install_data(
     'hand-open.png',
-    install_dir: join_paths(prefix, datadir, meson.project_name())
+    install_dir: join_paths(prefix, datadir, meson.project_name()),
+    install_tag : 'runtime'
 )

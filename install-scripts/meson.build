@@ -12,10 +12,11 @@
 
 
 # Re-compile gsettings
-meson.add_install_script('meson_install_schemas.py')
+# Re-compile gsettings
+meson.add_install_script('meson_install_schemas.py', install_tag: 'runtime')
 
 # Update mime info
-meson.add_install_script('meson_update_mime_database.py')
+meson.add_install_script('meson_update_mime_database.py', install_tag: 'runtime')
 
 # Update the Gtk icon cache
-meson.add_install_script('meson_update_icon_cache.py')
+meson.add_install_script('meson_update_icon_cache.py', install_tag: 'runtime')

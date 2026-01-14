@@ -49,6 +49,17 @@ ninja -C builddir
 G_MESSAGES_DEBUG=all builddir/shell/xreader document.pdf
 ```
 
+## Testing & Accessibility
+
+**Automated UI Tests**:
+Xreader supports automated UI testing via AT-SPI. To run the test suite:
+1. Ensure `python3-dogtail` is installed.
+2. Build the project.
+3. Run: `python3 test/testFileMenu.py ./build/shell/xreader`
+
+**Accessibility (a11y)**:
+Xreader integrates with the AT-SPI registry (via `atk-bridge`), allowing screen readers (like Orca) and automation tools to interact with the UI. If you encounter issues, ensure `at-spi2-core` is running and `GTK_MODULES` includes `atk-bridge` (though xreader initializes it explicitly).
+
 - Poppler for PDF Backend [ http://poppler.freedesktop.org/ ]
 - DjVuLibre for DjVu viewing [ http://djvulibre.djvuzone.org/ ]
 - Rar for viewing CBR comics [ http://www.rarsoft.com/ ]

@@ -48,7 +48,8 @@ foreach icon : icons
 
     install_data(
         icon,
-        install_dir: join_paths(datadir, meson.project_name(), 'icons', 'hicolor', size, context)
+        install_dir: join_paths(datadir, meson.project_name(), 'icons', 'hicolor', size, context),
+        install_tag : 'runtime'
     )
 endforeach
 
@@ -68,6 +69,7 @@ foreach icon : app_icons
 
     install_data(
         icon,
-        install_dir: join_paths(datadir, 'icons', 'hicolor', size, context)
+        install_dir: join_paths(datadir, 'icons', 'hicolor', size, context),
+        install_tag : 'runtime'
     )
 endforeach
