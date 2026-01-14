@@ -145,7 +145,7 @@ if mathjax_directory == ''
         # Debian
         '/usr/share/javascript/mathjax'
         ]
-        if run_command('test', ['-f', join_paths(dir, 'MathJax.js')]).returncode() == 0
+        if run_command('test', ['-f', join_paths(dir, 'MathJax.js')], check: false).returncode() == 0
             mathjax_directory = dir
             # break would require meson_version >= 0.49.0 so just let the last one win
         endif

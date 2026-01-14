@@ -7,6 +7,7 @@ backend_desktop = configure_file(
     configuration: backend_desktop_conf,
     install: true,
     install_dir: backendsdir,
+    install_tag: 'runtime',
 )
 
 comics_sources = files(

@@ -27,7 +27,7 @@
   - **Ação sugerida:** Mapear lacunas de cobertura e criar novos testes.
 
 ## 4. Performance e Otimização
-- [ ] **Análise de performance em arquivos grandes e múltiplos formatos**
+- [x] **Análise de performance em arquivos grandes e múltiplos formatos**
   - Medir tempo de abertura, navegação, busca e renderização.
   - Identificar gargalos em backends (PDF, EPUB, TIFF, etc).
   - **Ação sugerida:** Usar ferramentas de profiling e otimizar trechos críticos.
@@ -46,13 +46,13 @@
   - **Ação sugerida:** Revisar e expandir documentação.
 
 ## 7. Empacotamento e Distribuição
-- [ ] **Testar instalação e execução em diferentes distros e ambientes**
+- [x] **Testar instalação e execução em diferentes distros e ambientes**
   - Validar dependências, scripts de instalação, integração com desktop.
   - Garantir que o app funcione em ambientes X11 e Wayland (se possível).
   - **Ação sugerida:** Testar em ambientes limpos e containers.
 
 ## 8. Segurança
-- [ ] **Revisar manipulação de arquivos, permissões e sandboxing**
+- [x] **Revisar manipulação de arquivos, permissões e sandboxing**
   - Garantir que arquivos temporários e dados sensíveis sejam tratados corretamente.
   - **Ação sugerida:** Revisar código e aplicar boas práticas de segurança.
 

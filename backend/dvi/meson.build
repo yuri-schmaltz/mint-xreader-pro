@@ -29,6 +29,7 @@ shared_module(
     dependencies: dvi_deps,
     install: true,
     install_dir: backendsdir,
+    install_tag: 'runtime',
 )
 
 custom_target(
@@ -38,4 +39,5 @@ custom_target(
     command: [intltool_merge, '-d', '-u', po_dir, '@INPUT@', '@OUTPUT@'],
     install: true,
     install_dir: backendsdir,
+    install_tag: 'runtime',
 )
