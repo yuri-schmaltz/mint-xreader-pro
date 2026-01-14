@@ -80,10 +80,13 @@ typedef struct _EvWindowPrivate EvWindowPrivate;
 #define EV_WINDOW_GET_CLASS(object) (G_TYPE_INSTANCE_GET_CLASS((object), EV_TYPE_WINDOW, EvWindowClass))
 
 
+
 struct _EvWindow {
     GtkApplicationWindow    base_instance;
     EvWindowPrivate        *priv;
 };
+
+
 
 struct _EvWindowClass {
     GtkApplicationWindowClass     base_class;

@@ -43,20 +43,25 @@ static int ev_init_count;
 gboolean
 ev_init (void)
 {
-        static gboolean have_backends;
+    static gboolean have_backends;
 
-        if (ev_init_count++ > 0)
-                return have_backends;
-
-	/* set up translation catalog */
-	bindtextdomain (GETTEXT_PACKAGE, XREADER_LOCALE_DIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-
-        _ev_debug_init ();
-        _ev_file_helpers_init ();
-        have_backends = _ev_backends_manager_init ();
-
+    g_printerr("[ev_init] chamado\n");
+    if (ev_init_count++ > 0) {
+        g_printerr("[ev_init] já inicializado, have_backends=%d\n", have_backends);
         return have_backends;
+    }
+
+    /* set up translation catalog */
+    bindtextdomain (GETTEXT_PACKAGE, XREADER_LOCALE_DIR);
+    bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+
+    _ev_debug_init ();
+    _ev_file_helpers_init ();
+    g_printerr("[ev_init] chamando _ev_backends_manager_init\n");
+    have_backends = _ev_backends_manager_init ();
+    g_printerr("[ev_init] _ev_backends_manager_init retornou %d\n", have_backends);
+
+    return have_backends;
 }
 
 /**

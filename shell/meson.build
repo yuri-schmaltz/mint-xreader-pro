@@ -157,6 +157,6 @@ libshell_dep = declare_dependency(
 xreader = executable(
     'xreader',
     'main.c',
-    dependencies: libshell_dep,
+    dependencies: [libshell_dep, dependency('atk-bridge-2.0')],
     install: true,
 )

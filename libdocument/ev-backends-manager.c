@@ -49,11 +49,13 @@ static gchar *backendsdir = NULL;
 static const gchar *
 backends_dir (void)
 {
-	if (!backendsdir) {
-		backendsdir = g_strdup (EV_BACKENDSDIR);
-	}
-
-	return backendsdir;
+    if (!backendsdir) {
+        backendsdir = g_strdup (EV_BACKENDSDIR);
+        g_printerr("[ev-backends-manager] backendsdir inicializado: %s\n", backendsdir);
+    } else {
+        g_printerr("[ev-backends-manager] backendsdir já definido: %s\n", backendsdir);
+    }
+    return backendsdir;
 }
 
 const gchar *
@@ -134,38 +136,49 @@ ev_backends_manager_load_backend (const gchar *file)
 static gboolean
 ev_backends_manager_load (void)
 {
-	GDir        *dir;
-	const gchar *dirent;
-	GError      *error = NULL;
+    GDir        *dir;
+    const gchar *dirent;
+    GError      *error = NULL;
 
-	dir = g_dir_open (backends_dir(), 0, &error);
-	if (!dir) {
-		g_warning ("%s", error->message);
-		g_error_free (error);
+    const gchar *bdir = backends_dir();
+    g_printerr("[ev-backends-manager] Tentando abrir diretório de backends: %s\n", bdir);
+    dir = g_dir_open (bdir, 0, &error);
+    if (!dir) {
+        g_warning ("%s", error->message);
+        g_printerr("[ev-backends-manager] ERRO ao abrir diretório de backends: %s\n", error->message);
+        g_error_free (error);
+        return FALSE;
+    }
 
-		return FALSE;
-	}
+    int count = 0;
+    while ((dirent = g_dir_read_name (dir))) {
+        EvBackendInfo *info;
+        gchar         *file;
 
-	while ((dirent = g_dir_read_name (dir))) {
-		EvBackendInfo *info;
-		gchar         *file;
+        g_printerr("[ev-backends-manager] Encontrado arquivo: %s\n", dirent);
+        if (!g_str_has_suffix (dirent, EV_BACKENDS_EXTENSION)) {
+            g_printerr("[ev-backends-manager] Ignorando (não é backend): %s\n", dirent);
+            continue;
+        }
 
-		if (!g_str_has_suffix (dirent, EV_BACKENDS_EXTENSION))
-			continue;
+        file = g_build_filename (backends_dir(), dirent, NULL);
+        g_printerr("[ev-backends-manager] Carregando backend: %s\n", file);
+        info = ev_backends_manager_load_backend (file);
+        g_free (file);
 
-		file = g_build_filename (backends_dir(), dirent, NULL);
-		info = ev_backends_manager_load_backend (file);
-		g_free (file);
+        if (!info) {
+            g_printerr("[ev-backends-manager] Falha ao carregar backend: %s\n", dirent);
+            continue;
+        }
 
-		if (!info)
-			continue;
+        ev_backends_list = g_list_prepend (ev_backends_list, info);
+        count++;
+    }
+    g_printerr("[ev-backends-manager] Total de backends carregados: %d\n", count);
 
-		ev_backends_list = g_list_prepend (ev_backends_list, info);
-	}
+    g_dir_close (dir);
 
-	g_dir_close (dir);
-
-	return ev_backends_list != NULL;
+    return ev_backends_list != NULL;
 }
 
 /*

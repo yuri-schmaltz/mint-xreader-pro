@@ -1,3 +1,69 @@
+#include "ev-tabs.h"
+#include "xreader-view.h"
+
+// Callback para fechamento de aba
+static void on_tab_close_requested(GtkNotebook *notebook, GtkWidget *child, guint page, gpointer user_data) {
+    // Recupera dados da aba
+    EvTabData *tab_data = (EvTabData*)g_object_get_data(G_OBJECT(child), "ev-tab-data");
+    if (tab_data) {
+        if (tab_data->uri) g_free(tab_data->uri);
+        if (tab_data->document) g_object_unref(tab_data->document);
+        if (tab_data->view) {
+            /* Força liberação do cache de página associado à view */
+            g_object_unref(tab_data->view);
+        }
+        // Se houver buffers/caches customizados, liberar aqui
+    }
+    // gtk_notebook_remove_page NÃO deve ser chamado aqui, pois já está em processo de remoção
+    // (evita loop infinito e crash)
+}
+
+void ev_window_setup_tab_close(GtkNotebook *notebook, gpointer window_user_data) {
+    g_signal_connect(notebook, "page-removed", G_CALLBACK(on_tab_close_requested), window_user_data);
+}
+
+int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
+    if (!notebook || !GTK_IS_NOTEBOOK(notebook))
+        return -1;
+    EvTabData *tab_data = g_new0(EvTabData, 1);
+    tab_data->scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+    tab_data->view = ev_view_new();
+    gtk_container_add(GTK_CONTAINER(tab_data->scrolled_window), tab_data->view);
+    gtk_widget_show(tab_data->view);
+    gtk_widget_show(tab_data->scrolled_window);
+
+    // Título da aba
+    gchar *tab_title = g_path_get_basename(uri);
+    int page_num = gtk_notebook_append_page(notebook, tab_data->scrolled_window, gtk_label_new(tab_title));
+    g_free(tab_title);
+
+    // Armazena o ponteiro para tab_data no widget da aba
+    g_object_set_data_full(G_OBJECT(tab_data->scrolled_window), "ev-tab-data", tab_data, g_free);
+
+    gtk_notebook_set_current_page(notebook, page_num);
+    return page_num;
+}
+
+EvTabData* ev_window_get_current_tab(GtkNotebook *notebook) {
+    if (!notebook || !GTK_IS_NOTEBOOK(notebook))
+        return NULL;
+    int page = gtk_notebook_get_current_page(notebook);
+    if (page < 0)
+        return NULL;
+    GtkWidget *child = gtk_notebook_get_nth_page(notebook, page);
+    if (!child)
+        return NULL;
+    return (EvTabData*)g_object_get_data(G_OBJECT(child), "ev-tab-data");
+}
+
+void ev_window_close_current_tab(GtkNotebook *notebook) {
+    if (!notebook || !GTK_IS_NOTEBOOK(notebook))
+        return;
+    int page = gtk_notebook_get_current_page(notebook);
+    if (page < 0)
+        return;
+    gtk_notebook_remove_page(notebook, page);
+}
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8; c-indent-level: 8 -*- */
 /* this file is part of xreader, a generic document viewer
  *
@@ -543,7 +609,7 @@ ev_window_update_actions (EvWindow *ev_window)
     }
     can_find_in_page = (ev_window->priv->find_job && ev_job_find_has_results (EV_JOB_FIND (ev_window->priv->find_job)));
     if (view) {
-        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
         ev_window_set_action_sensitive (ev_window, "EditCopy", has_pages && ev_view_get_has_selection (tab_data ? tab_data->view : view));
     }
 #if ENABLE_EPUB
@@ -563,7 +629,7 @@ ev_window_update_actions (EvWindow *ev_window)
     presentation_mode = EV_WINDOW_IS_PRESENTATION (ev_window);
 
     if (ev_window->priv->document && ev_window->priv->document->iswebdocument == FALSE ) {
-        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
         ev_window_set_action_sensitive (ev_window, "ViewZoomIn",
                         has_pages && ev_view_can_zoom_in (tab_data ? tab_data->view : view) && !presentation_mode);
         ev_window_set_action_sensitive (ev_window, "ViewZoomOut",
@@ -937,7 +1003,7 @@ static void
 view_selection_changed_cb (EvView   *view,
                            EvWindow *window)
 {
-    EvTabData *tab_data = ev_window_get_current_tab(window);
+    EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(window->priv->notebook));
     ev_window_set_action_sensitive (window, "EditCopy", ev_view_get_has_selection (tab_data ? tab_data->view : view));
 }
 
@@ -1632,7 +1698,7 @@ ev_window_handle_link (EvWindow *ev_window,
 
         link_action = ev_link_action_new_dest (dest);
         link = ev_link_new (NULL, link_action);
-        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
         ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), link);
         g_object_unref (link);
     }
@@ -1656,7 +1722,7 @@ ev_window_load_job_cb (EvJob *job,
 
     g_assert (job_load->uri);
 
-    EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+    EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
     ev_view_set_loading (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), FALSE);
     /* Success! */
     if (!ev_job_is_failed (job)) {
@@ -1902,7 +1968,7 @@ ev_window_load_remote_failed (EvWindow *ev_window,
 {
     if ( !ev_window->priv->view ) return;
 
-    EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+    EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
     ev_view_set_loading (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), FALSE);
     ev_window->priv->in_reload = FALSE;
     ev_window_error_message (ev_window, error,
@@ -1995,7 +2061,7 @@ window_open_file_copy_ready_cb (GFile        *source,
         ev_window->priv->uri = NULL;
         g_object_unref (source);
 
-        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
         ev_view_set_loading (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), FALSE);
     } else {
         ev_window_load_remote_failed (ev_window, error);
@@ -2160,7 +2226,7 @@ ev_window_open_uri (EvWindow       *ev_window,
     if (!g_file_is_native (source_file) && !ev_window->priv->local_uri) {
         ev_window_load_file_remote (ev_window, source_file);
     } else {
-        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
         ev_view_set_loading (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), TRUE);
         g_object_unref (source_file);
         ev_job_scheduler_push_job (ev_window->priv->load_job, EV_JOB_PRIORITY_NONE);
@@ -2201,7 +2267,7 @@ ev_window_open_document (EvWindow       *ev_window,
 
         link_action = ev_link_action_new_dest (dest);
         link = ev_link_new (NULL, link_action);
-        EvTabData *tab_data = ev_window_get_current_tab(ev_window);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
         ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : ev_window->priv->view), link);
         g_object_unref (link_action);
         g_object_unref (link);
@@ -2286,16 +2352,42 @@ reload_remote_copy_ready_cb (GFile        *remote,
     if (error) {
         if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
             ev_window_error_message (ev_window, error,
-                    "%s", _("Failed to reload document."));
+                    "%s", _( "Failed to reload document."));
         g_error_free (error);
     } else {
         ev_window_reload_local (ev_window);
-            // Cria uma nova aba para o documento
-            int tab_idx = ev_window_add_tab(ev_window, uri);
-            EvTabData *tab_data = ev_window_get_current_tab(ev_window);
-            // O restante da lógica de carregamento do documento deve ser adaptada para usar tab_data->view, tab_data->scrolled_window, etc.
-            // ... (adaptação futura: carregar documento na view da aba)
-    g_object_unref (info);
+        // Corrigir: obter uri e info corretamente
+        const gchar *uri = ev_window->priv->uri;
+        int tab_idx = ev_window_add_tab(GTK_NOTEBOOK(ev_window->priv->notebook), uri);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
+        // O restante da lógica de carregamento do documento deve ser adaptada para usar tab_data->view, tab_data->scrolled_window, etc.
+        // ... (adaptação futura: carregar documento na view da aba)
+        // info não está declarado aqui, então não faz sentido dar unref
+    }
+}
+
+// Callback para g_file_query_info_async
+static void query_remote_uri_mtime_cb(GFile *remote, GAsyncResult *async_result, EvWindow *ev_window) {
+    GFileInfo *info = NULL;
+    GError *error = NULL;
+    info = g_file_query_info_finish(remote, async_result, &error);
+    if (error) {
+        ev_window_error_message(ev_window, error, "%s", _( "Failed to reload document."));
+        g_error_free(error);
+    } else {
+        GTimeVal mtime;
+        g_file_info_get_modification_time(info, &mtime);
+        ev_window->priv->uri_mtime = mtime.tv_sec;
+        g_object_unref(info);
+        // Após obter mtime, iniciar cópia remota
+        GFile *dest = g_file_new_for_uri(ev_window->priv->local_uri);
+        g_file_copy_async(remote, dest,
+                         G_FILE_COPY_OVERWRITE, G_PRIORITY_DEFAULT,
+                         NULL, NULL, NULL,
+                         (GAsyncReadyCallback)reload_remote_copy_ready_cb, ev_window);
+        g_object_unref(dest);
+    }
+    g_object_unref(remote);
 }
 
 static void
@@ -6080,346 +6172,346 @@ static const GtkActionEntry entries[] = {
         { "FileOpen", "xsi-document-open-symbolic", N_("_Open…"),
                 "<control>O",
                 N_("Open an existing document"),
-                G_CALLBACK (ev_window_cmd_file_open) },
+            NULL },
         { "FileOpenCopy", NULL, N_("Op_en a Copy"),
                 "<control>N",
                 N_("Open a copy of the current document in a new window"),
-                G_CALLBACK (ev_window_cmd_file_open_copy) },
+            NULL },
         { "FileSaveAs", "xsi-document-save-as-symbolic", N_("_Save a Copy…"),
                 "<control>S",
                 N_("Save a copy of the current document"),
-                G_CALLBACK (ev_window_cmd_save_as) },
+            NULL },
         { "FilePrint", "xsi-document-print-symbolic", N_("_Print…"),
                 "<control>P",
                 N_("Print this document"),
-                G_CALLBACK (ev_window_cmd_file_print) },
+            NULL },
         { "FileProperties", "xsi-document-properties-symbolic", N_("P_roperties"),
                 "<alt>Return",
                 NULL,
-                G_CALLBACK (ev_window_cmd_file_properties) },
+            NULL },
         { "FileCloseAllWindows", NULL, N_("_Close All Windows"),
                 "<control>Q",
                 NULL,
-                G_CALLBACK (ev_window_cmd_file_close_all_windows) },
+            NULL },
         { "FileCloseWindow", "xsi-window-close-symbolic", N_("_Close"),
                 "<control>W",
                 NULL,
-                G_CALLBACK (ev_window_cmd_file_close_window) },
+            NULL },
 
         /* Edit menu */
         { "EditCopy", "xsi-edit-copy-symbolic", N_("_Copy"),
-                "<control>C",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_copy) },
+            "<control>C",
+            NULL,
+            NULL },
         { "EditSelectAll", "xsi-edit-select-all-symbolic", N_("Select _All"),
-                "<control>A",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_select_all) },
+            "<control>A",
+            NULL,
+            NULL },
         { "EditFind", "xsi-edit-find-symbolic", N_("_Find…"),
-                "<control>F",
-                N_("Find a word or phrase in the document"),
-                G_CALLBACK (ev_window_cmd_edit_find) },
+            "<control>F",
+            N_("Find a word or phrase in the document"),
+            NULL },
         { "EditFindNext", NULL, N_("Find Ne_xt"),
-                "<control>G",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_find_next) },
+            "<control>G",
+            NULL,
+            NULL },
         { "EditFindPrevious", NULL, N_("Find Pre_vious"),
-                "<shift><control>G",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_find_previous) },
+            "<shift><control>G",
+            NULL,
+            NULL },
         { "EditRotateLeft", "xsi-object-rotate-left-symbolic", N_("Rotate _Left"),
-                "<control>Left",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_rotate_left) },
+            "<control>Left",
+            NULL,
+            NULL },
         { "EditRotateRight", "xsi-object-rotate-right-symbolic", N_("Rotate _Right"),
-                "<control>Right",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_rotate_right) },
+            "<control>Right",
+            NULL,
+            NULL },
         { "EditSaveSettings", NULL, N_("Save Current Settings as _Default"),
-                "<control>T",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_save_settings) },
+            "<control>T",
+            NULL,
+            NULL },
         { "EditPreferences", "xsi-toolbox-symbolic", N_("Preferences"),
-                "<shift><control>P",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_preferences) },
+            "<shift><control>P",
+            NULL,
+            NULL },
 
 
         /* View menu */
         { "ViewZoomReset", "xsi-zoom-original-symbolic", N_("_Original size"),
-                "<control>0",
-                N_("View the document at its original size"),
-                G_CALLBACK (ev_window_cmd_view_zoom_reset) },
+            "<control>0",
+            N_("View the document at its original size"),
+            NULL },
         { "ViewZoomIn", "xsi-zoom-in-symbolic", N_("Zoom _In"),
-                "<control>plus",
-                N_("Enlarge the document"),
-                G_CALLBACK (ev_window_cmd_view_zoom_in) },
+            "<control>plus",
+            N_("Enlarge the document"),
+            NULL },
         { "ViewZoomOut", "xsi-zoom-out-symbolic", N_("Zoom _Out"),
-                "<control>minus",
-                N_("Shrink the document"),
-                G_CALLBACK (ev_window_cmd_view_zoom_out) },
+            "<control>minus",
+            N_("Shrink the document"),
+            NULL },
         { "ViewReload", "xsi-view-refresh-symbolic", N_("_Reload"),
-                "<control>R",
-                N_("Reload the document"),
-                G_CALLBACK (ev_window_cmd_view_reload) },
+            "<control>R",
+            N_("Reload the document"),
+            NULL },
         { "ViewExpandWindow", "xsi-zoom-fit-best-symbolic", N_("_Expand Window to Fit"),
-                "<control>e",
-                N_("Expand Window to Fit"),
-                G_CALLBACK (ev_window_cmd_view_expand_window) },
+            "<control>e",
+            N_("Expand Window to Fit"),
+            NULL },
 
         { "ViewAutoscroll", "xsi-media-playback-start-symbolic", N_("Auto_scroll"),
-                NULL,
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_autoscroll) },
+            NULL,
+            NULL,
+            NULL },
 
         /* Go menu */
         { "GoPreviousPage", "xsi-go-previous-symbolic", N_("_Previous Page"),
-                "<control>Page_Up",
-                N_("Go to the previous page"),
-                G_CALLBACK (ev_window_cmd_go_previous_page) },
+            "<control>Page_Up",
+            N_("Go to the previous page"),
+            NULL },
         { "GoNextPage", "xsi-go-next-symbolic", N_("_Next Page"),
-                "<control>Page_Down",
-                N_("Go to the next page"),
-                G_CALLBACK (ev_window_cmd_go_next_page) },
+            "<control>Page_Down",
+            N_("Go to the next page"),
+            NULL },
         { "GoFirstPage", "xsi-go-first-symbolic", N_("_First Page"),
-                "<control>Home",
-                N_("Go to the first page"),
-                G_CALLBACK (ev_window_cmd_go_first_page) },
+            "<control>Home",
+            N_("Go to the first page"),
+            NULL },
         { "GoLastPage", "xsi-go-last-symbolic", N_("_Last Page"),
-                "<control>End",
-                N_("Go to the last page"),
-                G_CALLBACK (ev_window_cmd_go_last_page) },
+            "<control>End",
+            N_("Go to the last page"),
+            NULL },
         { "GoPreviousHistory", "xsi-go-history-previous-symbolic", N_("Previous History Item"),
-                "<shift><control>Page_Up",
-                N_("Go to previous history item"),
-                G_CALLBACK (ev_window_cmd_go_previous_history) },
+            "<shift><control>Page_Up",
+            N_("Go to previous history item"),
+            NULL },
         { "GoNextHistory", "xsi-go-history-next-symbolic", N_("Next History Item"),
-                "<shift><control>Page_Down",
-                N_("Go to next history item"),
-                G_CALLBACK (ev_window_cmd_go_next_history) },
+            "<shift><control>Page_Down",
+            N_("Go to next history item"),
+            NULL },
 
         /* Bookmarks menu */
         { "BookmarksAdd", "xsi-bookmark-new-symbolic", N_("_Add Bookmark"),
-                "<control>D",
-                N_("Add a bookmark for the current page"),
-                G_CALLBACK (ev_window_cmd_bookmarks_add) },
+            "<control>D",
+            N_("Add a bookmark for the current page"),
+            NULL },
 
         /* Help menu */
         { "HelpContents", "xsi-help-contents-symbolic", N_("_Contents"),
-                "F1",
-                NULL,
-                G_CALLBACK (ev_window_cmd_help_contents) },
+            "F1",
+            NULL,
+            NULL },
 
         { "HelpAbout", "xsi-help-about-symbolic", N_("_About"),
-                NULL,
-                NULL,
-                G_CALLBACK (ev_window_cmd_help_about) },
+            NULL,
+            NULL,
+            NULL },
 
         /* Toolbar-only */
         { "LeaveFullscreen", "xsi-view-restore-symbolic", N_("Leave Fullscreen"),
-                NULL,
-                N_("Leave fullscreen mode"),
-                G_CALLBACK (ev_window_cmd_leave_fullscreen) },
+            NULL,
+            N_("Leave fullscreen mode"),
+            NULL },
         { "StartPresentation", "xsi-x-office-presentation-symbolic", N_("Start Presentation"),
-                NULL,
-                N_("Start a presentation"),
-                G_CALLBACK (ev_window_cmd_start_presentation) },
+            NULL,
+            N_("Start a presentation"),
+            NULL },
 
         /* Accellerators */
         { "Escape", NULL, "",
-                "Escape",
-                "",
-                G_CALLBACK (ev_window_cmd_escape) },
+            "Escape",
+            "",
+            NULL },
         { "Slash", GTK_STOCK_FIND, NULL,
-                "slash",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_find) },
+            "slash",
+            NULL,
+            NULL },
         { "F3", NULL, "",
-                "F3",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_find_next) },
+            "F3",
+            NULL,
+            NULL },
         { "PageDown", NULL, "",
-                "Page_Down",
-                NULL,
-                G_CALLBACK (ev_window_cmd_scroll_forward) },
+            "Page_Down",
+            NULL,
+            NULL },
         { "PageUp", NULL, "",
-                "Page_Up",
-                NULL,
-                G_CALLBACK (ev_window_cmd_scroll_backward) },
+            "Page_Up",
+            NULL,
+            NULL },
         { "Space", NULL, "",
-                "space",
-                NULL,
-                G_CALLBACK (ev_window_cmd_scroll_forward) },
+            "space",
+            NULL,
+            NULL },
         { "ShiftSpace", NULL, "",
-                "<shift>space",
-                NULL,
-                G_CALLBACK (ev_window_cmd_scroll_backward) },
+            "<shift>space",
+            NULL,
+            NULL },
         { "BackSpace", NULL, "",
-                "BackSpace",
-                NULL,
-                G_CALLBACK (ev_window_cmd_scroll_backward) },
+            "BackSpace",
+            NULL,
+            NULL },
         { "ShiftBackSpace", NULL, "",
-                "<shift>BackSpace",
-                NULL,
-                G_CALLBACK (ev_window_cmd_scroll_forward) },
+            "<shift>BackSpace",
+            NULL,
+            NULL },
         { "Return", NULL, "",
-                "Return",
-                NULL,
-                G_CALLBACK (ev_window_cmd_scroll_forward) },
+            "Return",
+            NULL,
+            NULL },
         { "ShiftReturn", NULL, "",
-                "<shift>Return",
-                NULL,
-                G_CALLBACK (ev_window_cmd_scroll_backward) },
+            "<shift>Return",
+            NULL,
+            NULL },
         { "p", GTK_STOCK_GO_UP, "",
-                "p",
-                NULL,
-                G_CALLBACK (ev_window_cmd_go_previous_page) },
+            "p",
+            NULL,
+            NULL },
         { "n", GTK_STOCK_GO_DOWN, "",
-                "n",
-                NULL,
-                G_CALLBACK (ev_window_cmd_go_next_page) },
+            "n",
+            NULL,
+            NULL },
         { "Plus", GTK_STOCK_ZOOM_IN, NULL,
-                "plus",
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_zoom_in) },
+            "plus",
+            NULL,
+            NULL },
         { "CtrlEqual", GTK_STOCK_ZOOM_IN, NULL,
-                "<control>equal",
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_zoom_in) },
+            "<control>equal",
+            NULL,
+            NULL },
         { "Equal", GTK_STOCK_ZOOM_IN, NULL,
-                "equal",
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_zoom_in) },
+            "equal",
+            NULL,
+            NULL },
         { "Minus", GTK_STOCK_ZOOM_OUT, NULL,
-                "minus",
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_zoom_out) },
+            "minus",
+            NULL,
+            NULL },
         { "FocusPageSelector", NULL, "",
-                "<control>l",
-                NULL,
-                G_CALLBACK (ev_window_cmd_focus_page_selector) },
+            "<control>l",
+            NULL,
+            NULL },
         { "GoBackwardFast", NULL, "",
-                "<shift>Page_Up",
-                NULL,
-                G_CALLBACK (ev_window_cmd_go_backward) },
+            "<shift>Page_Up",
+            NULL,
+            NULL },
         { "GoForwardFast", NULL, "",
-                "<shift>Page_Down",
-                NULL,
-                G_CALLBACK (ev_window_cmd_go_forward) },
+            "<shift>Page_Down",
+            NULL,
+            NULL },
         { "KpPlus", GTK_STOCK_ZOOM_IN, NULL,
-                "KP_Add",
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_zoom_in) },
+            "KP_Add",
+            NULL,
+            NULL },
         { "KpMinus", GTK_STOCK_ZOOM_OUT, NULL,
-                "KP_Subtract",
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_zoom_out) },
+            "KP_Subtract",
+            NULL,
+            NULL },
         { "CtrlKpPlus", GTK_STOCK_ZOOM_IN, NULL,
-                "<control>KP_Add",
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_zoom_in) },
+            "<control>KP_Add",
+            NULL,
+            NULL },
         { "CtrlKpMinus", GTK_STOCK_ZOOM_OUT, NULL,
-                "<control>KP_Subtract",
-                NULL,
-                G_CALLBACK (ev_window_cmd_view_zoom_out) },
+            "<control>KP_Subtract",
+            NULL,
+            NULL },
         { "CtrlInsert", GTK_STOCK_COPY, NULL,
-                "<control>Insert",
-                NULL,
-                G_CALLBACK (ev_window_cmd_edit_copy) },
+            "<control>Insert",
+            NULL,
+            NULL },
         { "ReaderView", NULL, "",
-                "<control>1",
-                NULL,
-                G_CALLBACK (ev_window_cmd_reader_view) },
+            "<control>1",
+            NULL,
+            NULL },
         { "PageView", NULL, "",
-                "<control>2",
-                NULL,
-                G_CALLBACK (ev_window_cmd_page_view) }
+            "<control>2",
+            NULL,
+            NULL }
 };
 
 /* Toggle items */
 static const GtkToggleActionEntry toggle_entries[] = {
         /* View Menu */
         { "ViewMenubar", NULL, N_("_Menubar"),
-                NULL,
-                N_("Show or hide the menubar"),
-                G_CALLBACK (ev_window_view_menubar_cb), TRUE },
+            NULL,
+            N_("Show or hide the menubar"),
+            NULL, TRUE },
         { "ViewToolbar", NULL, N_("_Toolbar"),
-                "<shift><control>T",
-                N_("Show or hide the toolbar"),
-                G_CALLBACK (ev_window_view_toolbar_cb), TRUE },
+            "<shift><control>T",
+            N_("Show or hide the toolbar"),
+            NULL, TRUE },
         { "ViewSidebar", "xsi-view-left-pane-symbolic", N_("Side _Pane"),
-                "F9",
-                N_("Show or hide the side pane"),
-                G_CALLBACK (ev_window_view_sidebar_cb), TRUE },
+            "F9",
+            N_("Show or hide the side pane"),
+            NULL, TRUE },
          { "ViewContinuous", EV_STOCK_VIEW_CONTINUOUS, N_("_Continuous"),
-                 "<shift><ctrl>C",
-                 N_("Show the entire document"),
-                 G_CALLBACK (ev_window_cmd_continuous), TRUE },
+             "<shift><ctrl>C",
+             N_("Show the entire document"),
+             NULL, TRUE },
          { "ViewDual", EV_STOCK_VIEW_DUAL, N_("_Dual (Even pages left)"),
-                 "d",
-                 N_("Show two pages at once with even pages on the left"),
-                 G_CALLBACK (ev_window_cmd_dual), FALSE },
+             "d",
+             N_("Show two pages at once with even pages on the left"),
+             NULL, FALSE },
          { "ViewDualOddLeft", EV_STOCK_VIEW_DUAL, N_("Dual (_Odd pages left)"),
-                 NULL,
-                 N_("Show two pages at once with odd pages on the left"),
-                 G_CALLBACK (ev_window_cmd_dual_odd_pages_left), FALSE },
+             NULL,
+             N_("Show two pages at once with odd pages on the left"),
+             NULL, FALSE },
          { "ViewRtl", NULL, N_("Right to Left"),
-                 NULL,
-                 N_("Browse the document from right to left"),
-                 G_CALLBACK (ev_window_cmd_rtl), FALSE },
+             NULL,
+             N_("Browse the document from right to left"),
+             NULL, FALSE },
          { "ViewFullscreen", GTK_STOCK_FULLSCREEN, N_("_Fullscreen"),
-                 "F11",
-                 N_("Expand the window to fill the screen"),
-                 G_CALLBACK (ev_window_cmd_view_fullscreen) },
+             "F11",
+             N_("Expand the window to fill the screen"),
+             NULL },
          { "ViewPresentation", EV_STOCK_RUN_PRESENTATION, N_("Pre_sentation"),
-                 "F5",
-                 N_("Run document as a presentation"),
-                 G_CALLBACK (ev_window_cmd_view_presentation) },
+             "F5",
+             N_("Run document as a presentation"),
+             NULL },
          { "ViewBestFit", EV_STOCK_ZOOM_PAGE, N_("_Best Fit"),
-                 "f",
-                 N_("Make the current document fill the window"),
-                 G_CALLBACK (ev_window_cmd_view_best_fit) },
+             "f",
+             N_("Make the current document fill the window"),
+             NULL },
          { "ViewPageWidth", EV_STOCK_ZOOM_WIDTH, N_("Fit Page _Width"),
-                 "w",
-                 N_("Make the current document fill the window width"),
-                 G_CALLBACK (ev_window_cmd_view_page_width) },
+             "w",
+             N_("Make the current document fill the window width"),
+             NULL },
          { "ViewInvertedColors", EV_STOCK_INVERTED_COLORS, N_("_Inverted Colors"),
-                 "<control>I",
-                 N_("Show page contents with the colors inverted"),
-                 G_CALLBACK (ev_window_cmd_view_inverted_colors) },
+             "<control>I",
+             N_("Show page contents with the colors inverted"),
+             NULL },
 
 };
 
 /* Popups specific items */
 static const GtkActionEntry view_popup_entries [] = {
 	/* Links */
-	{ "OpenLink", "xsi-document-open-symbolic", N_("_Open Link"), NULL,
-	  NULL, G_CALLBACK (ev_view_popup_cmd_open_link) },
-	{ "GoLink", "xsi-go-next-symbolic", N_("_Go To"), NULL,
-	  NULL, G_CALLBACK (ev_view_popup_cmd_open_link) },
-	{ "OpenLinkNewWindow", NULL, N_("Open in New _Window"), NULL,
-	  NULL, G_CALLBACK (ev_view_popup_cmd_open_link_new_window) },
-	{ "CopyLinkAddress", NULL, N_("_Copy Link Address"), NULL,
-	  NULL, G_CALLBACK (ev_view_popup_cmd_copy_link_address) },
-	{ "SaveImageAs", NULL, N_("_Save Image As…"), NULL,
-	  NULL, G_CALLBACK (ev_view_popup_cmd_save_image_as) },
-	{ "CopyImage", NULL, N_("Copy _Image"), NULL,
-	  NULL, G_CALLBACK (ev_view_popup_cmd_copy_image) },
-	{ "AnnotProperties", "xsi-format-text-highlight-symbolic" , N_("Annotation Properties…"), NULL,
-	  NULL, G_CALLBACK (ev_view_popup_cmd_annot_properties) },
-	{ "RemoveAnnotation", "xsi-window-close-symbolic", N_("Remove Annotation"), NULL,
-	  NULL, G_CALLBACK (ev_view_popup_cmd_remove_annotation) }
+        { "OpenLink", "xsi-document-open-symbolic", N_("_Open Link"), NULL,
+            NULL, NULL },
+        { "GoLink", "xsi-go-next-symbolic", N_("_Go To"), NULL,
+            NULL, NULL },
+        { "OpenLinkNewWindow", NULL, N_("Open in New _Window"), NULL,
+            NULL, NULL },
+        { "CopyLinkAddress", NULL, N_("_Copy Link Address"), NULL,
+            NULL, NULL },
+        { "SaveImageAs", NULL, N_("_Save Image As…"), NULL,
+            NULL, NULL },
+        { "CopyImage", NULL, N_("Copy _Image"), NULL,
+            NULL, NULL },
+        { "AnnotProperties", "xsi-format-text-highlight-symbolic" , N_("Annotation Properties…"), NULL,
+            NULL, NULL },
+        { "RemoveAnnotation", "xsi-window-close-symbolic", N_("Remove Annotation"), NULL,
+            NULL, NULL }
 };
 
 static const GtkActionEntry attachment_popup_entries [] = {
         { "OpenAttachment", "xsi-document-open-symbolic", N_("_Open Attachment"), NULL,
-                NULL, G_CALLBACK (ev_attachment_popup_cmd_open_attachment) },
+            NULL, NULL },
         { "SaveAttachmentAs", "xsi-document-save-as-symbolic", N_("_Save Attachment As…"), NULL,
-                NULL, G_CALLBACK (ev_attachment_popup_cmd_save_attachment_as) },
+            NULL, NULL },
 };
 
 static const GActionEntry actions[] = {
-    { "zoom", ev_window_cmd_view_zoom, "d" }
+    { "zoom", NULL, "d" }
 };
 
 static void
@@ -6428,7 +6520,7 @@ sidebar_links_link_activated_cb (EvSidebarLinks *sidebar_links,
                                  EvWindow       *window)
 {
     if (window->priv->document->iswebdocument == FALSE ) {
-        EvTabData *tab_data = ev_window_get_current_tab(window);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(window->priv->notebook));
         ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : window->priv->view), link);
     }
 #if ENABLE_EPUB
@@ -6451,7 +6543,7 @@ activate_link_cb (GObject  *object,
                   EvWindow *window)
 {
     if (window->priv->view) {
-        EvTabData *tab_data = ev_window_get_current_tab(window);
+        EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(window->priv->notebook));
         ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : window->priv->view), link);
         gtk_widget_grab_focus (window->priv->view);
     }
@@ -6956,7 +7048,7 @@ ev_view_popup_cmd_open_link (GtkAction *action,
                              EvWindow  *window)
 {
     if (window->priv->document->iswebdocument == TRUE ) return;
-    EvTabData *tab_data = ev_window_get_current_tab(window);
+    EvTabData *tab_data = ev_window_get_current_tab(GTK_NOTEBOOK(window->priv->notebook));
     ev_view_handle_link (EV_VIEW (tab_data ? tab_data->view : window->priv->view), window->priv->link);
 }
 

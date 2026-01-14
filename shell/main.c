@@ -228,13 +228,22 @@ load_files (const char **files)
         }
 }
 
+
+#include <atk/atk.h>
+#include <atk-bridge.h>
+
 int
 main (int argc, char *argv[])
 {
-    EvApplication  *application;
+	EvApplication  *application;
 	GOptionContext *context;
 	GError         *error = NULL;
-    int             status;
+	int             status;
+
+	/* Inicializa explicitamente o ATK/AT-SPI para acessibilidade */
+	if (!atk_get_root()) {
+		atk_bridge_adaptor_init(NULL, NULL);
+	}
 
 	BASELINE_START(main_total);
 	BASELINE_START(i18n_init);
