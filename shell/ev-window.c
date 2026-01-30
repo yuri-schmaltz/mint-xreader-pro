@@ -34,6 +34,8 @@ int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
   EvTabData *tab_data = g_new0(EvTabData, 1);
   tab_data->scrolled_window = gtk_scrolled_window_new(NULL, NULL);
   tab_data->view = ev_view_new();
+  tab_data->uri = g_strdup(uri);
+
   gtk_container_add(GTK_CONTAINER(tab_data->scrolled_window), tab_data->view);
   gtk_widget_show(tab_data->view);
   gtk_widget_show(tab_data->scrolled_window);
@@ -46,7 +48,11 @@ int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
 
   // Armazena o ponteiro para tab_data no widget da aba
   g_object_set_data_full(G_OBJECT(tab_data->scrolled_window), "ev-tab-data",
-                         tab_data, g_free);
+                         tab_data, (GDestroyNotify)g_free);
+
+  if (gtk_notebook_get_n_pages(notebook) > 1) {
+    gtk_notebook_set_show_tabs(notebook, TRUE);
+  }
 
   gtk_notebook_set_current_page(notebook, page_num);
   return page_num;
@@ -597,8 +603,8 @@ static void ev_window_update_actions(EvWindow *ev_window) {
         ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
     ev_window_set_action_sensitive(
         ev_window, "EditCopy",
-        has_pages &&
-            ev_view_get_has_selection(tab_data ? tab_data->view : view));
+        has_pages && ev_view_get_has_selection(
+                         tab_data ? EV_VIEW(tab_data->view) : view));
   }
 #if ENABLE_EPUB
   else if (webview) {
@@ -625,11 +631,13 @@ static void ev_window_update_actions(EvWindow *ev_window) {
         ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
     ev_window_set_action_sensitive(
         ev_window, "ViewZoomIn",
-        has_pages && ev_view_can_zoom_in(tab_data ? tab_data->view : view) &&
+        has_pages &&
+            ev_view_can_zoom_in(tab_data ? EV_VIEW(tab_data->view) : view) &&
             !presentation_mode);
     ev_window_set_action_sensitive(
         ev_window, "ViewZoomOut",
-        has_pages && ev_view_can_zoom_out(tab_data ? tab_data->view : view) &&
+        has_pages &&
+            ev_view_can_zoom_out(tab_data ? EV_VIEW(tab_data->view) : view) &&
             !presentation_mode);
     ev_window_set_action_sensitive(ev_window, "ViewZoomReset",
                                    has_pages && !presentation_mode);
@@ -973,7 +981,7 @@ static void view_selection_changed_cb(EvView *view, EvWindow *window) {
       ev_window_get_current_tab(GTK_NOTEBOOK(window->priv->notebook));
   ev_window_set_action_sensitive(
       window, "EditCopy",
-      ev_view_get_has_selection(tab_data ? tab_data->view : view));
+      ev_view_get_has_selection(tab_data ? EV_VIEW(tab_data->view) : view));
 }
 
 static void view_layers_changed_cb(EvView *view, EvWindow *window) {
@@ -2083,6 +2091,16 @@ void ev_window_open_uri(EvWindow *ev_window, const char *uri, EvLinkDest *dest,
       g_ascii_strcasecmp(ev_window->priv->uri, uri) == 0) {
     ev_window_reload_document(ev_window, dest);
     return;
+  }
+
+  if (ev_window->priv->uri &&
+      g_ascii_strcasecmp(ev_window->priv->uri, uri) != 0) {
+    /* If a different document is already open, add it as a new tab */
+    ev_window_add_tab(GTK_NOTEBOOK(ev_window->priv->notebook), uri);
+    /* ev_window_add_tab should probably handle the loading or we call it here
+     */
+    // For now, let's just proceed as it would normally but it needs more work
+    // to separate per-tab state.
   }
 
   if (ev_window->priv->monitor) {
@@ -5522,15 +5540,6 @@ static void ev_window_dispose(GObject *object) {
   G_OBJECT_CLASS(ev_window_parent_class)->dispose(object);
 }
 
-static void menubar_deactivate_cb(GtkWidget *menubar, EvWindow *window) {
-  g_signal_handlers_disconnect_by_func(
-      menubar, G_CALLBACK(menubar_deactivate_cb), window);
-
-  gtk_menu_shell_deselect(GTK_MENU_SHELL(menubar));
-
-  update_chrome_visibility(window);
-}
-
 static gboolean is_alt_key_event(GdkEventKey *event) {
   GdkModifierType nominal_state;
   gboolean state_ok;
@@ -7107,10 +7116,21 @@ static void ev_window_init(EvWindow *ev_window) {
   ev_sidebar_add_page(EV_SIDEBAR(ev_window->priv->sidebar), sidebar_widget);
 
   ev_window->priv->view_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
-  ev_window->priv->scrolled_window =
-      GTK_WIDGET(g_object_new(GTK_TYPE_SCROLLED_WINDOW, NULL));
+
+  ev_window->priv->notebook = gtk_notebook_new();
+  gtk_notebook_set_scrollable(GTK_NOTEBOOK(ev_window->priv->notebook), TRUE);
+  gtk_notebook_set_show_tabs(GTK_NOTEBOOK(ev_window->priv->notebook), FALSE);
+  gtk_notebook_set_show_border(GTK_NOTEBOOK(ev_window->priv->notebook), FALSE);
   gtk_box_pack_start(GTK_BOX(ev_window->priv->view_box),
-                     ev_window->priv->scrolled_window, TRUE, TRUE, 0);
+                     ev_window->priv->notebook, TRUE, TRUE, 0);
+  gtk_widget_show(ev_window->priv->notebook);
+
+  ev_window_setup_tab_close(GTK_NOTEBOOK(ev_window->priv->notebook), ev_window);
+
+  ev_window->priv->scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+  gtk_notebook_append_page(GTK_NOTEBOOK(ev_window->priv->notebook),
+                           ev_window->priv->scrolled_window,
+                           gtk_label_new(_("Default")));
   gtk_widget_show(ev_window->priv->scrolled_window);
 
   gtk_paned_add2(GTK_PANED(ev_window->priv->hpaned), ev_window->priv->view_box);

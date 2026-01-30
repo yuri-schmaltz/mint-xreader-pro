@@ -21,152 +21,176 @@
 #include "config.h"
 
 #include "ev-annotations-toolbar.h"
-#include <xreader-document.h>
 #include <glib/gi18n.h>
+#include <xreader-document.h>
 
-enum {
-        BEGIN_ADD_ANNOT,
-        CANCEL_ADD_ANNOT,
-        N_SIGNALS
-};
+enum { BEGIN_ADD_ANNOT, CANCEL_ADD_ANNOT, N_SIGNALS };
 
 struct _EvAnnotationsToolbar {
-	GtkToolbar base_instance;
+  GtkToolbar base_instance;
 
-        GtkWidget *text_button;
-        GtkWidget *highlight_button;
+  GtkWidget *text_button;
+  GtkWidget *highlight_button;
+  GtkWidget *free_text_button;
+  GtkWidget *draw_button;
 };
 
 struct _EvAnnotationsToolbarClass {
-	GtkToolbarClass base_class;
-
+  GtkToolbarClass base_class;
 };
 
 static guint signals[N_SIGNALS];
 
-G_DEFINE_TYPE (EvAnnotationsToolbar, ev_annotations_toolbar, GTK_TYPE_TOOLBAR)
+G_DEFINE_TYPE(EvAnnotationsToolbar, ev_annotations_toolbar, GTK_TYPE_TOOLBAR)
 
 static void
-ev_annotations_toolbar_annot_button_toggled (GtkWidget            *button,
-                                             EvAnnotationsToolbar *toolbar)
-{
-        EvAnnotationType annot_type;
+ev_annotations_toolbar_annot_button_toggled(GtkWidget *button,
+                                            EvAnnotationsToolbar *toolbar) {
+  EvAnnotationType annot_type;
 
-        if (!gtk_toggle_tool_button_get_active (GTK_TOGGLE_TOOL_BUTTON (button))) {
-                g_signal_emit (toolbar, signals[CANCEL_ADD_ANNOT], 0, NULL);
-                return;
-        }
+  if (!gtk_toggle_tool_button_get_active(GTK_TOGGLE_TOOL_BUTTON(button))) {
+    g_signal_emit(toolbar, signals[CANCEL_ADD_ANNOT], 0, NULL);
+    return;
+  }
 
-        if (button == toolbar->text_button) {
-                annot_type = EV_ANNOTATION_TYPE_TEXT;
-                gtk_toggle_tool_button_set_active (GTK_TOGGLE_TOOL_BUTTON (toolbar->highlight_button), FALSE);
-        } else if (button == toolbar->highlight_button) {
-                annot_type = EV_ANNOTATION_TYPE_TEXT_MARKUP;
-                gtk_toggle_tool_button_set_active (GTK_TOGGLE_TOOL_BUTTON (toolbar->text_button), FALSE);
-        } else {
-                g_assert_not_reached ();
-        }
+  if (button == toolbar->text_button) {
+    annot_type = EV_ANNOTATION_TYPE_TEXT;
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->highlight_button), FALSE);
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->free_text_button), FALSE);
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->draw_button), FALSE);
+  } else if (button == toolbar->highlight_button) {
+    annot_type = EV_ANNOTATION_TYPE_TEXT_MARKUP;
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->text_button), FALSE);
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->free_text_button), FALSE);
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->draw_button), FALSE);
+  } else if (button == toolbar->free_text_button) {
+    annot_type = EV_ANNOTATION_TYPE_FREE_TEXT;
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->text_button), FALSE);
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->highlight_button), FALSE);
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->draw_button), FALSE);
+  } else if (button == toolbar->draw_button) {
+    annot_type = EV_ANNOTATION_TYPE_INK;
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->text_button), FALSE);
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->highlight_button), FALSE);
+    gtk_toggle_tool_button_set_active(
+        GTK_TOGGLE_TOOL_BUTTON(toolbar->free_text_button), FALSE);
+  } else {
+    g_assert_not_reached();
+  }
 
-        g_signal_emit (toolbar, signals[BEGIN_ADD_ANNOT], 0, annot_type);
+  g_signal_emit(toolbar, signals[BEGIN_ADD_ANNOT], 0, annot_type);
 }
 
 static gboolean
-ev_annotations_toolbar_toggle_button_if_active (EvAnnotationsToolbar *toolbar,
-                                                GtkToggleToolButton  *button)
-{
-        if (!gtk_toggle_tool_button_get_active (button))
-                return FALSE;
+ev_annotations_toolbar_toggle_button_if_active(EvAnnotationsToolbar *toolbar,
+                                               GtkToggleToolButton *button) {
+  if (!gtk_toggle_tool_button_get_active(button))
+    return FALSE;
 
-        g_signal_handlers_block_by_func (button,
-                                         ev_annotations_toolbar_annot_button_toggled,
-                                         toolbar);
-        gtk_toggle_tool_button_set_active (button, FALSE);
-        g_signal_handlers_unblock_by_func (button,
-                                           ev_annotations_toolbar_annot_button_toggled,
-                                           toolbar);
+  g_signal_handlers_block_by_func(
+      button, ev_annotations_toolbar_annot_button_toggled, toolbar);
+  gtk_toggle_tool_button_set_active(button, FALSE);
+  g_signal_handlers_unblock_by_func(
+      button, ev_annotations_toolbar_annot_button_toggled, toolbar);
 
-        return TRUE;
+  return TRUE;
 }
 
 static GtkWidget *
-ev_annotations_toolbar_create_toggle_button (EvAnnotationsToolbar *toolbar,
-                                             const gchar          *icon_name,
-                                             const gchar          *tooltip)
-{
-        GtkWidget *button = GTK_WIDGET (gtk_toggle_tool_button_new ());
+ev_annotations_toolbar_create_toggle_button(EvAnnotationsToolbar *toolbar,
+                                            const gchar *icon_name,
+                                            const gchar *tooltip) {
+  GtkWidget *button = GTK_WIDGET(gtk_toggle_tool_button_new());
 
-        gtk_widget_set_tooltip_text (button, tooltip);
-        gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (button), icon_name);
-        /* For some reason adding text-button class to the GtkToogleButton makes the button smaller */
-        gtk_style_context_add_class (gtk_widget_get_style_context (gtk_bin_get_child (GTK_BIN (button))), "text-button");
-        g_signal_connect (button, "toggled",
-                          G_CALLBACK (ev_annotations_toolbar_annot_button_toggled),
-                          toolbar);
+  gtk_widget_set_tooltip_text(button, tooltip);
+  gtk_tool_button_set_icon_name(GTK_TOOL_BUTTON(button), icon_name);
+  /* For some reason adding text-button class to the GtkToogleButton makes the
+   * button smaller */
+  gtk_style_context_add_class(
+      gtk_widget_get_style_context(gtk_bin_get_child(GTK_BIN(button))),
+      "text-button");
+  g_signal_connect(button, "toggled",
+                   G_CALLBACK(ev_annotations_toolbar_annot_button_toggled),
+                   toolbar);
 
-        return button;
+  return button;
+}
+
+static void ev_annotations_toolbar_init(EvAnnotationsToolbar *toolbar) {
+  gtk_orientable_set_orientation(GTK_ORIENTABLE(toolbar),
+                                 GTK_ORIENTATION_HORIZONTAL);
+
+  gtk_toolbar_set_icon_size(GTK_TOOLBAR(toolbar), GTK_ICON_SIZE_MENU);
+  gtk_style_context_add_class(gtk_widget_get_style_context(GTK_WIDGET(toolbar)),
+                              GTK_STYLE_CLASS_INLINE_TOOLBAR);
+
+  toolbar->text_button = ev_annotations_toolbar_create_toggle_button(
+      toolbar, "xsi-annotations-text-symbolic", _("Add text annotation"));
+  gtk_container_add(GTK_CONTAINER(toolbar), toolbar->text_button);
+  gtk_widget_show(toolbar->text_button);
+
+  toolbar->highlight_button = ev_annotations_toolbar_create_toggle_button(
+      toolbar, "xsi-format-text-highlight-symbolic",
+      _("Add highlight annotation"));
+  gtk_container_add(GTK_CONTAINER(toolbar), toolbar->highlight_button);
+  gtk_widget_show(toolbar->highlight_button);
+
+  toolbar->free_text_button = ev_annotations_toolbar_create_toggle_button(
+      toolbar, "xsi-format-text-type-symbolic", _("Add free text annotation"));
+  gtk_container_add(GTK_CONTAINER(toolbar), toolbar->free_text_button);
+  gtk_widget_show(toolbar->free_text_button);
+
+  toolbar->draw_button = ev_annotations_toolbar_create_toggle_button(
+      toolbar, "xsi-content-ink-drawing-symbolic", _("Add drawing annotation"));
+  gtk_container_add(GTK_CONTAINER(toolbar), toolbar->draw_button);
+  gtk_widget_show(toolbar->draw_button);
 }
 
 static void
-ev_annotations_toolbar_init (EvAnnotationsToolbar *toolbar)
-{
-        gtk_orientable_set_orientation (GTK_ORIENTABLE (toolbar), GTK_ORIENTATION_HORIZONTAL);
+ev_annotations_toolbar_class_init(EvAnnotationsToolbarClass *klass) {
+  GObjectClass *g_object_class = G_OBJECT_CLASS(klass);
 
-        gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_MENU);
-        gtk_style_context_add_class (gtk_widget_get_style_context (GTK_WIDGET (toolbar)),
-                                     GTK_STYLE_CLASS_INLINE_TOOLBAR);
+  signals[BEGIN_ADD_ANNOT] = g_signal_new(
+      "begin-add-annot", G_TYPE_FROM_CLASS(g_object_class), G_SIGNAL_RUN_LAST,
+      0, NULL, NULL, g_cclosure_marshal_VOID__ENUM, G_TYPE_NONE, 1,
+      EV_TYPE_ANNOTATION_TYPE);
 
-        toolbar->text_button = ev_annotations_toolbar_create_toggle_button (toolbar,
-                                                                            "xsi-annotations-text-symbolic",
-                                                                            _("Add text annotation"));
-        gtk_container_add (GTK_CONTAINER(toolbar), toolbar->text_button);
-        gtk_widget_show (toolbar->text_button);
-
-        toolbar->highlight_button = ev_annotations_toolbar_create_toggle_button (toolbar,
-                                                                                 "xsi-format-text-highlight-symbolic",
-                                                                                 _("Add highlight annotation"));
-        gtk_container_add (GTK_CONTAINER (toolbar), toolbar->highlight_button);
-        gtk_widget_show (toolbar->highlight_button);
+  signals[CANCEL_ADD_ANNOT] =
+      g_signal_new("cancel-add-annot", G_TYPE_FROM_CLASS(g_object_class),
+                   G_SIGNAL_RUN_LAST, 0, NULL, NULL,
+                   g_cclosure_marshal_VOID__VOID, G_TYPE_NONE, 0, G_TYPE_NONE);
 }
 
-static void
-ev_annotations_toolbar_class_init (EvAnnotationsToolbarClass *klass)
-{
-        GObjectClass *g_object_class = G_OBJECT_CLASS (klass);
-
-        signals[BEGIN_ADD_ANNOT] =
-                g_signal_new ("begin-add-annot",
-                              G_TYPE_FROM_CLASS (g_object_class),
-                              G_SIGNAL_RUN_LAST,
-                              0,
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__ENUM,
-                              G_TYPE_NONE, 1,
-                              EV_TYPE_ANNOTATION_TYPE);
-
-        signals[CANCEL_ADD_ANNOT] =
-                g_signal_new ("cancel-add-annot",
-                              G_TYPE_FROM_CLASS (g_object_class),
-                              G_SIGNAL_RUN_LAST,
-                              0,
-                              NULL, NULL,
-                              g_cclosure_marshal_VOID__VOID,
-                              G_TYPE_NONE, 0,
-                              G_TYPE_NONE);
+GtkWidget *ev_annotations_toolbar_new(void) {
+  return GTK_WIDGET(g_object_new(EV_TYPE_ANNOTATIONS_TOOLBAR, NULL));
 }
 
-GtkWidget *
-ev_annotations_toolbar_new (void)
-{
-	return GTK_WIDGET (g_object_new (EV_TYPE_ANNOTATIONS_TOOLBAR, NULL));
-}
+void ev_annotations_toolbar_add_annot_finished(EvAnnotationsToolbar *toolbar) {
+  g_return_if_fail(EV_IS_ANNOTATIONS_TOOLBAR(toolbar));
 
-void
-ev_annotations_toolbar_add_annot_finished (EvAnnotationsToolbar *toolbar)
-{
-        g_return_if_fail (EV_IS_ANNOTATIONS_TOOLBAR (toolbar));
+  if (ev_annotations_toolbar_toggle_button_if_active(
+          toolbar, GTK_TOGGLE_TOOL_BUTTON(toolbar->text_button)))
+    return;
 
-        if (ev_annotations_toolbar_toggle_button_if_active (toolbar, GTK_TOGGLE_TOOL_BUTTON (toolbar->text_button)))
-                return;
+  if (ev_annotations_toolbar_toggle_button_if_active(
+          toolbar, GTK_TOGGLE_TOOL_BUTTON(toolbar->highlight_button)))
+    return;
 
-        ev_annotations_toolbar_toggle_button_if_active (toolbar, GTK_TOGGLE_TOOL_BUTTON (toolbar->highlight_button));
+  if (ev_annotations_toolbar_toggle_button_if_active(
+          toolbar, GTK_TOGGLE_TOOL_BUTTON(toolbar->free_text_button)))
+    return;
+
+  ev_annotations_toolbar_toggle_button_if_active(
+      toolbar, GTK_TOGGLE_TOOL_BUTTON(toolbar->draw_button));
 }

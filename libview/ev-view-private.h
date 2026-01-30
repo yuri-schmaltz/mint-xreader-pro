@@ -1,4 +1,5 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8; c-indent-level: 8 -*- */
+/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8;
+ * c-indent-level: 8 -*- */
 /* this file is part of xreader, a generic document viewer
  *
  *  Copyright (C) 2004 Red Hat, Inc
@@ -15,280 +16,266 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
+ * USA.
  */
 
-#if !defined (XREADER_COMPILATION)
+#if !defined(XREADER_COMPILATION)
 #error "This is a private header."
 #endif
 
 #ifndef __EV_VIEW_PRIVATE_H__
 #define __EV_VIEW_PRIVATE_H__
 
-#include "ev-view.h"
 #include "ev-document-model.h"
-#include "ev-pixbuf-cache.h"
-#include "ev-page-cache.h"
-#include "ev-jobs.h"
-#include "ev-image.h"
 #include "ev-form-field.h"
+#include "ev-image.h"
+#include "ev-jobs.h"
+#include "ev-page-cache.h"
+#include "ev-pixbuf-cache.h"
 #include "ev-selection.h"
 #include "ev-view-cursor.h"
+#include "ev-view.h"
 
 #define DRAG_HISTORY 10
 
 /* Information for middle clicking and moving around the doc */
 typedef struct {
-        gboolean in_drag;
-	GdkPoint start;
-	gdouble hadj;
-	gdouble vadj;
-	guint drag_timeout_id;
-	guint release_timeout_id;
-	GdkPoint buffer[DRAG_HISTORY];
-	GdkPoint momentum;
+  gboolean in_drag;
+  GdkPoint start;
+  gdouble hadj;
+  gdouble vadj;
+  guint drag_timeout_id;
+  guint release_timeout_id;
+  GdkPoint buffer[DRAG_HISTORY];
+  GdkPoint momentum;
 } DragInfo;
 
 /* Autoscrolling */
 typedef struct {
-	gboolean autoscrolling;
-	guint last_y;
-	guint start_y;
-	guint timeout_id;	
+  gboolean autoscrolling;
+  guint last_y;
+  guint start_y;
+  guint timeout_id;
 } AutoScrollInfo;
 
 /* Information for handling selection */
 typedef struct {
-	gboolean in_drag;
-	GdkPoint start;
-	gboolean in_selection;
-	GList *selections;
-	EvSelectionStyle style;
+  gboolean in_drag;
+  GdkPoint start;
+  gboolean in_selection;
+  GList *selections;
+  EvSelectionStyle style;
 } SelectionInfo;
 
 /* Information for handling images DND */
 typedef struct {
-	gboolean in_drag;
-	GdkPoint start;
-	EvImage *image;
+  gboolean in_drag;
+  GdkPoint start;
+  EvImage *image;
 } ImageDNDInfo;
 
 typedef enum {
-	EV_PAN_ACTION_NONE,
-	EV_PAN_ACTION_NEXT,
-	EV_PAN_ACTION_PREV
+  EV_PAN_ACTION_NONE,
+  EV_PAN_ACTION_NEXT,
+  EV_PAN_ACTION_PREV
 } EvPanAction;
 
 /* Annotation popup windows */
 typedef struct {
-	GtkWidget *window;
-	guint      page;
+  GtkWidget *window;
+  guint page;
 
-	/* Current position */
-	gint       x;
-	gint       y;
+  /* Current position */
+  gint x;
+  gint y;
 
-	/* EvView root position */
-	gint       parent_x;
-	gint       parent_y;
+  /* EvView root position */
+  gint parent_x;
+  gint parent_y;
 
-	/* Document coords */
-	gdouble    orig_x;
-	gdouble    orig_y;
+  /* Document coords */
+  gdouble orig_x;
+  gdouble orig_y;
 
-	gboolean   visible;
-	gboolean   moved;
+  gboolean visible;
+  gboolean moved;
 } EvViewWindowChild;
 
 typedef enum {
-	SCROLL_TO_KEEP_POSITION,
-	SCROLL_TO_PAGE_POSITION,
-	SCROLL_TO_CENTER,
-	SCROLL_TO_FIND_LOCATION,
+  SCROLL_TO_KEEP_POSITION,
+  SCROLL_TO_PAGE_POSITION,
+  SCROLL_TO_CENTER,
+  SCROLL_TO_FIND_LOCATION,
 } PendingScroll;
 
 typedef struct _EvHeightToPageCache {
-	gint rotation;
-	gboolean dual_even_left;
-	gdouble *height_to_page;
-	gdouble *dual_height_to_page;
+  gint rotation;
+  gboolean dual_even_left;
+  gdouble *height_to_page;
+  gdouble *dual_height_to_page;
 } EvHeightToPageCache;
 
 /* Information for handling annotations */
 typedef struct {
-	GdkPoint         start;
-	GdkPoint         stop;
-	gboolean         adding_annot;
-	EvAnnotationType type;
-	EvAnnotation    *annot;
+  GdkPoint start;
+  GdkPoint stop;
+  gboolean adding_annot;
+  EvAnnotationType type;
+  EvAnnotation *annot;
+  GList *path; /* List of GArray of EvPoint */
 } AddingAnnotInfo;
 
 struct _EvView {
-	GtkLayout layout;
+  GtkLayout layout;
 
-	/* Container */
-	GList *children;
+  /* Container */
+  GList *children;
 
-	EvDocument *document;
+  EvDocument *document;
 
-	/* Find */
-	GList **find_pages;
-	gint find_result;
-	gboolean jump_to_find_result;
-	gboolean highlight_find_results;
+  /* Find */
+  GList **find_pages;
+  gint find_result;
+  gboolean jump_to_find_result;
+  gboolean highlight_find_results;
 
-	EvDocumentModel *model;
-	EvPixbufCache *pixbuf_cache;
-	gsize pixbuf_cache_size;
-	EvPageCache *page_cache;
-	EvHeightToPageCache *height_to_page_cache;
-	EvViewCursor cursor;
-	EvJobRender *current_job;
+  EvDocumentModel *model;
+  EvPixbufCache *pixbuf_cache;
+  gsize pixbuf_cache_size;
+  EvPageCache *page_cache;
+  EvHeightToPageCache *height_to_page_cache;
+  EvViewCursor cursor;
+  EvJobRender *current_job;
 
-	GtkRequisition requisition;
-	gboolean       internal_size_request;
+  GtkRequisition requisition;
+  gboolean internal_size_request;
 
-	/* Scrolling */
-	GtkAdjustment *hadjustment;
-	GtkAdjustment *vadjustment;
+  /* Scrolling */
+  GtkAdjustment *hadjustment;
+  GtkAdjustment *vadjustment;
 
-	/* GtkScrollablePolicy needs to be checked when
-	* driving the scrollable adjustment values */
-	guint hscroll_policy : 1;
-	guint vscroll_policy : 1;
+  /* GtkScrollablePolicy needs to be checked when
+   * driving the scrollable adjustment values */
+  guint hscroll_policy : 1;
+  guint vscroll_policy : 1;
 
-	gint scroll_x;
-	gint scroll_y;	
+  gint scroll_x;
+  gint scroll_y;
 
-	/* Delta sum for emulating normal scrolling */
-	gdouble       total_delta;
-	PendingScroll pending_scroll;
-	gboolean      pending_resize;
-	EvPoint       pending_point;
+  /* Delta sum for emulating normal scrolling */
+  gdouble total_delta;
+  PendingScroll pending_scroll;
+  gboolean pending_resize;
+  EvPoint pending_point;
 
-	/* Current geometry */
-    
-	gint start_page;
-	gint end_page;
-	gint current_page;
+  /* Current geometry */
 
-	gint rotation;
-	gdouble scale;
-	gint spacing;
+  gint start_page;
+  gint end_page;
+  gint current_page;
 
-	gboolean loading;
-	gboolean continuous;
-	gboolean dual_page;
-	gboolean dual_even_left;
-	gboolean fullscreen;
-	EvSizingMode sizing_mode;
-	GtkWidget *loading_window;
-	guint loading_timeout;
+  gint rotation;
+  gdouble scale;
+  gint spacing;
 
-	/* Common for button press handling */
-	int pressed_button;
+  gboolean loading;
+  gboolean continuous;
+  gboolean dual_page;
+  gboolean dual_even_left;
+  gboolean fullscreen;
+  EvSizingMode sizing_mode;
+  GtkWidget *loading_window;
+  guint loading_timeout;
 
-    /* Key bindings propagation */
-    gboolean key_binding_handled;
+  /* Common for button press handling */
+  int pressed_button;
 
-	/* Information for middle clicking and dragging around. */
-	DragInfo drag_info;
-	
-	/* Autoscrolling */
-	AutoScrollInfo scroll_info;
+  /* Key bindings propagation */
+  gboolean key_binding_handled;
 
-	/* Selection */
-	GdkPoint motion;
-	guint selection_update_id;
-	guint selection_scroll_id;
+  /* Information for middle clicking and dragging around. */
+  DragInfo drag_info;
 
-	EvViewSelectionMode selection_mode;
-	SelectionInfo selection_info;
+  /* Autoscrolling */
+  AutoScrollInfo scroll_info;
 
-	/* Copy link address selection */
-	EvLinkAction *link_selected;
+  /* Selection */
+  GdkPoint motion;
+  guint selection_update_id;
+  guint selection_scroll_id;
 
-	/* Image DND */
-	ImageDNDInfo image_dnd_info;
+  EvViewSelectionMode selection_mode;
+  SelectionInfo selection_info;
 
-	/* Annotations */
-	GList             *window_children;
-	EvViewWindowChild *window_child_focus;
-	EvMapping         *focus_annotation;
-	AddingAnnotInfo    adding_annot_info;
-	GHashTable        *annot_window_map;
+  /* Copy link address selection */
+  EvLinkAction *link_selected;
 
-	/* Focus */
-	EvMapping *focused_element;
-	guint focused_element_page;
-	guint child_focus_idle_id;
+  /* Image DND */
+  ImageDNDInfo image_dnd_info;
 
-	/* Synctex */
-	EvMapping *synctex_result;
+  /* Annotations */
+  GList *window_children;
+  EvViewWindowChild *window_child_focus;
+  EvMapping *focus_annotation;
+  AddingAnnotInfo adding_annot_info;
+  GHashTable *annot_window_map;
 
-	/* Accessibility */
-	AtkObject *accessible;
+  /* Focus */
+  EvMapping *focused_element;
+  guint focused_element_page;
+  guint child_focus_idle_id;
 
-	/* Gestures */
-	GtkGesture *pan_gesture;
-	GtkGesture *zoom_gesture;
-	gdouble prev_zoom_gesture_scale;
-	EvPanAction pan_action;
+  /* Synctex */
+  EvMapping *synctex_result;
 
-	/* Current zoom center */
-	gdouble zoom_center_x;
-	gdouble zoom_center_y;
+  /* Accessibility */
+  AtkObject *accessible;
+
+  /* Gestures */
+  GtkGesture *pan_gesture;
+  GtkGesture *zoom_gesture;
+  gdouble prev_zoom_gesture_scale;
+  EvPanAction pan_action;
+
+  /* Current zoom center */
+  gdouble zoom_center_x;
+  gdouble zoom_center_y;
 };
 
 struct _EvViewClass {
-	GtkLayoutClass parent_class;
+  GtkLayoutClass parent_class;
 
-	void    (*binding_activated)	  (EvView         *view,
-					   GtkScrollType   scroll,
-					   gboolean        horizontal);
-	void    (*handle_link)		  (EvView         *view,
-					   EvLink         *link);
-	void    (*external_link)	  (EvView         *view,
-					   EvLinkAction   *action);
-	void    (*popup_menu)		  (EvView         *view,
-					   GList          *items);
-	void    (*selection_changed)      (EvView         *view);
-	void    (*sync_source)            (EvView         *view,
-					   EvSourceLink   *link);
-	void    (*annot_added)            (EvView         *view,
-					   EvAnnotation   *annot);
-	void    (*layers_changed)         (EvView         *view);
-	void    (*activate)         (EvView         *view);
+  void (*binding_activated)(EvView *view, GtkScrollType scroll,
+                            gboolean horizontal);
+  void (*handle_link)(EvView *view, EvLink *link);
+  void (*external_link)(EvView *view, EvLinkAction *action);
+  void (*popup_menu)(EvView *view, GList *items);
+  void (*selection_changed)(EvView *view);
+  void (*sync_source)(EvView *view, EvSourceLink *link);
+  void (*annot_added)(EvView *view, EvAnnotation *annot);
+  void (*layers_changed)(EvView *view);
+  void (*activate)(EvView *view);
 };
 
-void _get_page_size_for_scale_and_rotation (EvDocument *document,
-					    gint        page,
-					    gdouble     scale,
-					    gint        rotation,
-					    gint       *page_width,
-					    gint       *page_height);
-void _ev_view_transform_view_point_to_doc_point (EvView       *view,
-						 GdkPoint     *view_point,
-						 GdkRectangle *page_area,
-						 GtkBorder    *border,
-						 double       *doc_point_x,
-						 double       *doc_point_y);
-void _ev_view_transform_view_rect_to_doc_rect (EvView       *view,
-					       GdkRectangle *view_rect,
-					       GdkRectangle *page_area,
-					       GtkBorder    *border,
-					       EvRectangle  *doc_rect);
-void _ev_view_transform_doc_point_to_view_point (EvView   *view,
-						 int       page,
-						 EvPoint  *doc_point,
-						 GdkPoint *view_point);
-void _ev_view_transform_doc_rect_to_view_rect (EvView       *view,
-					       int           page,
-					       EvRectangle  *doc_rect,
-					       GdkRectangle *view_rect);
-void _ev_view_get_selection_colors (EvView  *view,
-				    GdkRGBA *bg_color,
-				    GdkRGBA *fg_color);
+void _get_page_size_for_scale_and_rotation(EvDocument *document, gint page,
+                                           gdouble scale, gint rotation,
+                                           gint *page_width, gint *page_height);
+void _ev_view_transform_view_point_to_doc_point(
+    EvView *view, GdkPoint *view_point, GdkRectangle *page_area,
+    GtkBorder *border, double *doc_point_x, double *doc_point_y);
+void _ev_view_transform_view_rect_to_doc_rect(EvView *view,
+                                              GdkRectangle *view_rect,
+                                              GdkRectangle *page_area,
+                                              GtkBorder *border,
+                                              EvRectangle *doc_rect);
+void _ev_view_transform_doc_point_to_view_point(EvView *view, int page,
+                                                EvPoint *doc_point,
+                                                GdkPoint *view_point);
+void _ev_view_transform_doc_rect_to_view_rect(EvView *view, int page,
+                                              EvRectangle *doc_rect,
+                                              GdkRectangle *view_rect);
+void _ev_view_get_selection_colors(EvView *view, GdkRGBA *bg_color,
+                                   GdkRGBA *fg_color);
 
-#endif  /* __EV_VIEW_PRIVATE_H__ */
-
+#endif /* __EV_VIEW_PRIVATE_H__ */
