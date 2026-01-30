@@ -1,3 +1,15 @@
+xreader (4.6.2+advanced-annots) zena; urgency=medium
+
+  * Advanced Annotations (Edge-style):
+    - Added Ink (freehand drawing) and FreeText support.
+    - Improved real-time drawing feedback.
+    - Added fallbacks for older Poppler versions.
+  * Tab Infrastructure:
+    - Added support for multiple documents in a single window using GtkNotebook.
+    - Enabled single-instance mode with multi-file support.
+
+ -- Yuri Schmaltz <yuri-schmaltz@example.com>  Fri, 30 Jan 2026 18:30:00 -0300
+
 xreader (4.6.2) zena; urgency=medium
 
   * Fix accessibility for About dialog
