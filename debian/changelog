@@ -1,3 +1,12 @@
+xreader (4.6.4+advanced-annots) zena; urgency=medium
+
+  * Advanced Annotations Release (v4.6.4):
+    - Bumped version to ensure upgrade compatibility with Mint backports.
+    - Includes all features from 4.6.2+advanced (Tabs, Ink, FreeText).
+
+ -- Yuri Schmaltz <yuri-schmaltz@example.com>  Fri, 30 Jan 2026 20:06:37 -0300
+
+xreader (4.6.4+advanced-annots) zena; urgency=medium\n\n  * Advanced Annotations Release (v4.6.4):\n    - Bumped version to ensure upgrade compatibility with Mint backports.\n    - Includes all features from 4.6.2+advanced (Tabs, Ink, FreeText).\n\n -- Yuri Schmaltz <yuri-schmaltz@example.com>  Fri, 30 Jan 2026 20:06:29 -0300\n
 xreader (4.6.2+advanced-annots) zena; urgency=medium
 
   * Advanced Annotations (Edge-style):
