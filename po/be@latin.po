@@ -405,7 +405,7 @@ msgstr ""
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
@@ -1201,24 +1201,24 @@ msgstr "Uźnikła pamyłka pry pakazie dapamohi"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader - heta volnaje prahramnaje zabieśpiačeńnie; ty možaš raspaŭsiudžvać "
+"Xreader Pro - heta volnaje prahramnaje zabieśpiačeńnie; ty možaš raspaŭsiudžvać "
 "jaho i/ci źmianiać zhodna z umovami Ahulnaj Publičnaj Licenzii GNU (GPL), "
 "apublikavanaj Fondam Volnaha Prahramnaha Zabieśpiačeńnia (Free Software "
 "Foundation); versii 2 albo (pa tvaim vybary) luboj paźniejšaj.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader raspaŭsiudžvajecca z nadziejaj, što hetaja prahrama budzie karysnaj, "
+"Xreader Pro raspaŭsiudžvajecca z nadziejaj, što hetaja prahrama budzie karysnaj, "
 "ale my ANIČOHA NIE HARANTUJEM, navat HANDLOVAJ PRYDATNAŚCI ci PRYDATNAŚCI "
 "CHOĆ BY DLA JAKICH METAŬ. Hladzi Ahulnuju Publičnuju Licenziju GNU (GPL) dla "
 "padrabiaznaściaŭ.\n"
@@ -1226,13 +1226,13 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

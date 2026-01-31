@@ -417,13 +417,13 @@ msgstr "Belge Görüntüleyici"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader basit çok-sayfalı bir belge görüntüleyicisidir. PostScript (PS), "
+"<p> Xreader Pro basit çok-sayfalı bir belge görüntüleyicisidir. PostScript (PS), "
 "Encapsulated PostScript (EPS), DJVU, DVI, XPS ve Portable Document Format "
 "(PDF) dosyaları yanı çizgi roman arşiv dosyalarını görüntüleyebilir. "
 "Desteklenen bir belgede metin araması, metnin panoya kopyalanması, "
@@ -1248,40 +1248,40 @@ msgstr "Yardım gösterilirken bir hata oluştu"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader özgür yazılımdır; onu Özgür Yazılım Vakfı tarafından yayınlanan GNU "
+"Xreader Pro özgür yazılımdır; onu Özgür Yazılım Vakfı tarafından yayınlanan GNU "
 "Genel Kamul Lisansı 2. sürümü ya da (tercihen) daha sonraki sürümleri "
 "koşullarında yeniden dağıtabilir ya da değiştirebilirsiniz.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader kullanışlı olması umuduyla dağıtılmaktadır,ama herhangi bir GARANTİ "
+"Xreader Pro kullanışlı olması umuduyla dağıtılmaktadır,ama herhangi bir GARANTİ "
 "içermez, SATILABİLİRLİKya da HERHANGİ BİR AMACA UYGUNLUK için GARANTİ ima "
 "etmez.Ayrıntılı bilgi için GNU Genel Kamu Lisansını inceleyin.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Xreader ile birlikte GNU Genel Kamu Lisansının bir kopyasını almış "
+"Xreader Pro ile birlikte GNU Genel Kamu Lisansının bir kopyasını almış "
 "olmalısınız. Aksi halde bu adrese yazılı olarak bildirin: Free Software "
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  "
 "USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1702,7 +1702,7 @@ msgstr "NUMARA"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Xreader'i tam ekran kipinde çalıştır"
+msgstr "Xreader Pro'i tam ekran kipinde çalıştır"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1714,11 +1714,11 @@ msgstr "HEDEF"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Xreader'i sunum kipinde çalıştır"
+msgstr "Xreader Pro'i sunum kipinde çalıştır"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Xreader'i ön izleyici olarak çalıştır"
+msgstr "Xreader Pro'i ön izleyici olarak çalıştır"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

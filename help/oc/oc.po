@@ -29,12 +29,12 @@ msgstr ""
 "md5=7f4da5e33bcac35738a268d93d497d47"
 
 #: ../C/xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
+msgid "Xreader Pro Document Viewer Manual"
 msgstr ""
 
 #: ../C/xreader.xml:27(para)
 msgid ""
-"The Xreader Document Viewer application enables you to view documents of "
+"The Xreader Pro Document Viewer application enables you to view documents of "
 "various formats like Portable Document Format (PDF) files and PostScript "
 "files"
 msgstr ""
@@ -144,7 +144,7 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: ../C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
 msgstr ""
 
 #: ../C/xreader.xml:89(date)
@@ -152,7 +152,7 @@ msgid "2005-04-06"
 msgstr "06/04/2005"
 
 #: ../C/xreader.xml:97(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
 msgstr ""
 
 #: ../C/xreader.xml:100(title)
@@ -161,13 +161,13 @@ msgstr ""
 
 #: ../C/xreader.xml:101(para)
 msgid ""
-"To report a bug or make a suggestion regarding the Xreader Document Viewer "
+"To report a bug or make a suggestion regarding the Xreader Pro Document Viewer "
 "application or this manual, follow the directions in the <ulink url=\"help:"
 "mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 
 #: ../C/xreader.xml:108(primary)
-msgid "Xreader Document Viewer"
+msgid "Xreader Pro Document Viewer"
 msgstr ""
 
 #: ../C/xreader.xml:111(primary)
@@ -180,9 +180,9 @@ msgstr "Introduccion"
 
 #: ../C/xreader.xml:120(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> application enables "
+"The <application>Xreader Pro Document Viewer</application> application enables "
 "you to view documents of various formats like Portable Document Format (PDF) "
-"files and PostScript files. <application>Xreader Document Viewer</"
+"files and PostScript files. <application>Xreader Pro Document Viewer</"
 "application> follows Freedesktop.org and MATE standards to provide "
 "integration with Desktop Environment."
 msgstr ""
@@ -192,46 +192,46 @@ msgid "Getting Started"
 msgstr "Per començar"
 
 #: ../C/xreader.xml:130(title)
-msgid "To Start Xreader Document Viewer"
+msgid "To Start Xreader Pro Document Viewer"
 msgstr ""
 
 #: ../C/xreader.xml:131(para)
 msgid ""
-"<application>Xreader Document Viewer</application> starts when you open a "
+"<application>Xreader Pro Document Viewer</application> starts when you open a "
 "document such as a PDF or PostScript file."
 msgstr ""
 
 #: ../C/xreader.xml:132(para)
 msgid ""
-"Alternatively, you can start <application>Xreader Document Viewer</"
+"Alternatively, you can start <application>Xreader Pro Document Viewer</"
 "application> from the command line, with the command: <command>xreader</"
 "command>."
 msgstr ""
 
 #: ../C/xreader.xml:137(title)
-msgid "When You Start Xreader Document Viewer"
+msgid "When You Start Xreader Pro Document Viewer"
 msgstr ""
 
 #: ../C/xreader.xml:138(para)
 msgid ""
-"When you start <application>Xreader Document Viewer</application>, the "
+"When you start <application>Xreader Pro Document Viewer</application>, the "
 "following window is displayed."
 msgstr ""
 
 #: ../C/xreader.xml:142(title)
-msgid "Xreader Document Viewer Window"
+msgid "Xreader Pro Document Viewer Window"
 msgstr ""
 
 #: ../C/xreader.xml:149(phrase)
 msgid ""
-"Shows Xreader Document Viewer main window. Contains titlebar, menubar, "
+"Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, "
 "toolbar and display area. Menubar contains File, Edit, View, Go and Help "
 "menus."
 msgstr ""
 
 #: ../C/xreader.xml:155(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> window contains the "
+"The <application>Xreader Pro Document Viewer</application> window contains the "
 "following elements:"
 msgstr ""
 
@@ -242,7 +242,7 @@ msgstr "Barra de menuts"
 #: ../C/xreader.xml:161(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
-"with documents in <application>Xreader Document Viewer</application>."
+"with documents in <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 
 #: ../C/xreader.xml:165(term)
@@ -277,7 +277,7 @@ msgstr "Fenèstra"
 
 #: ../C/xreader.xml:198(para)
 msgid ""
-"Drag a file into the <application>Xreader Document Viewer</application> "
+"Drag a file into the <application>Xreader Pro Document Viewer</application> "
 "window from another application such as a file manager."
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr ""
 
 #: ../C/xreader.xml:178(para)
 msgid ""
-"In <application>Xreader Document Viewer</application>, you can perform the "
+"In <application>Xreader Pro Document Viewer</application>, you can perform the "
 "same action in several ways. For example, you can open a document in the "
 "following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
@@ -333,7 +333,7 @@ msgstr ""
 
 #: ../C/xreader.xml:244(para)
 msgid ""
-"Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</"
+"Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</"
 "application> displays the name of the document in the titlebar of the window."
 msgstr ""
 
@@ -341,13 +341,13 @@ msgstr ""
 msgid ""
 "To open another document, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. "
-"<application>Xreader Document Viewer</application> opens each file in a new "
+"<application>Xreader Pro Document Viewer</application> opens each file in a new "
 "window."
 msgstr ""
 
 #: ../C/xreader.xml:252(para)
 msgid ""
-"If you try to open a document with format that <application>Xreader Document "
+"If you try to open a document with format that <application>Xreader Pro Document "
 "Viewer</application> does not recognize, the application displays an error "
 "message."
 msgstr ""
@@ -422,7 +422,7 @@ msgstr ""
 #: ../C/xreader.xml:303(para)
 msgid ""
 "You can use the following methods to resize a page in the "
-"<application>Xreader Document Viewer</application> display area:"
+"<application>Xreader Pro Document Viewer</application> display area:"
 msgstr ""
 
 #: ../C/xreader.xml:308(para)
@@ -439,24 +439,24 @@ msgstr ""
 
 #: ../C/xreader.xml:318(para)
 msgid ""
-"To resize a page to have the same width as the <application>Xreader Document "
+"To resize a page to have the same width as the <application>Xreader Pro Document "
 "Viewer</application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
 msgstr ""
 
 #: ../C/xreader.xml:323(para)
 msgid ""
-"To resize a page to fit within the <application>Xreader Document Viewer</"
+"To resize a page to fit within the <application>Xreader Pro Document Viewer</"
 "application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
 msgstr ""
 
 #: ../C/xreader.xml:328(para)
 msgid ""
-"To resize the <application>Xreader Document Viewer</application> window to "
+"To resize the <application>Xreader Pro Document Viewer</application> window to "
 "have the same width and height as the screen, choose "
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></"
-"menuchoice>. To resize the <application>Xreader Document Viewer</application> "
+"menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> "
 "window to the original size, click on the <guibutton>Exit Full Screen</"
 "guibutton> button."
 msgstr ""
@@ -578,7 +578,7 @@ msgstr ""
 #: ../C/xreader.xml:434(para)
 msgid ""
 "The <guilabel>Create a PDF document</guilabel> option is not supported in "
-"this version of <application>Xreader Document Viewer</application>."
+"this version of <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 
 #: ../C/xreader.xml:440(guilabel)
@@ -661,7 +661,7 @@ msgstr "Estat"
 #: ../C/xreader.xml:502(para) ../C/xreader.xml:508(para)
 #: ../C/xreader.xml:514(para)
 msgid ""
-"This functionality is not supported in this version of <application>Xreader "
+"This functionality is not supported in this version of <application>Xreader Pro "
 "Document Viewer</application>."
 msgstr ""
 
@@ -787,7 +787,7 @@ msgstr ""
 
 #: ../C/xreader.xml:607(para)
 msgid ""
-"When you try to open a password-protected document, <application>Xreader "
+"When you try to open a password-protected document, <application>Xreader Pro "
 "Document Viewer</application> displays a security dialog. Type either the "
 "user password or the master password in the <guilabel>Enter document "
 "password</guilabel> text box, then click <guibutton>Open Document</"
@@ -806,7 +806,7 @@ msgstr ""
 
 #: ../C/xreader.xml:617(para)
 msgid ""
-"If the window is the last <application>Xreader Document Viewer</application> "
+"If the window is the last <application>Xreader Pro Document Viewer</application> "
 "window open, the application exits."
 msgstr ""
 

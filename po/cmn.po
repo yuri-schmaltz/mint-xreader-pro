@@ -466,19 +466,19 @@ msgstr ""
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
-" <p> Xreader is a fork of Evince and part of the MATE Desktop Environment. If "
-"you would like to know more about MATE and Xreader, please visit the project's"
+" <p> Xreader Pro is a fork of Evince and part of the MATE Desktop Environment. If "
+"you would like to know more about MATE and Xreader Pro, please visit the project's"
 " home page. </p>"
 msgstr ""
 
 #: ../data/xreader.desktop.in.in.h:1
-msgid "Xreader Document Viewer"
-msgstr "Xreader 文件檢視器"
+msgid "Xreader Pro Document Viewer"
+msgstr "Xreader Pro 文件檢視器"
 
 #. Manually set name and icon
 #: ../data/xreader.desktop.in.in.h:2 ../shell/ev-window.c:5006
@@ -676,11 +676,11 @@ msgid "%s, Landscape (%s)"
 msgstr "%s，橫向 (%s)"
 
 #: ../properties/libxreader-properties-page.caja-extension.in.h:1
-msgid "Xreader properties"
+msgid "Xreader Pro properties"
 msgstr ""
 
 #: ../properties/libxreader-properties-page.caja-extension.in.h:2
-msgid "Shows details for Xreader documents"
+msgid "Shows details for Xreader Pro documents"
 msgstr ""
 
 #: ../libmisc/ev-page-action-widget.c:68
@@ -982,9 +982,9 @@ msgstr "正在轉換中繼資料"
 
 #: ../shell/ev-convert-metadata.c:187
 msgid ""
-"The metadata format used by Xreader has changed, and hence it needs to be "
+"The metadata format used by Xreader Pro has changed, and hence it needs to be "
 "migrated. If the migration is cancelled the metadata storage will not work."
-msgstr "Xreader 所使用的中繼資料已經改變，因此需要做轉移。如果轉移的動作被取消，中繼資料的儲存就無法運作。"
+msgstr "Xreader Pro 所使用的中繼資料已經改變，因此需要做轉移。如果轉移的動作被取消，中繼資料的儲存就無法運作。"
 
 #: ../shell/ev-open-recent-action.c:72
 msgid "Open a recently used document"
@@ -1311,30 +1311,30 @@ msgstr "文件檢視器\n使用 %s (%s)"
 
 #: ../shell/ev-window.c:5037
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
-msgstr "Xreader 為自由軟體；您可依據自由軟體基金會所發表的 GNU 通用公共授權條款規定，就本程式再為散布與／或修改；無論您依據的是本授權的第二版或（您自行選擇的）任一日後發行的版本。\n"
+msgstr "Xreader Pro 為自由軟體；您可依據自由軟體基金會所發表的 GNU 通用公共授權條款規定，就本程式再為散布與／或修改；無論您依據的是本授權的第二版或（您自行選擇的）任一日後發行的版本。\n"
 
 #: ../shell/ev-window.c:5041
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
-msgstr "Xreader 係基於使用目的而加以散布，然而不負任何擔保責任；亦無對適售性或特定目的適用性所為的默示性擔保。詳情請參照 GNU 通用公共授權。\n"
+msgstr "Xreader Pro 係基於使用目的而加以散布，然而不負任何擔保責任；亦無對適售性或特定目的適用性所為的默示性擔保。詳情請參照 GNU 通用公共授權。\n"
 
 #: ../shell/ev-window.c:5045
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
-msgstr "您應該已收到附於 Xreader 的 GNU 通用公共授權的副本。如果沒有，請寫信至：Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n"
+msgstr "您應該已收到附於 Xreader Pro 的 GNU 通用公共授權的副本。如果沒有，請寫信至：Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n"
 
 #: ../shell/ev-window.c:5074
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #: ../shell/ev-window.c:5077
 msgid ""

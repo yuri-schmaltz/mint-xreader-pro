@@ -7,7 +7,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Xreader\n"
+"Project-Id-Version: Xreader Pro\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-24 21:37-0400\n"
 "PO-Revision-Date: 2005-07-24 06:42+0200\n"
@@ -28,12 +28,12 @@ msgid ""
 msgstr ""
 
 #: ../C/xreader.xml:25(title) ../C/xreader.xml:85(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Упутство за прегледач докумената Xreader 1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Упутство за прегледач докумената Xreader Pro 1.0"
 
 #: ../C/xreader.xml:27(para)
-msgid "User manual for the Xreader Document Viewer."
-msgstr "Упутство за кориснике прегледача докумената Xreader."
+msgid "User manual for the Xreader Pro Document Viewer."
+msgstr "Упутство за кориснике прегледача докумената Xreader Pro."
 
 #: ../C/xreader.xml:30(year)
 msgid "2005"
@@ -185,8 +185,8 @@ msgid "2005-04-06"
 msgstr "2005-04-06"
 
 #: ../C/xreader.xml:94(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
-msgstr "Ово упутство описује издање 0.2 прегледача докумената Xreader"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
+msgstr "Ово упутство описује издање 0.2 прегледача докумената Xreader Pro"
 
 #: ../C/xreader.xml:97(title)
 msgid "Feedback"
@@ -194,17 +194,17 @@ msgstr "Сарадња"
 
 #: ../C/xreader.xml:98(para)
 msgid ""
-"To report a bug or make a suggestion regarding the Xreader Document Viewer "
+"To report a bug or make a suggestion regarding the Xreader Pro Document Viewer "
 "application or this manual, follow the directions in the <ulink url=\"help:"
 "mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
-"Да пријавите грешку или учините предлог у вези прегледача докумената Xreader "
+"Да пријавите грешку или учините предлог у вези прегледача докумената Xreader Pro "
 "или овог упутства, пратите упутства са <ulink url=\"help:mate-feedback\" "
 "type=\"help\">стране за учествовање у Гному</ulink>."
 
 #: ../C/xreader.xml:105(primary)
-msgid "Xreader Document Viewer"
-msgstr "Прегледач докумената Xreader"
+msgid "Xreader Pro Document Viewer"
+msgstr "Прегледач докумената Xreader Pro"
 
 #: ../C/xreader.xml:108(primary)
 msgid "xreader"
@@ -216,9 +216,9 @@ msgstr "Увод"
 
 #: ../C/xreader.xml:117(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> application enables "
+"The <application>Xreader Pro Document Viewer</application> application enables "
 "you to view documents of various formats like Portable Document Format (PDF) "
-"files and PostScript files. <application>Xreader Document Viewer</"
+"files and PostScript files. <application>Xreader Pro Document Viewer</"
 "application> follows Freedesktop.org and MATE standards to provide "
 "integration with Desktop Environment."
 msgstr ""
@@ -228,12 +228,12 @@ msgid "Getting Started"
 msgstr "Како почети"
 
 #: ../C/xreader.xml:127(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "Да покренете прегледач докумената Xreader"
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "Да покренете прегледач докумената Xreader Pro"
 
 #: ../C/xreader.xml:128(para)
 msgid ""
-"You can start <application>Xreader Document Viewer</application> in the "
+"You can start <application>Xreader Pro Document Viewer</application> in the "
 "following ways:"
 msgstr ""
 
@@ -243,7 +243,7 @@ msgstr "Мени <guimenu>Програми</guimenu>"
 
 #: ../C/xreader.xml:134(para)
 msgid ""
-"Choose <menuchoice><guisubmenu>Graphics</guisubmenu><guimenuitem>Xreader "
+"Choose <menuchoice><guisubmenu>Graphics</guisubmenu><guimenuitem>Xreader Pro "
 "Document Viewer</guimenuitem></menuchoice>."
 msgstr ""
 
@@ -256,29 +256,29 @@ msgid "Execute the following command: <command>xreader</command>"
 msgstr ""
 
 #: ../C/xreader.xml:149(title)
-msgid "When You Start Xreader Document Viewer"
+msgid "When You Start Xreader Pro Document Viewer"
 msgstr ""
 
 #: ../C/xreader.xml:150(para)
 msgid ""
-"When you start <application>Xreader Document Viewer</application>, the "
+"When you start <application>Xreader Pro Document Viewer</application>, the "
 "following window is displayed."
 msgstr ""
 
 #: ../C/xreader.xml:154(title)
-msgid "Xreader Document Viewer Window"
+msgid "Xreader Pro Document Viewer Window"
 msgstr ""
 
 #: ../C/xreader.xml:161(phrase)
 msgid ""
-"Shows Xreader Document Viewer main window. Contains titlebar, menubar, "
+"Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, "
 "toolbar and display area. Menubar contains File, Edit, View, Go and Help "
 "menus."
 msgstr ""
 
 #: ../C/xreader.xml:167(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> window contains the "
+"The <application>Xreader Pro Document Viewer</application> window contains the "
 "following elements:"
 msgstr ""
 
@@ -289,7 +289,7 @@ msgstr ""
 #: ../C/xreader.xml:173(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
-"with documents in <application>Xreader Document Viewer</application>."
+"with documents in <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 
 #: ../C/xreader.xml:177(term)
@@ -324,7 +324,7 @@ msgstr "Прозор"
 
 #: ../C/xreader.xml:210(para)
 msgid ""
-"Drag a file into the <application>Xreader Document Viewer</application> "
+"Drag a file into the <application>Xreader Pro Document Viewer</application> "
 "window from another application such as a file manager."
 msgstr ""
 
@@ -348,7 +348,7 @@ msgstr ""
 
 #: ../C/xreader.xml:190(para)
 msgid ""
-"In <application>Xreader Document Viewer</application>, you can perform the "
+"In <application>Xreader Pro Document Viewer</application>, you can perform the "
 "same action in several ways. For example, you can open a document in the "
 "following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
@@ -384,7 +384,7 @@ msgstr ""
 
 #: ../C/xreader.xml:256(para)
 msgid ""
-"Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</"
+"Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</"
 "application> displays the name of the document in the titlebar of the window."
 msgstr ""
 
@@ -392,13 +392,13 @@ msgstr ""
 msgid ""
 "To open another document, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. "
-"<application>Xreader Document Viewer</application> opens each file in a new "
+"<application>Xreader Pro Document Viewer</application> opens each file in a new "
 "window."
 msgstr ""
 
 #: ../C/xreader.xml:264(para)
 msgid ""
-"If you try to open a document with format that <application>Xreader Document "
+"If you try to open a document with format that <application>Xreader Pro Document "
 "Viewer</application> does not recognize, the application displays an error "
 "message."
 msgstr ""
@@ -473,7 +473,7 @@ msgstr ""
 #: ../C/xreader.xml:315(para)
 msgid ""
 "You can use the following methods to resize a page in the "
-"<application>Xreader Document Viewer</application> display area:"
+"<application>Xreader Pro Document Viewer</application> display area:"
 msgstr ""
 
 #: ../C/xreader.xml:320(para)
@@ -490,24 +490,24 @@ msgstr ""
 
 #: ../C/xreader.xml:330(para)
 msgid ""
-"To resize a page to have the same width as the <application>Xreader Document "
+"To resize a page to have the same width as the <application>Xreader Pro Document "
 "Viewer</application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
 msgstr ""
 
 #: ../C/xreader.xml:335(para)
 msgid ""
-"To resize a page to fit within the <application>Xreader Document Viewer</"
+"To resize a page to fit within the <application>Xreader Pro Document Viewer</"
 "application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
 msgstr ""
 
 #: ../C/xreader.xml:340(para)
 msgid ""
-"To resize the <application>Xreader Document Viewer</application> window to "
+"To resize the <application>Xreader Pro Document Viewer</application> window to "
 "have the same width and height as the screen, choose "
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></"
-"menuchoice>. To resize the <application>Xreader Document Viewer</application> "
+"menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> "
 "window to the original size, click on the <guibutton>Exit Full Screen</"
 "guibutton> button."
 msgstr ""
@@ -632,7 +632,7 @@ msgstr ""
 #: ../C/xreader.xml:446(para)
 msgid ""
 "The <guilabel>Create a PDF document</guilabel> option is not supported in "
-"this version of <application>Xreader Document Viewer</application>."
+"this version of <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 
 #: ../C/xreader.xml:452(guilabel)
@@ -717,7 +717,7 @@ msgstr "Стање"
 #: ../C/xreader.xml:514(para) ../C/xreader.xml:520(para)
 #: ../C/xreader.xml:526(para)
 msgid ""
-"This functionality is not supported in this version of <application>Xreader "
+"This functionality is not supported in this version of <application>Xreader Pro "
 "Document Viewer</application>."
 msgstr ""
 
@@ -843,7 +843,7 @@ msgstr ""
 
 #: ../C/xreader.xml:619(para)
 msgid ""
-"When you try to open a password-protected document, <application>Xreader "
+"When you try to open a password-protected document, <application>Xreader Pro "
 "Document Viewer</application> displays a security dialog. Type either the "
 "user password or the master password in the <guilabel>Enter document "
 "password</guilabel> text box, then click <guibutton>Open Document</"
@@ -862,20 +862,20 @@ msgstr ""
 
 #: ../C/xreader.xml:629(para)
 msgid ""
-"If the window is the last <application>Xreader Document Viewer</application> "
+"If the window is the last <application>Xreader Pro Document Viewer</application> "
 "window open, the application exits."
 msgstr ""
 
 #: ../C/xreader.xml:632(para)
 msgid ""
-"To quit <application>Xreader Document Viewer</application> at any time, no "
+"To quit <application>Xreader Pro Document Viewer</application> at any time, no "
 "matter how many windows are open, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Quit</guimenuitem></menuchoice>."
 msgstr ""
 
 #: ../C/xreader.xml:634(para)
 msgid ""
-"When you quit, <application>Xreader Document Viewer</application> closes all "
+"When you quit, <application>Xreader Pro Document Viewer</application> closes all "
 "documents opened in the current session."
 msgstr ""
 
@@ -1346,42 +1346,42 @@ msgstr ""
 #~ "Користи poppler %s (%s)"
 
 #~ msgid ""
-#~ "Xreader is free software; you can redistribute it and/or modify\n"
+#~ "Xreader Pro is free software; you can redistribute it and/or modify\n"
 #~ "it under the terms of the GNU General Public License as published by\n"
 #~ "the Free Software Foundation; either version 2 of the License, or\n"
 #~ "(at your option) any later version.\n"
 #~ msgstr ""
-#~ "Xreader је слободан софтвер; можете га расподељивати и/или га мењати\n"
+#~ "Xreader Pro је слободан софтвер; можете га расподељивати и/или га мењати\n"
 #~ "под условима ГНУ Опште Јавне Лиценце (GNU GPL) како је објављује \n"
 #~ "Задужбина за Слободни Софтвер (FSF); било верзије 2 те Лиценце, било\n"
 #~ "(по вашем нахођењу) било које новије верзије.\n"
 
 #~ msgid ""
-#~ "Xreader is distributed in the hope that it will be useful,\n"
+#~ "Xreader Pro is distributed in the hope that it will be useful,\n"
 #~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
 #~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
 #~ "GNU General Public License for more details.\n"
 #~ msgstr ""
-#~ "Xreader се расподељује у нади да ће бити од користи, али БЕЗ\n"
+#~ "Xreader Pro се расподељује у нади да ће бити од користи, али БЕЗ\n"
 #~ "ИКАКВИХ ГАРАНЦИЈА; чак и без подразумеване гаранције \n"
 #~ "КОРИСНОСТИ или ПРИЛАГОЂЕНОСТИ ОДРЕЂЕНОЈ НАМЕНИ.  Видите ГНУ \n"
 #~ "Општу Јавну Лиценцу за више детаља.\n"
 
 #~ msgid ""
 #~ "You should have received a copy of the GNU General Public License\n"
-#~ "along with Xreader; if not, write to the Free Software Foundation, Inc.,\n"
+#~ "along with Xreader Pro; if not, write to the Free Software Foundation, Inc.,\n"
 #~ "59 Temple Place, Suite 330, Boston, MA  02111-1307  USA\n"
 #~ msgstr ""
-#~ "Требали сте да примите примерак ГНУ Опште Јавне Лиценце уз Xreader; ако\n"
+#~ "Требали сте да примите примерак ГНУ Опште Јавне Лиценце уз Xreader Pro; ако\n"
 #~ "нисте, пишите Задужбини за Слободни Софтвер (Free Software Foundation, "
 #~ "Inc.), \n"
 #~ "59 Temple Place, Suite 330, Boston, MA  02111-1307  USA\n"
 
-#~ msgid "Xreader"
-#~ msgstr "Xreader"
+#~ msgid "Xreader Pro"
+#~ msgstr "Xreader Pro"
 
-#~ msgid "© 1996-2005 The Xreader authors"
-#~ msgstr "Сва права задржана © 1996–2005 Аутори Xreader-а"
+#~ msgid "© 1996-2005 The Xreader Pro authors"
+#~ msgstr "Сва права задржана © 1996–2005 Аутори Xreader Pro-а"
 
 #~ msgid "_File"
 #~ msgstr "_Датотека"

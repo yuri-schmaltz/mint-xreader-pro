@@ -418,13 +418,13 @@ msgstr "Четец на документи"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader е опростен четец на документи. Той може да показва и разпечатва "
+"<p> Xreader Pro е опростен четец на документи. Той може да показва и разпечатва "
 "файлове с формати PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, "
 "XPS and Portable Document Format (PDF), а също така и комикси. Когато е "
 "възможно, може да търсите текст в документа, да копирате текст, да отваряте "
@@ -1249,19 +1249,19 @@ msgstr "Грешка при показването на помощ"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Тази програма (Xreader) е свободен софтуер. Можете да я разпространявате "
+"Тази програма (Xreader Pro) е свободен софтуер. Можете да я разпространявате "
 "и/или променяте под условията на Общия публичен лиценз на GNU (GNU GPL), "
 "както е публикуван от Фондацията за свободен софтуер — версия 2 на лиценза "
 "или (по ваше решение) по-късна версия.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
@@ -1273,7 +1273,7 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "Трябва да сте получили копие от Общия публичен лиценз на GNU (GNU GPL) "
@@ -1281,8 +1281,8 @@ msgstr ""
 "Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1706,7 +1706,7 @@ msgstr "НОМЕР"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Пускане на Xreader в режим цял екран"
+msgstr "Пускане на Xreader Pro в режим цял екран"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1718,11 +1718,11 @@ msgstr "ЦЕЛ"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Пускане на Xreader в режим на презентация"
+msgstr "Пускане на Xreader Pro в режим на презентация"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Пускане на Xreader за преглед"
+msgstr "Пускане на Xreader Pro за преглед"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

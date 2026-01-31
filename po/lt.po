@@ -414,13 +414,13 @@ msgstr "Dokumentų žiūryklė"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader yra paprasta dokumentų žiūryklė. Ji gali rodyti ir spausdinti "
+"<p> Xreader Pro yra paprasta dokumentų žiūryklė. Ji gali rodyti ir spausdinti "
 "PostScript (PS), uždarus PostScript (EPS), DJVU, DVI, XPS ir Portable "
 "Document Format (PDF) failus, o taip pat komiksų archyvų failus. Kuomet tai "
 "palaiko dokumentas, programa leidžia atlikti teksto paiešką, kopijuoti "
@@ -1251,24 +1251,24 @@ msgstr "Rodant žinyną įvyko klaida"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader yra laisva programinė įranga; galite ją platinti ir / ar modifikuoti "
+"Xreader Pro yra laisva programinė įranga; galite ją platinti ir / ar modifikuoti "
 "GNU bendrosios viešosios licencijos sąlygomis, kurios paskelbtos Laisvosios "
 "programinės įrangos fondo; 2-osios arba (savo pasirinkimu) bet kurios "
 "vėlesnės licencijos versijos sąlygomis.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader yra platinama tikintis, kad ji bus naudinga, bet NETEIKIANT JOKIŲ "
+"Xreader Pro yra platinama tikintis, kad ji bus naudinga, bet NETEIKIANT JOKIŲ "
 "GARANTIJŲ; netgi be numanomų PARDAVIMO arba TINKAMUMO KONKREČIAM TIKSLUI "
 "garantijų. Dėl išsamesnės informacijos žiūrėkite GNU bendrąją viešąją "
 "licenciją.\n"
@@ -1276,16 +1276,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Turėjote gauti GNU bendrosios viešosios licencijos kopiją kartu su Xreader; "
+"Turėjote gauti GNU bendrosios viešosios licencijos kopiją kartu su Xreader Pro; "
 "jeigu negavote, rašykite The Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1706,7 +1706,7 @@ msgstr "NUMERIS"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Paleisti Xreader viso ekrano veiksenoje"
+msgstr "Paleisti Xreader Pro viso ekrano veiksenoje"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1718,11 +1718,11 @@ msgstr "PASKIRTIS"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Paleisti Xreader pateikčių veiksenoje"
+msgstr "Paleisti Xreader Pro pateikčių veiksenoje"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Paleisti Xreader kaip peržiūros programą"
+msgstr "Paleisti Xreader Pro kaip peržiūros programą"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

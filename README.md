@@ -1,9 +1,9 @@
-# Xreader 
+# Xreader Pro 
 ![build](https://github.com/linuxmint/xreader/actions/workflows/build.yml/badge.svg)
 
-**Xreader** is a document viewer capable of displaying multiple and single page
+**Xreader Pro** is a document viewer capable of displaying multiple and single page
 document formats like PDF and Postscript. For more general information about
-Xreader please visit our website at https://github.com/linuxmint/xreader.
+Xreader Pro please visit our website at https://github.com/linuxmint/xreader.
 
 This software is licensed under GNU GENERAL PUBLIC LICENSE Version 2 from June
 1991 (see COPYING).
@@ -52,13 +52,13 @@ G_MESSAGES_DEBUG=all builddir/shell/xreader document.pdf
 ## Testing & Accessibility
 
 **Automated UI Tests**:
-Xreader supports automated UI testing via AT-SPI. To run the test suite:
+Xreader Pro supports automated UI testing via AT-SPI. To run the test suite:
 1. Ensure `python3-dogtail` is installed.
 2. Build the project.
 3. Run: `python3 test/testFileMenu.py ./build/shell/xreader`
 
 **Accessibility (a11y)**:
-Xreader integrates with the AT-SPI registry (via `atk-bridge`), allowing screen readers (like Orca) and automation tools to interact with the UI. If you encounter issues, ensure `at-spi2-core` is running and `GTK_MODULES` includes `atk-bridge` (though xreader initializes it explicitly).
+Xreader Pro integrates with the AT-SPI registry (via `atk-bridge`), allowing screen readers (like Orca) and automation tools to interact with the UI. If you encounter issues, ensure `at-spi2-core` is running and `GTK_MODULES` includes `atk-bridge` (though xreader initializes it explicitly).
 
 - Poppler for PDF Backend [ http://poppler.freedesktop.org/ ]
 - DjVuLibre for DjVu viewing [ http://djvulibre.djvuzone.org/ ]

@@ -3,7 +3,7 @@
 # Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: Xreader documentation\n"
+"Project-Id-Version: Xreader Pro documentation\n"
 "POT-Creation-Date: 2010-04-25 16:28+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
@@ -23,12 +23,12 @@ msgid "@@image: 'figures/xreader_start_window.png'; md5=7f4da5e33bcac35738a268d9
 msgstr ""
 
 #: C/xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
-msgstr "Priročnik Xreader pregledovalnika dokumentov"
+msgid "Xreader Pro Document Viewer Manual"
+msgstr "Priročnik Xreader Pro pregledovalnika dokumentov"
 
 #: C/xreader.xml:27(para)
-msgid "The Xreader Document Viewer application enables you to view documents of various formats like Portable Document Format (PDF) files and PostScript files"
-msgstr "Xreader pregledovalnik dokumentov vam omogoča ogled dokumentov različnih vrst kot sta datoteki Prenosljiva vrsta dokumenta (PDF) in datoteke PostScript "
+msgid "The Xreader Pro Document Viewer application enables you to view documents of various formats like Portable Document Format (PDF) files and PostScript files"
+msgstr "Xreader Pro pregledovalnik dokumentov vam omogoča ogled dokumentov različnih vrst kot sta datoteki Prenosljiva vrsta dokumenta (PDF) in datoteke PostScript "
 
 #: C/xreader.xml:33(year)
 msgid "2005"
@@ -100,8 +100,8 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.1"
-msgstr "Priročnik Xreader pregledovalnika dokumentov r 1.1"
+msgid "Xreader Pro Document Viewer Manual V1.1"
+msgstr "Priročnik Xreader Pro pregledovalnika dokumentov r 1.1"
 
 #: C/xreader.xml:89(date)
 msgid "2008-04-05"
@@ -116,28 +116,28 @@ msgid "Claude Paroz"
 msgstr "Claude Paroz"
 
 #: C/xreader.xml:97(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Priročnik Xreader pregledovalnika dokumentov r 1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Priročnik Xreader Pro pregledovalnika dokumentov r 1.0"
 
 #: C/xreader.xml:98(date)
 msgid "2005-04-06"
 msgstr "06.04.2005"
 
 #: C/xreader.xml:106(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
-msgstr "Ta priročnik opisuje Xreader pregledovalnik dokumentov različico 0.2"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
+msgstr "Ta priročnik opisuje Xreader Pro pregledovalnik dokumentov različico 0.2"
 
 #: C/xreader.xml:109(title)
 msgid "Feedback"
 msgstr "Odziv"
 
 #: C/xreader.xml:110(para)
-msgid "To report a bug or make a suggestion regarding the Xreader Document Viewer application or this manual, follow the directions in the <ulink url=\"help:mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
-msgstr "Za poročilo hrošča ali predloga glede Xreader pregledovalnika dokumentov ali tega priročnika sledite smernicam na <ulink url=\"help:mate-feedback\" type=\"help\">Strani odziva MATE </ulink>."
+msgid "To report a bug or make a suggestion regarding the Xreader Pro Document Viewer application or this manual, follow the directions in the <ulink url=\"help:mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
+msgstr "Za poročilo hrošča ali predloga glede Xreader Pro pregledovalnika dokumentov ali tega priročnika sledite smernicam na <ulink url=\"help:mate-feedback\" type=\"help\">Strani odziva MATE </ulink>."
 
 #: C/xreader.xml:117(primary)
-msgid "Xreader Document Viewer"
-msgstr "Xreader pregledovalnik dokumentov"
+msgid "Xreader Pro Document Viewer"
+msgstr "Xreader Pro pregledovalnik dokumentov"
 
 #: C/xreader.xml:120(primary)
 msgid "xreader"
@@ -148,44 +148,44 @@ msgid "Introduction"
 msgstr "Uvod"
 
 #: C/xreader.xml:129(para)
-msgid "The <application>Xreader Document Viewer</application> application enables you to view documents of various formats like Portable Document Format (PDF) files and PostScript files. <application>Xreader Document Viewer</application> follows Freedesktop.org and MATE standards to provide integration with Desktop Environment."
-msgstr "Program <application>Xreader pregledovalnik dokumentov</application> vam omogoča ogled dokumentov različnih vrst kot so datoteke Prenosljiva vrsta dokumenta (PDF) in PostScript. <application>Xreader pregledovalnik dokumentov</application> sledi Freedestop.org  in MATE standardom za vključitev v namizno okolje."
+msgid "The <application>Xreader Pro Document Viewer</application> application enables you to view documents of various formats like Portable Document Format (PDF) files and PostScript files. <application>Xreader Pro Document Viewer</application> follows Freedesktop.org and MATE standards to provide integration with Desktop Environment."
+msgstr "Program <application>Xreader Pro pregledovalnik dokumentov</application> vam omogoča ogled dokumentov različnih vrst kot so datoteke Prenosljiva vrsta dokumenta (PDF) in PostScript. <application>Xreader Pro pregledovalnik dokumentov</application> sledi Freedestop.org  in MATE standardom za vključitev v namizno okolje."
 
 #: C/xreader.xml:136(title)
 msgid "Getting Started"
 msgstr "Kako začeti"
 
 #: C/xreader.xml:139(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "Za zagon Xreader pregledovalnika dokumentov"
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "Za zagon Xreader Pro pregledovalnika dokumentov"
 
 #: C/xreader.xml:140(para)
-msgid "<application>Xreader Document Viewer</application> starts when you open a document such as a PDF or PostScript file."
-msgstr "<application>Xreader pregledovalnik dokumentov</application> se zažene, ko odprete dokument kot je datoteka PDF ali PostScript."
+msgid "<application>Xreader Pro Document Viewer</application> starts when you open a document such as a PDF or PostScript file."
+msgstr "<application>Xreader Pro pregledovalnik dokumentov</application> se zažene, ko odprete dokument kot je datoteka PDF ali PostScript."
 
 #: C/xreader.xml:141(para)
-msgid "Alternatively, you can start <application>Xreader Document Viewer</application> from the command line, with the command: <command>xreader</command>."
-msgstr "Dodatno lahko <application>Xreader pregledovalnik dokumentov</application> zaženete v ukazni vrstici z ukazom: <command>xreader</command>."
+msgid "Alternatively, you can start <application>Xreader Pro Document Viewer</application> from the command line, with the command: <command>xreader</command>."
+msgstr "Dodatno lahko <application>Xreader Pro pregledovalnik dokumentov</application> zaženete v ukazni vrstici z ukazom: <command>xreader</command>."
 
 #: C/xreader.xml:146(title)
-msgid "When You Start Xreader Document Viewer"
-msgstr "Ko zaženete Xreader pregledovalnik dokumentov"
+msgid "When You Start Xreader Pro Document Viewer"
+msgstr "Ko zaženete Xreader Pro pregledovalnik dokumentov"
 
 #: C/xreader.xml:147(para)
-msgid "When you start <application>Xreader Document Viewer</application>, the following window is displayed."
-msgstr "Ob zagonu <application>Xreader pregledovalnika dokumentov</application> je prikazano naslednje okno."
+msgid "When you start <application>Xreader Pro Document Viewer</application>, the following window is displayed."
+msgstr "Ob zagonu <application>Xreader Pro pregledovalnika dokumentov</application> je prikazano naslednje okno."
 
 #: C/xreader.xml:151(title)
-msgid "Xreader Document Viewer Window"
-msgstr "Okno Xreader pregledovalnika dokumentov "
+msgid "Xreader Pro Document Viewer Window"
+msgstr "Okno Xreader Pro pregledovalnika dokumentov "
 
 #: C/xreader.xml:158(phrase)
-msgid "Shows Xreader Document Viewer main window. Contains titlebar, menubar, toolbar and display area. Menubar contains File, Edit, View, Go and Help menus."
-msgstr "Pokaže glavno okno Xreader pregledovalnika dokumentov. Vsebuje naslovno vrstico, menijsko vrstico, orodno vrstico in področje prikaza. Menijska vrstica vsebuje menije Datoteka, Uredi, Pogled in Pomoč."
+msgid "Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, toolbar and display area. Menubar contains File, Edit, View, Go and Help menus."
+msgstr "Pokaže glavno okno Xreader Pro pregledovalnika dokumentov. Vsebuje naslovno vrstico, menijsko vrstico, orodno vrstico in področje prikaza. Menijska vrstica vsebuje menije Datoteka, Uredi, Pogled in Pomoč."
 
 #: C/xreader.xml:164(para)
-msgid "The <application>Xreader Document Viewer</application> window contains the following elements:"
-msgstr "Okno <application>Xreader pregledovalnika dokumentov</application> vsebuje naslednje predmete:"
+msgid "The <application>Xreader Pro Document Viewer</application> window contains the following elements:"
+msgstr "Okno <application>Xreader Pro pregledovalnika dokumentov</application> vsebuje naslednje predmete:"
 
 #: C/xreader.xml:168(term)
 #: C/xreader.xml:216(para)
@@ -193,8 +193,8 @@ msgid "Menubar"
 msgstr "Menijska vrstica"
 
 #: C/xreader.xml:170(para)
-msgid "The menus on the menubar contain all of the commands that you need to work with documents in <application>Xreader Document Viewer</application>."
-msgstr "Meniji v menijski vrstici vsebujejo vse ukaze, ki jih potrebujete za delo z dokumenti v <application>Xreader pregledovalniku dokumentov</application>."
+msgid "The menus on the menubar contain all of the commands that you need to work with documents in <application>Xreader Pro Document Viewer</application>."
+msgstr "Meniji v menijski vrstici vsebujejo vse ukaze, ki jih potrebujete za delo z dokumenti v <application>Xreader Pro pregledovalniku dokumentov</application>."
 
 #: C/xreader.xml:174(term)
 msgid "Toolbar"
@@ -226,8 +226,8 @@ msgid "Window"
 msgstr "Okno"
 
 #: C/xreader.xml:207(para)
-msgid "Drag a file into the <application>Xreader Document Viewer</application> window from another application such as a file manager."
-msgstr "Povlecite datoteko v okno <application>Xreader pregledovalnika dokumentov</application> iz drugega programa kot je upravljalnik datotek."
+msgid "Drag a file into the <application>Xreader Pro Document Viewer</application> window from another application such as a file manager."
+msgstr "Povlecite datoteko v okno <application>Xreader Pro pregledovalnika dokumentov</application> iz drugega programa kot je upravljalnik datotek."
 
 #: C/xreader.xml:210(para)
 msgid "Double-click on the file name in the file manager"
@@ -247,8 +247,8 @@ msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>."
 msgstr "Pritisnite <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>."
 
 #: C/xreader.xml:187(para)
-msgid "In <application>Xreader Document Viewer</application>, you can perform the same action in several ways. For example, you can open a document in the following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></tgroup></informaltable>"
-msgstr "V <application>Xreader pregledovalniku dokumentov</application> lahko isto dejanje izvedete na več načinov. Dokument lahko na primer odprete na naslednje načine: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></tgroup></informaltable>"
+msgid "In <application>Xreader Pro Document Viewer</application>, you can perform the same action in several ways. For example, you can open a document in the following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></tgroup></informaltable>"
+msgstr "V <application>Xreader Pro pregledovalniku dokumentov</application> lahko isto dejanje izvedete na več načinov. Dokument lahko na primer odprete na naslednje načine: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></tgroup></informaltable>"
 
 #: C/xreader.xml:228(para)
 msgid "This manual documents functionality from the menubar."
@@ -271,16 +271,16 @@ msgid "In the <guilabel>Open Document</guilabel> dialog, select the file you wan
 msgstr "V pogovornemu oknu <guilabel>Odpri dokument</guilabel> izberite datoteko, ki jo želite odpreti."
 
 #: C/xreader.xml:253(para)
-msgid "Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</application> displays the name of the document in the titlebar of the window."
-msgstr "Kliknite <guibutton>Odpri</guibutton>. <application>Xreader pregledovalnik dokumentov</application> prikaže ime dokumenta v naslovni vrstici okna."
+msgid "Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</application> displays the name of the document in the titlebar of the window."
+msgstr "Kliknite <guibutton>Odpri</guibutton>. <application>Xreader Pro pregledovalnik dokumentov</application> prikaže ime dokumenta v naslovni vrstici okna."
 
 #: C/xreader.xml:258(para)
-msgid "To open another document, choose <menuchoice><guimenu>File</guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. <application>Xreader Document Viewer</application> opens each file in a new window."
-msgstr "Za odprtje drugega dokumenta ponovno izberite <menuchoice><guimenu>Datoteka</guimenu><guimenuitem>Odpri</guimenuitem></menuchoice>. <application>Xreader pregledovalnik dokumentov</application> odpre vsako datoteko v svojemu oknu."
+msgid "To open another document, choose <menuchoice><guimenu>File</guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. <application>Xreader Pro Document Viewer</application> opens each file in a new window."
+msgstr "Za odprtje drugega dokumenta ponovno izberite <menuchoice><guimenu>Datoteka</guimenu><guimenuitem>Odpri</guimenuitem></menuchoice>. <application>Xreader Pro pregledovalnik dokumentov</application> odpre vsako datoteko v svojemu oknu."
 
 #: C/xreader.xml:261(para)
-msgid "If you try to open a document with format that <application>Xreader Document Viewer</application> does not recognize, the application displays an error message."
-msgstr "V primeru da pokusite odpreti vrsto dokumenta, ki ga <application>Xreader pregledovalnik dokumentov</application> ne prepozna, program prikaže sporočilo o napaki. "
+msgid "If you try to open a document with format that <application>Xreader Pro Document Viewer</application> does not recognize, the application displays an error message."
+msgstr "V primeru da pokusite odpreti vrsto dokumenta, ki ga <application>Xreader Pro pregledovalnik dokumentov</application> ne prepozna, program prikaže sporočilo o napaki. "
 
 #: C/xreader.xml:267(title)
 msgid "To Navigate Through a Document"
@@ -336,8 +336,8 @@ msgid "To Change the Page Size"
 msgstr "Za spremembo velikosti strani"
 
 #: C/xreader.xml:312(para)
-msgid "You can use the following methods to resize a page in the <application>Xreader Document Viewer</application> display area:"
-msgstr "Za spremembo velikosti strani v področju prikaza <application>Xreader pregledovalnika dokumentov</application> lahko uporabite naslednje načine:"
+msgid "You can use the following methods to resize a page in the <application>Xreader Pro Document Viewer</application> display area:"
+msgstr "Za spremembo velikosti strani v področju prikaza <application>Xreader Pro pregledovalnika dokumentov</application> lahko uporabite naslednje načine:"
 
 #: C/xreader.xml:317(para)
 msgid "To increase the page size, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Zoom In</guimenuitem></menuchoice>."
@@ -348,16 +348,16 @@ msgid "To decrease the page size, choose <menuchoice><guimenu>View</guimenu><gui
 msgstr "Za zmanjšanje velikosti strani izberite <menuchoice><guimenu>Pogled</guimenu><guimenuitem>Oddalji</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:327(para)
-msgid "To resize a page to have the same width as the <application>Xreader Document Viewer</application> display area, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
-msgstr "Za spremembo širine strani na širino področja prikaza <application>Xreader pregledovalnika dokumentov</application> izberite <menuchoice><guimenu>Pogled</guimenu><guimenuitem>Prilagojeno širini strani</guimenuitem></menuchoice>."
+msgid "To resize a page to have the same width as the <application>Xreader Pro Document Viewer</application> display area, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
+msgstr "Za spremembo širine strani na širino področja prikaza <application>Xreader Pro pregledovalnika dokumentov</application> izberite <menuchoice><guimenu>Pogled</guimenu><guimenuitem>Prilagojeno širini strani</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:332(para)
-msgid "To resize a page to fit within the <application>Xreader Document Viewer</application> display area, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
-msgstr "Za spremembo velikosti strani v področju prikaza <application>Xreader pregledovalnika dokumentov</application> izberite <menuchoice><guimenu>Pogled</guimenu><guimenuitem>Prilagojeno zaslonu</guimenuitem></menuchoice>."
+msgid "To resize a page to fit within the <application>Xreader Pro Document Viewer</application> display area, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
+msgstr "Za spremembo velikosti strani v področju prikaza <application>Xreader Pro pregledovalnika dokumentov</application> izberite <menuchoice><guimenu>Pogled</guimenu><guimenuitem>Prilagojeno zaslonu</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:337(para)
-msgid "To resize the <application>Xreader Document Viewer</application> window to have the same width and height as the screen, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></menuchoice>. To resize the <application>Xreader Document Viewer</application> window to the original size, click on the <guibutton>Exit Full Screen</guibutton> button."
-msgstr "Za spremembo velikosti okna <application>Xreader pregledovalnika dokumentov</application> na enako širino in višino kot zaslon izberite <menuchoice><guimenu>Pogled</guimenu><guimenuitem>Celozaslonski način</guimenuitem></menuchoice>. Za spremembo velikosti okna <application>Xreader pregledovalnika dokumentov</application> nazaj na izvorno velikost kliknite na gumb <guibutton>Zapusti celozaslonski način</guibutton>."
+msgid "To resize the <application>Xreader Pro Document Viewer</application> window to have the same width and height as the screen, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> window to the original size, click on the <guibutton>Exit Full Screen</guibutton> button."
+msgstr "Za spremembo velikosti okna <application>Xreader Pro pregledovalnika dokumentov</application> na enako širino in višino kot zaslon izberite <menuchoice><guimenu>Pogled</guimenu><guimenuitem>Celozaslonski način</guimenuitem></menuchoice>. Za spremembo velikosti okna <application>Xreader Pro pregledovalnika dokumentov</application> nazaj na izvorno velikost kliknite na gumb <guibutton>Zapusti celozaslonski način</guibutton>."
 
 #: C/xreader.xml:345(title)
 msgid "To View Pages or Document Structure"
@@ -456,8 +456,8 @@ msgid "Use this drop-down list to select the printer to which you want to print 
 msgstr "Uporabite ta spustni seznam za izbiro tiskalnika s katerim želite natisniti dokument."
 
 #: C/xreader.xml:443(para)
-msgid "The <guilabel>Create a PDF document</guilabel> option is not supported in this version of <application>Xreader Document Viewer</application>."
-msgstr "Možnost <guilabel>Ustvari dokument PDF</guilabel> v tej različici <application>Xreader pregledovalnika dokumentov</application> ni podprta."
+msgid "The <guilabel>Create a PDF document</guilabel> option is not supported in this version of <application>Xreader Pro Document Viewer</application>."
+msgstr "Možnost <guilabel>Ustvari dokument PDF</guilabel> v tej različici <application>Xreader Pro pregledovalnika dokumentov</application> ni podprta."
 
 #: C/xreader.xml:449(guilabel)
 msgid "Settings"
@@ -530,8 +530,8 @@ msgstr "Stanje"
 #: C/xreader.xml:511(para)
 #: C/xreader.xml:517(para)
 #: C/xreader.xml:523(para)
-msgid "This functionality is not supported in this version of <application>Xreader Document Viewer</application>."
-msgstr "Ta zmožnost v tej različici <application>Xreader pregledovalnika dokumentov</application> ni podprta."
+msgid "This functionality is not supported in this version of <application>Xreader Pro Document Viewer</application>."
+msgstr "Ta zmožnost v tej različici <application>Xreader Pro pregledovalnika dokumentov</application> ni podprta."
 
 #: C/xreader.xml:515(guilabel)
 msgid "Type"
@@ -638,8 +638,8 @@ msgid "Master password that allows others to perform additional actions, such as
 msgstr "Glavno geslo, ki drugim omogoča izvajanje dodatnih dejanj kot je tiskanje dokumenta."
 
 #: C/xreader.xml:616(para)
-msgid "When you try to open a password-protected document, <application>Xreader Document Viewer</application> displays a security dialog. Type either the user password or the master password in the <guilabel>Enter document password</guilabel> text box, then click <guibutton>Open Document</guibutton>."
-msgstr "Ko poskusite odpreti z geslom zaščiten dokument, <application>Xreader pregledovalnik dokumentov</application> prikaže pogovorno okno varnosti. V polje <guilabel>Vnesite geslo dokumenta</guilabel> vpišite uporabniško geslo ali glavno geslo in nato kliknite <guibutton>Odpri dokument</guibutton>. "
+msgid "When you try to open a password-protected document, <application>Xreader Pro Document Viewer</application> displays a security dialog. Type either the user password or the master password in the <guilabel>Enter document password</guilabel> text box, then click <guibutton>Open Document</guibutton>."
+msgstr "Ko poskusite odpreti z geslom zaščiten dokument, <application>Xreader Pro pregledovalnik dokumentov</application> prikaže pogovorno okno varnosti. V polje <guilabel>Vnesite geslo dokumenta</guilabel> vpišite uporabniško geslo ali glavno geslo in nato kliknite <guibutton>Odpri dokument</guibutton>. "
 
 #: C/xreader.xml:623(title)
 msgid "To Close a Document"
@@ -650,16 +650,16 @@ msgid "To close a document, choose <menuchoice><guimenu>File</guimenu><guimenuit
 msgstr "Za zaprtje dokumenta izberite <menuchoice><guimenu>Datoteka</guimenu><guimenuitem>Zapri</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:626(para)
-msgid "If the window is the last <application>Xreader Document Viewer</application> window open, the application exits."
-msgstr "V primeru da je okno zadnje odprto okno <application>Xreader pregledovalnika dokumentov</application> se program zapre."
+msgid "If the window is the last <application>Xreader Pro Document Viewer</application> window open, the application exits."
+msgstr "V primeru da je okno zadnje odprto okno <application>Xreader Pro pregledovalnika dokumentov</application> se program zapre."
 
 #: C/xreader.xml:635(title)
 msgid "Shortcuts"
 msgstr "Bližnjice"
 
 #: C/xreader.xml:636(para)
-msgid "Below is a list of all shortcuts present in <application>Xreader Document Viewer</application>:"
-msgstr "Spodaj je seznam vseh bližnjic prisotnih v <application>Xreader pregledovalniku dokumentov</application>:"
+msgid "Below is a list of all shortcuts present in <application>Xreader Pro Document Viewer</application>:"
+msgstr "Spodaj je seznam vseh bližnjic prisotnih v <application>Xreader Pro pregledovalniku dokumentov</application>:"
 
 #: C/xreader.xml:644(para)
 msgid "Shortcut"

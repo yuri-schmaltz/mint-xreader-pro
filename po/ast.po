@@ -408,7 +408,7 @@ msgstr ""
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
@@ -1225,37 +1225,37 @@ msgstr "Hebo un fallu al amosar l'aida"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader ye software llibre; pues redistribuyilu y/o camudalu baxo los "
+"Xreader Pro ye software llibre; pues redistribuyilu y/o camudalu baxo los "
 "términos de la Llicencia Pública Xeneral de GNU asoleyada pola Free Software "
 "Foundation; yá seya na so versión 2 ó (al so criteriu) nuna versión "
 "postrera.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader distribúise col enfotu de que seya útil, pero ENSIN GARANTÍA; ensin "
+"Xreader Pro distribúise col enfotu de que seya útil, pero ENSIN GARANTÍA; ensin "
 "nenguna garantía implícita de COMERCIALIDÁ o IDONEIDÁ PA UN FIN DETERMINÁU.  "
 "Adique la Llicencia General GNU pa más detáis.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1676,7 +1676,7 @@ msgstr ""
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Executar Xreader en mou de pantalla completa"
+msgstr "Executar Xreader Pro en mou de pantalla completa"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1688,11 +1688,11 @@ msgstr ""
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Executar Xreader en mou de presentación"
+msgstr "Executar Xreader Pro en mou de presentación"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Executar Xreader como un previsualizador"
+msgstr "Executar Xreader Pro como un previsualizador"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

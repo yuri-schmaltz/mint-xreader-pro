@@ -1,4 +1,4 @@
-# Finnish translation of Xreader manual.
+# Finnish translation of Xreader Pro manual.
 #
 # Copyright © Tommi Vainikainen, 2006.
 # Copyright © Flammie Pirinen, 2006. (merged from gucharmap translation)
@@ -128,16 +128,16 @@ msgstr ""
 "md5=7f4da5e33bcac35738a268d93d497d47"
 
 #: C/xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
-msgstr "Xreader-asiakirjakatselimen käyttöohje"
+msgid "Xreader Pro Document Viewer Manual"
+msgstr "Xreader Pro-asiakirjakatselimen käyttöohje"
 
 #: C/xreader.xml:27(para)
 msgid ""
-"The Xreader Document Viewer application enables you to view documents of "
+"The Xreader Pro Document Viewer application enables you to view documents of "
 "various formats like Portable Document Format (PDF) files and PostScript "
 "files"
 msgstr ""
-"Xreader-asiakirjakatselimella voi katsella mm. PDF- ja PostScript-muotoisia "
+"Xreader Pro-asiakirjakatselimella voi katsella mm. PDF- ja PostScript-muotoisia "
 "asiakirjoja"
 
 #: C/xreader.xml:33(year)
@@ -182,16 +182,16 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Xreader-asiakirjakatselimen käyttöohje v1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Xreader Pro-asiakirjakatselimen käyttöohje v1.0"
 
 #: C/xreader.xml:89(date)
 msgid "2005-04-06"
 msgstr "2005-04-06"
 
 #: C/xreader.xml:97(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
-msgstr "Tämä käyttöohje kuvaa Xreader-asiakirjakatselimen version 0.2"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
+msgstr "Tämä käyttöohje kuvaa Xreader Pro-asiakirjakatselimen version 0.2"
 
 #: C/xreader.xml:100(title)
 msgid "Feedback"
@@ -199,11 +199,11 @@ msgstr "Palaute"
 
 #: C/xreader.xml:101(para)
 msgid ""
-"To report a bug or make a suggestion regarding the Xreader Document Viewer "
+"To report a bug or make a suggestion regarding the Xreader Pro Document Viewer "
 "application or this manual, follow the directions in the <ulink url=\"help:"
 "mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
-"Ilmoittaaksesi viasta tai tehdäksesi ehdotuksen Xreader-asiakirjakatselimeen "
+"Ilmoittaaksesi viasta tai tehdäksesi ehdotuksen Xreader Pro-asiakirjakatselimeen "
 "taikka tähän käyttöohjeeseen liittyen, seuraa ohjeita <ulink url=\"help:"
 "mate-feedback\" type=\"help\">Maten palautesivulla</ulink>."
 
@@ -217,15 +217,15 @@ msgstr "Johdanto"
 
 #: C/xreader.xml:120(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> application enables "
+"The <application>Xreader Pro Document Viewer</application> application enables "
 "you to view documents of various formats like Portable Document Format (PDF) "
-"files and PostScript files. <application>Xreader Document Viewer</"
+"files and PostScript files. <application>Xreader Pro Document Viewer</"
 "application> follows Freedesktop.org and MATE standards to provide "
 "integration with Desktop Environment."
 msgstr ""
-"<application>Xreader-asiakirjakatselimella</application> voit katsoa "
+"<application>Xreader Pro-asiakirjakatselimella</application> voit katsoa "
 "asiakirjoja eri tiedostomuodoissa kuten Portable Document Format (PDF) ja "
-"PostScript. <application>Xreader-asiakirjakatselin</application> noudattaa "
+"PostScript. <application>Xreader Pro-asiakirjakatselin</application> noudattaa "
 "Freedesktop.org- ja Mate-standardeja ja sulautuu sen ansiosta luontevasti "
 "työpöytäympäristöön."
 
@@ -234,58 +234,58 @@ msgid "Getting Started"
 msgstr "Aloittaminen"
 
 #: C/xreader.xml:130(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "Xreader-asiakirjakatselimen käynnistäminen"
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "Xreader Pro-asiakirjakatselimen käynnistäminen"
 
 #: C/xreader.xml:131(para)
 msgid ""
-"<application>Xreader Document Viewer</application> starts when you open a "
+"<application>Xreader Pro Document Viewer</application> starts when you open a "
 "document such as a PDF or PostScript file."
 msgstr ""
-"<application>Xreader-asiakirjakatselin</application> käynnistyy kun avaat "
+"<application>Xreader Pro-asiakirjakatselin</application> käynnistyy kun avaat "
 "asiakirjan kuten PDF- tai PostScript-tiedoston."
 
 #: C/xreader.xml:132(para)
 msgid ""
-"Alternatively, you can start <application>Xreader Document Viewer</"
+"Alternatively, you can start <application>Xreader Pro Document Viewer</"
 "application> from the command line, with the command: <command>xreader</"
 "command>."
 msgstr ""
-"Vaihtoehtoisesti voit käynnistää <application>Xreader-asiakirjakatselimen</"
+"Vaihtoehtoisesti voit käynnistää <application>Xreader Pro-asiakirjakatselimen</"
 "application> komentoriviltä komennolla: <command>xreader</command>."
 
 #: C/xreader.xml:137(title)
-msgid "When You Start Xreader Document Viewer"
-msgstr "Kun käynnistät Xreader-asiakirjakatselimen"
+msgid "When You Start Xreader Pro Document Viewer"
+msgstr "Kun käynnistät Xreader Pro-asiakirjakatselimen"
 
 #: C/xreader.xml:138(para)
 msgid ""
-"When you start <application>Xreader Document Viewer</application>, the "
+"When you start <application>Xreader Pro Document Viewer</application>, the "
 "following window is displayed."
 msgstr ""
-"Kun käynnistät <application>Xreader-asiakirjakatselimen</application>, "
+"Kun käynnistät <application>Xreader Pro-asiakirjakatselimen</application>, "
 "seuraava ikkuna ilmaantuu näkyviin."
 
 #: C/xreader.xml:142(title)
-msgid "Xreader Document Viewer Window"
-msgstr "Xreader-asiakirjakatselimen ikkuna"
+msgid "Xreader Pro Document Viewer Window"
+msgstr "Xreader Pro-asiakirjakatselimen ikkuna"
 
 #: C/xreader.xml:149(phrase)
 msgid ""
-"Shows Xreader Document Viewer main window. Contains titlebar, menubar, "
+"Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, "
 "toolbar and display area. Menubar contains File, Edit, View, Go and Help "
 "menus."
 msgstr ""
-"Näkymä Xreader-asiakirjakatselimen pääikkunasta. Ikkuna sisältää "
+"Näkymä Xreader Pro-asiakirjakatselimen pääikkunasta. Ikkuna sisältää "
 "otsikkopalkin, valikkopalkin, työkalupalkin sekä näyttöalueen. Valikkopalkki "
 "sisältää Tiedosto-, Muokkaa-, Näkymä-, Mene- ja Ohje-valikot."
 
 #: C/xreader.xml:155(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> window contains the "
+"The <application>Xreader Pro Document Viewer</application> window contains the "
 "following elements:"
 msgstr ""
-"<application>Xreader-asiakirjakatselimen</application> ikkuna sisältää "
+"<application>Xreader Pro-asiakirjakatselimen</application> ikkuna sisältää "
 "seuraavat osat:"
 
 #: C/xreader.xml:159(term) C/xreader.xml:207(para)
@@ -295,10 +295,10 @@ msgstr "Valikkopalkki"
 #: C/xreader.xml:161(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
-"with documents in <application>Xreader Document Viewer</application>."
+"with documents in <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 "Valikkopalkin valikot sisältävät kaikki komennot, joita tarvitset "
-"asiakirjojen kanssa työskennellessä <application>Xreader-"
+"asiakirjojen kanssa työskennellessä <application>Xreader Pro-"
 "asiakirjakatselimella</application>."
 
 #: C/xreader.xml:165(term)
@@ -334,10 +334,10 @@ msgstr "Ikkuna"
 
 #: C/xreader.xml:198(para)
 msgid ""
-"Drag a file into the <application>Xreader Document Viewer</application> "
+"Drag a file into the <application>Xreader Pro Document Viewer</application> "
 "window from another application such as a file manager."
 msgstr ""
-"Vedä tiedosto <application>Xreader-asiakirjakatselimen</application> ikkunaan "
+"Vedä tiedosto <application>Xreader Pro-asiakirjakatselimen</application> ikkunaan "
 "toisesta sovelluksesta kuten tiedostonhallinnasta."
 
 #: C/xreader.xml:201(para)
@@ -362,14 +362,14 @@ msgstr "Paina <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>."
 
 #: C/xreader.xml:178(para)
 msgid ""
-"In <application>Xreader Document Viewer</application>, you can perform the "
+"In <application>Xreader Pro Document Viewer</application>, you can perform the "
 "same action in several ways. For example, you can open a document in the "
 "following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
 "colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></"
 "tgroup></informaltable>"
 msgstr ""
-"<application>Xreader-asiakirjakatselimessa</application> voit suorittaa "
+"<application>Xreader Pro-asiakirjakatselimessa</application> voit suorittaa "
 "samoja toimintoja useilla tavoilla. Esimerkiksi voit avata asiakirjan "
 "seuraavilla tavoin: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep="
 "\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
@@ -402,30 +402,30 @@ msgstr ""
 
 #: C/xreader.xml:244(para)
 msgid ""
-"Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</"
+"Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</"
 "application> displays the name of the document in the titlebar of the window."
 msgstr ""
-"Napsauta <guibutton>Avaa</guibutton>. <application>Xreader-asiakirjakatselin</"
+"Napsauta <guibutton>Avaa</guibutton>. <application>Xreader Pro-asiakirjakatselin</"
 "application> näyttää asiakirjan nimen ikkunan otsikkopalkissa."
 
 #: C/xreader.xml:249(para)
 msgid ""
 "To open another document, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. "
-"<application>Xreader Document Viewer</application> opens each file in a new "
+"<application>Xreader Pro Document Viewer</application> opens each file in a new "
 "window."
 msgstr ""
 "Avataksesi toisen asiakirjan valitse jälleen <menuchoice><guimenu>Tiedosto</"
-"guimenu><guimenuitem>Avaa</guimenuitem></menuchoice>. <application>Xreader-"
+"guimenu><guimenuitem>Avaa</guimenuitem></menuchoice>. <application>Xreader Pro-"
 "asiakirjakatselin</application> avaa jokaisen tiedoston uuteen ikkunaan."
 
 #: C/xreader.xml:252(para)
 msgid ""
-"If you try to open a document with format that <application>Xreader Document "
+"If you try to open a document with format that <application>Xreader Pro Document "
 "Viewer</application> does not recognize, the application displays an error "
 "message."
 msgstr ""
-"Mikäli yrität avata <application>Xreader-asiakirjakatselimella</application> "
+"Mikäli yrität avata <application>Xreader Pro-asiakirjakatselimella</application> "
 "asiakirjan, jonka tiedostomuotoa ei tunnisteta, sovellus näyttää "
 "virheilmoituksen."
 
@@ -515,9 +515,9 @@ msgstr "Sivukoon muuttaminen"
 #: C/xreader.xml:303(para)
 msgid ""
 "You can use the following methods to resize a page in the "
-"<application>Xreader Document Viewer</application> display area:"
+"<application>Xreader Pro Document Viewer</application> display area:"
 msgstr ""
-"Voit käyttää seuraavia tapoja sivukoon muuttamiseksi <application>Xreader-"
+"Voit käyttää seuraavia tapoja sivukoon muuttamiseksi <application>Xreader Pro-"
 "asiakirjakatselimen</application> näyttöalueessa:"
 
 #: C/xreader.xml:308(para)
@@ -538,37 +538,37 @@ msgstr ""
 
 #: C/xreader.xml:318(para)
 msgid ""
-"To resize a page to have the same width as the <application>Xreader Document "
+"To resize a page to have the same width as the <application>Xreader Pro Document "
 "Viewer</application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
 msgstr ""
-"Sivun leveys muutetaan samaksi kuin <application>Xreader-asiakirjakatselimen</"
+"Sivun leveys muutetaan samaksi kuin <application>Xreader Pro-asiakirjakatselimen</"
 "application> näyttöalue valitsemalla <menuchoice><guimenu>Näkymä</"
 "guimenu><guimenuitem>Sovita sivun leveys</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:323(para)
 msgid ""
-"To resize a page to fit within the <application>Xreader Document Viewer</"
+"To resize a page to fit within the <application>Xreader Pro Document Viewer</"
 "application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
 msgstr ""
-"Sivun koko sovitetaan <application>Xreader-asiakirjakatselimen</application> "
+"Sivun koko sovitetaan <application>Xreader Pro-asiakirjakatselimen</application> "
 "näyttöalueeseen valitsemalla <menuchoice><guimenu>Näkymä</"
 "guimenu><guimenuitem>Paras sovitus</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:328(para)
 msgid ""
-"To resize the <application>Xreader Document Viewer</application> window to "
+"To resize the <application>Xreader Pro Document Viewer</application> window to "
 "have the same width and height as the screen, choose "
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></"
-"menuchoice>. To resize the <application>Xreader Document Viewer</application> "
+"menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> "
 "window to the original size, click on the <guibutton>Exit Full Screen</"
 "guibutton> button."
 msgstr ""
-"Suurentaaksesi <application>Xreader-asiakirjakatselimen</application> ikkunan "
+"Suurentaaksesi <application>Xreader Pro-asiakirjakatselimen</application> ikkunan "
 "kokoa ruudun leveyteen ja korkeuteen valitse <menuchoice><guimenu>Näkymä</"
 "guimenu><guimenuitem>Kokoruutu</guimenuitem></menuchoice>. Palauttaaksesi "
-"<application>Xreader-asiakirjakatselimen</application> ikkunan alkuperäiseen "
+"<application>Xreader Pro-asiakirjakatselimen</application> ikkunan alkuperäiseen "
 "kokoon, napsauta <guibutton>Lopeta kokoruutu</guibutton> -painiketta."
 
 #: C/xreader.xml:336(title)
@@ -714,9 +714,9 @@ msgstr "Valitse alasvetoluettelosta käytettävä tulostin."
 #: C/xreader.xml:434(para)
 msgid ""
 "The <guilabel>Create a PDF document</guilabel> option is not supported in "
-"this version of <application>Xreader Document Viewer</application>."
+"this version of <application>Xreader Pro Document Viewer</application>."
 msgstr ""
-"Tämä versio <application>Xreader-asiakirjakatselimesta</application> ei tue "
+"Tämä versio <application>Xreader Pro-asiakirjakatselimesta</application> ei tue "
 "vaihtoehtoa <guilabel>Luo PDF-asiakirja</guilabel>."
 
 #: C/xreader.xml:440(guilabel)
@@ -806,10 +806,10 @@ msgstr "Tila"
 
 #: C/xreader.xml:502(para) C/xreader.xml:508(para) C/xreader.xml:514(para)
 msgid ""
-"This functionality is not supported in this version of <application>Xreader "
+"This functionality is not supported in this version of <application>Xreader Pro "
 "Document Viewer</application>."
 msgstr ""
-"Tämä versio <application>Xreader-asiakirjakatselimesta</application> ei tue "
+"Tämä versio <application>Xreader Pro-asiakirjakatselimesta</application> ei tue "
 "tätä toimintoa."
 
 #: C/xreader.xml:506(guilabel)
@@ -946,13 +946,13 @@ msgstr ""
 
 #: C/xreader.xml:607(para)
 msgid ""
-"When you try to open a password-protected document, <application>Xreader "
+"When you try to open a password-protected document, <application>Xreader Pro "
 "Document Viewer</application> displays a security dialog. Type either the "
 "user password or the master password in the <guilabel>Enter document "
 "password</guilabel> text box, then click <guibutton>Open Document</"
 "guibutton>."
 msgstr ""
-"Kun yrität avata salasanasuojatun asiakirjan, <application>Xreader-"
+"Kun yrität avata salasanasuojatun asiakirjan, <application>Xreader Pro-"
 "asiakirjakatselin</application> näyttää turvakyselyn. Syötä joko käyttäjä- "
 "tai pääsalasana <guilabel>Syötä salasana</guilabel> -tekstikenttään ja "
 "napsauta <guibutton>Avaa asiakirja</guibutton>."
@@ -971,10 +971,10 @@ msgstr ""
 
 #: C/xreader.xml:617(para)
 msgid ""
-"If the window is the last <application>Xreader Document Viewer</application> "
+"If the window is the last <application>Xreader Pro Document Viewer</application> "
 "window open, the application exits."
 msgstr ""
-"Mikäli ikkuna on viimeinen <application>Xreader-asiakirjakatselimen</"
+"Mikäli ikkuna on viimeinen <application>Xreader Pro-asiakirjakatselimen</"
 "application> avoinna oleva ikkuna, sovellus lopetetaan."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
@@ -986,8 +986,8 @@ msgstr ""
 "Flammie Pirinen <flammie@iki.fi>, 2006"
 
 #: C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.1"
-msgstr "Xreader-asiakirjakatselimen käyttöohje v1.1"
+msgid "Xreader Pro Document Viewer Manual V1.1"
+msgstr "Xreader Pro-asiakirjakatselimen käyttöohje v1.1"
 
 #: C/xreader.xml:89(date)
 msgid "2008-04-05"
@@ -1007,10 +1007,10 @@ msgstr "Pikanäppäimet"
 
 #: C/xreader.xml:636(para)
 msgid ""
-"Below is a list of all shortcuts present in <application>Xreader Document "
+"Below is a list of all shortcuts present in <application>Xreader Pro Document "
 "Viewer</application>:"
 msgstr ""
-"<application>Xreader-asiakirjakatselimessa</application> käytettävissä "
+"<application>Xreader Pro-asiakirjakatselimessa</application> käytettävissä "
 "olevat pikanäppäimet on lueteltu alla:"
 
 #: C/xreader.xml:644(para)
@@ -1237,8 +1237,8 @@ msgstr "F11"
 msgid "Toggle fullscreen mode"
 msgstr "Kokoruututila"
 
-#~ msgid "Xreader Document Viewer"
-#~ msgstr "Xreader-asiakirjakatselin"
+#~ msgid "Xreader Pro Document Viewer"
+#~ msgstr "Xreader Pro-asiakirjakatselin"
 
 #~ msgid "To Open a File"
 #~ msgstr "Tiedoston avaaminen"

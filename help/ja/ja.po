@@ -23,15 +23,15 @@ msgstr "@@image: 'figures/xreader_start_window.png'; "
 "md5=facb0196a444d6ffdc4fd53ea7ee632b"
 
 #: C/xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
-msgstr "Xreader ドキュメントビューア マニュアル"
+msgid "Xreader Pro Document Viewer Manual"
+msgstr "Xreader Pro ドキュメントビューア マニュアル"
 
 #: C/xreader.xml:27(para)
 msgid ""
-"The Xreader Document Viewer application enables you to view documents of "
+"The Xreader Pro Document Viewer application enables you to view documents of "
 "various formats like Portable Document Format (PDF) files and PostScript "
 "files"
-msgstr "Xreader ドキュメントビューアで PDF や PostScript のような様々な"
+msgstr "Xreader Pro ドキュメントビューアで PDF や PostScript のような様々な"
 "フォーマットのドキュメントを見ることができます。"
 
 #: C/xreader.xml:33(year)
@@ -173,16 +173,16 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Xreader ドキュメントビューア マニュアル v1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Xreader Pro ドキュメントビューア マニュアル v1.0"
 
 #: C/xreader.xml:89(date)
 msgid "2005-04-06"
 msgstr "2005-04-06"
 
 #: C/xreader.xml:97(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
-msgstr "このマニュアルは Xreader ドキュメントビューアの 0.2 について説明しています。"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
+msgstr "このマニュアルは Xreader Pro ドキュメントビューアの 0.2 について説明しています。"
 
 #: C/xreader.xml:100(title)
 msgid "Feedback"
@@ -190,17 +190,17 @@ msgstr "フィードバック"
 
 #: C/xreader.xml:101(para)
 msgid ""
-"To report a bug or make a suggestion regarding the Xreader Document Viewer "
+"To report a bug or make a suggestion regarding the Xreader Pro Document Viewer "
 "application or this manual, follow the directions in the <ulink url=\"help:"
 "mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
-msgstr "Xreader ドキュメントビューアまたはこのマニュアルの"
+msgstr "Xreader Pro ドキュメントビューアまたはこのマニュアルの"
 "バグや提案を報告して頂く場合、"
 "<ulink url=\"help:mate-feedback\" type=\"help\">MATE "
 "フィードバックページ</ulink> 内の指示に従って下さい。"
 
 #: C/xreader.xml:108(primary)
-msgid "Xreader Document Viewer"
-msgstr "Xreader ドキュメントビューア"
+msgid "Xreader Pro Document Viewer"
+msgstr "Xreader Pro ドキュメントビューア"
 
 #: C/xreader.xml:111(primary)
 msgid "xreader"
@@ -212,15 +212,15 @@ msgstr "概要"
 
 #: C/xreader.xml:120(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> application enables "
+"The <application>Xreader Pro Document Viewer</application> application enables "
 "you to view documents of various formats like Portable Document Format (PDF) "
-"files and PostScript files. <application>Xreader Document Viewer</"
+"files and PostScript files. <application>Xreader Pro Document Viewer</"
 "application> follows Freedesktop.org and MATE standards to provide "
 "integration with Desktop Environment."
-msgstr "<application>Xreader ドキュメントビューア</application> によって"
+msgstr "<application>Xreader Pro ドキュメントビューア</application> によって"
 "Portable Document Format (PDF) ファイルや PostScript ファイルのような"
 "様々な形式のドキュメントを見ることができます。"
-"<application>Xreader ドキュメントビューア</application> はデスクトップ"
+"<application>Xreader Pro ドキュメントビューア</application> はデスクトップ"
 "環境との統合を提供するために Freedesktop.org と MATE の標準に従っています。"
 
 #: C/xreader.xml:127(title)
@@ -228,55 +228,55 @@ msgid "Getting Started"
 msgstr "はじめに"
 
 #: C/xreader.xml:130(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "Xreader ドキュメントビューアの起動"
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "Xreader Pro ドキュメントビューアの起動"
 
 #: C/xreader.xml:131(para)
 msgid ""
-"<application>Xreader Document Viewer</application> starts when you open a "
+"<application>Xreader Pro Document Viewer</application> starts when you open a "
 "document such as a PDF or PostScript file."
 msgstr "PDF または PostScript ファイルのドキュメントを開くと "
-"<application>Xreader ドキュメントビューア</application> が起動します。"
+"<application>Xreader Pro ドキュメントビューア</application> が起動します。"
 
 #: C/xreader.xml:132(para)
 msgid ""
-"Alternatively, you can start <application>Xreader Document Viewer</"
+"Alternatively, you can start <application>Xreader Pro Document Viewer</"
 "application> from the command line, with the command: <command>xreader</"
 "command>."
 msgstr "あるいは、コマンド <command>xreader</command> をコマンド行で"
-"入力して <application>Xreader ドキュメントビューア</application> を"
+"入力して <application>Xreader Pro ドキュメントビューア</application> を"
 "起動することもできます。"
 
 #: C/xreader.xml:137(title)
-msgid "When You Start Xreader Document Viewer"
-msgstr "Xreader ドキュメントビューアのメインウィンドウ"
+msgid "When You Start Xreader Pro Document Viewer"
+msgstr "Xreader Pro ドキュメントビューアのメインウィンドウ"
 
 #: C/xreader.xml:138(para)
 msgid ""
-"When you start <application>Xreader Document Viewer</application>, the "
+"When you start <application>Xreader Pro Document Viewer</application>, the "
 "following window is displayed."
-msgstr "<application>Xreader ドキュメントビューア</application> を"
+msgstr "<application>Xreader Pro ドキュメントビューア</application> を"
 "起動すると、次のようなウィンドウが表示されます。"
 
 #: C/xreader.xml:142(title)
-msgid "Xreader Document Viewer Window"
-msgstr "Xreader ドキュメントビューアのメインウィンドウ"
+msgid "Xreader Pro Document Viewer Window"
+msgstr "Xreader Pro ドキュメントビューアのメインウィンドウ"
 
 #: C/xreader.xml:149(phrase)
 msgid ""
-"Shows Xreader Document Viewer main window. Contains titlebar, menubar, "
+"Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, "
 "toolbar and display area. Menubar contains File, Edit, View, Go and Help "
 "menus."
-msgstr "Xreader ドキュメントビューアのメインウィンドウです。"
+msgstr "Xreader Pro ドキュメントビューアのメインウィンドウです。"
 "タイトルバーとメニューバー、ツールバーそして表示領域があります。"
 "メニューバーにはファイル、編集、表示、移動そしてヘルプメニューが"
 "含まれています。"
 
 #: C/xreader.xml:155(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> window contains the "
+"The <application>Xreader Pro Document Viewer</application> window contains the "
 "following elements:"
-msgstr "<application>Xreader ドキュメントビューア</application> の"
+msgstr "<application>Xreader Pro ドキュメントビューア</application> の"
 "ウィンドウには次の要素が含まれています:"
 
 #: C/xreader.xml:159(term) C/xreader.xml:207(para)
@@ -286,8 +286,8 @@ msgstr "メニューバー"
 #: C/xreader.xml:161(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
-"with documents in <application>Xreader Document Viewer</application>."
-msgstr "<application>Xreader ドキュメントビューア</application> で"
+"with documents in <application>Xreader Pro Document Viewer</application>."
+msgstr "<application>Xreader Pro ドキュメントビューア</application> で"
 "ドキュメントについて作業するのに必要なすべてのコマンドのメニューが"
 "あります。"
 
@@ -324,10 +324,10 @@ msgstr "ウィンドウ"
 
 #: C/xreader.xml:198(para)
 msgid ""
-"Drag a file into the <application>Xreader Document Viewer</application> "
+"Drag a file into the <application>Xreader Pro Document Viewer</application> "
 "window from another application such as a file manager."
 msgstr "ファイルマネージャのような他のアプリケーションから "
-"<application>Xreader ドキュメントビューア</application> の"
+"<application>Xreader Pro ドキュメントビューア</application> の"
 "ウィンドウにファイルをドラッグ"
 
 #: C/xreader.xml:201(para)
@@ -351,13 +351,13 @@ msgstr "<keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo> を押す"
 
 #: C/xreader.xml:178(para)
 msgid ""
-"In <application>Xreader Document Viewer</application>, you can perform the "
+"In <application>Xreader Pro Document Viewer</application>, you can perform the "
 "same action in several ways. For example, you can open a document in the "
 "following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
 "colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></"
 "tgroup></informaltable>"
-msgstr "<application>Xreader ドキュメントビューア</application> では"
+msgstr "<application>Xreader Pro ドキュメントビューア</application> では"
 "同じアクションをいくつかの方法で実行できます。例えばドキュメントを"
 "開くには次のようにします: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
@@ -390,29 +390,29 @@ msgstr "<guilabel>ドキュメントを開く</guilabel> ダイアログで"
 
 #: C/xreader.xml:244(para)
 msgid ""
-"Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</"
+"Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</"
 "application> displays the name of the document in the titlebar of the window."
 msgstr "<guibutton>開く</guibutton> をクリックします。"
-"<application>Xreader ドキュメントビューア</application> の"
+"<application>Xreader Pro ドキュメントビューア</application> の"
 "ウィンドウのタイトルバーにドキュメントの名前が表示されます。"
 
 #: C/xreader.xml:249(para)
 msgid ""
 "To open another document, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. "
-"<application>Xreader Document Viewer</application> opens each file in a new "
+"<application>Xreader Pro Document Viewer</application> opens each file in a new "
 "window."
 msgstr "他のドキュメントを開くには再度 <menuchoice><guimenu>ファイル"
 "</guimenu><guimenuitem>開く</guimenuitem></menuchoice> を選択します。"
-"<application>Xreader ドキュメントビューア</application> は"
+"<application>Xreader Pro ドキュメントビューア</application> は"
 "新しいウィンドウでそれぞれのファイルを開きます。"
 
 #: C/xreader.xml:252(para)
 msgid ""
-"If you try to open a document with format that <application>Xreader Document "
+"If you try to open a document with format that <application>Xreader Pro Document "
 "Viewer</application> does not recognize, the application displays an error "
 "message."
-msgstr "<application>Xreader ドキュメントビューア</application> が"
+msgstr "<application>Xreader Pro ドキュメントビューア</application> が"
 "認識しないファイル形式のドキュメントを開こうとすると"
 "エラーメッセージが表示されます。"
 
@@ -494,8 +494,8 @@ msgstr "ページサイズの変更"
 #: C/xreader.xml:303(para)
 msgid ""
 "You can use the following methods to resize a page in the "
-"<application>Xreader Document Viewer</application> display area:"
-msgstr "<application>Xreader ドキュメントビューア</application> の"
+"<application>Xreader Pro Document Viewer</application> display area:"
+msgstr "<application>Xreader Pro ドキュメントビューア</application> の"
 "表示領域の中のページの大きさを変更するには次のようにします:"
 
 #: C/xreader.xml:308(para)
@@ -514,36 +514,36 @@ msgstr "ページサイズを小さくするには <menuchoice><guimenu>表示</
 
 #: C/xreader.xml:318(para)
 msgid ""
-"To resize a page to have the same width as the <application>Xreader Document "
+"To resize a page to have the same width as the <application>Xreader Pro Document "
 "Viewer</application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
-msgstr "ページをリサイズして <application>Xreader ドキュメントビューア"
+msgstr "ページをリサイズして <application>Xreader Pro ドキュメントビューア"
 "</application> の表示領域と同じ幅にするには <menuchoice><guimenu>表示</guimenu>"
 "<guimenuitem>幅に合わせる</guimenuitem></menuchoice> を選択します。"
 
 #: C/xreader.xml:323(para)
 msgid ""
-"To resize a page to fit within the <application>Xreader Document Viewer</"
+"To resize a page to fit within the <application>Xreader Pro Document Viewer</"
 "application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
-msgstr "ページをリサイズして <application>Xreader ドキュメントビューア"
+msgstr "ページをリサイズして <application>Xreader Pro ドキュメントビューア"
 "</application> の表示領域の大きさにちょうど合うようにするには "
 "<menuchoice><guimenu>表示</guimenu><guimenuitem>全体に合わせる</guimenuitem>"
 "</menuchoice> を選択します。"
 
 #: C/xreader.xml:328(para)
 msgid ""
-"To resize the <application>Xreader Document Viewer</application> window to "
+"To resize the <application>Xreader Pro Document Viewer</application> window to "
 "have the same width and height as the screen, choose "
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></"
-"menuchoice>. To resize the <application>Xreader Document Viewer</application> "
+"menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> "
 "window to the original size, click on the <guibutton>Exit Full Screen</"
 "guibutton> button."
-msgstr "<application>Xreader ドキュメントビューア</application> の"
+msgstr "<application>Xreader Pro ドキュメントビューア</application> の"
 "ウィンドウをリサイズして画面と同じ幅と高さにするには "
 "<menuchoice><guimenu>表示</guimenu><guimenuitem>フルスクリーン表示"
 "</guimenuitem></menuchoice> を選択します。"
-"<application>Xreader ドキュメントビューア</application> の"
+"<application>Xreader Pro ドキュメントビューア</application> の"
 "ウィンドウをリサイズして元の大きさに戻すには <guibutton>フルスクリーンの"
 "解除</guibutton> ボタンをクリックします。"
 
@@ -682,9 +682,9 @@ msgstr "ドキュメントを印刷するプリンタを選択するにはこの
 #: C/xreader.xml:434(para)
 msgid ""
 "The <guilabel>Create a PDF document</guilabel> option is not supported in "
-"this version of <application>Xreader Document Viewer</application>."
+"this version of <application>Xreader Pro Document Viewer</application>."
 msgstr "<guilabel>PDF ドキュメントの作成</guilabel> オプションは"
-"<application>Xreader ドキュメントビューア</application> の"
+"<application>Xreader Pro ドキュメントビューア</application> の"
 "このバージョンではサポートされていません。"
 
 #: C/xreader.xml:440(guilabel)
@@ -773,10 +773,10 @@ msgstr "状態"
 
 #: C/xreader.xml:502(para) C/xreader.xml:508(para) C/xreader.xml:514(para)
 msgid ""
-"This functionality is not supported in this version of <application>Xreader "
+"This functionality is not supported in this version of <application>Xreader Pro "
 "Document Viewer</application>."
 msgstr "この機能はこのバージョンの "
-"<application>Xreader ドキュメントビューア</application> では"
+"<application>Xreader Pro ドキュメントビューア</application> では"
 "サポートされていません。"
 
 # ?
@@ -911,13 +911,13 @@ msgstr "他者にドキュメントの印刷などの追加のアクションを
 
 #: C/xreader.xml:607(para)
 msgid ""
-"When you try to open a password-protected document, <application>Xreader "
+"When you try to open a password-protected document, <application>Xreader Pro "
 "Document Viewer</application> displays a security dialog. Type either the "
 "user password or the master password in the <guilabel>Enter document "
 "password</guilabel> text box, then click <guibutton>Open Document</"
 "guibutton>."
 msgstr "パスワードで保護されたドキュメントを開こうとすると "
-"<application>Xreader ドキュメントビューア</application> は"
+"<application>Xreader Pro ドキュメントビューア</application> は"
 "セキュリティダイアログを表示します。ユーザーパスワードまたは"
 "マスターパスワードを <guilabel>パスワードの入力</guilabel> "
 "テキストボックスに入力し、<guibutton>ドキュメントを開く</guibutton> を"
@@ -936,9 +936,9 @@ msgstr "ドキュメントを閉じるには <menuchoice><guimenu>ファイル</
 
 #: C/xreader.xml:617(para)
 msgid ""
-"If the window is the last <application>Xreader Document Viewer</application> "
+"If the window is the last <application>Xreader Pro Document Viewer</application> "
 "window open, the application exits."
-msgstr "ウィンドウが <application>Xreader ドキュメントビューア</application> の"
+msgstr "ウィンドウが <application>Xreader Pro ドキュメントビューア</application> の"
 "最後の残りのウィンドウならアプリケーションは終了します。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.

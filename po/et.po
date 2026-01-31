@@ -411,13 +411,13 @@ msgstr "Dokumendinäitaja"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader on lihtne mitmeleheküljeliste dokumentide kuvaja. See avab ja "
+"<p> Xreader Pro on lihtne mitmeleheküljeliste dokumentide kuvaja. See avab ja "
 "prindib PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS ja "
 "PDF faile, samuti koomiksiraamatu arhiivifaile. Kui dokument seda võimaldab, "
 "on võimalik otsida teksti, kopeerida seda lõikelauale, kasutada linke ja "
@@ -849,7 +849,7 @@ msgstr "Lisa esiletõstuga kommentaar"
 
 #: ../shell/ev-application.c:1018
 msgid "Running in presentation mode"
-msgstr "Xreaderi käivitamine esitlusrežiimis"
+msgstr "Xreader Proi käivitamine esitlusrežiimis"
 
 #: ../shell/ev-history.c:474 ../shell/ev-sidebar-bookmarks.c:314
 #: ../shell/ev-window.c:916 ../shell/ev-window.c:4781
@@ -1239,24 +1239,24 @@ msgstr "Abiteabe kuvamisel tekkis viga"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader on vaba tarkvara. Te võite seda edasi levitada ja/või muuta "
+"Xreader Pro on vaba tarkvara. Te võite seda edasi levitada ja/või muuta "
 "vastavalt GNU Üldise Avaliku Litsentsi tingimustele, nagu need on Vaba "
 "Tarkvara Fondi poolt avaldatud; kas Litsentsi versioon number 2 või "
 "(vastavalt Teie valikule) ükskõik milline hilisem versioon.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader'i levitatakse lootuses, et see on kasulik, kuid ILMA IGASUGUSE "
+"Xreader Pro'i levitatakse lootuses, et see on kasulik, kuid ILMA IGASUGUSE "
 "GARANTIITA; isegi KESKMISE/TAVALISE KVALITEEDIGARANTIITA või SOBIVUSELE "
 "TEATUD KINDLAKS EESMÄRGIKS. Üksikasjade suhtes vaata GNU Üldist Avalikku "
 "Litsentsi.\n"
@@ -1264,16 +1264,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Te peaks olema saanud GNU Üldise Avaliku Litsentsi koopia koos Xreader'ga; "
+"Te peaks olema saanud GNU Üldise Avaliku Litsentsi koopia koos Xreader Pro'ga; "
 "kui ei, siis võtke ühendust Free Software Foundation'iga, 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1469,7 +1469,7 @@ msgstr "_Sisu"
 
 #: ../shell/ev-window.c:6270
 msgid "_About"
-msgstr "_Xreader'ist lähemalt"
+msgstr "_Xreader Pro'ist lähemalt"
 
 #. Toolbar-only
 #: ../shell/ev-window.c:6276
@@ -1694,7 +1694,7 @@ msgstr "NUMBER"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Xreaderi käivitamine täisekraanirežiimis"
+msgstr "Xreader Proi käivitamine täisekraanirežiimis"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1706,11 +1706,11 @@ msgstr "SIHT"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Xreaderi käivitamine esitlusžiimis"
+msgstr "Xreader Proi käivitamine esitlusžiimis"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Xreader käivitamine eelvaatlusrežiimis"
+msgstr "Xreader Pro käivitamine eelvaatlusrežiimis"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

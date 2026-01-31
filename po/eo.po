@@ -411,13 +411,13 @@ msgstr "Rigardilo por dokumentoj"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader estas simpla mult-paĝa dokumentrigardilo. Ĝi povas vidigi kaj "
+"<p> Xreader Pro estas simpla mult-paĝa dokumentrigardilo. Ĝi povas vidigi kaj "
 "presi dosierojn kun aranĝo PostScript (PS), Enkapsuligita PostScript (EPS), "
 "DJVU, DVI, XPS kaj Portebla Dokument-Formo (PDF), same kiel komikslibraj "
 "arkivdosieroj. Se subtenata de la dokumento, ĝi ankaŭ permesas serĉadon pri "
@@ -1244,24 +1244,24 @@ msgstr "Okazis eraro dum montrado de helpo"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader estas libera programo; vi povas pludisdoni kopiojn kaj modifi ĝin "
+"Xreader Pro estas libera programo; vi povas pludisdoni kopiojn kaj modifi ĝin "
 "sub la kondiĉoj de la Ĝenerala Publika Rajtigilo de GNU, kiel tio estas "
 "eldonita de Free Software Foundation; aŭ versio 2 de la rajtigilo, aŭ (laŭ "
 "via elekto) iu sekva versio.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader estas disdonita kun la espero, ke ĝi estos utila, sed SEN IA AJN "
+"Xreader Pro estas disdonita kun la espero, ke ĝi estos utila, sed SEN IA AJN "
 "GARANTIO; eĉ sen la implicita garantio de KOMERCA KVALITO aŭ ADEKVATECO POR "
 "DIFINITA CELO. Vidu la Ĝeneralan Publikan Rajtigilon de GNU por pli da "
 "detaloj.\n"
@@ -1269,16 +1269,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "Vi devus esti ricevinta kopion de la Ĝenerala Publika Permesilo de GNU kun "
-"Xreader; se ne, skribu al Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; se ne, skribu al Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreadero"
+msgid "Xreader Pro"
+msgstr "Xreader Proo"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1715,7 +1715,7 @@ msgstr "Ruli Envince prezentaĵe"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Lanĉi Xreader kiel antaŭvidilo"
+msgstr "Lanĉi Xreader Pro kiel antaŭvidilo"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

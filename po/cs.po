@@ -427,13 +427,13 @@ msgstr "Prohlížeč dokumentů"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader je jednoduchý prohlížeč vícestránkových dokumentů. Zobrazuje a "
+"<p> Xreader Pro je jednoduchý prohlížeč vícestránkových dokumentů. Zobrazuje a "
 "tiskne formáty PostStript (PS), Encapsulated PostScript (EPS), DJVU, DVI, "
 "XPS, Portable Document Format (PDF) a soubory knih komixů. Pokud je "
 "podporováno dokumentem, je možné vyhledávat, kopírovat do schránky, používat "
@@ -1258,31 +1258,31 @@ msgstr "Při zobrazování nápovědy se vyskytla chyba"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader je svobodný software; můžete ho šířit a/nebo pozměňovat podle "
+"Xreader Pro je svobodný software; můžete ho šířit a/nebo pozměňovat podle "
 "ustanovení GNU General Public License, vydávané Free Software Foundation a "
 "to buď verze 2 této licence anebo (podle vlastního uvážení) kterékoliv "
 "pozdější verze.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader je rozšiřováno v naději, že bude užitečné, avšak BEZ JAKÉKOLIV "
+"Xreader Pro je rozšiřováno v naději, že bude užitečné, avšak BEZ JAKÉKOLIV "
 "ZÁRUKY; neposkytují se ani odvozené záruky PRODEJNOSTI anebo VHODNOSTI PRO "
 "URČITÝ ÚČEL. Další podrobnosti hledejte v GNU General Public License.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "Kopii GNU General Public License  byste měli obdržet spolu s touto aplikací; "
@@ -1290,8 +1290,8 @@ msgstr ""
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1713,7 +1713,7 @@ msgstr "ČÍSLO"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Spustit Xreader v celoobrazovkovém režimu"
+msgstr "Spustit Xreader Pro v celoobrazovkovém režimu"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1725,11 +1725,11 @@ msgstr "CÍL"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Spustit Xreader v prezentačním režimu"
+msgstr "Spustit Xreader Pro v prezentačním režimu"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Spustit Xreader v náhledovém režimu"
+msgstr "Spustit Xreader Pro v náhledovém režimu"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

@@ -21,12 +21,12 @@ msgid "@@image: 'figures/xreader_start_window.png'; md5=7f4da5e33bcac35738a268d9
 msgstr "@@image: 'figures/xreader_start_window.png'; md5=7f4da5e33bcac35738a268d93d497d47"
 
 #: C/xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
-msgstr "Τεκμηρίωση εφαρμογής προβολής εγγράφων Xreader"
+msgid "Xreader Pro Document Viewer Manual"
+msgstr "Τεκμηρίωση εφαρμογής προβολής εγγράφων Xreader Pro"
 
 #: C/xreader.xml:27(para)
-msgid "The Xreader Document Viewer application enables you to view documents of various formats like Portable Document Format (PDF) files and PostScript files"
-msgstr "Η εφαρμογή Προβολής εγγράφων Xreader σάς επιτρέπει να διαβάσετε έγγραφα διαφόρων μορφών, όπως αρχεία τύπου Portable Document Format (PDF) ή PostScript."
+msgid "The Xreader Pro Document Viewer application enables you to view documents of various formats like Portable Document Format (PDF) files and PostScript files"
+msgstr "Η εφαρμογή Προβολής εγγράφων Xreader Pro σάς επιτρέπει να διαβάσετε έγγραφα διαφόρων μορφών, όπως αρχεία τύπου Portable Document Format (PDF) ή PostScript."
 
 #: C/xreader.xml:33(year)
 msgid "2005"
@@ -98,8 +98,8 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.1"
-msgstr "Εγχειρίδιο της Προβολής εγγράφων Xreader έκδοσης V1.1"
+msgid "Xreader Pro Document Viewer Manual V1.1"
+msgstr "Εγχειρίδιο της Προβολής εγγράφων Xreader Pro έκδοσης V1.1"
 
 #: C/xreader.xml:89(date)
 msgid "2008-04-05"
@@ -114,28 +114,28 @@ msgid "Claude Paroz"
 msgstr "Claude Paroz"
 
 #: C/xreader.xml:97(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Τεκμηρίωση Προβολής εγγράφων Xreader Έκδοση 1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Τεκμηρίωση Προβολής εγγράφων Xreader Pro Έκδοση 1.0"
 
 #: C/xreader.xml:98(date)
 msgid "2005-04-06"
 msgstr "2005-04-06"
 
 #: C/xreader.xml:106(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
-msgstr "Η τεκμηρίωση αυτή περιγράφει την έκδοση 0.2 της Προβολής εγγράφων Xreader"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
+msgstr "Η τεκμηρίωση αυτή περιγράφει την έκδοση 0.2 της Προβολής εγγράφων Xreader Pro"
 
 #: C/xreader.xml:109(title)
 msgid "Feedback"
 msgstr "Ανάδραση"
 
 #: C/xreader.xml:110(para)
-msgid "To report a bug or make a suggestion regarding the Xreader Document Viewer application or this manual, follow the directions in the <ulink url=\"help:mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
-msgstr "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την Προβολή εγγράφων Xreader ή αυτή την τεκμηρίωση, ακολουθήστε τις οδηγίες στη σελίδα <ulink url=\"help:mate-feedback\" type=\"help\">ανάδρασης MATE </ulink>."
+msgid "To report a bug or make a suggestion regarding the Xreader Pro Document Viewer application or this manual, follow the directions in the <ulink url=\"help:mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
+msgstr "Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την Προβολή εγγράφων Xreader Pro ή αυτή την τεκμηρίωση, ακολουθήστε τις οδηγίες στη σελίδα <ulink url=\"help:mate-feedback\" type=\"help\">ανάδρασης MATE </ulink>."
 
 #: C/xreader.xml:117(primary)
-msgid "Xreader Document Viewer"
-msgstr "Προβολή εγγράφων Xreader"
+msgid "Xreader Pro Document Viewer"
+msgstr "Προβολή εγγράφων Xreader Pro"
 
 #: C/xreader.xml:120(primary)
 msgid "xreader"
@@ -146,44 +146,44 @@ msgid "Introduction"
 msgstr "Εισαγωγή"
 
 #: C/xreader.xml:129(para)
-msgid "The <application>Xreader Document Viewer</application> application enables you to view documents of various formats like Portable Document Format (PDF) files and PostScript files. <application>Xreader Document Viewer</application> follows Freedesktop.org and MATE standards to provide integration with Desktop Environment."
-msgstr "Η <application>Προβολή εγγράφων Xreader</application> σας επιτρέπει να διαβάσετε έγγραφα διαφόρων μορφών, όπως αρχεία τύπου Portable Document Format (PDF) ή PostScript. Η <application>Προβολή εγγράφων Xreader</application> ακολουθεί τις προδιαγραφές του Freedesktop.org και MATE για να την ενσωμάτωσή του με το περιβάλλον εργασίας."
+msgid "The <application>Xreader Pro Document Viewer</application> application enables you to view documents of various formats like Portable Document Format (PDF) files and PostScript files. <application>Xreader Pro Document Viewer</application> follows Freedesktop.org and MATE standards to provide integration with Desktop Environment."
+msgstr "Η <application>Προβολή εγγράφων Xreader Pro</application> σας επιτρέπει να διαβάσετε έγγραφα διαφόρων μορφών, όπως αρχεία τύπου Portable Document Format (PDF) ή PostScript. Η <application>Προβολή εγγράφων Xreader Pro</application> ακολουθεί τις προδιαγραφές του Freedesktop.org και MATE για να την ενσωμάτωσή του με το περιβάλλον εργασίας."
 
 #: C/xreader.xml:136(title)
 msgid "Getting Started"
 msgstr "Ξεκινώντας"
 
 #: C/xreader.xml:139(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "Για να ξεκινήσετε την Προβολή εγγράφων Xreader"
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "Για να ξεκινήσετε την Προβολή εγγράφων Xreader Pro"
 
 #: C/xreader.xml:140(para)
-msgid "<application>Xreader Document Viewer</application> starts when you open a document such as a PDF or PostScript file."
-msgstr "Η <application>Προβολή εγγράφων Xreader </application> ξεκινάει όταν ανοίγετε ένα έγγραφο όπως π.χ. κάποιο αρχείο PDF ή Postscript."
+msgid "<application>Xreader Pro Document Viewer</application> starts when you open a document such as a PDF or PostScript file."
+msgstr "Η <application>Προβολή εγγράφων Xreader Pro </application> ξεκινάει όταν ανοίγετε ένα έγγραφο όπως π.χ. κάποιο αρχείο PDF ή Postscript."
 
 #: C/xreader.xml:141(para)
-msgid "Alternatively, you can start <application>Xreader Document Viewer</application> from the command line, with the command: <command>xreader</command>."
-msgstr "Εναλλακτικά μπορείτε να εκκινήσετε το <application>Προβολή εγγράφων Xreader</application>από τη γραμμή εντολών, με την εντολή <command>xreader</command>."
+msgid "Alternatively, you can start <application>Xreader Pro Document Viewer</application> from the command line, with the command: <command>xreader</command>."
+msgstr "Εναλλακτικά μπορείτε να εκκινήσετε το <application>Προβολή εγγράφων Xreader Pro</application>από τη γραμμή εντολών, με την εντολή <command>xreader</command>."
 
 #: C/xreader.xml:146(title)
-msgid "When You Start Xreader Document Viewer"
-msgstr "Όταν ξεκινήσετε το Xreader"
+msgid "When You Start Xreader Pro Document Viewer"
+msgstr "Όταν ξεκινήσετε το Xreader Pro"
 
 #: C/xreader.xml:147(para)
-msgid "When you start <application>Xreader Document Viewer</application>, the following window is displayed."
-msgstr "Όταν ξεκινήσετε την <application>Προβολή εγγράφων Xreader</application>, θα εμφανιστεί το παρακάτω παράθυρο."
+msgid "When you start <application>Xreader Pro Document Viewer</application>, the following window is displayed."
+msgstr "Όταν ξεκινήσετε την <application>Προβολή εγγράφων Xreader Pro</application>, θα εμφανιστεί το παρακάτω παράθυρο."
 
 #: C/xreader.xml:151(title)
-msgid "Xreader Document Viewer Window"
-msgstr "Παράθυρο Προβολή εγγράφων Xreader"
+msgid "Xreader Pro Document Viewer Window"
+msgstr "Παράθυρο Προβολή εγγράφων Xreader Pro"
 
 #: C/xreader.xml:158(phrase)
-msgid "Shows Xreader Document Viewer main window. Contains titlebar, menubar, toolbar and display area. Menubar contains File, Edit, View, Go and Help menus."
-msgstr "Παρουσιάζεται το κυρίως παράθυρο του Xreader. Περιέχει τη γραμμή τίτλου, τη γραμμή μενού, την εργαλειοθήκη και την περιοχή εμφάνισης κειμένου. Η γραμμή μενού περιλαμβάνει τις επιλογές Αρχείο, Επεξεργασία, Προβολή, Μετάβαση και Βοήθεια. "
+msgid "Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, toolbar and display area. Menubar contains File, Edit, View, Go and Help menus."
+msgstr "Παρουσιάζεται το κυρίως παράθυρο του Xreader Pro. Περιέχει τη γραμμή τίτλου, τη γραμμή μενού, την εργαλειοθήκη και την περιοχή εμφάνισης κειμένου. Η γραμμή μενού περιλαμβάνει τις επιλογές Αρχείο, Επεξεργασία, Προβολή, Μετάβαση και Βοήθεια. "
 
 #: C/xreader.xml:164(para)
-msgid "The <application>Xreader Document Viewer</application> window contains the following elements:"
-msgstr "Το παράθυρο του <application>Xreader</application> περιλαμβάνει τα παρακάτω στοιχεία:"
+msgid "The <application>Xreader Pro Document Viewer</application> window contains the following elements:"
+msgstr "Το παράθυρο του <application>Xreader Pro</application> περιλαμβάνει τα παρακάτω στοιχεία:"
 
 #: C/xreader.xml:168(term)
 #: C/xreader.xml:216(para)
@@ -191,8 +191,8 @@ msgid "Menubar"
 msgstr "Γραμμή μενού"
 
 #: C/xreader.xml:170(para)
-msgid "The menus on the menubar contain all of the commands that you need to work with documents in <application>Xreader Document Viewer</application>."
-msgstr "Τα στοιχεία στη γραμμή μενού έχουν όλες τις εντολές που θα χρειαστείτε για εργασία με έγγραφα στο <application>Xreader Προβολή εγγράφων</application>"
+msgid "The menus on the menubar contain all of the commands that you need to work with documents in <application>Xreader Pro Document Viewer</application>."
+msgstr "Τα στοιχεία στη γραμμή μενού έχουν όλες τις εντολές που θα χρειαστείτε για εργασία με έγγραφα στο <application>Xreader Pro Προβολή εγγράφων</application>"
 
 #: C/xreader.xml:174(term)
 msgid "Toolbar"
@@ -224,8 +224,8 @@ msgid "Window"
 msgstr "Παράθυρο"
 
 #: C/xreader.xml:207(para)
-msgid "Drag a file into the <application>Xreader Document Viewer</application> window from another application such as a file manager."
-msgstr "Σύρτε ένα αρχείο στο <application>Xreader Προβολή εγγράφων</application> από άλλη εφαρμογή όπως π.χ. τον διαχειριστή αρχείων. "
+msgid "Drag a file into the <application>Xreader Pro Document Viewer</application> window from another application such as a file manager."
+msgstr "Σύρτε ένα αρχείο στο <application>Xreader Pro Προβολή εγγράφων</application> από άλλη εφαρμογή όπως π.χ. τον διαχειριστή αρχείων. "
 
 #: C/xreader.xml:210(para)
 msgid "Double-click on the file name in the file manager"
@@ -245,8 +245,8 @@ msgid "Press <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>."
 msgstr "Πατήστε <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>."
 
 #: C/xreader.xml:187(para)
-msgid "In <application>Xreader Document Viewer</application>, you can perform the same action in several ways. For example, you can open a document in the following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></tgroup></informaltable>"
-msgstr "Στον <application>Προβολή εγγράφων Xreader</application>, μπορείτε να πραγματοποιήσετε την ίδια ενέργεια με διάφορους τρόπους. Για παράδειγμα, μπορείτε να ανοίξετε ένα έγγραφο με τους ακόλουθους τρόπους: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></tgroup></informaltable>"
+msgid "In <application>Xreader Pro Document Viewer</application>, you can perform the same action in several ways. For example, you can open a document in the following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></tgroup></informaltable>"
+msgstr "Στον <application>Προβολή εγγράφων Xreader Pro</application>, μπορείτε να πραγματοποιήσετε την ίδια ενέργεια με διάφορους τρόπους. Για παράδειγμα, μπορείτε να ανοίξετε ένα έγγραφο με τους ακόλουθους τρόπους: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></tgroup></informaltable>"
 
 #: C/xreader.xml:228(para)
 msgid "This manual documents functionality from the menubar."
@@ -269,16 +269,16 @@ msgid "In the <guilabel>Open Document</guilabel> dialog, select the file you wan
 msgstr "Στο παράθυρο διαλόγου <guilabel>Άνοιγμα εγγράφου</guilabel>, επιλέξτε το αρχείο που επιθυμείτε να ανοίξετε."
 
 #: C/xreader.xml:253(para)
-msgid "Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</application> displays the name of the document in the titlebar of the window."
-msgstr "Κάντε κλικ στο <guibutton>Άνοιγμα αρχείου</guibutton>. Ο <application>Xreader Προβολή εγγράφων</application> δείχνει το όνομα του εγγράφου στην μπάρα τίτλου του παραθύρου."
+msgid "Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</application> displays the name of the document in the titlebar of the window."
+msgstr "Κάντε κλικ στο <guibutton>Άνοιγμα αρχείου</guibutton>. Ο <application>Xreader Pro Προβολή εγγράφων</application> δείχνει το όνομα του εγγράφου στην μπάρα τίτλου του παραθύρου."
 
 #: C/xreader.xml:258(para)
-msgid "To open another document, choose <menuchoice><guimenu>File</guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. <application>Xreader Document Viewer</application> opens each file in a new window."
-msgstr "Για να ανοίξετε κάποιο άλλο κείμενο, επιλέξτε ξανά <menuchoice><guimenu>Αρχείο</guimenu><guimenuitem>Άνοιγμα</guimenuitem></menuchoice>. Ο <application>Xreader Προβολή εγγράφων</application> ανοίγει κάθε αρχείο σε νέο παράθυρο."
+msgid "To open another document, choose <menuchoice><guimenu>File</guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. <application>Xreader Pro Document Viewer</application> opens each file in a new window."
+msgstr "Για να ανοίξετε κάποιο άλλο κείμενο, επιλέξτε ξανά <menuchoice><guimenu>Αρχείο</guimenu><guimenuitem>Άνοιγμα</guimenuitem></menuchoice>. Ο <application>Xreader Pro Προβολή εγγράφων</application> ανοίγει κάθε αρχείο σε νέο παράθυρο."
 
 #: C/xreader.xml:261(para)
-msgid "If you try to open a document with format that <application>Xreader Document Viewer</application> does not recognize, the application displays an error message."
-msgstr "Αν προσπαθήσετε να ανοίξετε ένα έγγραφο σε μορφή που ο <application>Xreader Προβολή εγγράφων</application> δεν αναγνωρίζει, η εφαρμογή θα εμφανίσει μήνυμα λάθους."
+msgid "If you try to open a document with format that <application>Xreader Pro Document Viewer</application> does not recognize, the application displays an error message."
+msgstr "Αν προσπαθήσετε να ανοίξετε ένα έγγραφο σε μορφή που ο <application>Xreader Pro Προβολή εγγράφων</application> δεν αναγνωρίζει, η εφαρμογή θα εμφανίσει μήνυμα λάθους."
 
 #: C/xreader.xml:267(title)
 msgid "To Navigate Through a Document"
@@ -333,8 +333,8 @@ msgid "To Change the Page Size"
 msgstr "Για να αλλάξετε το μέγεθος της σελίδας"
 
 #: C/xreader.xml:312(para)
-msgid "You can use the following methods to resize a page in the <application>Xreader Document Viewer</application> display area:"
-msgstr "Μπορείτε να χρησιμοποιήσετε τις παρακάτω μεθόδους για να αλλάξετε το μέγεθος της σελίδας στον <application>Xreader Προβολή εγγράφων</application> "
+msgid "You can use the following methods to resize a page in the <application>Xreader Pro Document Viewer</application> display area:"
+msgstr "Μπορείτε να χρησιμοποιήσετε τις παρακάτω μεθόδους για να αλλάξετε το μέγεθος της σελίδας στον <application>Xreader Pro Προβολή εγγράφων</application> "
 
 #: C/xreader.xml:317(para)
 msgid "To increase the page size, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Zoom In</guimenuitem></menuchoice>."
@@ -345,16 +345,16 @@ msgid "To decrease the page size, choose <menuchoice><guimenu>View</guimenu><gui
 msgstr "Για να μειώσετε το μέγεθος σελίδας, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Σμίκρυνση</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:327(para)
-msgid "To resize a page to have the same width as the <application>Xreader Document Viewer</application> display area, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
-msgstr "Για να αλλάξετε το μέγεθος της σελίδας ώστε να έχει το ίδιο πλάτος με την περιοχή κειμένου του <application>Xreader Προβολή εγγράφων</application>, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Ταίριασμα στο πλάτος της σελίδας</guimenuitem></menuchoice>."
+msgid "To resize a page to have the same width as the <application>Xreader Pro Document Viewer</application> display area, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
+msgstr "Για να αλλάξετε το μέγεθος της σελίδας ώστε να έχει το ίδιο πλάτος με την περιοχή κειμένου του <application>Xreader Pro Προβολή εγγράφων</application>, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Ταίριασμα στο πλάτος της σελίδας</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:332(para)
-msgid "To resize a page to fit within the <application>Xreader Document Viewer</application> display area, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
-msgstr "Για να αλλάξετε το μέγεθος της σελίδας ώστε να ταιριάζει με την περιοχή κειμένου του <application>Xreader Προβολή εγγράφων</application>, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Καλύτερο Ταίριασμα</guimenuitem></menuchoice>."
+msgid "To resize a page to fit within the <application>Xreader Pro Document Viewer</application> display area, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
+msgstr "Για να αλλάξετε το μέγεθος της σελίδας ώστε να ταιριάζει με την περιοχή κειμένου του <application>Xreader Pro Προβολή εγγράφων</application>, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Καλύτερο Ταίριασμα</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:337(para)
-msgid "To resize the <application>Xreader Document Viewer</application> window to have the same width and height as the screen, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></menuchoice>. To resize the <application>Xreader Document Viewer</application> window to the original size, click on the <guibutton>Exit Full Screen</guibutton> button."
-msgstr "Για να αλλάξετε το μέγεθος παραθύρου της <application>Προβολής εγγράφων Xreader</application> ώστε να έχει το ίδιο μήκος και πλάτος όσο η οθόνη, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Πλήρης οθόνη</guimenuitem></menuchoice>. Για να επαναφέρετε το παράθυρο του <application>Xreader Προβολή εγγράφων</application> στο αρχικό του μέγεθος, κάντε κλικ στο κουμπί με την κεφαλίδα Έξοδος Πλήρης Οθόνης."
+msgid "To resize the <application>Xreader Pro Document Viewer</application> window to have the same width and height as the screen, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> window to the original size, click on the <guibutton>Exit Full Screen</guibutton> button."
+msgstr "Για να αλλάξετε το μέγεθος παραθύρου της <application>Προβολής εγγράφων Xreader Pro</application> ώστε να έχει το ίδιο μήκος και πλάτος όσο η οθόνη, επιλέξτε <menuchoice><guimenu>Προβολή</guimenu><guimenuitem>Πλήρης οθόνη</guimenuitem></menuchoice>. Για να επαναφέρετε το παράθυρο του <application>Xreader Pro Προβολή εγγράφων</application> στο αρχικό του μέγεθος, κάντε κλικ στο κουμπί με την κεφαλίδα Έξοδος Πλήρης Οθόνης."
 
 #: C/xreader.xml:345(title)
 msgid "To View Pages or Document Structure"
@@ -453,8 +453,8 @@ msgid "Use this drop-down list to select the printer to which you want to print 
 msgstr "Χρησιμοποιήστε την λίστα για να διαλέξετε τον εκτυπωτή στον οποίο θα τυπωθεί το έγγραφο."
 
 #: C/xreader.xml:443(para)
-msgid "The <guilabel>Create a PDF document</guilabel> option is not supported in this version of <application>Xreader Document Viewer</application>."
-msgstr "Η επιλογή <guilabel>Δημιουργία εγγράφου PDF</guilabel> δεν υποστηρίζεται σε αυτή την έκδοση του <application>Xreader Προβολή εγγράφων</application>."
+msgid "The <guilabel>Create a PDF document</guilabel> option is not supported in this version of <application>Xreader Pro Document Viewer</application>."
+msgstr "Η επιλογή <guilabel>Δημιουργία εγγράφου PDF</guilabel> δεν υποστηρίζεται σε αυτή την έκδοση του <application>Xreader Pro Προβολή εγγράφων</application>."
 
 #: C/xreader.xml:449(guilabel)
 msgid "Settings"
@@ -527,8 +527,8 @@ msgstr "State"
 #: C/xreader.xml:511(para)
 #: C/xreader.xml:517(para)
 #: C/xreader.xml:523(para)
-msgid "This functionality is not supported in this version of <application>Xreader Document Viewer</application>."
-msgstr "Αυτή η λειτουργία δεν υποστηρίζεται σε αυτή την έκδοση του <application>Xreader Προβολή εγγράφων</application>."
+msgid "This functionality is not supported in this version of <application>Xreader Pro Document Viewer</application>."
+msgstr "Αυτή η λειτουργία δεν υποστηρίζεται σε αυτή την έκδοση του <application>Xreader Pro Προβολή εγγράφων</application>."
 
 #: C/xreader.xml:515(guilabel)
 msgid "Type"
@@ -635,8 +635,8 @@ msgid "Master password that allows others to perform additional actions, such as
 msgstr "Κύριος κωδικός που επιτρέπει σε άλλους να εκτελέσουν και άλλες λειτουργίες όπως εκτύπωση του εγγράφου."
 
 #: C/xreader.xml:616(para)
-msgid "When you try to open a password-protected document, <application>Xreader Document Viewer</application> displays a security dialog. Type either the user password or the master password in the <guilabel>Enter document password</guilabel> text box, then click <guibutton>Open Document</guibutton>."
-msgstr "Όταν προσπαθήσετε να ανοίξετε ένα έγγραφο που προστατεύεται με κωδικό, ο <application>Xreader Προβολή εγγράφων</application> εμφανίζει ένα διάλογο ασφαλείας. Δώστε είτε τον κωδικό χρήστη ή τον κύριο κωδικό στο κουτί <guilabel>Εισαγωγή κωδικού εγγράφου</guilabel> και μετά κάντε κλικ <guibutton>Άνοιγμα Εγγράφου</guibutton>."
+msgid "When you try to open a password-protected document, <application>Xreader Pro Document Viewer</application> displays a security dialog. Type either the user password or the master password in the <guilabel>Enter document password</guilabel> text box, then click <guibutton>Open Document</guibutton>."
+msgstr "Όταν προσπαθήσετε να ανοίξετε ένα έγγραφο που προστατεύεται με κωδικό, ο <application>Xreader Pro Προβολή εγγράφων</application> εμφανίζει ένα διάλογο ασφαλείας. Δώστε είτε τον κωδικό χρήστη ή τον κύριο κωδικό στο κουτί <guilabel>Εισαγωγή κωδικού εγγράφου</guilabel> και μετά κάντε κλικ <guibutton>Άνοιγμα Εγγράφου</guibutton>."
 
 #: C/xreader.xml:623(title)
 msgid "To Close a Document"
@@ -647,16 +647,16 @@ msgid "To close a document, choose <menuchoice><guimenu>File</guimenu><guimenuit
 msgstr "Για να κλείσετε ένα έγγραφο, επιλέξτε <menuchoice><guimenu>Αρχείο</guimenu><guimenuitem>Κλείσιμο</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:626(para)
-msgid "If the window is the last <application>Xreader Document Viewer</application> window open, the application exits."
-msgstr "Εάν το παράθυρο είναι το τελευταίο ανοιχτό παράθυρο του <application>Προβολής εγγράφων Xreader</application>, η εφαρμογή θα κλείσει."
+msgid "If the window is the last <application>Xreader Pro Document Viewer</application> window open, the application exits."
+msgstr "Εάν το παράθυρο είναι το τελευταίο ανοιχτό παράθυρο του <application>Προβολής εγγράφων Xreader Pro</application>, η εφαρμογή θα κλείσει."
 
 #: C/xreader.xml:635(title)
 msgid "Shortcuts"
 msgstr "Συντομεύσεις"
 
 #: C/xreader.xml:636(para)
-msgid "Below is a list of all shortcuts present in <application>Xreader Document Viewer</application>:"
-msgstr "Παρακάτω μπορείτε να δείτε μία λίστα με όλες τις συντομεύσεις που παρουσιάζονται στην <application>Προβολή εγγράφων Xreader</application>:"
+msgid "Below is a list of all shortcuts present in <application>Xreader Pro Document Viewer</application>:"
+msgstr "Παρακάτω μπορείτε να δείτε μία λίστα με όλες τις συντομεύσεις που παρουσιάζονται στην <application>Προβολή εγγράφων Xreader Pro</application>:"
 
 #: C/xreader.xml:644(para)
 msgid "Shortcut"
@@ -904,40 +904,40 @@ msgstr "Στυλιανός Παπαναστασίου <stelios@dcs.gla.ac.uk>, 2
 
 #~ msgid "To Open a File"
 #~ msgstr "Για να ανοίξετε ένα αρχείο"
-#~ msgid "User manual for the Xreader Document Viewer."
-#~ msgstr "Τεκμηρίωση για το Xreader Προβολή εγγράφων.<"
+#~ msgid "User manual for the Xreader Pro Document Viewer."
+#~ msgstr "Τεκμηρίωση για το Xreader Pro Προβολή εγγράφων.<"
 #~ msgid ""
-#~ "You can start <application>Xreader Document Viewer</application> in the "
+#~ "You can start <application>Xreader Pro Document Viewer</application> in the "
 #~ "following ways:"
 #~ msgstr ""
-#~ "Μπορείτε να ξεκινήσετε το <application>Xreader Προβολή εγγράφων</"
+#~ "Μπορείτε να ξεκινήσετε το <application>Xreader Pro Προβολή εγγράφων</"
 #~ "application> με τους παρακάτω τρόπους:"
 #~ msgid "<guimenu>Applications</guimenu> menu"
 #~ msgstr "Μενού <guimenu>Εφαρμογές</guimenu>"
 #~ msgid ""
-#~ "Choose <menuchoice><guisubmenu>Graphics</guisubmenu><guimenuitem>Xreader "
+#~ "Choose <menuchoice><guisubmenu>Graphics</guisubmenu><guimenuitem>Xreader Pro "
 #~ "Document Viewer</guimenuitem></menuchoice>."
 #~ msgstr ""
-#~ "Επιλέξτε <menuchoice><guisubmenu>Γραφικά</guisubmenu><guimenuitem>Xreader "
+#~ "Επιλέξτε <menuchoice><guisubmenu>Γραφικά</guisubmenu><guimenuitem>Xreader Pro "
 #~ "Προβολή εγγράφων</guimenuitem></menuchoice>."
 #~ msgid "Command line"
 #~ msgstr "Γραμμή εντολών"
 #~ msgid "Execute the following command: <command>xreader</command>"
 #~ msgstr "Εκτελέστε την ακόλουθη εντολή: <command>xreader</command>"
 #~ msgid ""
-#~ "To quit <application>Xreader Document Viewer</application> at any time, no "
+#~ "To quit <application>Xreader Pro Document Viewer</application> at any time, no "
 #~ "matter how many windows are open, choose <menuchoice><guimenu>File</"
 #~ "guimenu><guimenuitem>Quit</guimenuitem></menuchoice>."
 #~ msgstr ""
-#~ "Για να εγκαταλείψετε τον <application>Xreader Προβολή εγγράφων</"
+#~ "Για να εγκαταλείψετε τον <application>Xreader Pro Προβολή εγγράφων</"
 #~ "application> οποιαδήποτε στιγμή, ανεξάρτητα από το πόσα παράθυρα είναι "
 #~ "ανοιχτά, επιλέξτε <menuchoice><guimenu>Αρχείο</"
 #~ "guimenu><guimenuitem>Έξοδος</guimenuitem></menuchoice>."
 #~ msgid ""
-#~ "When you quit, <application>Xreader Document Viewer</application> closes "
+#~ "When you quit, <application>Xreader Pro Document Viewer</application> closes "
 #~ "all documents opened in the current session."
 #~ msgstr ""
-#~ "Όταν εγκαταλείψετε την εφαρμογή, ο <application>Xreader Προβολέας "
+#~ "Όταν εγκαταλείψετε την εφαρμογή, ο <application>Xreader Pro Προβολέας "
 #~ "Εγγράφου</application> θα κλείσει όλα τα έγγραφα ανοιχτά κατά την "
 #~ "τρέχουσα συνεδρία."
 

@@ -29,16 +29,16 @@ msgstr ""
 "md5=7f4da5e33bcac35738a268d93d497d47"
 
 #: C/xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
-msgstr "Příručka k prohlížeči dokumentů Xreader"
+msgid "Xreader Pro Document Viewer Manual"
+msgstr "Příručka k prohlížeči dokumentů Xreader Pro"
 
 #: C/xreader.xml:27(para)
 msgid ""
-"The Xreader Document Viewer application enables you to view documents of "
+"The Xreader Pro Document Viewer application enables you to view documents of "
 "various formats like Portable Document Format (PDF) files and PostScript "
 "files"
 msgstr ""
-"Aplikace prohlížeč dokumentů Xreader umožňuje prohlížení dokumentů v různých "
+"Aplikace prohlížeč dokumentů Xreader Pro umožňuje prohlížení dokumentů v různých "
 "formátech souborů, jako jsou Portable Document Format (PDF) nebo PostScript."
 
 #: C/xreader.xml:33(year)
@@ -182,8 +182,8 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.1"
-msgstr "Příručka k prohlížeči dokumentů Xreader V1.1"
+msgid "Xreader Pro Document Viewer Manual V1.1"
+msgstr "Příručka k prohlížeči dokumentů Xreader Pro V1.1"
 
 #: C/xreader.xml:89(date)
 msgid "2008-04-05"
@@ -198,15 +198,15 @@ msgid "Claude Paroz"
 msgstr "Claude Paroz"
 
 #: C/xreader.xml:97(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Příručka k prohlížeči dokumentů Xreader V1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Příručka k prohlížeči dokumentů Xreader Pro V1.0"
 
 #: C/xreader.xml:98(date)
 msgid "2005-04-06"
 msgstr "6.4.2005"
 
 #: C/xreader.xml:106(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
 msgstr "Tato příručka popisuje prohlížeč dokumentů ve verzi 0.2"
 
 #: C/xreader.xml:109(title)
@@ -215,17 +215,17 @@ msgstr "Ohlasy"
 
 #: C/xreader.xml:110(para)
 msgid ""
-"To report a bug or make a suggestion regarding the Xreader Document Viewer "
+"To report a bug or make a suggestion regarding the Xreader Pro Document Viewer "
 "application or this manual, follow the directions in the <ulink url=\"help:"
 "mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 "Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci "
-"Xreader nebo této příručce, postupujte dle instrukcí na stránce <ulink url="
+"Xreader Pro nebo této příručce, postupujte dle instrukcí na stránce <ulink url="
 "\"help:mate-feedback\" type=\"help\">Zpětná vazba MATE</ulink>."
 
 #: C/xreader.xml:117(primary)
-msgid "Xreader Document Viewer"
-msgstr "Prohlížeč dokumentů Xreader"
+msgid "Xreader Pro Document Viewer"
+msgstr "Prohlížeč dokumentů Xreader Pro"
 
 #: C/xreader.xml:120(primary)
 msgid "xreader"
@@ -237,16 +237,16 @@ msgstr "Úvod"
 
 #: C/xreader.xml:129(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> application enables "
+"The <application>Xreader Pro Document Viewer</application> application enables "
 "you to view documents of various formats like Portable Document Format (PDF) "
-"files and PostScript files. <application>Xreader Document Viewer</"
+"files and PostScript files. <application>Xreader Pro Document Viewer</"
 "application> follows Freedesktop.org and MATE standards to provide "
 "integration with Desktop Environment."
 msgstr ""
-"Aplikace <application>prohlížeč dokumentů Xreader</application> umožňuje "
+"Aplikace <application>prohlížeč dokumentů Xreader Pro</application> umožňuje "
 "prohlížení dokumentů v různých formátech souborů, jako jsou Portable "
 "Document Format (PDF) nebo PostScript. <application>Prohlížeč dokumentů "
-"Xreader</application> ctí standardy Freedesktop.org a MATE, aby zajistil "
+"Xreader Pro</application> ctí standardy Freedesktop.org a MATE, aby zajistil "
 "integraci s pracovním prostředím."
 
 #: C/xreader.xml:136(title)
@@ -254,58 +254,58 @@ msgid "Getting Started"
 msgstr "Začínáme"
 
 #: C/xreader.xml:139(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "Spuštění prohlížeče dokumentů Xreader"
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "Spuštění prohlížeče dokumentů Xreader Pro"
 
 #: C/xreader.xml:140(para)
 msgid ""
-"<application>Xreader Document Viewer</application> starts when you open a "
+"<application>Xreader Pro Document Viewer</application> starts when you open a "
 "document such as a PDF or PostScript file."
 msgstr ""
-"<application>Prohlížeč dokumentů Xreader</application> je spuštěn, otevřete-"
+"<application>Prohlížeč dokumentů Xreader Pro</application> je spuštěn, otevřete-"
 "li dokument, jakým jsou například soubory typu PDF nebo PostScript."
 
 #: C/xreader.xml:141(para)
 msgid ""
-"Alternatively, you can start <application>Xreader Document Viewer</"
+"Alternatively, you can start <application>Xreader Pro Document Viewer</"
 "application> from the command line, with the command: <command>xreader</"
 "command>."
 msgstr ""
-"<application>Prohlížeč dokumentů Xreader</application> můžete spouštět také z "
+"<application>Prohlížeč dokumentů Xreader Pro</application> můžete spouštět také z "
 "příkazové řádky pomocí příkazu <command>xreader</command>."
 
 #: C/xreader.xml:146(title)
-msgid "When You Start Xreader Document Viewer"
-msgstr "Když spustíte prohlížeč dokumentů Xreader…"
+msgid "When You Start Xreader Pro Document Viewer"
+msgstr "Když spustíte prohlížeč dokumentů Xreader Pro…"
 
 #: C/xreader.xml:147(para)
 msgid ""
-"When you start <application>Xreader Document Viewer</application>, the "
+"When you start <application>Xreader Pro Document Viewer</application>, the "
 "following window is displayed."
 msgstr ""
-"Když spustíte <application>prohlížeč dokumentů Xreader</application>, zobrazí "
+"Když spustíte <application>prohlížeč dokumentů Xreader Pro</application>, zobrazí "
 "se následující okno."
 
 #: C/xreader.xml:151(title)
-msgid "Xreader Document Viewer Window"
-msgstr "Okno prohlížeče dokumentů Xreader"
+msgid "Xreader Pro Document Viewer Window"
+msgstr "Okno prohlížeče dokumentů Xreader Pro"
 
 #: C/xreader.xml:158(phrase)
 msgid ""
-"Shows Xreader Document Viewer main window. Contains titlebar, menubar, "
+"Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, "
 "toolbar and display area. Menubar contains File, Edit, View, Go and Help "
 "menus."
 msgstr ""
-"Zobrazuje hlavní okno prohlížeče dokumentů Xreader. Obsahuje záhlaví, "
+"Zobrazuje hlavní okno prohlížeče dokumentů Xreader Pro. Obsahuje záhlaví, "
 "nabídkovou lištu, nástrojovou lištu a oblast zobrazování. Nabídková lišta "
 "obsahuje nabídky Soubor, Upravit, Zobrazit, Přejít a Nápověda."
 
 #: C/xreader.xml:164(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> window contains the "
+"The <application>Xreader Pro Document Viewer</application> window contains the "
 "following elements:"
 msgstr ""
-"Okno <application>prohlížeče dokumentů Xreader</application> obsahuje "
+"Okno <application>prohlížeče dokumentů Xreader Pro</application> obsahuje "
 "následující prvky:"
 
 #: C/xreader.xml:168(term) C/xreader.xml:216(para)
@@ -315,10 +315,10 @@ msgstr "Nabídková lišta"
 #: C/xreader.xml:170(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
-"with documents in <application>Xreader Document Viewer</application>."
+"with documents in <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 "Nabídky nabídkové lišty obsahují všechny příkazy potřebné k práci s "
-"dokumenty v <application>prohlížeči dokumentů Xreader</application>."
+"dokumenty v <application>prohlížeči dokumentů Xreader Pro</application>."
 
 #: C/xreader.xml:174(term)
 msgid "Toolbar"
@@ -352,10 +352,10 @@ msgstr "Okno"
 
 #: C/xreader.xml:207(para)
 msgid ""
-"Drag a file into the <application>Xreader Document Viewer</application> "
+"Drag a file into the <application>Xreader Pro Document Viewer</application> "
 "window from another application such as a file manager."
 msgstr ""
-"Přetáhnutí souboru do okna <application>prohlížeče dokumentů Xreader</"
+"Přetáhnutí souboru do okna <application>prohlížeče dokumentů Xreader Pro</"
 "application> z jiné aplikace, například ze správce souborů."
 
 #: C/xreader.xml:210(para)
@@ -381,14 +381,14 @@ msgstr ""
 
 #: C/xreader.xml:187(para)
 msgid ""
-"In <application>Xreader Document Viewer</application>, you can perform the "
+"In <application>Xreader Pro Document Viewer</application>, you can perform the "
 "same action in several ways. For example, you can open a document in the "
 "following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
 "colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></"
 "tgroup></informaltable>"
 msgstr ""
-"V <application>prohlížeči dokumentů Xreader</application> lze jednu činnost "
+"V <application>prohlížeči dokumentů Xreader Pro</application> lze jednu činnost "
 "vykonávat několika způsoby. Například otevírat dokumenty je možné těmito "
 "způsoby: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep="
 "\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname="
@@ -421,32 +421,32 @@ msgstr ""
 
 #: C/xreader.xml:253(para)
 msgid ""
-"Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</"
+"Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</"
 "application> displays the name of the document in the titlebar of the window."
 msgstr ""
 "Klikněte na <guibutton>Otevřít</guibutton>. <application>Prohlížeč dokumentů "
-"Xreader</application> v záhlaví okna zobrazí název dokumentu."
+"Xreader Pro</application> v záhlaví okna zobrazí název dokumentu."
 
 #: C/xreader.xml:258(para)
 msgid ""
 "To open another document, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. "
-"<application>Xreader Document Viewer</application> opens each file in a new "
+"<application>Xreader Pro Document Viewer</application> opens each file in a new "
 "window."
 msgstr ""
 "Chcete-li otevřít další dokument, vyberte znovu <menuchoice><guimenu>Soubor</"
 "guimenu><guimenuitem>Otevřít…</guimenuitem></menuchoice>. "
-"<application>Prohlížeč dokumentů Xreader</application> otevírá všechny "
+"<application>Prohlížeč dokumentů Xreader Pro</application> otevírá všechny "
 "soubory v nových oknech."
 
 #: C/xreader.xml:261(para)
 msgid ""
-"If you try to open a document with format that <application>Xreader Document "
+"If you try to open a document with format that <application>Xreader Pro Document "
 "Viewer</application> does not recognize, the application displays an error "
 "message."
 msgstr ""
 "Jestliže se pokoušíte otevřít dokument ve formátu, se kterým "
-"<application>prohlížeč dokumentů Xreader</application> neumí pracovat, "
+"<application>prohlížeč dokumentů Xreader Pro</application> neumí pracovat, "
 "aplikace zobrazí chybovou zprávu."
 
 #: C/xreader.xml:267(title)
@@ -536,10 +536,10 @@ msgstr "Změna velikosti stránky"
 #: C/xreader.xml:312(para)
 msgid ""
 "You can use the following methods to resize a page in the "
-"<application>Xreader Document Viewer</application> display area:"
+"<application>Xreader Pro Document Viewer</application> display area:"
 msgstr ""
 "Změnu velikosti stránky v oblasti zobrazování <application>prohlížeče "
-"dokumentů Xreader</application> můžete provést následujícími způsoby:"
+"dokumentů Xreader Pro</application> můžete provést následujícími způsoby:"
 
 #: C/xreader.xml:317(para)
 msgid ""
@@ -559,40 +559,40 @@ msgstr ""
 
 #: C/xreader.xml:327(para)
 msgid ""
-"To resize a page to have the same width as the <application>Xreader Document "
+"To resize a page to have the same width as the <application>Xreader Pro Document "
 "Viewer</application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
 msgstr ""
 "Chcete-li nastavit velikost stránky na stejnou šířku, jako má oblast "
-"zobrazování  <application>prohlížeče dokumentů Xreader</application>, "
+"zobrazování  <application>prohlížeče dokumentů Xreader Pro</application>, "
 "zaškrtněte <menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Přizpůsobit "
 "šířce stránky</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:332(para)
 msgid ""
-"To resize a page to fit within the <application>Xreader Document Viewer</"
+"To resize a page to fit within the <application>Xreader Pro Document Viewer</"
 "application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
 msgstr ""
 "Chcete-li nastavit velikost stránky tak, aby se vešla do oblasti zobrazování "
-"<application>prohlížeče dokumentů Xreader</application>, zaškrtněte "
+"<application>prohlížeče dokumentů Xreader Pro</application>, zaškrtněte "
 "<menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Přizpůsobit</"
 "guimenuitem></menuchoice>."
 
 #: C/xreader.xml:337(para)
 msgid ""
-"To resize the <application>Xreader Document Viewer</application> window to "
+"To resize the <application>Xreader Pro Document Viewer</application> window to "
 "have the same width and height as the screen, choose "
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></"
-"menuchoice>. To resize the <application>Xreader Document Viewer</application> "
+"menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> "
 "window to the original size, click on the <guibutton>Exit Full Screen</"
 "guibutton> button."
 msgstr ""
 "Chcete-li nastavit šířku a výšku okna <application>prohlížeče dokumentů "
-"Xreader</application> dle obrazovky, zaškrtněte "
+"Xreader Pro</application> dle obrazovky, zaškrtněte "
 "<menuchoice><guimenu>Zobrazit</guimenu><guimenuitem>Přes celou obrazovku</"
 "guimenuitem></menuchoice>. Chcete-li nastavit okno <application>prohlížeče "
-"dokumentů Xreader</application> na původní velikost, klikněte na tlačítko "
+"dokumentů Xreader Pro</application> na původní velikost, klikněte na tlačítko "
 "<guibutton>Opustit celou obrazovku</guibutton>."
 
 #: C/xreader.xml:345(title)
@@ -740,10 +740,10 @@ msgstr ""
 #: C/xreader.xml:443(para)
 msgid ""
 "The <guilabel>Create a PDF document</guilabel> option is not supported in "
-"this version of <application>Xreader Document Viewer</application>."
+"this version of <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 "Volba <guilabel>Vytvořit dokument PDF</guilabel> není v této verzi "
-"<application>prohlížeče dokumentů Xreader</application> podporována."
+"<application>prohlížeče dokumentů Xreader Pro</application> podporována."
 
 #: C/xreader.xml:449(guilabel)
 msgid "Settings"
@@ -835,10 +835,10 @@ msgstr "Stav"
 
 #: C/xreader.xml:511(para) C/xreader.xml:517(para) C/xreader.xml:523(para)
 msgid ""
-"This functionality is not supported in this version of <application>Xreader "
+"This functionality is not supported in this version of <application>Xreader Pro "
 "Document Viewer</application>."
 msgstr ""
-"Tato funkce není touto verzí <application>prolížeče dokumentů Xreader</"
+"Tato funkce není touto verzí <application>prolížeče dokumentů Xreader Pro</"
 "application> podporována."
 
 #: C/xreader.xml:515(guilabel)
@@ -979,14 +979,14 @@ msgstr ""
 
 #: C/xreader.xml:616(para)
 msgid ""
-"When you try to open a password-protected document, <application>Xreader "
+"When you try to open a password-protected document, <application>Xreader Pro "
 "Document Viewer</application> displays a security dialog. Type either the "
 "user password or the master password in the <guilabel>Enter document "
 "password</guilabel> text box, then click <guibutton>Open Document</"
 "guibutton>."
 msgstr ""
 "Když se pokoušíte otevřít heslem chráněný dokument, <application>prohlížeč "
-"dokumentů Xreader</application> zobrazuje bezpečnostní dialog. Do vstupního "
+"dokumentů Xreader Pro</application> zobrazuje bezpečnostní dialog. Do vstupního "
 "políčka <guilabel>Zadejte heslo k dokumentu</guilabel> zadejte buď "
 "uživatelské nebo hlavní heslo a pak klikněte na <guibutton>Otevřít dokument</"
 "guibutton>."
@@ -1005,11 +1005,11 @@ msgstr ""
 
 #: C/xreader.xml:626(para)
 msgid ""
-"If the window is the last <application>Xreader Document Viewer</application> "
+"If the window is the last <application>Xreader Pro Document Viewer</application> "
 "window open, the application exits."
 msgstr ""
 "Je-li zavírané okno posledním otevřeným oknem <application>prohlížeče "
-"dokumentů Xreader</application>, aplikace bude ukončena."
+"dokumentů Xreader Pro</application>, aplikace bude ukončena."
 
 #: C/xreader.xml:635(title)
 msgid "Shortcuts"
@@ -1017,11 +1017,11 @@ msgstr "Klávesové zkratky"
 
 #: C/xreader.xml:636(para)
 msgid ""
-"Below is a list of all shortcuts present in <application>Xreader Document "
+"Below is a list of all shortcuts present in <application>Xreader Pro Document "
 "Viewer</application>:"
 msgstr ""
 "Níže je seznam všech klávesových zkratek dostupných v "
-"<application>prohlížeči dokumentů Xreader</application>:"
+"<application>prohlížeči dokumentů Xreader Pro</application>:"
 
 #: C/xreader.xml:644(para)
 msgid "Shortcut"

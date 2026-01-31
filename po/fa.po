@@ -410,13 +410,13 @@ msgstr "یک نمایش‌گر اسناد"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader یک نمایش‌گر اسناد ساده و چندصفحه‌ای است. میتواند ضمیمه های پرینت "
+"<p> Xreader Pro یک نمایش‌گر اسناد ساده و چندصفحه‌ای است. میتواند ضمیمه های پرینت "
 "(PS)، ضمیمه های کپسوله شده پرینت (EPS)، DJVU، DVI، XPS و قالب سند قابل حمل "
 "(PDF)، و همچنین فایل های بایگانی کتاب مصور، را نمایش دهد. همچنین درصورت "
 "پشتیبانی توسط سند، امکان جستجو متن، رونوشت از متن به کلیپ‌بورد، مسیریابی "
@@ -1233,38 +1233,38 @@ msgstr "خطایی حین نمایش کمک رخ داد"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader نرم‌افزار آزاد است؛ شما میتوانید آنرا بازنشر کنید و/یا تحت پروانه "
+"Xreader Pro نرم‌افزار آزاد است؛ شما میتوانید آنرا بازنشر کنید و/یا تحت پروانه "
 "عمومی GNU نشر شده توسط سازمان نرم‌افزار آزاد آنرا تغییر دهید؛ یا نگارش 2 این "
 "پروانه، یا (به انتخاب خودتان) هر نسخه جدیدتر.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader به این امید که به‌کار بیاید منتشر میشود، اما هیچ تضمینی ندارد؛ حتی "
+"Xreader Pro به این امید که به‌کار بیاید منتشر میشود، اما هیچ تضمینی ندارد؛ حتی "
 "بدون ضمانت ضمنی تجارت یا تناسب برای یک هدف خاص. برای جزئیات بیشتر پروانه "
 "عمومی GNU را ببینید.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"شما باید همراه با Xreader یک رونوشت از پروانه عمومی GNU دریافت کرده باشید؛ "
+"شما باید همراه با Xreader Pro یک رونوشت از پروانه عمومی GNU دریافت کرده باشید؛ "
 "اگر نکرده‌اید، برای بنیاد نرم‌افزار آزاد نگارش کنید، Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
+msgid "Xreader Pro"
 msgstr "ای‌وینس"
 
 #. TRANS: Sometimes this could be better translated as

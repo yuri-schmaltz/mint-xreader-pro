@@ -12,12 +12,12 @@
  *  Author:
  *    Martin Kretzschmar <martink@gnome.org>
  *
- * Xreader is free software; you can redistribute it and/or modify it
+ * Xreader Pro is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Xreader is distributed in the hope that it will be useful, but
+ * Xreader Pro is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  * General Public License for more details.
@@ -32,9 +32,6 @@
 #include "config.h"
 #endif
 
-#include "ev-tabs.h"
-#include "xreader-view.h"
-
 #include <string.h>
 #include <unistd.h>
 
@@ -43,6 +40,9 @@
 #include <glib/gstdio.h>
 #include <gtk/gtk.h>
 #include <libxapp/xapp-favorites.h>
+
+#include "ev-tabs.h"
+#include "xreader-view.h"
 
 #include "eggfindbar.h"
 
@@ -4875,7 +4875,7 @@ static void ev_window_cmd_help_about(GtkAction *action, EvWindow *ev_window) {
   license_trans = g_strconcat(_(license[0]), "\n", _(license[1]), "\n",
                               _(license[2]), "\n", NULL);
 
-  gtk_show_about_dialog(GTK_WINDOW(ev_window), "program-name", _("Xreader"),
+  gtk_show_about_dialog(GTK_WINDOW(ev_window), "program-name", _("Xreader Pro"),
                         "version", VERSION, "license", license_trans, "website",
                         "http://www.github.com/linuxmint/xreader/",
                         "logo-icon-name", "xreader", "wrap-license", TRUE,

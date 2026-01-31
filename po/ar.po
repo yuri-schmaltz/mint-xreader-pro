@@ -401,13 +401,13 @@ msgstr "عارض المستندات"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader هو عارض مستندات بسيط متعدد الصفحات. يمكنه عرض وطباعة ملفات "
+"<p> Xreader Pro هو عارض مستندات بسيط متعدد الصفحات. يمكنه عرض وطباعة ملفات "
 "PostScript، و مغلفة PostScript (EPS)، وDJVU، وDVI، وXPS، وتنسيق المستند "
 "المحمول (PDF)، بالإضافة إلى ملفات أرشيف الكتاب الهزلي. عندما يدعمها المستند، "
 "ويسمح أيضًا بالبحث عن النص، ونسخ النص إلى الحافظة، وتنقل النص التشعبي، "
@@ -1229,39 +1229,39 @@ msgstr "حدث خطأ في عرض المساعدة"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader هو برنامج مجاني. يمكنك إعادة توزيعه/أو تعديله بموجب شروط رخصة GNU "
+"Xreader Pro هو برنامج مجاني. يمكنك إعادة توزيعه/أو تعديله بموجب شروط رخصة GNU "
 "العمومية كما نشرتها مؤسسة البرمجيات الحرة؛ إما الإصدار 2 من الترخيص، أو (حسب "
 "اختيارك) أي إصدار لاحق.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"يتم توزيع Xreader على أمل أن يكون مفيدا، ولكن دون أي ضمانات؛ حتى بدون الضمان "
+"يتم توزيع Xreader Pro على أمل أن يكون مفيدا، ولكن دون أي ضمانات؛ حتى بدون الضمان "
 "الضمني للرواج أو الملاءمة لغرض معين. انظر رخصة GNU العمومية لمزيد من "
 "التفاصيل\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"يجب أن تكون قد حصلت على نسخة من رخصة GNU العمومية مع Xreader؛ إذا لم يكن "
+"يجب أن تكون قد حصلت على نسخة من رخصة GNU العمومية مع Xreader Pro؛ إذا لم يكن "
 "كذلك، فاكتب لمؤسسة Free Software Foundation، Inc.، 51 Franklin Street، Fifth "
 "Floor، Boston، MA 02110-1301 USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

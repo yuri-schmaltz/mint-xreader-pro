@@ -428,13 +428,13 @@ msgstr "Um visualizador de documentos"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader é um visualizador de documentos simples multi-páginas. Ele pode "
+"<p> Xreader Pro é um visualizador de documentos simples multi-páginas. Ele pode "
 "exibir e imprimir PostScript (PS), Encapsulado PostScript (EPS), DJVU, DVI, "
 "XPS e arquivos Portable Document Format (PDF), bem como arquivos de "
 "histórias em quadrinhos. Quando suportado pelo documento, ele também permite "
@@ -1263,24 +1263,24 @@ msgstr "Houve um erro ao exibir a ajuda"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader é um software livre; você pode redistribuí-lo e/ou modificá-lo sob "
+"Xreader Pro é um software livre; você pode redistribuí-lo e/ou modificá-lo sob "
 "os termos da Licença Pública Geral GNU (GPL) como publicada pela Fundação do "
 "Software Livre; seja a versão 2 da Licença, ou (se preferir) qualquer versão "
 "mais recente.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"O Xreader é distribuído na esperança de que seja útil, mas SEM NENHUMA "
+"O Xreader Pro é distribuído na esperança de que seja útil, mas SEM NENHUMA "
 "GARANTIA; até mesmo sem a garantia implícita de COMERCIALIZAÇÃO ou de "
 "ADAPTAÇÃO A UM PROPÓSITO EM PARTICULAR. Veja a Licença Pública Geral GNU "
 "(GPL) para mais detalhes.\n"
@@ -1288,16 +1288,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "Você deve ter recebido uma cópia da Licença Pública Geral GNU (GPL) junto "
-"com o Xreader; se não, escreva para a Free Software Foundation, Inc., 51 "
+"com o Xreader Pro; se não, escreva para a Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA  02111-1301  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1718,7 +1718,7 @@ msgstr "NÚMERO"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Executar o Xreader em modo de tela cheia"
+msgstr "Executar o Xreader Pro em modo de tela cheia"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1730,11 +1730,11 @@ msgstr "DEST"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Executar o Xreader em modo de apresentação"
+msgstr "Executar o Xreader Pro em modo de apresentação"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Executar o Xreader como visualizador"
+msgstr "Executar o Xreader Pro como visualizador"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

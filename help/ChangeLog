@@ -164,7 +164,7 @@
 	* reference/xreader.types:
 	* reference/version.xml.in:
 	
-	Added gtk-doc based documentation for Xreader.
+	Added gtk-doc based documentation for Xreader Pro.
 	Still in initial state but I hope it will
 	grow.
 
@@ -263,7 +263,7 @@
 2006-03-09 Joachim Noreiko <jnoreiko@yahoo.com>
 
 	* C/xreader.xml:
-	Removed incorrect information about launching Xreader from the Applications menu
+	Removed incorrect information about launching Xreader Pro from the Applications menu
 
 2006-02-28  Nickolay V. Shmyrev <nshmyrev@yandex.ru>
 

@@ -415,13 +415,13 @@ msgstr "Prehliadač dokumentov"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<P> Xreader je jednoduchý viacstránkový prehliadač dokumentov. Je možné "
+"<P> Xreader Pro je jednoduchý viacstránkový prehliadač dokumentov. Je možné "
 "zobrazovať a tlačiť PostScript (PS), Encapsulated PostScript (EPS), DJVU, "
 "DVI, XPS a súbory Portable Document Format (PDF), rovnako ako komiksové "
 "súbory. Pokiaľ túto funkciu podporuje dokument, tiež umožňuje vyhľadávanie "
@@ -1246,40 +1246,40 @@ msgstr "Pri zobrazovaní pomocníka sa vyskytla chyba"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader je slobodný softvér; môžete ho šíriť a/alebo modifikovať za "
+"Xreader Pro je slobodný softvér; môžete ho šíriť a/alebo modifikovať za "
 "podmienok GNU General Public License publikovaných Free Software Foundation; "
 "a to buď verzie licencie 2, alebo (podľa vášho uváženia) ľubovoľnej "
 "neskoršej verzie.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader je šírený v nádeji, že bude užitočný, ale BEZ AKEJKOĽVEK ZÁRUKY; a "
+"Xreader Pro je šírený v nádeji, že bude užitočný, ale BEZ AKEJKOĽVEK ZÁRUKY; a "
 "to ani bez predpokladanej záruky PREDAJNOSTI, alebo VHODNOSTI PRE KONKRÉTNY "
 "ÚČEL. Pre ďalšie podrobnosti viď. GNU General Public License.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Kópiu GNU General Public License ste mali dostať spolu s Xreader; ak sa tak "
+"Kópiu GNU General Public License ste mali dostať spolu s Xreader Pro; ak sa tak "
 "nestalo, napíšte na Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301 USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

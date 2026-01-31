@@ -25,16 +25,16 @@ msgid ""
 msgstr "fatto"
 
 #: C/xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
-msgstr "Manuale di Visualizzatore documenti Xreader"
+msgid "Xreader Pro Document Viewer Manual"
+msgstr "Manuale di Visualizzatore documenti Xreader Pro"
 
 #: C/xreader.xml:27(para)
 msgid ""
-"The Xreader Document Viewer application enables you to view documents of "
+"The Xreader Pro Document Viewer application enables you to view documents of "
 "various formats like Portable Document Format (PDF) files and PostScript "
 "files"
 msgstr ""
-"L'applicazione Visualizzatore documenti Xreader consente di visualizzare vari "
+"L'applicazione Visualizzatore documenti Xreader Pro consente di visualizzare vari "
 "formati di documenti come i PDF (Portable Document Format) e PostScript."
 
 #: C/xreader.xml:33(year)
@@ -185,8 +185,8 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.1"
-msgstr "Manuale di Visualizzatore documenti Xreader V1.1"
+msgid "Xreader Pro Document Viewer Manual V1.1"
+msgstr "Manuale di Visualizzatore documenti Xreader Pro V1.1"
 
 #: C/xreader.xml:89(date)
 msgid "2008-04-05"
@@ -201,17 +201,17 @@ msgid "Claude Paroz"
 msgstr "Claude Paroz"
 
 #: C/xreader.xml:97(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Manuale di Visualizzatore documenti Xreader V1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Manuale di Visualizzatore documenti Xreader Pro V1.0"
 
 #: C/xreader.xml:98(date)
 msgid "2005-04-06"
 msgstr "06/04/2005"
 
 #: C/xreader.xml:106(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
 msgstr ""
-"Questo manuale descrive la versione 0.2 di Visualizzatore documenti Xreader"
+"Questo manuale descrive la versione 0.2 di Visualizzatore documenti Xreader Pro"
 
 #: C/xreader.xml:109(title)
 msgid "Feedback"
@@ -219,17 +219,17 @@ msgstr "Commenti"
 
 #: C/xreader.xml:110(para)
 msgid ""
-"To report a bug or make a suggestion regarding the Xreader Document Viewer "
+"To report a bug or make a suggestion regarding the Xreader Pro Document Viewer "
 "application or this manual, follow the directions in the <ulink url=\"help:"
 "mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 "Per segnalare un problema o inviare suggerimenti su Visualizzatore documenti "
-"Xreader o su questo manuale, seguire le istruzioni presenti alla <ulink url="
+"Xreader Pro o su questo manuale, seguire le istruzioni presenti alla <ulink url="
 "\"help:mate-feedback\" type=\"help\">pagina di commenti di MATE</ulink>."
 
 #: C/xreader.xml:117(primary)
-msgid "Xreader Document Viewer"
-msgstr "Visualizzatore documenti Xreader"
+msgid "Xreader Pro Document Viewer"
+msgstr "Visualizzatore documenti Xreader Pro"
 
 #: C/xreader.xml:120(primary)
 msgid "xreader"
@@ -241,16 +241,16 @@ msgstr "Introduzione"
 
 #: C/xreader.xml:129(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> application enables "
+"The <application>Xreader Pro Document Viewer</application> application enables "
 "you to view documents of various formats like Portable Document Format (PDF) "
-"files and PostScript files. <application>Xreader Document Viewer</"
+"files and PostScript files. <application>Xreader Pro Document Viewer</"
 "application> follows Freedesktop.org and MATE standards to provide "
 "integration with Desktop Environment."
 msgstr ""
-"L'applicazione <application>Visualizzatore documenti Xreader</application> "
+"L'applicazione <application>Visualizzatore documenti Xreader Pro</application> "
 "consente di visualizzare documenti di vari formati come i file PDF (Portable "
 "Document Format) e i file PostScript. <application>Visualizzatore documenti "
-"Xreader</application> segue gli standard di Freedesktop.org e di MATE per "
+"Xreader Pro</application> segue gli standard di Freedesktop.org e di MATE per "
 "fornire l'integrazione con l'ambiente desktop."
 
 #: C/xreader.xml:136(title)
@@ -258,60 +258,60 @@ msgid "Getting Started"
 msgstr "Per iniziare"
 
 #: C/xreader.xml:139(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "Avviare Visualizzatore documenti Xreader"
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "Avviare Visualizzatore documenti Xreader Pro"
 
 #: C/xreader.xml:140(para)
 msgid ""
-"<application>Xreader Document Viewer</application> starts when you open a "
+"<application>Xreader Pro Document Viewer</application> starts when you open a "
 "document such as a PDF or PostScript file."
 msgstr ""
-"<application>Visualizzatore documenti Xreader</application> si avvia quando "
+"<application>Visualizzatore documenti Xreader Pro</application> si avvia quando "
 "viene aperto un documento come un file PDF o PostScript."
 
 #: C/xreader.xml:141(para)
 msgid ""
-"Alternatively, you can start <application>Xreader Document Viewer</"
+"Alternatively, you can start <application>Xreader Pro Document Viewer</"
 "application> from the command line, with the command: <command>xreader</"
 "command>."
 msgstr ""
 "In alternativa, è possibile avviare <application>Visualizzatore documenti "
-"Xreader</application> dalla riga di comando con il comando: <command>xreader</"
+"Xreader Pro</application> dalla riga di comando con il comando: <command>xreader</"
 "command>."
 
 #: C/xreader.xml:146(title)
-msgid "When You Start Xreader Document Viewer"
-msgstr "Quando si avvia Visualizzatore documenti Xreader"
+msgid "When You Start Xreader Pro Document Viewer"
+msgstr "Quando si avvia Visualizzatore documenti Xreader Pro"
 
 #: C/xreader.xml:147(para)
 msgid ""
-"When you start <application>Xreader Document Viewer</application>, the "
+"When you start <application>Xreader Pro Document Viewer</application>, the "
 "following window is displayed."
 msgstr ""
-"Quando si avvia <application>Visualizzatore documenti Xreader</application>, "
+"Quando si avvia <application>Visualizzatore documenti Xreader Pro</application>, "
 "viene visualizzata la seguente finestra."
 
 #: C/xreader.xml:151(title)
-msgid "Xreader Document Viewer Window"
-msgstr "Finestra di Visualizzatore documenti Xreader"
+msgid "Xreader Pro Document Viewer Window"
+msgstr "Finestra di Visualizzatore documenti Xreader Pro"
 
 #: C/xreader.xml:158(phrase)
 msgid ""
-"Shows Xreader Document Viewer main window. Contains titlebar, menubar, "
+"Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, "
 "toolbar and display area. Menubar contains File, Edit, View, Go and Help "
 "menus."
 msgstr ""
-"Mostra la finestra principale di Visualizzatore documenti Xreader. Contiene "
+"Mostra la finestra principale di Visualizzatore documenti Xreader Pro. Contiene "
 "la barra del titolo, la barra dei menù, la barra degli strumenti e l'area di "
 "visualizzazione. La barra dei menù contiene i menù File, Modifica, "
 "Visualizza, Vai e Aiuto."
 
 #: C/xreader.xml:164(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> window contains the "
+"The <application>Xreader Pro Document Viewer</application> window contains the "
 "following elements:"
 msgstr ""
-"La finestra di <application>Visualizzatore documenti Xreader</application> "
+"La finestra di <application>Visualizzatore documenti Xreader Pro</application> "
 "contiene i seguenti elementi:"
 
 #: C/xreader.xml:168(term) C/xreader.xml:216(para)
@@ -321,10 +321,10 @@ msgstr "Barra dei menù"
 #: C/xreader.xml:170(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
-"with documents in <application>Xreader Document Viewer</application>."
+"with documents in <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 "I menù nella barra dei menù contengono tutti i comandi necessari per "
-"lavorare con i documenti in <application>Visualizzatore documenti Xreader</"
+"lavorare con i documenti in <application>Visualizzatore documenti Xreader Pro</"
 "application>."
 
 #: C/xreader.xml:174(term)
@@ -361,11 +361,11 @@ msgstr "Finestra"
 
 #: C/xreader.xml:207(para)
 msgid ""
-"Drag a file into the <application>Xreader Document Viewer</application> "
+"Drag a file into the <application>Xreader Pro Document Viewer</application> "
 "window from another application such as a file manager."
 msgstr ""
 "Trascinare un file all'interno della finestra di <application>Visualizzatore "
-"documenti Xreader</application> da un'altra applicazione come il file manager."
+"documenti Xreader Pro</application> da un'altra applicazione come il file manager."
 
 #: C/xreader.xml:210(para)
 msgid "Double-click on the file name in the file manager"
@@ -389,14 +389,14 @@ msgstr "Premere <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>."
 
 #: C/xreader.xml:187(para)
 msgid ""
-"In <application>Xreader Document Viewer</application>, you can perform the "
+"In <application>Xreader Pro Document Viewer</application>, you can perform the "
 "same action in several ways. For example, you can open a document in the "
 "following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
 "colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></"
 "tgroup></informaltable>"
 msgstr ""
-"Con <application>Visualizzatore documenti Xreader</application> è possibile "
+"Con <application>Visualizzatore documenti Xreader Pro</application> è possibile "
 "compiere la stessa azione in modi diversi. Ad esempio, è possibile aprire un "
 "documento nei seguenti modi: <informaltable frame=\"all\"><tgroup cols=\"2\" "
 "colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/"
@@ -429,33 +429,33 @@ msgstr ""
 
 #: C/xreader.xml:253(para)
 msgid ""
-"Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</"
+"Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</"
 "application> displays the name of the document in the titlebar of the window."
 msgstr ""
 "Fare clic su <guibutton>Apri</guibutton>. Il nome del documento viene "
 "mostrato nella barra del titolo della finestra di "
-"<application>Visualizzatore documenti Xreader</application>."
+"<application>Visualizzatore documenti Xreader Pro</application>."
 
 #: C/xreader.xml:258(para)
 msgid ""
 "To open another document, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. "
-"<application>Xreader Document Viewer</application> opens each file in a new "
+"<application>Xreader Pro Document Viewer</application> opens each file in a new "
 "window."
 msgstr ""
 "Per aprire un altro documento, scegliere nuovamente "
 "<menuchoice><guimenu>File</guimenu><guimenuitem>Apri</guimenuitem></"
 "menuchoice>. Ciascun file viene aperto all'interno di una nuova finestra di "
-"<application>Visualizzatore documenti Xreader</application>."
+"<application>Visualizzatore documenti Xreader Pro</application>."
 
 #: C/xreader.xml:261(para)
 msgid ""
-"If you try to open a document with format that <application>Xreader Document "
+"If you try to open a document with format that <application>Xreader Pro Document "
 "Viewer</application> does not recognize, the application displays an error "
 "message."
 msgstr ""
 "Se si cerca di aprire un documento con un formato non riconosciuto da "
-"<application>Visualizzatore documenti Xreader</application>, viene "
+"<application>Visualizzatore documenti Xreader Pro</application>, viene "
 "visualizzato un messaggio di errore."
 
 #: C/xreader.xml:267(title)
@@ -547,10 +547,10 @@ msgstr "Cambiare la dimensione della pagina"
 #: C/xreader.xml:312(para)
 msgid ""
 "You can use the following methods to resize a page in the "
-"<application>Xreader Document Viewer</application> display area:"
+"<application>Xreader Pro Document Viewer</application> display area:"
 msgstr ""
 "È possibile usare i seguenti metodi per ridimensionare una pagina nell'area "
-"di visualizzazione di <application>Visualizzatore documenti Xreader</"
+"di visualizzazione di <application>Visualizzatore documenti Xreader Pro</"
 "application>:"
 
 #: C/xreader.xml:317(para)
@@ -573,40 +573,40 @@ msgstr ""
 
 #: C/xreader.xml:327(para)
 msgid ""
-"To resize a page to have the same width as the <application>Xreader Document "
+"To resize a page to have the same width as the <application>Xreader Pro Document "
 "Viewer</application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
 msgstr ""
 "Per ridimensionare una pagina affinché abbia la stessa larghezza dell'area "
-"di visualizzazione di <application>Visualizzatore documenti Xreader</"
+"di visualizzazione di <application>Visualizzatore documenti Xreader Pro</"
 "application>, scegliere <menuchoice><guimenu>Visualizza</"
 "guimenu><guimenuitem>Adatta alla larghezza</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:332(para)
 msgid ""
-"To resize a page to fit within the <application>Xreader Document Viewer</"
+"To resize a page to fit within the <application>Xreader Pro Document Viewer</"
 "application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
 msgstr ""
 "Per ridimensionare una pagina affinché sia interamente contenuta nell'area "
-"di visualizzazione di <application>Visualizzatore documenti Xreader</"
+"di visualizzazione di <application>Visualizzatore documenti Xreader Pro</"
 "application>, scegliere <menuchoice><guimenu>Visualizza</"
 "guimenu><guimenuitem>Adatta alla pagina</guimenuitem></menuchoice>."
 
 #: C/xreader.xml:337(para)
 msgid ""
-"To resize the <application>Xreader Document Viewer</application> window to "
+"To resize the <application>Xreader Pro Document Viewer</application> window to "
 "have the same width and height as the screen, choose "
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></"
-"menuchoice>. To resize the <application>Xreader Document Viewer</application> "
+"menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> "
 "window to the original size, click on the <guibutton>Exit Full Screen</"
 "guibutton> button."
 msgstr ""
 "Per ridimensionare la finestra di <application>Visualizzatore documenti "
-"Xreader</application> affinché abbia le stesse dimensioni dello schermo, "
+"Xreader Pro</application> affinché abbia le stesse dimensioni dello schermo, "
 "scegliere <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Schermo "
 "intero</guimenuitem></menuchoice>. Per riportare la finestra di "
-"<application>Visualizzatore documenti Xreader</application> alle dimensioni "
+"<application>Visualizzatore documenti Xreader Pro</application> alle dimensioni "
 "originali, fare clic sul pulsante <guibutton>Finestra normale</guibutton>."
 
 #: C/xreader.xml:345(title)
@@ -760,10 +760,10 @@ msgstr ""
 #: C/xreader.xml:443(para)
 msgid ""
 "The <guilabel>Create a PDF document</guilabel> option is not supported in "
-"this version of <application>Xreader Document Viewer</application>."
+"this version of <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 "L'opzione <guilabel>Create a PDF document</guilabel> non è supportata in "
-"questa versione di <application>Visualizzatore documento Xreader</"
+"questa versione di <application>Visualizzatore documento Xreader Pro</"
 "application>."
 
 #: C/xreader.xml:449(guilabel)
@@ -860,11 +860,11 @@ msgstr "Stato"
 
 #: C/xreader.xml:511(para) C/xreader.xml:517(para) C/xreader.xml:523(para)
 msgid ""
-"This functionality is not supported in this version of <application>Xreader "
+"This functionality is not supported in this version of <application>Xreader Pro "
 "Document Viewer</application>."
 msgstr ""
 "Questa funzionalità non è supportata in questa versione di "
-"<application>Visualizzatore documenti Xreader</application>."
+"<application>Visualizzatore documenti Xreader Pro</application>."
 
 #: C/xreader.xml:515(guilabel)
 msgid "Type"
@@ -1012,14 +1012,14 @@ msgstr ""
 
 #: C/xreader.xml:616(para)
 msgid ""
-"When you try to open a password-protected document, <application>Xreader "
+"When you try to open a password-protected document, <application>Xreader Pro "
 "Document Viewer</application> displays a security dialog. Type either the "
 "user password or the master password in the <guilabel>Enter document "
 "password</guilabel> text box, then click <guibutton>Open Document</"
 "guibutton>."
 msgstr ""
 "Quando si prova ad aprire un documento protetto da password, "
-"<application>Visualizzatore documenti Xreader</application> mostra una "
+"<application>Visualizzatore documenti Xreader Pro</application> mostra una "
 "finestra di dialogo di sicurezza. Digitare la password utente o quella "
 "principale nella casella di testo <guilabel>Inserire password documento</"
 "guilabel>, quindi fare clic su <guibutton>Apri documento</guibutton>."
@@ -1038,10 +1038,10 @@ msgstr ""
 
 #: C/xreader.xml:626(para)
 msgid ""
-"If the window is the last <application>Xreader Document Viewer</application> "
+"If the window is the last <application>Xreader Pro Document Viewer</application> "
 "window open, the application exits."
 msgstr ""
-"Se la finestra di <application>Visualizzatore documenti Xreader</application> "
+"Se la finestra di <application>Visualizzatore documenti Xreader Pro</application> "
 "è l'unica aperta, l'applicazione esce."
 
 #: C/xreader.xml:635(title)
@@ -1050,9 +1050,9 @@ msgstr "Tasti scorciatoia"
 
 #: C/xreader.xml:636(para)
 msgid ""
-"Below is a list of all shortcuts present in <application>Xreader Document "
+"Below is a list of all shortcuts present in <application>Xreader Pro Document "
 "Viewer</application>:"
-msgstr "Di seguito viene presentato un elenco di tutte le scorciatoie presenti in <application>Visualizzatore documenti Xreader</application>:"
+msgstr "Di seguito viene presentato un elenco di tutte le scorciatoie presenti in <application>Visualizzatore documenti Xreader Pro</application>:"
 
 #: C/xreader.xml:644(para)
 msgid "Shortcut"

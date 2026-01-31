@@ -414,13 +414,13 @@ msgstr "Un visore di documenti"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader è un visualizzatore di documenti semplice e multi-pagina. Può "
+"<p> Xreader Pro è un visualizzatore di documenti semplice e multi-pagina. Può "
 "mostrare file nei formati seguenti: Encapsulated PostScript (EPS), DJVU, "
 "DVI, XPS, Portable Document Format (PDF) e comic book archive. Se consentito "
 "dal documento, può effettuare ricerche di testo, copiare testo, esplorazione "
@@ -1249,40 +1249,40 @@ msgstr "Si è verificato un errore durante la visualizzazione della guida"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader è software libero: è possibile redistribuirlo o modificarlo sotto i "
+"Xreader Pro è software libero: è possibile redistribuirlo o modificarlo sotto i "
 "termini della licenza GNU GPL, pubblicata dalla Free Software Foundation, "
 "versione 2 o (a propria scelta) successiva.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader è distribuito nella speranza che sia utile, ma SENZA ALCUNA "
+"Xreader Pro è distribuito nella speranza che sia utile, ma SENZA ALCUNA "
 "GARANZIA, senza neppure l'implicita garanzia di COMMERCIABILITÀ o IDONEITÀ A "
 "UNO SCOPO PARTICOLARE. Consultare la licenza GNU GPL per maggiori dettagli.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Insieme a Xreader dovrebbe essere stata fornita anche una copia della "
+"Insieme a Xreader Pro dovrebbe essere stata fornita anche una copia della "
 "licenza GNU GPL, in caso contrario è possibile richiederla scrivendo a: Free "
 "Software Foundation Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-"
 "1301  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

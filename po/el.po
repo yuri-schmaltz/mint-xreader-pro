@@ -420,13 +420,13 @@ msgstr "Μια Εφαρμογή Προβολής Εγγράφων"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Το Xreader είναι μια απλή εφαρμογή προβολής πολυσέλιδων εγγράφων. Μπορεί "
+"<p> Το Xreader Pro είναι μια απλή εφαρμογή προβολής πολυσέλιδων εγγράφων. Μπορεί "
 "να προβάλλει και να εκτυπώσει αρχεία PostScript (PS), Encapsulated "
 "PostScript (EPS), DJVU, DVI, XPS και Portable Document Format (PDF), καθώς "
 "και αρχεία αρχειοθετημένων βιβλίων κόμικ. Όταν υποστηρίζεται από το έγγραφο, "
@@ -1257,12 +1257,12 @@ msgstr "Παρουσιάστηκε σφάλμα κατά την εμφάνιση
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Το Xreader είναι ελεύθερο λογισμικό. Επιτρέπεται η αναδιανομή ή/και "
+"Το Xreader Pro είναι ελεύθερο λογισμικό. Επιτρέπεται η αναδιανομή ή/και "
 "τροποποίησή του υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU (GNU "
 "General Public License) όπως αυτή δημοσιεύεται από το Ίδρυμα Ελεύθερου "
 "Λογισμικού (Free Software Foundation) - είτε της έκδοσης 2 της άδειας, είτε "
@@ -1270,12 +1270,12 @@ msgstr ""
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Το Xreader διανέμεται με την ελπίδα οτι θα είναι χρήσιμο, αλλά ΧΩΡΙΣ ΚΑΜΜΙΑ "
+"Το Xreader Pro διανέμεται με την ελπίδα οτι θα είναι χρήσιμο, αλλά ΧΩΡΙΣ ΚΑΜΜΙΑ "
 "ΑΠΟΛΥΤΩΣ ΕΓΓΥΗΣΗ - χωρίς ακόμη και την έμμεση εγγύηση ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ "
 "ήΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ. Δείτε για περισσότερες λεπτομέρειες "
 "την Γενική Άδεια Δημόσιας Χρήσης GNU (GNU General Public License).\n"
@@ -1283,17 +1283,17 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "Θα πρέπει να έχετε λάβει ένα αντίγραφο της Γενικής Άδειας Δημόσιας Χρήσης "
-"GNU (GNU General Public License) μαζί με το Xreader. Αν όχι, επικοινωνήστε "
+"GNU (GNU General Public License) μαζί με το Xreader Pro. Αν όχι, επικοινωνήστε "
 "γραπτώς με το Ίδρυμα Ελεύθερου Λογισμικού (Free Software Foundation, Inc.), "
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

@@ -26,15 +26,15 @@ msgstr ""
 "md5=7f4da5e33bcac35738a268d93d497d47"
 
 #: C/xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
-msgstr "Xreader 文档查看器手册"
+msgid "Xreader Pro Document Viewer Manual"
+msgstr "Xreader Pro 文档查看器手册"
 
 #: C/xreader.xml:27(para)
 msgid ""
-"The Xreader Document Viewer application enables you to view documents of "
+"The Xreader Pro Document Viewer application enables you to view documents of "
 "various formats like Portable Document Format (PDF) files and PostScript "
 "files"
-msgstr "Xreader 文档查看器可查阅多种不同格式(如 PDF 和 PostScript 等)的文档。"
+msgstr "Xreader Pro 文档查看器可查阅多种不同格式(如 PDF 和 PostScript 等)的文档。"
 
 #: C/xreader.xml:33(year)
 msgid "2005"
@@ -165,8 +165,8 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: C/xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.1"
-msgstr "Xreader 文档查看器手册 V1.1"
+msgid "Xreader Pro Document Viewer Manual V1.1"
+msgstr "Xreader Pro 文档查看器手册 V1.1"
 
 #: C/xreader.xml:89(date)
 msgid "2008-04-05"
@@ -181,16 +181,16 @@ msgid "Claude Paroz"
 msgstr "Claude Paroz"
 
 #: C/xreader.xml:97(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Xreader 文档查看器手册 V1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Xreader Pro 文档查看器手册 V1.0"
 
 #: C/xreader.xml:98(date)
 msgid "2005-04-06"
 msgstr "2005年4月6日"
 
 #: C/xreader.xml:106(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
-msgstr "此手册描述的是0.2版的 Xreader 文档查看器。"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
+msgstr "此手册描述的是0.2版的 Xreader Pro 文档查看器。"
 
 #: C/xreader.xml:109(title)
 msgid "Feedback"
@@ -198,16 +198,16 @@ msgstr "反馈"
 
 #: C/xreader.xml:110(para)
 msgid ""
-"To report a bug or make a suggestion regarding the Xreader Document Viewer "
+"To report a bug or make a suggestion regarding the Xreader Pro Document Viewer "
 "application or this manual, follow the directions in the <ulink url=\"help:"
 "mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
-"欲报告 bug 或提出针对 Xreader 文档查看器的程序或手册的建议，请参照 <ulink url="
+"欲报告 bug 或提出针对 Xreader Pro 文档查看器的程序或手册的建议，请参照 <ulink url="
 "\"help:mate-feedback\" type=\"help\">MATE 反馈页</ulink>的指示。"
 
 #: C/xreader.xml:117(primary)
-msgid "Xreader Document Viewer"
-msgstr "Xreader 文档查看器"
+msgid "Xreader Pro Document Viewer"
+msgstr "Xreader Pro 文档查看器"
 
 #: C/xreader.xml:120(primary)
 msgid "xreader"
@@ -219,14 +219,14 @@ msgstr "简介"
 
 #: C/xreader.xml:129(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> application enables "
+"The <application>Xreader Pro Document Viewer</application> application enables "
 "you to view documents of various formats like Portable Document Format (PDF) "
-"files and PostScript files. <application>Xreader Document Viewer</"
+"files and PostScript files. <application>Xreader Pro Document Viewer</"
 "application> follows Freedesktop.org and MATE standards to provide "
 "integration with Desktop Environment."
 msgstr ""
-"<application>Xreader 文档查看器</application>可查阅多种不同格式(如 PDF 和 "
-"PostScript 等)的文档。 <application>Xreader 文档查看器</application>遵循 "
+"<application>Xreader Pro 文档查看器</application>可查阅多种不同格式(如 PDF 和 "
+"PostScript 等)的文档。 <application>Xreader Pro 文档查看器</application>遵循 "
 "Freedesktop.org 与 MATE 标准，以同“桌面环境”整合。"
 
 #: C/xreader.xml:136(title)
@@ -234,55 +234,55 @@ msgid "Getting Started"
 msgstr "新手上路"
 
 #: C/xreader.xml:139(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "启动 Xreader 文档查看器 "
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "启动 Xreader Pro 文档查看器 "
 
 #: C/xreader.xml:140(para)
 msgid ""
-"<application>Xreader Document Viewer</application> starts when you open a "
+"<application>Xreader Pro Document Viewer</application> starts when you open a "
 "document such as a PDF or PostScript file."
 msgstr ""
-"<application>Xreader 文档查看器</application>会在您打开一个如 PDF 或 "
+"<application>Xreader Pro 文档查看器</application>会在您打开一个如 PDF 或 "
 "PostScript 文件之类的文档时启动。"
 
 #: C/xreader.xml:141(para)
 msgid ""
-"Alternatively, you can start <application>Xreader Document Viewer</"
+"Alternatively, you can start <application>Xreader Pro Document Viewer</"
 "application> from the command line, with the command: <command>xreader</"
 "command>."
 msgstr ""
 "或者，您可以从命令行里，用命令 <command>xreader</command> 启动 "
-"<application>Xreader 文档查看器</application>。"
+"<application>Xreader Pro 文档查看器</application>。"
 
 #: C/xreader.xml:146(title)
-msgid "When You Start Xreader Document Viewer"
-msgstr "当您启动 Xreader 文档查看器时"
+msgid "When You Start Xreader Pro Document Viewer"
+msgstr "当您启动 Xreader Pro 文档查看器时"
 
 #: C/xreader.xml:147(para)
 msgid ""
-"When you start <application>Xreader Document Viewer</application>, the "
+"When you start <application>Xreader Pro Document Viewer</application>, the "
 "following window is displayed."
 msgstr ""
-"当您启动 <application>Xreader 文档查看器</application>时，会显示以下窗口。"
+"当您启动 <application>Xreader Pro 文档查看器</application>时，会显示以下窗口。"
 
 #: C/xreader.xml:151(title)
-msgid "Xreader Document Viewer Window"
-msgstr "Xreader 文档查看器窗口"
+msgid "Xreader Pro Document Viewer Window"
+msgstr "Xreader Pro 文档查看器窗口"
 
 #: C/xreader.xml:158(phrase)
 msgid ""
-"Shows Xreader Document Viewer main window. Contains titlebar, menubar, "
+"Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, "
 "toolbar and display area. Menubar contains File, Edit, View, Go and Help "
 "menus."
 msgstr ""
-"此图展示了 Xreader 文档查看器窗口。包括标题栏，菜单栏，工具栏和显示区域。菜单"
+"此图展示了 Xreader Pro 文档查看器窗口。包括标题栏，菜单栏，工具栏和显示区域。菜单"
 "栏包括文件，编辑，查看，转到和帮助等菜单。"
 
 #: C/xreader.xml:164(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> window contains the "
+"The <application>Xreader Pro Document Viewer</application> window contains the "
 "following elements:"
-msgstr "Xreader 文档查看器窗口包括以下要素："
+msgstr "Xreader Pro 文档查看器窗口包括以下要素："
 
 #: C/xreader.xml:168(term) C/xreader.xml:216(para)
 msgid "Menubar"
@@ -291,9 +291,9 @@ msgstr "菜单栏"
 #: C/xreader.xml:170(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
-"with documents in <application>Xreader Document Viewer</application>."
+"with documents in <application>Xreader Pro Document Viewer</application>."
 msgstr ""
-"菜单栏里的菜单包含了所有您在 <application>Xreader 文档查看器</application>里查"
+"菜单栏里的菜单包含了所有您在 <application>Xreader Pro 文档查看器</application>里查"
 "阅文档时所需的所有命令。"
 
 #: C/xreader.xml:174(term)
@@ -328,10 +328,10 @@ msgstr "窗口"
 
 #: C/xreader.xml:207(para)
 msgid ""
-"Drag a file into the <application>Xreader Document Viewer</application> "
+"Drag a file into the <application>Xreader Pro Document Viewer</application> "
 "window from another application such as a file manager."
 msgstr ""
-"将文件从另一个程序，如文件管理器，拖动至 <application>Xreader 文档查看器</"
+"将文件从另一个程序，如文件管理器，拖动至 <application>Xreader Pro 文档查看器</"
 "application>窗口。"
 
 #: C/xreader.xml:210(para)
@@ -356,14 +356,14 @@ msgstr "按 <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>。"
 
 #: C/xreader.xml:187(para)
 msgid ""
-"In <application>Xreader Document Viewer</application>, you can perform the "
+"In <application>Xreader Pro Document Viewer</application>, you can perform the "
 "same action in several ways. For example, you can open a document in the "
 "following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
 "colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/><placeholder-2/></"
 "tgroup></informaltable>"
 msgstr ""
-"在 <application>Xreader 文档查看器</application>中，您可以用几种方式做出相同动"
+"在 <application>Xreader Pro 文档查看器</application>中，您可以用几种方式做出相同动"
 "作。例如，您可以用下列方式打开一个文档：<informaltable frame=\"all\"><tgroup "
 "cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth="
 "\"50*\"/><colspec colname=\"COLSPEC1\" colwidth=\"50*\"/><placeholder-1/"
@@ -393,30 +393,30 @@ msgstr "在 <guilabel>打开文档</guilabel> 对话框里，选择您想要打�
 
 #: C/xreader.xml:253(para)
 msgid ""
-"Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</"
+"Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</"
 "application> displays the name of the document in the titlebar of the window."
 msgstr ""
-"单击<guibutton>打开</guibutton>。<application>Xreader 文档查看器</application>"
+"单击<guibutton>打开</guibutton>。<application>Xreader Pro 文档查看器</application>"
 "在窗口的标题栏上显示出文档的名字"
 
 #: C/xreader.xml:258(para)
 msgid ""
 "To open another document, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. "
-"<application>Xreader Document Viewer</application> opens each file in a new "
+"<application>Xreader Pro Document Viewer</application> opens each file in a new "
 "window."
 msgstr ""
 "欲打开另一文档，再次选择<menuchoice><guimenu>文件</guimenu><guimenuitem>打开"
-"</guimenuitem></menuchoice>。<application>Xreader 文档查看器</application>会逐"
+"</guimenuitem></menuchoice>。<application>Xreader Pro 文档查看器</application>会逐"
 "一在新窗口中打开每个文件。"
 
 #: C/xreader.xml:261(para)
 msgid ""
-"If you try to open a document with format that <application>Xreader Document "
+"If you try to open a document with format that <application>Xreader Pro Document "
 "Viewer</application> does not recognize, the application displays an error "
 "message."
 msgstr ""
-"若您试图打开一个 <application>Xreader 文档查看器</application>无法识别格式的文"
+"若您试图打开一个 <application>Xreader Pro 文档查看器</application>无法识别格式的文"
 "件，本程序会显示一条错误消息。"
 
 #: C/xreader.xml:267(title)
@@ -500,9 +500,9 @@ msgstr "改变页面大小"
 #: C/xreader.xml:312(para)
 msgid ""
 "You can use the following methods to resize a page in the "
-"<application>Xreader Document Viewer</application> display area:"
+"<application>Xreader Pro Document Viewer</application> display area:"
 msgstr ""
-"您可用下列方法改变 <application>Xreader 文档查看器</application>显示区域的大"
+"您可用下列方法改变 <application>Xreader Pro 文档查看器</application>显示区域的大"
 "小："
 
 #: C/xreader.xml:317(para)
@@ -523,36 +523,36 @@ msgstr ""
 
 #: C/xreader.xml:327(para)
 msgid ""
-"To resize a page to have the same width as the <application>Xreader Document "
+"To resize a page to have the same width as the <application>Xreader Pro Document "
 "Viewer</application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
 msgstr ""
-"欲将页面宽度设为 <application>Xreader 文档查看器</application>显示区域的相同宽"
+"欲将页面宽度设为 <application>Xreader Pro 文档查看器</application>显示区域的相同宽"
 "度，选择<menuchoice><guimenu>查看</guimenu><guimenuitem>适合宽度</"
 "guimenuitem></menuchoice>。"
 
 #: C/xreader.xml:332(para)
 msgid ""
-"To resize a page to fit within the <application>Xreader Document Viewer</"
+"To resize a page to fit within the <application>Xreader Pro Document Viewer</"
 "application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
 msgstr ""
-"欲将页面大小设为与 <application>Xreader 文档查看器</application>显示区域一致，"
+"欲将页面大小设为与 <application>Xreader Pro 文档查看器</application>显示区域一致，"
 "选择<menuchoice><guimenu>查看</guimenu><guimenuitem>最适合</guimenuitem></"
 "menuchoice>。"
 
 #: C/xreader.xml:337(para)
 msgid ""
-"To resize the <application>Xreader Document Viewer</application> window to "
+"To resize the <application>Xreader Pro Document Viewer</application> window to "
 "have the same width and height as the screen, choose "
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></"
-"menuchoice>. To resize the <application>Xreader Document Viewer</application> "
+"menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> "
 "window to the original size, click on the <guibutton>Exit Full Screen</"
 "guibutton> button."
 msgstr ""
-"欲将 <application>Xreader 文档查看器</application>窗口大小设为屏幕高度和宽度，"
+"欲将 <application>Xreader Pro 文档查看器</application>窗口大小设为屏幕高度和宽度，"
 "选择<menuchoice><guimenu>查看</guimenu><guimenuitem>全屏幕</guimenuitem></"
-"menuchoice>。欲将 <application>Xreader 文档查看器</application>窗口大小恢复到"
+"menuchoice>。欲将 <application>Xreader Pro 文档查看器</application>窗口大小恢复到"
 "原始大小，单击<guibutton>离开全屏</guibutton>按钮。"
 
 #: C/xreader.xml:345(title)
@@ -684,9 +684,9 @@ msgstr "用此下拉列表选择用以打印文档的打印机。"
 #: C/xreader.xml:443(para)
 msgid ""
 "The <guilabel>Create a PDF document</guilabel> option is not supported in "
-"this version of <application>Xreader Document Viewer</application>."
+"this version of <application>Xreader Pro Document Viewer</application>."
 msgstr ""
-"<guilabel>创建PDF文档</guilabel>选项在此版本 <application>Xreader 文档查看器</"
+"<guilabel>创建PDF文档</guilabel>选项在此版本 <application>Xreader Pro 文档查看器</"
 "application>中尚未支持。"
 
 #: C/xreader.xml:449(guilabel)
@@ -775,9 +775,9 @@ msgstr "状态"
 
 #: C/xreader.xml:511(para) C/xreader.xml:517(para) C/xreader.xml:523(para)
 msgid ""
-"This functionality is not supported in this version of <application>Xreader "
+"This functionality is not supported in this version of <application>Xreader Pro "
 "Document Viewer</application>."
-msgstr "此版本 <application>Xreader 文档查看器</application>不支持此项功能。"
+msgstr "此版本 <application>Xreader Pro 文档查看器</application>不支持此项功能。"
 
 #: C/xreader.xml:515(guilabel)
 msgid "Type"
@@ -907,13 +907,13 @@ msgstr "令他人可以执行如打印文档等附加动作的主密码。"
 
 #: C/xreader.xml:616(para)
 msgid ""
-"When you try to open a password-protected document, <application>Xreader "
+"When you try to open a password-protected document, <application>Xreader Pro "
 "Document Viewer</application> displays a security dialog. Type either the "
 "user password or the master password in the <guilabel>Enter document "
 "password</guilabel> text box, then click <guibutton>Open Document</"
 "guibutton>."
 msgstr ""
-"对您试图打开一个有密码保护的文档时，<application>Xreader 文档查看器</"
+"对您试图打开一个有密码保护的文档时，<application>Xreader Pro 文档查看器</"
 "application>会显示一个安全对话框。在<guilabel>输入文档密码</guilabel>文本框中"
 "键入用户密码或主密码，然后点击<guibutton>打开文档</guibutton>."
 
@@ -931,10 +931,10 @@ msgstr ""
 
 #: C/xreader.xml:626(para)
 msgid ""
-"If the window is the last <application>Xreader Document Viewer</application> "
+"If the window is the last <application>Xreader Pro Document Viewer</application> "
 "window open, the application exits."
 msgstr ""
-"若当前窗口是最后一个打开的 <application>Xreader 文档查看器</application>窗口，"
+"若当前窗口是最后一个打开的 <application>Xreader Pro 文档查看器</application>窗口，"
 "本程序会退出。"
 
 #: C/xreader.xml:635(title)
@@ -943,9 +943,9 @@ msgstr "快捷键"
 
 #: C/xreader.xml:636(para)
 msgid ""
-"Below is a list of all shortcuts present in <application>Xreader Document "
+"Below is a list of all shortcuts present in <application>Xreader Pro Document "
 "Viewer</application>:"
-msgstr "下列是 <application>Xreader 文档查看器</application> 中的所有快捷键列表:"
+msgstr "下列是 <application>Xreader Pro 文档查看器</application> 中的所有快捷键列表:"
 
 #: C/xreader.xml:644(para)
 msgid "Shortcut"

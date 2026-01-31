@@ -419,13 +419,13 @@ msgstr "Переглядач документів"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader — це простий багатосторінковий переглядач документів. Він може "
+"<p> Xreader Pro — це простий багатосторінковий переглядач документів. Він може "
 "показувати та друкувати файли форматів PostScript (PS), Encapsulated "
 "PostScript (EPS), DJVU, DVI, XPS і Portable Document Format (PDF), а також "
 "коміксів. Щораз, коли це можливо, Ви можете шукати текст у документі, "
@@ -1252,40 +1252,40 @@ msgstr "Виникла помилка при показі довідки"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader — вільне програмне забезпечення; Ви можете вільно розповсюджувати "
+"Xreader Pro — вільне програмне забезпечення; Ви можете вільно розповсюджувати "
 "або змінювати його за умовами вільної ліцензії GNU General Public License "
 "яку оголошено Free Software Foundation; або версії 2 цієї ліцензії, або (на "
 "ваш розсуд) будь-якої старшої версії.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader розповсюджується зі сподіванням, що програма буде корисною, але без "
+"Xreader Pro розповсюджується зі сподіванням, що програма буде корисною, але без "
 "БУДЬ-ЯКИХ ЗАПОРУК; навіть не гарантується ПРИДАТНІСТЬ і ВІДПОВІДНІСТЬ БУДЬ-"
 "ЯКИМ ВИМОГАМ. Докладніше про це дивіться GNU General Public License.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Ви мали отримати копію GNU General Public License разом з Xreader. Якщо "
+"Ви мали отримати копію GNU General Public License разом з Xreader Pro. Якщо "
 "цього не сталося, напишіть Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

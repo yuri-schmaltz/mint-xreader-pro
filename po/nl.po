@@ -417,13 +417,13 @@ msgstr "Een documentenkijker"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader is een eenvoudige multipagina-documentkijker. Hij kan de "
+"<p> Xreader Pro is een eenvoudige multipagina-documentkijker. Hij kan de "
 "volgende soorten bestanden weergeven en afdrukken: PostScript (PS), "
 "Encapsulated PostScript (EPS), DJVU, DVI, XPS en Portable Document Format "
 "(PDF) files en stripboekarchiefbestanden. Indien ondersteund door het "
@@ -1252,12 +1252,12 @@ msgstr "Er is een fout opgetreden bij het tonen van de hulptekst"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader is vrije programmatuur; u mag hem opnieuw distribueren en/of "
+"Xreader Pro is vrije programmatuur; u mag hem opnieuw distribueren en/of "
 "wijzigen\n"
 "onder de voorwaarden van de GNU General Public License zoals gepubliceerd\n"
 "door de Free Software Foundation; hetzij volgens versie 2 van deze licentie "
@@ -1266,12 +1266,12 @@ msgstr ""
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader wordt gedistibueerd in de hoop dat hij nuttig zal zijn,\n"
+"Xreader Pro wordt gedistibueerd in de hoop dat hij nuttig zal zijn,\n"
 "maar ZONDER ENIGE GARANTIE; zonder zelfs de geïmpliceerde garantie\n"
 "van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL.  Zie de\n"
 "GNU General Public License voor meer bijzonderheden.\n"
@@ -1279,16 +1279,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "U zou een kopie van de GNU General Public License moeten hebben gekregen\n"
-"samen met Xreader; zoniet, schrijf dan naar de Free Software Foundation,\n"
+"samen met Xreader Pro; zoniet, schrijf dan naar de Free Software Foundation,\n"
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1709,7 +1709,7 @@ msgstr "NUMMER"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Xreader draaien in schermvullende modus"
+msgstr "Xreader Pro draaien in schermvullende modus"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1721,11 +1721,11 @@ msgstr "DOEL"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Xreader draaien in presentatiemodus"
+msgstr "Xreader Pro draaien in presentatiemodus"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Xreader draaien als voorbeeldweergever"
+msgstr "Xreader Pro draaien als voorbeeldweergever"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

@@ -408,13 +408,13 @@ msgstr "Hujjatni ko‘ruvchi"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader oddiy ko‘p sahifali hujjatlarni ko‘rish dasturidir. U PostScript "
+"<p> Xreader Pro oddiy ko‘p sahifali hujjatlarni ko‘rish dasturidir. U PostScript "
 "(PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS va Portativ Document "
 "Format (PDF) fayllarini, shuningdek, komikslar arxivi fayllarini ko‘rsatishi "
 "va chop etishi mumkin. Hujjat tomonidan qo‘llab-quvvatlansa, u matnni "
@@ -1239,24 +1239,24 @@ msgstr "Yordamni ko‘rsatishda xatolik yuz berdi"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader - bu erkin dasturiy ta'minot; siz uni qayta tarqatishingiz va/yoki "
+"Xreader Pro - bu erkin dasturiy ta'minot; siz uni qayta tarqatishingiz va/yoki "
 "uni Free Software Foundation tomonidan e'lon qilingan GNU General Public "
 "License shartlariga muvofiq o‘zgartirishingiz mumkin; Litsenziyaning 2-"
 "versiyasi yoki (sizning xohishingizga ko‘ra) har qanday keyingi versiyasi.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader foydali bo‘ladi degan umidda tarqatiladi, lekin HECH QANDAY "
+"Xreader Pro foydali bo‘ladi degan umidda tarqatiladi, lekin HECH QANDAY "
 "KAFOLATSIZ; TIJORAT MUVOFIQligi yoki MAQSUS MAQSADGA MUVOFIQligi "
 "to‘g‘risidagi nazarda tutilgan kafolatsiz ham. Batafsil ma'lumot uchun GNU "
 "General Public Licensega qarang.\n"
@@ -1264,16 +1264,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Siz Xreader bilan birga GNU General Public License nusxasini olishingiz "
+"Siz Xreader Pro bilan birga GNU General Public License nusxasini olishingiz "
 "kerak edi; boʻlmasa, Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301 USA ga yozing.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1695,7 +1695,7 @@ msgstr "RAQAM"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Xreaderni to‘liq ekran rejimida ishga tushirish"
+msgstr "Xreader Proni to‘liq ekran rejimida ishga tushirish"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1707,11 +1707,11 @@ msgstr "JOYI"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Xreaderni taqdimot rejimida ishga tushirish"
+msgstr "Xreader Proni taqdimot rejimida ishga tushirish"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Xreaderni ko‘rib chiquvchi sifatida ishga tushirish"
+msgstr "Xreader Proni ko‘rib chiquvchi sifatida ishga tushirish"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

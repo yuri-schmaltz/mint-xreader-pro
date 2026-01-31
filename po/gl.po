@@ -419,13 +419,13 @@ msgstr "Un visualizador de documentos"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader é un sinxelo visualizadorbde documentos multi-páxina. Pode "
+"<p> Xreader Pro é un sinxelo visualizadorbde documentos multi-páxina. Pode "
 "visualizar e imprimir PostScript (PS), Encapsulated PostScript (EPS), DJVU, "
 "DVI, XPS e arquivos Portable Document Format (PDF), do mesmo xeito que comic "
 "book archive files. Cando o documento o soporta, tamén soporta a búsqueda de "
@@ -1255,40 +1255,40 @@ msgstr "Produciuse un erro ao amosar a axuda"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"O Xreader é software libre, pode redistribuílo ou modificalo baixo as "
+"O Xreader Pro é software libre, pode redistribuílo ou modificalo baixo as "
 "condicións da Licenza pública xeral GNU tal como a publica a Free Software "
 "Foundation; tanto na versión 2 da Licenza como (segundo o seu criterio) en "
 "calquera versión posterior.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"O Xreader distribúese esperando que sexa útil, mais SEN NINGUNHA GARANTÍA; "
+"O Xreader Pro distribúese esperando que sexa útil, mais SEN NINGUNHA GARANTÍA; "
 "mesmo sen a garantía implícita de VALOR COMERCIAL ou ADECUACIÓN PARA UN "
 "PROPÓSITO PARTICULAR. Para máis detalles vexa a Licenza pública xeral GNU.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Debeu de recibir unha copia da Licenza pública xeral GNU xunto co Xreader; "
+"Debeu de recibir unha copia da Licenza pública xeral GNU xunto co Xreader Pro; "
 "en caso contrario, escriba á Free Software Foundation, Inc., 59 Temple "
 "Place, Suite 330, Boston, MA  02111-1307  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1709,7 +1709,7 @@ msgstr "NÚMERO"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Executar o Xreader no modo de pantalla completa"
+msgstr "Executar o Xreader Pro no modo de pantalla completa"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1721,11 +1721,11 @@ msgstr "DEST"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Executar o Xreader no modo de presentación"
+msgstr "Executar o Xreader Pro no modo de presentación"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Executar o Xreader para facer vistas previas"
+msgstr "Executar o Xreader Pro para facer vistas previas"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

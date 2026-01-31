@@ -413,13 +413,13 @@ msgstr "Прагляднік дакументаў"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader - гэта просты прагляднік шматстаронкавых дакументаў. Ён умее "
+"<p> Xreader Pro - гэта просты прагляднік шматстаронкавых дакументаў. Ён умее "
 "паказваць і друкаваць файлы PostScript (PS), Encapsulated PostScript (EPS), "
 "DJVU, DVI, XPS, PDF і комікс-архівы. Дазваляе шукаць па тэксце, капіяваць у "
 "буфер абмену, карыстацца ўнутранымі спасылкамі і закладкамі ў змесце (калі "
@@ -1241,23 +1241,23 @@ msgstr "Памылка паказу даведкі"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader - свабодная праграма; яе можна распаўсюджваць і/ці змяняць паводле "
+"Xreader Pro - свабодная праграма; яе можна распаўсюджваць і/ці змяняць паводле "
 "ўмоў GNU General Public License версіі 2 ці пазнейшай (на ваш выбар), "
 "апублікаванай Free Software Foundation.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader распаўсюджваецца з надзеяй на тое, што праграма будзе карыснай, але "
+"Xreader Pro распаўсюджваецца з надзеяй на тое, што праграма будзе карыснай, але "
 "БЕЗ АНІЯКІХ ГАРАНТЫЙ; нават без відавочных гарантый прыдатнасці да "
 "КАМЕРЦЫЙНАГА ПРОДАЖУ ці ПЭЎНАЙ МЭТЫ. Для падрабязнасцей глядзіце GNU General "
 "Public License.\n"
@@ -1265,16 +1265,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Вы мусілі атрымаць копію GNU General Public License разам з Xreader; калі "
+"Вы мусілі атрымаць копію GNU General Public License разам з Xreader Pro; калі "
 "не, можаце напісаць у Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301 USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1696,7 +1696,7 @@ msgstr "НУМАР"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Запускаць Xreader у поўнаэкранным рэжыме"
+msgstr "Запускаць Xreader Pro у поўнаэкранным рэжыме"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1708,11 +1708,11 @@ msgstr "МЕСЦА"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Запускаць Xreader у рэжыме прэзентацыі"
+msgstr "Запускаць Xreader Pro у рэжыме прэзентацыі"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Запускаць Xreader у рэжыме перадпрагляду"
+msgstr "Запускаць Xreader Pro у рэжыме перадпрагляду"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

@@ -424,13 +424,13 @@ msgstr "Un visor de documentos"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader es un sencillo visor de documentos multipágina. Puede mostrar e "
+"<p> Xreader Pro es un sencillo visor de documentos multipágina. Puede mostrar e "
 "imprimir archivos PostScript (PS), PostScript encapsulado (EPS), DJVU, DVI, "
 "XPS y PDF, así como archivadores de cómics. Cuando el documento lo admite, "
 "también permite buscar texto, copiar texto en el portapapeles, navegar por "
@@ -1260,24 +1260,24 @@ msgstr "Se ha producido un error al mostrar la ayuda"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader es software libre; puede redistribuirlo y/o modificarlo según los "
+"Xreader Pro es software libre; puede redistribuirlo y/o modificarlo según los "
 "términos de la Licencia Pública General de GNU publicada por la Fundación "
 "para el Software Libre; ya sea la versión 2 de la Licencia o (a su elección) "
 "cualquier versión posterior.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader se distribuye con la esperanza de que sea útil, pero SIN NINGUNA "
+"Xreader Pro se distribuye con la esperanza de que sea útil, pero SIN NINGUNA "
 "GARANTÍA; ni siquiera la garantía implícita de COMERCIABILIDAD o IDONEIDAD "
 "PARA UN PROPÓSITO PARTICULAR. Consulte la Licencia Pública General de GNU "
 "para obtener más detalles.\n"
@@ -1285,16 +1285,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "Debería haber recibido una copia de la Licencia Pública General de GNU junto "
-"con Xreader; si no es así, escriba a la Free Software Foundation, Inc. 51 "
+"con Xreader Pro; si no es así, escriba a la Free Software Foundation, Inc. 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301 EE.UU.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1716,7 +1716,7 @@ msgstr "NÚMERO"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Ejecutar Xreader en modo de pantalla completa"
+msgstr "Ejecutar Xreader Pro en modo de pantalla completa"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1728,11 +1728,11 @@ msgstr "DESTINO"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Ejecutar Xreader en modo de presentación"
+msgstr "Ejecutar Xreader Pro en modo de presentación"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Ejecutar Xreader en modo de vista previa de impresión"
+msgstr "Ejecutar Xreader Pro en modo de vista previa de impresión"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

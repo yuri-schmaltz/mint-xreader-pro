@@ -1,4 +1,4 @@
-% Xreader
+% Xreader Pro
 % Oz Nahum (2012); Nickolay V. Shmyrev; Niels Giesen; Claude Paroz (2004)
 % 18 September 2012
 
@@ -6,8 +6,8 @@
 Introduction
 ============
 
-Xreader enables you to view documents of various formats
-like Portable Document Format (PDF) files and PostScript files. Xreader 
+Xreader Pro enables you to view documents of various formats
+like Portable Document Format (PDF) files and PostScript files. Xreader Pro 
 follows Freedesktop.org and MATE standards to provide integration with
 Desktop Environment.
 
@@ -31,7 +31,7 @@ When you start xreader, the following window is displayed.
 display area. Menubar contains File, Edit, View, Go and Help menus.
 ](figures/xreader_start_window.png)
 
-Xreader window contains the following elements:
+Xreader Pro window contains the following elements:
 
 Menubar
 :   The menus on the menubar contain all of the commands that you need

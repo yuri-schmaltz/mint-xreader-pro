@@ -418,13 +418,13 @@ msgstr "一个文档查看器"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader 是一个简单的多页文档查看器。它可以显示和打印 PostScript (PS)，Encapsulated PostScript "
+"<p> Xreader Pro 是一个简单的多页文档查看器。它可以显示和打印 PostScript (PS)，Encapsulated PostScript "
 "(EPS)，DJVU，DVI，XPS，便携式文档格式 (PDF)，以及 Comic Book 文档。 "
 "当文档支持时，它还有搜索文本，将文本复制到剪贴板，超文本导航，目录书签等功能。</p>"
 
@@ -1224,38 +1224,38 @@ msgstr "显示帮助时出现一个错误"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader 是自由软件；您可以按照自由软件基金会所发布的 GNU GPL 许可对其再发放和/或修改它；至于 GPL "
+"Xreader Pro 是自由软件；您可以按照自由软件基金会所发布的 GNU GPL 许可对其再发放和/或修改它；至于 GPL "
 "的版本，您可以使用第二版或任何更新的版本。\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"发布 Xreader 的目的是希望它能够在一定程度上帮到您。但我们并不为\n"
+"发布 Xreader Pro 的目的是希望它能够在一定程度上帮到您。但我们并不为\n"
 "它提供任何形式的担保，也无法保证它可以在特定用途中得到您希望的\n"
 "结果。请参看 GNU GPL 许可中的更多细节。\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"您应该收到和 Xreader 一起的 GNU GPL 协议副本；如果没有收到该协议\n"
+"您应该收到和 Xreader Pro 一起的 GNU GPL 协议副本；如果没有收到该协议\n"
 "的话，您可以写信给自由软件基金会，地址是：\n"
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

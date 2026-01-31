@@ -412,13 +412,13 @@ msgstr "Dokumentu skatītājs"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader ir vienkārša daudzlapu dokumentu skatīšanas programma. Tā var "
+"<p> Xreader Pro ir vienkārša daudzlapu dokumentu skatīšanas programma. Tā var "
 "parādīt un izdrukāt PostScript (PS), Encapsulated PostScript (EPS), DJVU, "
 "DVI, XPS un Portable Document Format (PDF) failus, kā arī komiksu arhīva "
 "failus. Ja dokuments to atbalsta, programma ļauj arī meklēt tekstu, kopēt "
@@ -851,7 +851,7 @@ msgstr "Pievienot izcēluma piezīmi"
 
 #: ../shell/ev-application.c:1018
 msgid "Running in presentation mode"
-msgstr "Xreader darbojas prezentācijas režīmā"
+msgstr "Xreader Pro darbojas prezentācijas režīmā"
 
 #: ../shell/ev-history.c:474 ../shell/ev-sidebar-bookmarks.c:314
 #: ../shell/ev-window.c:916 ../shell/ev-window.c:4781
@@ -1248,24 +1248,24 @@ msgstr "Gadījās kļūda, mēģinot parādīt palīdzību"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader ir brīva programmatūra; jūs varat to izplatīt tālāk un/vai modificēt "
+"Xreader Pro ir brīva programmatūra; jūs varat to izplatīt tālāk un/vai modificēt "
 "saskaņā ar GNU Vispārējās publiskās licences noteikumiem, ko publicējis "
 "Brīvas programmatūras fonds; izmantojiet Licences versiju 2 vai (pēc jūsu "
 "izvēles) jebkuru vēlāku versiju.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader tiek izplatīta cerībā, ka tā būs noderīga, taču BEZ JEBKĀDĀM "
+"Xreader Pro tiek izplatīta cerībā, ka tā būs noderīga, taču BEZ JEBKĀDĀM "
 "GARANTIJĀM; pat bez šķietamām KOMERCIĀLAS VĒRTĪBAS un PIEMĒROTĪBAS "
 "KONKRĒTIEM NOLŪKIEM garantijām. Sīkāku informāciju meklējiet GNU Vispārējā "
 "publiskajā licencē.\n"
@@ -1273,16 +1273,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "Jums vajadzēja saņemt GNU Vispārējās publiskās licences kopiju kopā ar "
-"Xreader; ja neesat saņēmis, rakstiet uz adresi Free Software Foundation, "
+"Xreader Pro; ja neesat saņēmis, rakstiet uz adresi Free Software Foundation, "
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1704,7 +1704,7 @@ msgstr "NUMURS"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Palaist Xreader pilnekrāna režīmā"
+msgstr "Palaist Xreader Pro pilnekrāna režīmā"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1716,11 +1716,11 @@ msgstr "MĒRĶIS"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Palaist Xreader prezentācijas režīmā"
+msgstr "Palaist Xreader Pro prezentācijas režīmā"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Palaist Xreader kā pirmsskatītāju"
+msgstr "Palaist Xreader Pro kā pirmsskatītāju"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

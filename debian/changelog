@@ -558,7 +558,7 @@ xreader (2.6.0) ulyana; urgency=medium
   * ev-window.c: Hide the toolbar in recent document mode, there's nothing that can be used on it anyhow.
 
   [ icarter09 ]
-  * Created more tests for Xreader menu.
+  * Created more tests for Xreader Pro menu.
 
   [ Stephen Collins ]
   * Tests: use build target rather than executable name for dependency
@@ -615,7 +615,7 @@ xreader (2.4.4) tricia; urgency=medium
   * meson: fix detection of t1lib
 
   [ icarter09 ]
-  * Created test for the Xreader Help menu.
+  * Created test for the Xreader Pro Help menu.
   * Created test cases for File and Edit menus.
 
   [ Isaac Carter ]

@@ -411,13 +411,13 @@ msgstr "Một trình xem tài liệu"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader là một trình xem tài liệu nhiều trang đơn giản. Nó có thể hiển "
+"<p> Xreader Pro là một trình xem tài liệu nhiều trang đơn giản. Nó có thể hiển "
 "thị và in các tệp PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, "
 "XPS và Portable Document Format (PDF), cũng như các tệp lưu trữ truyện "
 "tranh. Khi được hỗ trợ, nó cũng cho phép tìm kiếm văn bản, sao chép văn bản "
@@ -1233,40 +1233,40 @@ msgstr "Gặp lỗi khi hiển thị trợ giúp"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader là phần mềm tự do; bạn có thể phát hành lại nó và/hoặc sửa đổi nó "
+"Xreader Pro là phần mềm tự do; bạn có thể phát hành lại nó và/hoặc sửa đổi nó "
 "theo các điều khoản của Giấy phép Công cộng GNU như được xuất bản bởi Tổ "
 "chức Phần mềm Tự do; hoặc phiên bản 2 của Giấy phép này, hoặc bất kì phiên "
 "bản sau nào (tuỳ ý).\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader được phân phối với mong muốn nó sẽ là một phần mềm có ích, nhưng "
+"Xreader Pro được phân phối với mong muốn nó sẽ là một phần mềm có ích, nhưng "
 "KHÔNG PHẢI CHỊU BẤT KÌ TRÁCH NHIỆM NÀO. Xem Giấy phép Công cộng GNU để biết "
 "thêm chi tiết.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Bạn nên nhận được một bản sao của Giấy phép Công cộng GNU cùng với Xreader; "
+"Bạn nên nhận được một bản sao của Giấy phép Công cộng GNU cùng với Xreader Pro; "
 "Nếu không, hãy viết thư cho Tổ chức Phần mềm Tự do(Free Software Foundation, "
 "Inc.) tại số 51 Đường Franklin, Tầng 4, Boston, MA 02110-1301 Hoa Kỳ.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1686,7 +1686,7 @@ msgstr "SỐ"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Chạy Xreader ở chế độ toàn màn hình"
+msgstr "Chạy Xreader Pro ở chế độ toàn màn hình"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1698,11 +1698,11 @@ msgstr "ĐÍCH"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Chạy Xreader ở chế độ trình chiếu"
+msgstr "Chạy Xreader Pro ở chế độ trình chiếu"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Chạy Xreader ở chế độ xem thử"
+msgstr "Chạy Xreader Pro ở chế độ xem thử"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"

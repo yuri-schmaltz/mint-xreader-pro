@@ -409,13 +409,13 @@ msgstr "ఒక డాక్యుమెంట్ వ్యూయర్"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader అనేది ఒక సాధారణ బహుళ-పేజీ డాక్యుమెంట్ వ్యూయర్. ఇది "
+"<p> Xreader Pro అనేది ఒక సాధారణ బహుళ-పేజీ డాక్యుమెంట్ వ్యూయర్. ఇది "
 "పోస్ట్‌స్క్రిప్ట్ (PS), ఎన్‌క్యాప్సులేటెడ్ పోస్ట్‌స్క్రిప్ట్ (EPS), DJVU, "
 "DVI, XPS మరియు పోర్టబుల్ డాక్యుమెంట్ ఫార్మాట్ (PDF) ఫైల్‌లను, అలాగే కామిక్ "
 "బుక్ ఆర్కైవ్ ఫైల్‌లను ప్రదర్శించగలదు మరియు ప్రింట్ చేయగలదు. డాక్యుమెంట్ "
@@ -1240,23 +1240,23 @@ msgstr "అక్కడ వొక దోషము సహాయమును ప�
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader స్వతంత్ర సాఫ్ట్వేర్; నీవు దానిని మరలపంచవచ్చు స్వతంత్ర సాఫ్ట్వేర్ "
+"Xreader Pro స్వతంత్ర సాఫ్ట్వేర్; నీవు దానిని మరలపంచవచ్చు స్వతంత్ర సాఫ్ట్వేర్ "
 "సంస్థ వెలువరిచిన GNU సర్వసామన్యమైన ప్రజా లైసెన్సు వివరణం 2 లైసెన్సు లేదా "
 "వేరే (మీ ఐచ్చికం వద్ద) వివరణల ప్రకారం మార్చవచ్చు.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader ఉపయోగపడుతుందనే నమ్మకంతో పంపిణీచేయబడుతోంది, అయితే ఏ హామీ లేకుండా;  "
+"Xreader Pro ఉపయోగపడుతుందనే నమ్మకంతో పంపిణీచేయబడుతోంది, అయితే ఏ హామీ లేకుండా;  "
 "వ్యాపారసంబందంగా కాని లేదా ఒక నిర్దిష్ట అవసరానికిచెందినదని కాని హామీ లేదు. "
 "ఎక్కువ సమాచారం కొరకు GNU జనరల్ పబ్లిక్ లైసెన్స్  ను చూడండి. మీరు ఈ "
 "ప్రోగ్రామ్ నకలు తోటి ఒక GNU జనరల్ పబ్లిక్ లైసెన్స్  నకలుగూడా పొందిఉంటారు; "
@@ -1266,15 +1266,15 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"మీరు Xreader తో పాటు GNU జనరల్ పబ్లిక్ లైసెన్స్ కాపీని కూడా అందుకొని ఉండాలి; "
+"మీరు Xreader Pro తో పాటు GNU జనరల్ పబ్లిక్ లైసెన్స్ కాపీని కూడా అందుకొని ఉండాలి; "
 "లేకపోతే, Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, "
 "Boston, MA 02110-1301 USA కు వ్రాయండి.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
+msgid "Xreader Pro"
 msgstr "ఎవిన్స్"
 
 #. TRANS: Sometimes this could be better translated as

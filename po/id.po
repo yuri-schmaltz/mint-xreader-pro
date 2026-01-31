@@ -415,13 +415,13 @@ msgstr "Penampil dokumen"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader adalah penampil dokumen multi halaman yang sederhana. Bisa "
+"<p> Xreader Pro adalah penampil dokumen multi halaman yang sederhana. Bisa "
 "menampilkan dan mencetak PostScript(PS), Encapsulated PostScript (EPS), "
 "DJVU, DVI, XPS dan file Portable Document Format (PDF), juga file archive "
 "buku komik. Ketika dokumen telah mendukung, juga dapat mencari kata, "
@@ -1243,40 +1243,40 @@ msgstr "Terjadi galat sewaktu menampilkan bantuan"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader adalah perangkat lunak bebas; Anda dapat mendistribusikan ulang "
+"Xreader Pro adalah perangkat lunak bebas; Anda dapat mendistribusikan ulang "
 "dan/atau mengubahnya di bawah ketentuan GNU General Public License "
 "sebagaimana dipublikasikan oleh Free Software Foundation; Lisensi versi 2, "
 "atau (sesuai pilihan Anda) menggunakan versi selanjutnya.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader didistribusikan dengan harapan dapat berguna, tetapi TANPA ADANYA "
+"Xreader Pro didistribusikan dengan harapan dapat berguna, tetapi TANPA ADANYA "
 "JAMINAN; termasuk tanpa jaminan DAYA JUAL atau KELAIKAN UNTUK TUJUAN "
 "TERTENTU. Lihat GNU General Public License untuk rincian lebih lanjut.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
 "Anda seharusnya menerima salinan dari GNU General Public License bersama "
-"Xreader; jika tidak, kirimkan surat Anda ke Free Software Foundation, Inc., "
+"Xreader Pro; jika tidak, kirimkan surat Anda ke Free Software Foundation, Inc., "
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

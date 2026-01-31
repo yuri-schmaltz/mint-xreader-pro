@@ -19,7 +19,7 @@
   <bookinfo>
     <title>Xreader Programmer's Reference Manual</title>
     <releaseinfo>
-      For Xreader version &version;.
+      For Xreader Pro version &version;.
       The latest version of this documentation can be found on-line at the
       <ulink role="online-location" url="http://library.mate.org/devel/xreader/index.html">MATE Library</ulink>.
     </releaseinfo>
@@ -70,7 +70,7 @@
     <title>Frontend</title>
     <partintro>
       <para>
-        Xreader frontend.
+        Xreader Pro frontend.
       </para>
     </partintro>
 

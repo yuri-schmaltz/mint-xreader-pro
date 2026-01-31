@@ -124,15 +124,15 @@ msgid ""
 msgstr "FIXME: Необходима е локализирана снимка."
 
 #: xreader.xml:25(title)
-msgid "Xreader Document Viewer Manual"
-msgstr "Ръководство за програмата за разглеждане на документи - Xreader"
+msgid "Xreader Pro Document Viewer Manual"
+msgstr "Ръководство за програмата за разглеждане на документи - Xreader Pro"
 
 #: xreader.xml:27(para)
 msgid ""
-"The Xreader Document Viewer application enables you to view documents of "
+"The Xreader Pro Document Viewer application enables you to view documents of "
 "various formats like Portable Document Format (PDF) files and PostScript "
 "files"
-msgstr "Програмата за разглеждане на документи Xreader Ви позволява да преглеждате документи от различни формати като Portable Document Format (PDF) или PostScript."
+msgstr "Програмата за разглеждане на документи Xreader Pro Ви позволява да преглеждате документи от различни формати като Portable Document Format (PDF) или PostScript."
 
 #: xreader.xml:33(year)
 msgid "2005"
@@ -175,18 +175,18 @@ msgid "nshmyrev@yandex.ru"
 msgstr "nshmyrev@yandex.ru"
 
 #: xreader.xml:88(revnumber)
-msgid "Xreader Document Viewer Manual V1.0"
-msgstr "Ръководство за Xreader, версия 1.0"
+msgid "Xreader Pro Document Viewer Manual V1.0"
+msgstr "Ръководство за Xreader Pro, версия 1.0"
 
 #: xreader.xml:89(date)
 msgid "2005-04-06"
 msgstr "06-04-2005"
 
 #: xreader.xml:97(releaseinfo)
-msgid "This manual describes version 0.2 of Xreader Document Viewer"
+msgid "This manual describes version 0.2 of Xreader Pro Document Viewer"
 msgstr ""
 "Това ръководство е за версия 0.2 на програмата за преглед на документи "
-"Xreader."
+"Xreader Pro."
 
 #: xreader.xml:100(title)
 msgid "Feedback"
@@ -194,12 +194,12 @@ msgstr "Обратна връзка"
 
 #: xreader.xml:101(para)
 msgid ""
-"To report a bug or make a suggestion regarding the Xreader Document Viewer "
+"To report a bug or make a suggestion regarding the Xreader Pro Document Viewer "
 "application or this manual, follow the directions in the <ulink url=\"help:"
 "mate-feedback\" type=\"help\">MATE Feedback Page</ulink>."
 msgstr ""
 "За да докладвате за грешка или да направите предложение относно програмата "
-"за преглед на документи Xreader или това ръководство, следвайте указанията, "
+"за преглед на документи Xreader Pro или това ръководство, следвайте указанията, "
 "описани в <ulink url=\"help:mate-feedback\" type=\"help\">Страницата за "
 "обратна връзка на MATE</ulink>."
 
@@ -213,15 +213,15 @@ msgstr "Въведение"
 
 #: xreader.xml:120(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> application enables "
+"The <application>Xreader Pro Document Viewer</application> application enables "
 "you to view documents of various formats like Portable Document Format (PDF) "
-"files and PostScript files. <application>Xreader Document Viewer</"
+"files and PostScript files. <application>Xreader Pro Document Viewer</"
 "application> follows Freedesktop.org and MATE standards to provide "
 "integration with Desktop Environment."
 msgstr ""
-"Програмата <application>Xreader</application> позволява да преглеждате "
+"Програмата <application>Xreader Pro</application> позволява да преглеждате "
 "документи от различни формати като Portable Document Format (PDF) файлове "
-"или PostScript файлове. <application>Xreader</application> следва стандартите "
+"или PostScript файлове. <application>Xreader Pro</application> следва стандартите "
 "на Freedesktop.org и MATE, за да предостави интеграция с работната среда."
 
 #: xreader.xml:127(title)
@@ -229,15 +229,15 @@ msgid "Getting Started"
 msgstr "Първи стъпки"
 
 #: xreader.xml:130(title)
-msgid "To Start Xreader Document Viewer"
-msgstr "Стартиране на Xreader"
+msgid "To Start Xreader Pro Document Viewer"
+msgstr "Стартиране на Xreader Pro"
 
 #: xreader.xml:131(para)
 msgid ""
-"You can start <application>Xreader Document Viewer</application> in the "
+"You can start <application>Xreader Pro Document Viewer</application> in the "
 "following ways:"
 msgstr ""
-"Може да стартирате <application>Xreader</application> по следните начини:"
+"Може да стартирате <application>Xreader Pro</application> по следните начини:"
 
 #: xreader.xml:135(term)
 msgid "<guimenu>Applications</guimenu> menu"
@@ -245,7 +245,7 @@ msgstr "От менюто <guimenu>Програми</guimenu>"
 
 #: xreader.xml:137(para)
 msgid ""
-"Choose <menuchoice><guisubmenu>Graphics</guisubmenu><guimenuitem>Xreader "
+"Choose <menuchoice><guisubmenu>Graphics</guisubmenu><guimenuitem>Xreader Pro "
 "Document Viewer</guimenuitem></menuchoice>."
 msgstr ""
 "Изберете <menuchoice><guisubmenu>Графика</guisubmenu><guimenuitem>Преглед на "
@@ -260,38 +260,38 @@ msgid "Execute the following command: <command>xreader</command>"
 msgstr "Изпълнете следната команда: <command>xreader</command>"
 
 #: xreader.xml:152(title)
-msgid "When You Start Xreader Document Viewer"
-msgstr "Когато стартирате Xreader"
+msgid "When You Start Xreader Pro Document Viewer"
+msgstr "Когато стартирате Xreader Pro"
 
 #: xreader.xml:153(para)
 msgid ""
-"When you start <application>Xreader Document Viewer</application>, the "
+"When you start <application>Xreader Pro Document Viewer</application>, the "
 "following window is displayed."
 msgstr ""
-"Когато стартирате <application>Xreader</application> се появява следният "
+"Когато стартирате <application>Xreader Pro</application> се появява следният "
 "прозорец."
 
 #: xreader.xml:157(title)
-msgid "Xreader Document Viewer Window"
-msgstr "Прозорецът на програмата за преглед на документи Xreader"
+msgid "Xreader Pro Document Viewer Window"
+msgstr "Прозорецът на програмата за преглед на документи Xreader Pro"
 
 #: xreader.xml:164(phrase)
 msgid ""
-"Shows Xreader Document Viewer main window. Contains titlebar, menubar, "
+"Shows Xreader Pro Document Viewer main window. Contains titlebar, menubar, "
 "toolbar and display area. Menubar contains File, Edit, View, Go and Help "
 "menus."
 msgstr ""
-"Показва главния прозорец на програмата за преглед на документи Xreader. "
+"Показва главния прозорец на програмата за преглед на документи Xreader Pro. "
 "Съдържа заглавна лента, лента с менюта, лента с инструменти и район на "
 "преглед. Лентата с менюта съдържа менютата Файл, Редактиране, Изглед, "
 "Отиване и Помощ."
 
 #: xreader.xml:170(para)
 msgid ""
-"The <application>Xreader Document Viewer</application> window contains the "
+"The <application>Xreader Pro Document Viewer</application> window contains the "
 "following elements:"
 msgstr ""
-"Прозорецът на <application>Xreader</application> съдържа следните елементи:"
+"Прозорецът на <application>Xreader Pro</application> съдържа следните елементи:"
 
 #: xreader.xml:174(term) xreader.xml:222(para)
 msgid "Menubar"
@@ -300,10 +300,10 @@ msgstr "Лента с менюта"
 #: xreader.xml:176(para)
 msgid ""
 "The menus on the menubar contain all of the commands that you need to work "
-"with documents in <application>Xreader Document Viewer</application>."
+"with documents in <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 "Менютата на лентата с менюта съдържат всички команди, които са Ви нужни, за "
-"да работите с документи чрез <application>Xreader</application>."
+"да работите с документи чрез <application>Xreader Pro</application>."
 
 #: xreader.xml:180(term)
 msgid "Toolbar"
@@ -339,11 +339,11 @@ msgstr "Прозорец"
 
 #: xreader.xml:213(para)
 msgid ""
-"Drag a file into the <application>Xreader Document Viewer</application> "
+"Drag a file into the <application>Xreader Pro Document Viewer</application> "
 "window from another application such as a file manager."
 msgstr ""
 "Изтеглете файл, от друга програма като например файлов мениджър, към "
-"прозореца на <application>Xreader</application>."
+"прозореца на <application>Xreader Pro</application>."
 
 #: xreader.xml:216(para)
 msgid "Double-click on the file name in the file manager"
@@ -368,7 +368,7 @@ msgstr ""
 
 #: xreader.xml:193(para)
 msgid ""
-"In <application>Xreader Document Viewer</application>, you can perform the "
+"In <application>Xreader Pro Document Viewer</application>, you can perform the "
 "same action in several ways. For example, you can open a document in the "
 "following ways: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" "
 "rowsep=\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec "
@@ -379,7 +379,7 @@ msgid ""
 "\"><placeholder-5/><entry><placeholder-6/></entry></row><row valign=\"top"
 "\"><placeholder-7/><placeholder-8/></row></tbody></tgroup></informaltable>"
 msgstr ""
-"В <application>Xreader</application> можете да извършвате едно и също "
+"В <application>Xreader Pro</application> можете да извършвате едно и също "
 "действие по различни начини. Например, може да отварите документ по следните "
 "начини: <informaltable frame=\"all\"><tgroup cols=\"2\" colsep=\"1\" rowsep="
 "\"1\"><colspec colname=\"COLSPEC0\" colwidth=\"50*\"/><colspec colname="
@@ -416,30 +416,30 @@ msgstr ""
 
 #: xreader.xml:259(para)
 msgid ""
-"Click <guibutton>Open</guibutton>. <application>Xreader Document Viewer</"
+"Click <guibutton>Open</guibutton>. <application>Xreader Pro Document Viewer</"
 "application> displays the name of the document in the titlebar of the window."
 msgstr ""
-"Натиснете <guibutton>Отваряне</guibutton>. <application>Xreader</application> "
+"Натиснете <guibutton>Отваряне</guibutton>. <application>Xreader Pro</application> "
 "показва името на документа в заглавната лента на главния прозорец прозорец."
 
 #: xreader.xml:264(para)
 msgid ""
 "To open another document, choose <menuchoice><guimenu>File</"
 "guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. "
-"<application>Xreader Document Viewer</application> opens each file in a new "
+"<application>Xreader Pro Document Viewer</application> opens each file in a new "
 "window."
 msgstr ""
 "За да отворите друг документ, изберете отново <menuchoice><guimenu>Файл</"
 "guimenu><guimenuitem>Отваряне</guimenuitem></menuchoice>. "
-"<application>Xreader</application> отваря всеки файл в отделен прозорец."
+"<application>Xreader Pro</application> отваря всеки файл в отделен прозорец."
 
 #: xreader.xml:267(para)
 msgid ""
-"If you try to open a document with format that <application>Xreader Document "
+"If you try to open a document with format that <application>Xreader Pro Document "
 "Viewer</application> does not recognize, the application displays an error "
 "message."
 msgstr ""
-"Ако се опитате да отворите документ с формат, който <application>Xreader</"
+"Ако се опитате да отворите документ с формат, който <application>Xreader Pro</"
 "application> не разпознава, програмата ще покаже съобщение за грешка."
 
 #: xreader.xml:273(title)
@@ -528,10 +528,10 @@ msgstr "Промяна размера на страницата"
 #: xreader.xml:318(para)
 msgid ""
 "You can use the following methods to resize a page in the "
-"<application>Xreader Document Viewer</application> display area:"
+"<application>Xreader Pro Document Viewer</application> display area:"
 msgstr ""
 "Може да използвате следните методи, за да преоразмерите страница в района на "
-"преглед на <application>Xreader</application>:"
+"преглед на <application>Xreader Pro</application>:"
 
 #: xreader.xml:323(para)
 msgid ""
@@ -551,39 +551,39 @@ msgstr ""
 
 #: xreader.xml:333(para)
 msgid ""
-"To resize a page to have the same width as the <application>Xreader Document "
+"To resize a page to have the same width as the <application>Xreader Pro Document "
 "Viewer</application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Fit page width</guimenuitem></menuchoice>."
 msgstr ""
 "За да преоразмерите страница, така че да има същата ширина като района на "
-"преглед на <application>Xreader</application>, изберете "
+"преглед на <application>Xreader Pro</application>, изберете "
 "<menuchoice><guimenu>Изглед</guimenu><guimenuitem>Запълване на страницата по "
 "ширина</guimenuitem></menuchoice>."
 
 #: xreader.xml:338(para)
 msgid ""
-"To resize a page to fit within the <application>Xreader Document Viewer</"
+"To resize a page to fit within the <application>Xreader Pro Document Viewer</"
 "application> display area, choose <menuchoice><guimenu>View</"
 "guimenu><guimenuitem>Best Fit</guimenuitem></menuchoice>."
 msgstr ""
 "За да преоразмерите страница, така че пасне като големина на района на "
-"преглед на <application>Xreader</application>, изберете "
+"преглед на <application>Xreader Pro</application>, изберете "
 "<menuchoice><guimenu>Изглед</guimenu><guimenuitem>Запълване на екрана</"
 "guimenuitem></menuchoice>."
 
 #: xreader.xml:343(para)
 msgid ""
-"To resize the <application>Xreader Document Viewer</application> window to "
+"To resize the <application>Xreader Pro Document Viewer</application> window to "
 "have the same width and height as the screen, choose "
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Full Screen</guimenuitem></"
-"menuchoice>. To resize the <application>Xreader Document Viewer</application> "
+"menuchoice>. To resize the <application>Xreader Pro Document Viewer</application> "
 "window to the original size, click on the <guibutton>Exit Full Screen</"
 "guibutton> button."
 msgstr ""
-"За да преоразмерите прозореца на <application>Xreader</application>, така че "
+"За да преоразмерите прозореца на <application>Xreader Pro</application>, така че "
 "да има същата дължина и височина като екрана, изберете "
 "<menuchoice><guimenu>Изглед</guimenu><guimenuitem>Цял екран</guimenuitem></"
-"menuchoice>. За върнете прозореца на <application>Xreader</application> към "
+"menuchoice>. За върнете прозореца на <application>Xreader Pro</application> към "
 "предишните му размери, натиснете на бутона <guibutton>Напускане на режим "
 "„Цял екран“</guibutton>."
 
@@ -732,10 +732,10 @@ msgstr ""
 #: xreader.xml:449(para)
 msgid ""
 "The <guilabel>Create a PDF document</guilabel> option is not supported in "
-"this version of <application>Xreader Document Viewer</application>."
+"this version of <application>Xreader Pro Document Viewer</application>."
 msgstr ""
 "Опцията <guilabel>Създаване на PDF документ</guilabel> не е поддържана в "
-"тази версия на <application>Xreader</application>."
+"тази версия на <application>Xreader Pro</application>."
 
 #: xreader.xml:455(guilabel)
 msgid "Settings"
@@ -829,10 +829,10 @@ msgstr "Състояние"
 
 #: xreader.xml:517(para) xreader.xml:523(para) xreader.xml:529(para)
 msgid ""
-"This functionality is not supported in this version of <application>Xreader "
+"This functionality is not supported in this version of <application>Xreader Pro "
 "Document Viewer</application>."
 msgstr ""
-"Тази функционалност не се поддържа от тази версия на <application>Xreader</"
+"Тази функционалност не се поддържа от тази версия на <application>Xreader Pro</"
 "application>."
 
 #: xreader.xml:521(guilabel)
@@ -977,13 +977,13 @@ msgstr ""
 
 #: xreader.xml:622(para)
 msgid ""
-"When you try to open a password-protected document, <application>Xreader "
+"When you try to open a password-protected document, <application>Xreader Pro "
 "Document Viewer</application> displays a security dialog. Type either the "
 "user password or the master password in the <guilabel>Enter document "
 "password</guilabel> text box, then click <guibutton>Open Document</"
 "guibutton>."
 msgstr ""
-"Когато се опитате да отворите паролно защитен документ, <application>Xreader</"
+"Когато се опитате да отворите паролно защитен документ, <application>Xreader Pro</"
 "application> показва прозорец за сигурността. Въведете или потребителската "
 "парола, или главната такава в полето за <guilabel>Въвеждане на документна "
 "парола</guilabel> и после натиснете <guibutton>Отваряне на документ</"
@@ -1003,10 +1003,10 @@ msgstr ""
 
 #: xreader.xml:632(para)
 msgid ""
-"If the window is the last <application>Xreader Document Viewer</application> "
+"If the window is the last <application>Xreader Pro Document Viewer</application> "
 "window open, the application exits."
 msgstr ""
-"Ако прозорецът е последният отворен <application>Xreader</application> "
+"Ако прозорецът е последният отворен <application>Xreader Pro</application> "
 "прозорец, програмата ще се затвори."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.

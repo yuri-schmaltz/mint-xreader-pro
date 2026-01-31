@@ -17,9 +17,9 @@
     A copy of the license is included in the COPYING file.
     -->
   <bookinfo>
-    <title>Xreader View Library Reference Manual</title>
+    <title>Xreader Pro View Library Reference Manual</title>
     <releaseinfo>
-      For Xreader version &version;.
+      For Xreader Pro version &version;.
       The latest version of this documentation can be found on-line at the
       <ulink role="online-location" url="http://library.mate.org/devel/libevview/index.html">MATE Library</ulink>.
     </releaseinfo>
@@ -67,7 +67,7 @@
   </bookinfo>
 
   <part id="view-view">
-    <title>Xreader View</title>
+    <title>Xreader Pro View</title>
     <partintro>
       <para>
       </para>

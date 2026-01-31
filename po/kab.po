@@ -406,13 +406,13 @@ msgstr "Tameskant n isemliyen"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader d taskant n usmel aget-asebter afessas. Iskanay-d sakin isaggaz "
+"<p> Xreader Pro d taskant n usmel aget-asebter afessas. Iskanay-d sakin isaggaz "
 "PostScript (PS), PostScript Ittwagebren (EPS), DJVU, DVI, XPS  akked ifuyla "
 "n ismal ittwarfaden s umasal (PDF), daɣ ifuyla n uḥraz n udlis. Mi ara "
 "ittusefrak isemli, ittmudaɣ-d tagnit i unadi n uḍris, anɣal akked usenṭeḍ n "
@@ -1228,39 +1228,39 @@ msgstr "Teḍra-d tuccḍa deg ubeqqeḍ n tallalt"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Xreader d aseɣẓan illeli; tzemreḍ ad tezuzreḍ-t akked/neɣ ad tẓergeḍ-t ddaw "
+"Xreader Pro d aseɣẓan illeli; tzemreḍ ad tezuzreḍ-t akked/neɣ ad tẓergeḍ-t ddaw "
 "iluan n GNU turagt Tazzayezt Tamatut akken i d-ttunefken sɣur Free Software "
 "Foundation; ama lqem wis 2 n turagt neɣ lqem aneggaru.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Xreader Ittwazuzer i siwi d akken ad yili deg lmendad, maca war ṭmana; war "
+"Xreader Pro Ittwazuzer i siwi d akken ad yili deg lmendad, maca war ṭmana; war "
 "ṭmana n useqdec. wali GNU  Turagt Tazzayezt Tamatut i ugar n talɣut "
 "leqqayen.\n"
 
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Isefk ad yili iwweḍ-ak-n anɣal n GNU Turagt Tazzayzt Tamatut akked Xreader; "
+"Isefk ad yili iwweḍ-ak-n anɣal n GNU Turagt Tazzayzt Tamatut akked Xreader Pro; "
 "Ma yella mazal, aru i Free Software Foundation, Inc., 51 Franklin Street, "
 "Fifth Floor, Boston, MA 02110-1301 USA\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string

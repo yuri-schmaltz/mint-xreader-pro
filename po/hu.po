@@ -411,13 +411,13 @@ msgstr "Dokumentum-megjelenítő"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Az Xreader egy egyszerűen használható több oldalas dokumentum-"
+"<p> Az Xreader Pro egy egyszerűen használható több oldalas dokumentum-"
 "megjelenítő. Képes megjeleníteni és nyomtatni a PostScript (PS), az "
 "Encapsulated PostScript (EPS), a DJVU, a DVI, az XPS és a Portable Document "
 "Format (PDF) fájlok mellett a képregény archívumokat is. Ha egy dokumentum "
@@ -1244,23 +1244,23 @@ msgstr "Hiba történt a súgó megjelenítése közben"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Az Xreader szabad szoftver, terjesztheti és/vagy módosíthatja a Free "
+"Az Xreader Pro szabad szoftver, terjesztheti és/vagy módosíthatja a Free "
 "Software Foundation által kiadott GNU General Public License második (vagy "
 "bármely későbbi) változatában foglaltak alapján.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Az Xreader programot abban a reményben terjesztjük, hogy hasznos lesz, de "
+"Az Xreader Pro programot abban a reményben terjesztjük, hogy hasznos lesz, de "
 "nem vállalunk SEMMIFÉLE GARANCIÁT, még olyan értelemben sem, hogy a program "
 "alkalmas-e a KÖZREADÁSRA vagy EGY BIZONYOS FELADAT ELVÉGZÉSÉRE. További "
 "részletekért tanulmányozza a GNU GPL licencet.\n"
@@ -1268,16 +1268,16 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Az Xreader programhoz a GNU General Public License egy példánya is jár, ha "
+"Az Xreader Pro programhoz a GNU General Public License egy példánya is jár, ha "
 "nem kapta meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 51 "
 "Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1711,7 +1711,7 @@ msgstr "CÉL"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Az Xreader futtatása bemutató módban"
+msgstr "Az Xreader Pro futtatása bemutató módban"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"

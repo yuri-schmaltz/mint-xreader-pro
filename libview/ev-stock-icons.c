@@ -6,12 +6,12 @@
  * Author:
  *   Martin Kretzschmar <Martin.Kretzschmar@inf.tu-dresden.de>
  *
- * Xreader is free software; you can redistribute it and/or modify it
+ * Xreader Pro is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * Xreader is distributed in the hope that it will be useful, but WITHOUT
+ * Xreader Pro is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
  * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
  * License for more details.
@@ -32,7 +32,7 @@ typedef struct {
 	char *icon;
 } EvStockIcon;
 
-/* Xreader stock icons */
+/* Xreader Pro stock icons */
 static const EvStockIcon stock_icons [] = {
 	{ EV_STOCK_ZOOM,	     "zoom" },
 	{ EV_STOCK_ZOOM_PAGE,        "zoom-fit-height" },

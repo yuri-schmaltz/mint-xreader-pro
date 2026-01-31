@@ -414,13 +414,13 @@ msgstr "Przeglądarka dokumentów"
 
 #: ../data/xreader.appdata.xml.in.h:2
 msgid ""
-"<p> Xreader is a simple multi-page document viewer. It can display and print "
+"<p> Xreader Pro is a simple multi-page document viewer. It can display and print "
 "PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and Portable "
 "Document Format (PDF) files, as well as comic book archive files. When "
 "supported by the document, it also allows searching for text, copying text "
 "to the clipboard, hypertext navigation and table-of-contents bookmarks. </p>"
 msgstr ""
-"<p> Xreader jest prostą, wielostronicową przeglądarką dokumentów. Może "
+"<p> Xreader Pro jest prostą, wielostronicową przeglądarką dokumentów. Może "
 "wyświetlać oraz drukować pliki PostScript (PS), Encapsulated PostScript "
 "(EPS), DJVU, DVI, XPS oraz Portable Document Format (PDF), jak również "
 "zarchiwizowane pliki komiksów. W sytuacji obsługiwania przez dokument, "
@@ -1248,24 +1248,24 @@ msgstr "Wystąpił błąd podczas wyświetlania pomocy"
 
 #: ../shell/ev-window.c:5119
 msgid ""
-"Xreader is free software; you can redistribute it and/or modify it under the "
+"Xreader Pro is free software; you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation; either version 2 of the License, or (at your option) any later "
 "version.\n"
 msgstr ""
-"Program Xreader jest wolnym oprogramowaniem; można go rozprowadzać dalej "
+"Program Xreader Pro jest wolnym oprogramowaniem; można go rozprowadzać dalej "
 "i/lub modyfikować na warunkach Powszechnej Licencji Publicznej GNU, wydanej "
 "przez Fundację Wolnego Oprogramowania (Free Software Foundation) - według "
 "wersji drugiej tej Licencji lub którejś z późniejszych wersji.\n"
 
 #: ../shell/ev-window.c:5123
 msgid ""
-"Xreader is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Xreader Pro is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details.\n"
 msgstr ""
-"Program Xreader rozpowszechniany jest z nadzieją, iż będzie on użyteczny - "
+"Program Xreader Pro rozpowszechniany jest z nadzieją, iż będzie on użyteczny - "
 "jednak BEZ JAKIEJKOLWIEK GWARANCJI, nawet domyślnej gwarancji PRZYDATNOŚCI "
 "HANDLOWEJ albo PRZYDATNOŚCI DO OKREŚLONYCH ZASTOSOWAŃ. W celu uzyskania "
 "bliższych informacji należy zapoznać się z Powszechną Licencją Publiczną "
@@ -1274,17 +1274,17 @@ msgstr ""
 #: ../shell/ev-window.c:5127
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
-"Xreader; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Xreader Pro; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301  USA\n"
 msgstr ""
-"Z pewnością wraz z programem Xreader dostarczono także egzemplarz "
+"Z pewnością wraz z programem Xreader Pro dostarczono także egzemplarz "
 "Powszechnej Licencji Publicznej GNU (GNU General Public License); jeśli nie -"
 " proszę napisać do Free Software Foundation, Inc., 51 Franklin Street, Fifth "
 "Floor, Boston, MA 02110-130159 USA.\n"
 
 #: ../shell/ev-window.c:5138
-msgid "Xreader"
-msgstr "Xreader"
+msgid "Xreader Pro"
+msgstr "Xreader Pro"
 
 #. TRANS: Sometimes this could be better translated as
 #. "%d hit(s) on this page".  Therefore this string
@@ -1706,7 +1706,7 @@ msgstr "NUMER"
 
 #: ../shell/main.c:68
 msgid "Run xreader in fullscreen mode"
-msgstr "Uruchamia program Xreader w trybie pełnoekranowym"
+msgstr "Uruchamia program Xreader Pro w trybie pełnoekranowym"
 
 #: ../shell/main.c:69
 msgid "Named destination to display."
@@ -1718,11 +1718,11 @@ msgstr "CEL"
 
 #: ../shell/main.c:70
 msgid "Run xreader in presentation mode"
-msgstr "Uruchamia program Xreader w trybie prezentacji"
+msgstr "Uruchamia program Xreader Pro w trybie prezentacji"
 
 #: ../shell/main.c:71
 msgid "Run xreader as a previewer"
-msgstr "Uruchamia program Xreader w trybie podglądu"
+msgstr "Uruchamia program Xreader Pro w trybie podglądu"
 
 #: ../shell/main.c:72
 msgid "The word or phrase to find in the document"
