@@ -1,3 +1,12 @@
+xreader (4.6.6+xreader-pro) zena; urgency=medium
+
+  * Dependency Conflict Fix:
+    - Added Breaks and Replaces for older xreader-dbg versions to ensure
+      smooth transition during rebranding.
+  * Official Rebranding Maintenance Release.
+
+ -- Yuri Schmaltz <yuri-schmaltz@example.com>  Sat, 31 Jan 2026 16:43:00 -0300
+
 xreader (4.6.5+xreader-pro) zena; urgency=medium
 
   * Rebranding to Xreader Pro:

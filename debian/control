@@ -41,6 +41,8 @@ Depends: xreader-common (>= ${source:Version}),
          shared-mime-info,
          ${misc:Depends},
          ${shlibs:Depends},
+Breaks: xreader-dbg (<< 4.6.5+xreader-pro)
+Replaces: xreader-dbg (<< 4.6.5+xreader-pro)
 Recommends: dbus-x11,
             gvfs,
 Provides: djvu-viewer,
