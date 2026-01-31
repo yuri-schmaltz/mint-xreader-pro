@@ -1,6 +1,3 @@
-#include "ev-tabs.h"
-#include "xreader-view.h"
-
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8;
  * c-indent-level: 8 -*- */
 /* this file is part of xreader, a generic document viewer
@@ -35,9 +32,9 @@
 #include "config.h"
 #endif
 
-#include <errno.h>
-#include <math.h>
-#include <stdlib.h>
+#include "ev-tabs.h"
+#include "xreader-view.h"
+
 #include <string.h>
 #include <unistd.h>
 
@@ -69,7 +66,6 @@
 #include "ev-file-exporter.h"
 #include "ev-file-helpers.h"
 #include "ev-file-monitor.h"
-#include "ev-history-action.h"
 #include "ev-history.h"
 #include "ev-image.h"
 #include "ev-job-scheduler.h"
@@ -93,7 +89,6 @@
 #include "ev-sidebar-thumbnails.h"
 #include "ev-sidebar.h"
 #include "ev-stock-icons.h"
-#include "ev-tabs.h"
 #include "ev-toolbar.h"
 #include "ev-utils.h"
 #include "ev-view-presentation.h"
@@ -102,6 +97,7 @@
 #include "ev-web-view.h"
 #include "ev-window-title.h"
 #include "ev-window.h"
+#include <ev-history-action.h>
 
 #ifdef ENABLE_DBUS
 #include "ev-gdbus-generated.h"
@@ -155,7 +151,7 @@ struct _EvWindowPrivate {
 #if ENABLE_EPUB
   GtkWidget *webview;
 #endif
-  GtkWidget *notebook; // Adicionado para suporte a múltiplas abas
+  GtkWidget *notebook; // Added for multiple tabs support
   /* Settings */
   GSettings *settings;
   GSettings *default_settings;
@@ -420,10 +416,10 @@ static gint compare_recent_items(GtkRecentInfo *a, GtkRecentInfo *b);
 static gboolean ev_window_close(EvWindow *window);
 G_DEFINE_TYPE_WITH_PRIVATE(EvWindow, ev_window, GTK_TYPE_APPLICATION_WINDOW)
 
-// Callback para fechamento de aba
+// Tab close requested callback
 static void on_tab_close_requested(GtkNotebook *notebook, GtkWidget *child,
                                    guint page, gpointer user_data) {
-  // Recupera dados da aba
+  // Retrieve tab data
   EvTabData *tab_data =
       (EvTabData *)g_object_get_data(G_OBJECT(child), "ev-tab-data");
   if (tab_data) {
@@ -432,7 +428,7 @@ static void on_tab_close_requested(GtkNotebook *notebook, GtkWidget *child,
     if (tab_data->document)
       g_object_unref(tab_data->document);
     if (tab_data->view) {
-      /* Força liberação do cache de página associado à view */
+      /* Force release of the page cache associated with the view */
       g_object_unref(tab_data->view);
     }
   }
@@ -476,13 +472,13 @@ int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
   gtk_widget_show(tab_data->view);
   gtk_widget_show(tab_data->scrolled_window);
 
-  // Título da aba
+  // Tab title
   gchar *tab_title = g_path_get_basename(uri);
   int page_num = gtk_notebook_append_page(notebook, tab_data->scrolled_window,
                                           gtk_label_new(tab_title));
   g_free(tab_title);
 
-  // Armazena o ponteiro para tab_data no widget da aba
+  // Stores the pointer to tab_data in the tab widget
   g_object_set_data_full(G_OBJECT(tab_data->scrolled_window), "ev-tab-data",
                          tab_data, (GDestroyNotify)g_free);
 
@@ -7298,28 +7294,6 @@ static void ev_window_init(EvWindow *ev_window) {
                            G_CALLBACK(ev_window_password_view_unlock),
                            ev_window);
   ev_window_setup_view(ev_window, EV_VIEW(ev_window->priv->view));
-  g_signal_connect_object(ev_window->priv->view, "focus_in_event",
-                          G_CALLBACK(view_actions_focus_in_cb), ev_window, 0);
-  g_signal_connect_object(ev_window->priv->view, "focus_out_event",
-                          G_CALLBACK(view_actions_focus_out_cb), ev_window, 0);
-  g_signal_connect_swapped(ev_window->priv->view, "external-link",
-                           G_CALLBACK(view_external_link_cb), ev_window);
-  g_signal_connect_object(ev_window->priv->view, "handle-link",
-                          G_CALLBACK(view_handle_link_cb), ev_window, 0);
-  g_signal_connect_object(ev_window->priv->view, "popup",
-                          G_CALLBACK(view_menu_popup_cb), ev_window, 0);
-  g_signal_connect_object(ev_window->priv->view, "selection-changed",
-                          G_CALLBACK(view_selection_changed_cb), ev_window, 0);
-  g_signal_connect_object(ev_window->priv->view, "annot-added",
-                          G_CALLBACK(view_annot_added), ev_window, 0);
-  g_signal_connect_object(ev_window->priv->view, "annot-removed",
-                          G_CALLBACK(view_annot_removed), ev_window, 0);
-  g_signal_connect_object(ev_window->priv->view, "layers-changed",
-                          G_CALLBACK(view_layers_changed_cb), ev_window, 0);
-#ifdef ENABLE_DBUS
-  g_signal_connect_swapped(ev_window->priv->view, "sync-source",
-                           G_CALLBACK(ev_window_sync_source), ev_window);
-#endif
   gtk_widget_show(ev_window->priv->view);
   gtk_widget_show(ev_window->priv->password_view);
 
