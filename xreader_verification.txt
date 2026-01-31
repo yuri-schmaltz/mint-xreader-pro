@@ -1,0 +1,96 @@
+[ev_init] chamado
+[ev_init] chamando _ev_backends_manager_init
+[ev-backends-manager] backendsdir inicializado via ENV: /home/yurix/Documentos/mint-xreader/builddir/backend
+[ev-backends-manager] Carregando backends de: /home/yurix/Documentos/mint-xreader/builddir/backend (dev=1)
+[ev-backends-manager] Total de backends carregados: 9
+[ev_init] _ev_backends_manager_init retornou 1
+
+** (xreader:3521480): WARNING **: 02:22:13.149: Error when getting information for file “/home/yurix/Documentos/mint-xreader/backend/pdf/test-links.pdf”: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.155: Error when getting information for file “/home/yurix/Documentos/mint-xreader/backend/pdf/test-page-labels.pdf”: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.160: Error when getting information for file “/home/yurix/Documentos/mint-xreader/backend/pdf/test-encrypt.pdf”: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.161: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.162: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.200: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3521480): WARNING **: 02:22:13.201: Error setting file metadata: Arquivo ou diretório inexistente

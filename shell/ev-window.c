@@ -1,83 +1,6 @@
 #include "ev-tabs.h"
 #include "xreader-view.h"
 
-// Callback para fechamento de aba
-static void on_tab_close_requested(GtkNotebook *notebook, GtkWidget *child,
-                                   guint page, gpointer user_data) {
-  // Recupera dados da aba
-  EvTabData *tab_data =
-      (EvTabData *)g_object_get_data(G_OBJECT(child), "ev-tab-data");
-  if (tab_data) {
-    if (tab_data->uri)
-      g_free(tab_data->uri);
-    if (tab_data->document)
-      g_object_unref(tab_data->document);
-    if (tab_data->view) {
-      /* Força liberação do cache de página associado à view */
-      g_object_unref(tab_data->view);
-    }
-    // Se houver buffers/caches customizados, liberar aqui
-  }
-  // gtk_notebook_remove_page NÃO deve ser chamado aqui, pois já está em
-  // processo de remoção (evita loop infinito e crash)
-}
-
-void ev_window_setup_tab_close(GtkNotebook *notebook,
-                               gpointer window_user_data) {
-  g_signal_connect(notebook, "page-removed", G_CALLBACK(on_tab_close_requested),
-                   window_user_data);
-}
-
-int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
-  if (!notebook || !GTK_IS_NOTEBOOK(notebook))
-    return -1;
-  EvTabData *tab_data = g_new0(EvTabData, 1);
-  tab_data->scrolled_window = gtk_scrolled_window_new(NULL, NULL);
-  tab_data->view = ev_view_new();
-  tab_data->uri = g_strdup(uri);
-
-  gtk_container_add(GTK_CONTAINER(tab_data->scrolled_window), tab_data->view);
-  gtk_widget_show(tab_data->view);
-  gtk_widget_show(tab_data->scrolled_window);
-
-  // Título da aba
-  gchar *tab_title = g_path_get_basename(uri);
-  int page_num = gtk_notebook_append_page(notebook, tab_data->scrolled_window,
-                                          gtk_label_new(tab_title));
-  g_free(tab_title);
-
-  // Armazena o ponteiro para tab_data no widget da aba
-  g_object_set_data_full(G_OBJECT(tab_data->scrolled_window), "ev-tab-data",
-                         tab_data, (GDestroyNotify)g_free);
-
-  if (gtk_notebook_get_n_pages(notebook) > 1) {
-    gtk_notebook_set_show_tabs(notebook, TRUE);
-  }
-
-  gtk_notebook_set_current_page(notebook, page_num);
-  return page_num;
-}
-
-EvTabData *ev_window_get_current_tab(GtkNotebook *notebook) {
-  if (!notebook || !GTK_IS_NOTEBOOK(notebook))
-    return NULL;
-  int page = gtk_notebook_get_current_page(notebook);
-  if (page < 0)
-    return NULL;
-  GtkWidget *child = gtk_notebook_get_nth_page(notebook, page);
-  if (!child)
-    return NULL;
-  return (EvTabData *)g_object_get_data(G_OBJECT(child), "ev-tab-data");
-}
-
-void ev_window_close_current_tab(GtkNotebook *notebook) {
-  if (!notebook || !GTK_IS_NOTEBOOK(notebook))
-    return;
-  int page = gtk_notebook_get_current_page(notebook);
-  if (page < 0)
-    return;
-  gtk_notebook_remove_page(notebook, page);
-}
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8;
  * c-indent-level: 8 -*- */
 /* this file is part of xreader, a generic document viewer
@@ -350,6 +273,25 @@ static const gchar *document_print_settings[] = {
     GTK_PRINT_SETTINGS_OUTPUT_URI};
 
 static void ev_window_update_actions(EvWindow *ev_window);
+static void update_chrome_actions(EvWindow *window);
+static void ev_window_setup_action_sensitivity(EvWindow *ev_window);
+static gboolean view_actions_focus_in_cb(GtkWidget *widget,
+                                         GdkEventFocus *event,
+                                         EvWindow *ev_window);
+static gboolean view_actions_focus_out_cb(GtkWidget *widget,
+                                          GdkEventFocus *event,
+                                          EvWindow *ev_window);
+static gboolean view_menu_popup_cb(EvView *view, GList *items,
+                                   EvWindow *window);
+static void view_selection_changed_cb(EvView *view, EvWindow *window);
+static void view_annot_added(EvView *view, EvAnnotation *annot,
+                             EvWindow *window);
+static void view_annot_removed(EvView *view, EvAnnotation *annot,
+                               EvWindow *window);
+static void view_layers_changed_cb(EvView *view, EvWindow *window);
+#ifdef ENABLE_DBUS
+static void ev_window_sync_source(EvWindow *window, EvSourceLink *link);
+#endif
 static void ev_window_sidebar_visibility_changed_cb(EvSidebar *ev_sidebar,
                                                     GParamSpec *pspec,
                                                     EvWindow *ev_window);
@@ -358,6 +300,11 @@ static void ev_window_toggle_menubar(EvWindow *window, EvMenubarAction action);
 static void ev_window_view_toolbar_cb(GtkAction *action, EvWindow *ev_window);
 static void ev_window_set_page_mode(EvWindow *window,
                                     EvWindowPageMode page_mode);
+static void ev_window_page_changed_cb(EvWindow *ev_window, gint old_page,
+                                      gint new_page, EvDocumentModel *model);
+static void setup_chrome_from_metadata(EvWindow *window);
+static void setup_document_from_metadata(EvWindow *window);
+static void setup_view_from_metadata(EvWindow *window);
 static void ev_window_load_job_cb(EvJob *job, gpointer data);
 static void ev_window_reload_document(EvWindow *window, EvLinkDest *dest);
 static void ev_window_reload_job_cb(EvJob *job, EvWindow *window);
@@ -369,6 +316,58 @@ static void ev_window_sizing_mode_changed_cb(EvDocumentModel *model,
                                              EvWindow *ev_window);
 static void ev_window_zoom_changed_cb(EvDocumentModel *model, GParamSpec *pspec,
                                       EvWindow *ev_window);
+static void view_external_link_cb(EvWindow *window, EvLinkAction *action);
+static void view_handle_link_cb(EvView *view, EvLink *link, EvWindow *window);
+
+static void ev_window_setup_view(EvWindow *ev_window, EvView *view) {
+  g_signal_connect_object(view, "focus_in_event",
+                          G_CALLBACK(view_actions_focus_in_cb), ev_window, 0);
+  g_signal_connect_object(view, "focus_out_event",
+                          G_CALLBACK(view_actions_focus_out_cb), ev_window, 0);
+  g_signal_connect_swapped(view, "external-link",
+                           G_CALLBACK(view_external_link_cb), ev_window);
+  g_signal_connect_object(view, "handle-link", G_CALLBACK(view_handle_link_cb),
+                          ev_window, 0);
+  g_signal_connect_object(view, "popup", G_CALLBACK(view_menu_popup_cb),
+                          ev_window, 0);
+  g_signal_connect_object(view, "selection-changed",
+                          G_CALLBACK(view_selection_changed_cb), ev_window, 0);
+  g_signal_connect_object(view, "annot-added", G_CALLBACK(view_annot_added),
+                          ev_window, 0);
+  g_signal_connect_object(view, "annot-removed", G_CALLBACK(view_annot_removed),
+                          ev_window, 0);
+  g_signal_connect_object(view, "layers-changed",
+                          G_CALLBACK(view_layers_changed_cb), ev_window, 0);
+#ifdef ENABLE_DBUS
+  g_signal_connect_swapped(view, "sync-source",
+                           G_CALLBACK(ev_window_sync_source), ev_window);
+#endif
+}
+
+static void ev_window_switch_page_cb(GtkNotebook *notebook, GtkWidget *page,
+                                     guint page_num, EvWindow *ev_window) {
+  EvTabData *tab_data =
+      (EvTabData *)g_object_get_data(G_OBJECT(page), "ev-tab-data");
+  if (tab_data) {
+    ev_window->priv->view = tab_data->view;
+
+    if (tab_data->document) {
+      ev_document_model_set_document(ev_window->priv->model,
+                                     tab_data->document);
+    }
+
+    if (tab_data->uri) {
+      g_free(ev_window->priv->uri);
+      ev_window->priv->uri = g_strdup(tab_data->uri);
+      ev_window_title_set_uri(ev_window->priv->title, ev_window->priv->uri);
+    }
+
+    update_chrome_actions(ev_window);
+    ev_window_update_actions(ev_window);
+    ev_window_setup_action_sensitivity(ev_window);
+  }
+}
+
 static void ev_window_add_recent(EvWindow *window, const char *filename);
 static void ev_window_run_fullscreen(EvWindow *window);
 static void ev_window_stop_fullscreen(EvWindow *window,
@@ -416,9 +415,105 @@ static void ev_window_setup_bookmarks(EvWindow *window);
 
 static void zoom_control_changed_cb(EphyZoomAction *action, float zoom,
                                     EvWindow *ev_window);
+
 static gint compare_recent_items(GtkRecentInfo *a, GtkRecentInfo *b);
 static gboolean ev_window_close(EvWindow *window);
 G_DEFINE_TYPE_WITH_PRIVATE(EvWindow, ev_window, GTK_TYPE_APPLICATION_WINDOW)
+
+// Callback para fechamento de aba
+static void on_tab_close_requested(GtkNotebook *notebook, GtkWidget *child,
+                                   guint page, gpointer user_data) {
+  // Recupera dados da aba
+  EvTabData *tab_data =
+      (EvTabData *)g_object_get_data(G_OBJECT(child), "ev-tab-data");
+  if (tab_data) {
+    if (tab_data->uri)
+      g_free(tab_data->uri);
+    if (tab_data->document)
+      g_object_unref(tab_data->document);
+    if (tab_data->view) {
+      /* Força liberação do cache de página associado à view */
+      g_object_unref(tab_data->view);
+    }
+  }
+}
+
+void ev_window_setup_tab_close(GtkNotebook *notebook,
+                               gpointer window_user_data) {
+  g_signal_connect(notebook, "page-removed", G_CALLBACK(on_tab_close_requested),
+                   window_user_data);
+}
+
+static EvTabData *ev_window_find_tab_by_uri(GtkNotebook *notebook,
+                                            const gchar *uri) {
+  int n = gtk_notebook_get_n_pages(notebook);
+  for (int i = 0; i < n; i++) {
+    GtkWidget *child = gtk_notebook_get_nth_page(notebook, i);
+    EvTabData *tab_data =
+        (EvTabData *)g_object_get_data(G_OBJECT(child), "ev-tab-data");
+    if (tab_data && g_strcmp0(tab_data->uri, uri) == 0)
+      return tab_data;
+  }
+  return NULL;
+}
+
+int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
+  if (!notebook || !GTK_IS_NOTEBOOK(notebook))
+    return -1;
+  EvTabData *tab_data = g_new0(EvTabData, 1);
+  tab_data->scrolled_window = gtk_scrolled_window_new(NULL, NULL);
+  tab_data->view = ev_view_new();
+  tab_data->uri = g_strdup(uri);
+
+  GtkWidget *toplevel = gtk_widget_get_toplevel(GTK_WIDGET(notebook));
+  if (EV_IS_WINDOW(toplevel)) {
+    EvWindow *ev_window = EV_WINDOW(toplevel);
+    ev_view_set_model(EV_VIEW(tab_data->view), ev_window->priv->model);
+    ev_window_setup_view(ev_window, EV_VIEW(tab_data->view));
+  }
+
+  gtk_container_add(GTK_CONTAINER(tab_data->scrolled_window), tab_data->view);
+  gtk_widget_show(tab_data->view);
+  gtk_widget_show(tab_data->scrolled_window);
+
+  // Título da aba
+  gchar *tab_title = g_path_get_basename(uri);
+  int page_num = gtk_notebook_append_page(notebook, tab_data->scrolled_window,
+                                          gtk_label_new(tab_title));
+  g_free(tab_title);
+
+  // Armazena o ponteiro para tab_data no widget da aba
+  g_object_set_data_full(G_OBJECT(tab_data->scrolled_window), "ev-tab-data",
+                         tab_data, (GDestroyNotify)g_free);
+
+  if (gtk_notebook_get_n_pages(notebook) > 1) {
+    gtk_notebook_set_show_tabs(notebook, TRUE);
+  }
+
+  gtk_notebook_set_current_page(notebook, page_num);
+  return page_num;
+}
+
+EvTabData *ev_window_get_current_tab(GtkNotebook *notebook) {
+  if (!notebook || !GTK_IS_NOTEBOOK(notebook))
+    return NULL;
+  int page = gtk_notebook_get_current_page(notebook);
+  if (page < 0)
+    return NULL;
+  GtkWidget *child = gtk_notebook_get_nth_page(notebook, page);
+  if (!child)
+    return NULL;
+  return (EvTabData *)g_object_get_data(G_OBJECT(child), "ev-tab-data");
+}
+
+void ev_window_close_current_tab(GtkNotebook *notebook) {
+  if (!notebook || !GTK_IS_NOTEBOOK(notebook))
+    return;
+  int page = gtk_notebook_get_current_page(notebook);
+  if (page < 0)
+    return;
+  gtk_notebook_remove_page(notebook, page);
+}
 
 static gchar *sizing_mode_to_string(EvSizingMode mode) {
   switch (mode) {
@@ -1638,12 +1733,20 @@ static void ev_window_password_view_unlock(EvWindow *ev_window) {
 }
 
 static void ev_window_clear_load_job(EvWindow *ev_window) {
-  if (ev_window->priv->load_job != NULL) {
-    if (!ev_job_is_finished(ev_window->priv->load_job))
-      ev_job_cancel(ev_window->priv->load_job);
+  if (ev_window->priv->load_job) {
+    /* Em modo multi-abas, não desconectamos o sinal para permitir que
+       carregamentos em segundo plano terminem e atualizem suas abas.
+       Apenas limpamos a referência da janela ao job "principal". */
+    if (ev_window->priv->notebook &&
+        gtk_notebook_get_n_pages(GTK_NOTEBOOK(ev_window->priv->notebook)) > 1) {
+      g_object_unref(ev_window->priv->load_job);
+      ev_window->priv->load_job = NULL;
+      return;
+    }
 
     g_signal_handlers_disconnect_by_func(ev_window->priv->load_job,
                                          ev_window_load_job_cb, ev_window);
+    ev_job_cancel(ev_window->priv->load_job);
     g_object_unref(ev_window->priv->load_job);
     ev_window->priv->load_job = NULL;
   }
@@ -1700,97 +1803,118 @@ static void ev_window_load_job_cb(EvJob *job, gpointer data) {
   EvDocument *document = EV_JOB(job)->document;
   EvJobLoad *job_load = EV_JOB_LOAD(job);
 
-  g_assert(job_load->uri);
-
+  const gchar *uri = job_load->uri;
   EvTabData *tab_data =
-      ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
-  ev_view_set_loading(
-      EV_VIEW(tab_data ? tab_data->view : ev_window->priv->view), FALSE);
-  /* Success! */
-  if (!ev_job_is_failed(job)) {
-    ev_document_model_set_document(ev_window->priv->model, document);
+      ev_window_find_tab_by_uri(GTK_NOTEBOOK(ev_window->priv->notebook), uri);
 
-#ifdef ENABLE_DBUS
-    ev_window_emit_doc_loaded(ev_window);
-#endif
-    setup_chrome_from_metadata(ev_window);
-    update_chrome_actions(ev_window);
-    setup_document_from_metadata(ev_window);
-    setup_view_from_metadata(ev_window);
-
-    ev_window_add_recent(ev_window, ev_window->priv->uri);
-
-    ev_window_title_set_type(ev_window->priv->title, EV_WINDOW_TITLE_DOCUMENT);
-    if (job_load->password) {
-      GPasswordSave flags;
-
-      flags = ev_password_view_get_password_save_flags(
-          EV_PASSWORD_VIEW(ev_window->priv->password_view));
-      ev_keyring_save_password(ev_window->priv->uri, job_load->password, flags);
+  if (tab_data) {
+    ev_view_set_loading(EV_VIEW(tab_data->view), FALSE);
+    if (!ev_job_is_failed(job)) {
+      if (tab_data->document)
+        g_object_unref(tab_data->document);
+      tab_data->document = g_object_ref(document);
     }
-
-    ev_window_handle_link(ev_window, ev_window->priv->dest);
-    g_clear_object(&ev_window->priv->dest);
-
-    switch (ev_window->priv->window_mode) {
-    case EV_WINDOW_MODE_FULLSCREEN:
-      ev_window_run_fullscreen(ev_window);
-      break;
-    case EV_WINDOW_MODE_PRESENTATION:
-      ev_window_run_presentation(ev_window);
-      break;
-    default:
-      break;
-    }
-
-    /* Create a monitor for the document */
-    ev_window->priv->monitor = ev_file_monitor_new(ev_window->priv->uri);
-    g_signal_connect_swapped(ev_window->priv->monitor, "changed",
-                             G_CALLBACK(ev_window_document_changed), ev_window);
-
-    ev_window_clear_load_job(ev_window);
-    return;
   }
 
-  if (g_error_matches(job->error, EV_DOCUMENT_ERROR,
-                      EV_DOCUMENT_ERROR_ENCRYPTED)) {
-    gchar *password;
+  EvTabData *current_tab =
+      ev_window_get_current_tab(GTK_NOTEBOOK(ev_window->priv->notebook));
 
-    setup_view_from_metadata(ev_window);
+  // Se for o documento da aba atual (ou se não houver abas), atualiza o modelo
+  // da janela
+  if (current_tab == tab_data || !tab_data) {
+    ev_view_set_loading(
+        EV_VIEW(tab_data ? tab_data->view : ev_window->priv->view), FALSE);
+    /* Success! */
+    if (!ev_job_is_failed(job)) {
+      ev_document_model_set_document(ev_window->priv->model, document);
 
-    /* First look whether password is in keyring */
-    password = ev_keyring_lookup_password(ev_window->priv->uri);
-    if (password) {
-      if (job_load->password && strcmp(password, job_load->password) == 0) {
-        /* Password in kering is wrong */
-        ev_job_load_set_password(job_load, NULL);
-        /* FIXME: delete password from keyring? */
-      } else {
-        ev_job_load_set_password(job_load, password);
-        ev_job_scheduler_push_job(job, EV_JOB_PRIORITY_NONE);
-        g_free(password);
-        return;
+#ifdef ENABLE_DBUS
+      ev_window_emit_doc_loaded(ev_window);
+#endif
+      setup_chrome_from_metadata(ev_window);
+      update_chrome_actions(ev_window);
+      setup_document_from_metadata(ev_window);
+      setup_view_from_metadata(ev_window);
+
+      ev_window_add_recent(ev_window, uri);
+
+      ev_window_title_set_type(ev_window->priv->title,
+                               EV_WINDOW_TITLE_DOCUMENT);
+      if (job_load->password) {
+        GPasswordSave flags;
+
+        flags = ev_password_view_get_password_save_flags(
+            EV_PASSWORD_VIEW(ev_window->priv->password_view));
+        ev_keyring_save_password(uri, job_load->password, flags);
       }
 
-      g_free(password);
+      ev_window_handle_link(ev_window, ev_window->priv->dest);
+      g_clear_object(&ev_window->priv->dest);
+
+      switch (ev_window->priv->window_mode) {
+      case EV_WINDOW_MODE_FULLSCREEN:
+        ev_window_run_fullscreen(ev_window);
+        break;
+      case EV_WINDOW_MODE_PRESENTATION:
+        ev_window_run_presentation(ev_window);
+        break;
+      default:
+        break;
+      }
+
+      /* Create a monitor for the document */
+      if (ev_window->priv->monitor)
+        g_object_unref(ev_window->priv->monitor);
+      ev_window->priv->monitor = ev_file_monitor_new(uri);
+      g_signal_connect_swapped(ev_window->priv->monitor, "changed",
+                               G_CALLBACK(ev_window_document_changed),
+                               ev_window);
+
+      ev_window_clear_load_job(ev_window);
+      return;
     }
 
-    /* We need to ask the user for a password */
-    ev_window_title_set_uri(ev_window->priv->title, ev_window->priv->uri);
-    ev_window_title_set_type(ev_window->priv->title, EV_WINDOW_TITLE_PASSWORD);
+    if (g_error_matches(job->error, EV_DOCUMENT_ERROR,
+                        EV_DOCUMENT_ERROR_ENCRYPTED)) {
+      gchar *password;
 
-    ev_password_view_set_uri(EV_PASSWORD_VIEW(ev_window->priv->password_view),
-                             job_load->uri);
+      setup_view_from_metadata(ev_window);
 
-    ev_window_set_page_mode(ev_window, PAGE_MODE_PASSWORD);
+      /* First look whether password is in keyring */
+      password = ev_keyring_lookup_password(ev_window->priv->uri);
+      if (password) {
+        if (job_load->password && strcmp(password, job_load->password) == 0) {
+          /* Password in kering is wrong */
+          ev_job_load_set_password(job_load, NULL);
+          /* FIXME: delete password from keyring? */
+        } else {
+          ev_job_load_set_password(job_load, password);
+          ev_job_scheduler_push_job(job, EV_JOB_PRIORITY_NONE);
+          g_free(password);
+          return;
+        }
 
-    ev_job_load_set_password(job_load, NULL);
-    ev_password_view_ask_password(
-        EV_PASSWORD_VIEW(ev_window->priv->password_view));
-  } else {
-    ev_window_error_message(ev_window, job->error, "%s",
-                            _("Unable to open document"));
-    ev_window_clear_load_job(ev_window);
+        g_free(password);
+      }
+
+      /* We need to ask the user for a password */
+      ev_window_title_set_uri(ev_window->priv->title, ev_window->priv->uri);
+      ev_window_title_set_type(ev_window->priv->title,
+                               EV_WINDOW_TITLE_PASSWORD);
+
+      ev_password_view_set_uri(EV_PASSWORD_VIEW(ev_window->priv->password_view),
+                               job_load->uri);
+
+      ev_window_set_page_mode(ev_window, PAGE_MODE_PASSWORD);
+
+      ev_job_load_set_password(job_load, NULL);
+      ev_password_view_ask_password(
+          EV_PASSWORD_VIEW(ev_window->priv->password_view));
+    } else {
+      ev_window_error_message(ev_window, job->error, "%s",
+                              _("Unable to open document"));
+      ev_window_clear_load_job(ev_window);
+    }
   }
 }
 
@@ -2097,20 +2221,29 @@ void ev_window_open_uri(EvWindow *ev_window, const char *uri, EvLinkDest *dest,
       g_ascii_strcasecmp(ev_window->priv->uri, uri) != 0) {
     /* If a different document is already open, add it as a new tab */
     ev_window_add_tab(GTK_NOTEBOOK(ev_window->priv->notebook), uri);
-    /* ev_window_add_tab should probably handle the loading or we call it here
-     */
-    // For now, let's just proceed as it would normally but it needs more work
-    // to separate per-tab state.
   }
+
+  ev_window_close_dialogs(ev_window);
+
+  /* Só limpamos o job se estivermos abrindo o MESMO URI (reload)
+     ou se não houver suporte a abas. */
+  if (!ev_window->priv->notebook ||
+      (ev_window->priv->uri &&
+       g_ascii_strcasecmp(ev_window->priv->uri, uri) == 0)) {
+    ev_window_clear_load_job(ev_window);
+  } else if (ev_window->priv->load_job) {
+    // Para novos URIs em abas, apenas "desprendemos" o job atual sem
+    // cancelá-lo
+    g_object_unref(ev_window->priv->load_job);
+    ev_window->priv->load_job = NULL;
+  }
+
+  ev_window_clear_local_uri(ev_window);
 
   if (ev_window->priv->monitor) {
     g_object_unref(ev_window->priv->monitor);
     ev_window->priv->monitor = NULL;
   }
-
-  ev_window_close_dialogs(ev_window);
-  ev_window_clear_load_job(ev_window);
-  ev_window_clear_local_uri(ev_window);
 
   ev_window->priv->window_mode = mode;
 
@@ -2264,9 +2397,9 @@ static void reload_remote_copy_ready_cb(GFile *remote,
 
     ev_window_add_tab(GTK_NOTEBOOK(ev_window->priv->notebook), uri);
 
-    // O restante da lógica de carregamento do documento deve ser adaptada para
-    // O restante da lógica de carregamento do documento deve ser adaptada para
-    // usar tab_data->view, tab_data->scrolled_window, etc.
+    // O restante da lógica de carregamento do documento deve ser adaptada
+    // para O restante da lógica de carregamento do documento deve ser
+    // adaptada para usar tab_data->view, tab_data->scrolled_window, etc.
     // ... (adaptação futura: carregar documento na view da aba)
     // info não está declarado aqui, então não faz sentido dar unref
   }
@@ -4729,7 +4862,8 @@ static void ev_window_direction_changed_cb(EvDocumentModel *model,
 static void ev_window_cmd_help_about(GtkAction *action, EvWindow *ev_window) {
   const char *license[] = {
       N_("Xreader is free software; you can redistribute it and/or modify "
-         "it under the terms of the GNU General Public License as published by "
+         "it under the terms of the GNU General Public License as published "
+         "by "
          "the Free Software Foundation; either version 2 of the License, or "
          "(at your option) any later version.\n"),
       N_("Xreader is distributed in the hope that it will be useful, "
@@ -4796,9 +4930,9 @@ static void ev_window_toggle_menubar(EvWindow *window, EvMenubarAction action) {
   } else {
     gtk_widget_show(menubar);
 
-    /* When the menu is normally hidden, have an activation of it trigger a key
-     * grab. For keyboard users, this is a natural progression, that they will
-     * type a mnemonic next to open a menu.  Any loss of focus or click
+    /* When the menu is normally hidden, have an activation of it trigger a
+     * key grab. For keyboard users, this is a natural progression, that they
+     * will type a mnemonic next to open a menu.  Any loss of focus or click
      * elsewhere will re-hide the menu and cancel focus.
      */
     gtk_widget_grab_focus(menubar);
@@ -5546,9 +5680,10 @@ static gboolean is_alt_key_event(GdkEventKey *event) {
 
   nominal_state = event->state & gtk_accelerator_get_default_mod_mask();
 
-  /* A key press of alt will show just the alt keyval (GDK_KEY_Alt_L/R).  A key
-   * release of a single modifier is always modified by itself.  So a valid
-   * press state is 0 and a valid release state is GDK_MOD1_MASK (alt modifier).
+  /* A key press of alt will show just the alt keyval (GDK_KEY_Alt_L/R).  A
+   * key release of a single modifier is always modified by itself.  So a
+   * valid press state is 0 and a valid release state is GDK_MOD1_MASK (alt
+   * modifier).
    */
   state_ok = (event->type == GDK_KEY_PRESS && nominal_state == 0) ||
              (event->type == GDK_KEY_RELEASE && nominal_state == GDK_MOD1_MASK);
@@ -5584,9 +5719,9 @@ static gboolean ev_window_key_press_event(GtkWidget *widget,
    * When alt is pressed and the menu is NOT visible, we flag that on release
    * we'll show the menu.  If any other keys are pressed between alt being
    * pressed and released, we clear that flag, because it was more than likely
-   * part of some other shortcut, and otherwise, depending on the order the keys
-   * are released, if the alt key is last to be released, we don't want to show
-   * the menu, as that was not the original intent.
+   * part of some other shortcut, and otherwise, depending on the order the
+   * keys are released, if the alt key is last to be released, we don't want
+   * to show the menu, as that was not the original intent.
    */
   if (is_alt_key_event(event)) {
     if (gtk_widget_get_visible(window->priv->menubar)) {
@@ -7126,6 +7261,8 @@ static void ev_window_init(EvWindow *ev_window) {
   gtk_widget_show(ev_window->priv->notebook);
 
   ev_window_setup_tab_close(GTK_NOTEBOOK(ev_window->priv->notebook), ev_window);
+  g_signal_connect(ev_window->priv->notebook, "switch-page",
+                   G_CALLBACK(ev_window_switch_page_cb), ev_window);
 
   ev_window->priv->scrolled_window = gtk_scrolled_window_new(NULL, NULL);
   gtk_notebook_append_page(GTK_NOTEBOOK(ev_window->priv->notebook),
@@ -7133,10 +7270,16 @@ static void ev_window_init(EvWindow *ev_window) {
                            gtk_label_new(_("Default")));
   gtk_widget_show(ev_window->priv->scrolled_window);
 
+  ev_window->priv->view = ev_view_new();
+
+  EvTabData *initial_tab = g_new0(EvTabData, 1);
+  initial_tab->scrolled_window = ev_window->priv->scrolled_window;
+  initial_tab->view = ev_window->priv->view;
+  g_object_set_data_full(G_OBJECT(ev_window->priv->scrolled_window),
+                         "ev-tab-data", initial_tab, (GDestroyNotify)g_free);
+
   gtk_paned_add2(GTK_PANED(ev_window->priv->hpaned), ev_window->priv->view_box);
   gtk_widget_show(ev_window->priv->view_box);
-
-  ev_window->priv->view = ev_view_new();
 
 #if ENABLE_EPUB /*The webview, we won't add it now but it will replace the     \
                    xreader-view if a web(epub) document is encountered.*/
@@ -7154,6 +7297,7 @@ static void ev_window_init(EvWindow *ev_window) {
   g_signal_connect_swapped(ev_window->priv->password_view, "unlock",
                            G_CALLBACK(ev_window_password_view_unlock),
                            ev_window);
+  ev_window_setup_view(ev_window, EV_VIEW(ev_window->priv->view));
   g_signal_connect_object(ev_window->priv->view, "focus_in_event",
                           G_CALLBACK(view_actions_focus_in_cb), ev_window, 0);
   g_signal_connect_object(ev_window->priv->view, "focus_out_event",

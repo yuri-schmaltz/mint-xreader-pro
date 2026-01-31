@@ -1,0 +1,10 @@
+[ev_init] chamado
+[ev_init] chamando _ev_backends_manager_init
+[ev-backends-manager] backendsdir inicializado via ENV: /home/yurix/Documentos/mint-xreader/builddir/backend
+[ev-backends-manager] Carregando backends de: /home/yurix/Documentos/mint-xreader/builddir/backend (dev=1)
+[ev-backends-manager] Total de backends carregados: 9
+[ev_init] _ev_backends_manager_init retornou 1
+[ev-window] Tab switched to: file:///home/yurix/Documentos/mint-xreader/test/test-page-labels.pdf
+[ev-window] Tab switched to: file:///home/yurix/Documentos/mint-xreader/test/test-encrypt.pdf
+
+(xreader:3531735): Gtk-WARNING **: 02:24:37.882: Attempting to add a widget with type EvView to a container of type GtkScrolledWindow, but the widget is already inside a container of type GtkScrolledWindow, please remove the widget from its existing container first.

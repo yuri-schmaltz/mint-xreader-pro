@@ -1,0 +1,112 @@
+[ev_init] chamado
+[ev_init] chamando _ev_backends_manager_init
+[ev-backends-manager] backendsdir inicializado via ENV: /home/yurix/Documentos/mint-xreader/builddir/backend
+[ev-backends-manager] Carregando backends de: /home/yurix/Documentos/mint-xreader/builddir/backend (dev=1)
+[ev-backends-manager] Total de backends carregados: 9
+[ev_init] _ev_backends_manager_init retornou 1
+
+** (xreader:3450325): WARNING **: 02:08:08.017: Error when getting information for file “/home/yurix/Documentos/mint-xreader/backend/pdf/test-links.pdf”: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.024: Error when getting information for file “/home/yurix/Documentos/mint-xreader/backend/pdf/test-page-labels.pdf”: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.027: Error when getting information for file “/home/yurix/Documentos/mint-xreader/backend/pdf/test-encrypt.pdf”: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.028: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.029: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.078: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.078: Error setting file metadata: Arquivo ou diretório inexistente
+
+** (xreader:3450325): WARNING **: 02:08:08.079: Error setting file metadata: Arquivo ou diretório inexistente
+
+(xreader:3450325): GLib-GObject-CRITICAL **: 02:13:20.429: instance with invalid (NULL) class pointer
+
+(xreader:3450325): GLib-GObject-CRITICAL **: 02:13:20.429: signal_emit_valist_unlocked: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(xreader:3450325): GLib-GObject-CRITICAL **: 02:13:20.429: g_object_set_qdata: assertion 'G_IS_OBJECT (object)' failed
+
+(xreader:3450325): GLib-GObject-CRITICAL **: 02:13:20.429: instance with invalid (NULL) class pointer
+
+(xreader:3450325): GLib-GObject-CRITICAL **: 02:13:20.429: g_signal_handlers_destroy: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(xreader:3450325): GLib-GObject-CRITICAL **: 02:13:20.429: instance with invalid (NULL) class pointer
+
+(xreader:3450325): GLib-GObject-CRITICAL **: 02:13:20.429: g_signal_handlers_destroy: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
