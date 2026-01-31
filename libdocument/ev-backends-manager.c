@@ -28,6 +28,7 @@
 #include "ev-module.h"
 
 static GList *ev_backends_list = NULL;
+static GMutex ev_backends_mutex;
 
 typedef struct _EvBackendInfo EvBackendInfo;
 struct _EvBackendInfo {
@@ -186,6 +187,7 @@ static gboolean ev_backends_manager_load(void) {
  * Returns: %TRUE if there were any backends found; %FALSE otherwise
  */
 gboolean _ev_backends_manager_init(void) {
+  g_mutex_init(&ev_backends_mutex);
   if (ev_backends_list)
     return TRUE;
 
@@ -268,9 +270,12 @@ EvDocument *ev_backends_manager_get_document(const gchar *mime_type) {
   EvDocument *document;
   EvBackendInfo *info;
 
+  g_mutex_lock(&ev_backends_mutex);
   info = ev_backends_manager_get_backend_info(mime_type);
-  if (!info)
+  if (!info) {
+    g_mutex_unlock(&ev_backends_mutex);
     return NULL;
+  }
 
   /* PATCH 2: Lazy-load backend module on first use */
   if (!info->loaded) {
@@ -283,6 +288,7 @@ EvDocument *ev_backends_manager_get_document(const gchar *mime_type) {
   }
 
   if (!info->module) {
+    g_mutex_unlock(&ev_backends_mutex);
     return NULL;
   }
 
@@ -292,11 +298,13 @@ EvDocument *ev_backends_manager_get_document(const gchar *mime_type) {
     g_object_unref(G_OBJECT(info->module));
     info->module = NULL;
 
+    g_mutex_unlock(&ev_backends_mutex);
     return NULL;
   }
 
   document = EV_DOCUMENT(ev_module_new_object(EV_MODULE(info->module)));
   g_type_module_unuse(info->module);
+  g_mutex_unlock(&ev_backends_mutex);
 
   return document;
 }

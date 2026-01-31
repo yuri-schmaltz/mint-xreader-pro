@@ -269,6 +269,11 @@ static const gchar *document_print_settings[] = {
     GTK_PRINT_SETTINGS_OUTPUT_URI};
 
 static void ev_window_update_actions(EvWindow *ev_window);
+static void ev_window_setup_bookmarks(EvWindow *window);
+void ev_window_close_tab(GtkNotebook *notebook, gint page_num);
+void ev_window_close_tabs_to_right(GtkNotebook *notebook, gint page_num);
+void ev_window_close_tabs_to_left(GtkNotebook *notebook, gint page_num);
+void ev_window_close_all_tabs(GtkNotebook *notebook);
 static void update_chrome_actions(EvWindow *window);
 static void ev_window_setup_action_sensitivity(EvWindow *ev_window);
 static gboolean view_actions_focus_in_cb(GtkWidget *widget,
@@ -347,9 +352,34 @@ static void ev_window_switch_page_cb(GtkNotebook *notebook, GtkWidget *page,
   if (tab_data) {
     ev_window->priv->view = tab_data->view;
 
-    if (tab_data->document) {
-      ev_document_model_set_document(ev_window->priv->model,
-                                     tab_data->document);
+    if (tab_data->model) {
+      /* Update window's model pointer to the current tab's model */
+      g_object_unref(ev_window->priv->model);
+      ev_window->priv->model = g_object_ref(tab_data->model);
+
+      /* Sync window's view and other components with the new model */
+      ev_view_set_model(EV_VIEW(ev_window->priv->view), ev_window->priv->model);
+
+      if (ev_window->priv->sidebar_thumbs)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_thumbs),
+            ev_window->priv->model);
+      if (ev_window->priv->sidebar_links)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_links),
+            ev_window->priv->model);
+      if (ev_window->priv->sidebar_attachments)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_attachments),
+            ev_window->priv->model);
+      if (ev_window->priv->sidebar_layers)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_layers),
+            ev_window->priv->model);
+      if (ev_window->priv->sidebar_annots)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_annots),
+            ev_window->priv->model);
     }
 
     if (tab_data->uri) {
@@ -361,6 +391,7 @@ static void ev_window_switch_page_cb(GtkNotebook *notebook, GtkWidget *page,
     update_chrome_actions(ev_window);
     ev_window_update_actions(ev_window);
     ev_window_setup_action_sensitivity(ev_window);
+    ev_window_setup_bookmarks(ev_window);
   }
 }
 
@@ -416,6 +447,54 @@ static gint compare_recent_items(GtkRecentInfo *a, GtkRecentInfo *b);
 static gboolean ev_window_close(EvWindow *window);
 G_DEFINE_TYPE_WITH_PRIVATE(EvWindow, ev_window, GTK_TYPE_APPLICATION_WINDOW)
 
+static void on_tab_menu_cb(GtkWidget *page, gint page_num, EvWindow *window) {
+  GtkWidget *menu = gtk_menu_new();
+  GtkWidget *item;
+
+  item = gtk_menu_item_new_with_label(_("Close Tab"));
+  g_signal_connect_swapped(item, "activate", G_CALLBACK(ev_window_close_tab),
+                           window->priv->notebook);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+
+  item = gtk_menu_item_new_with_label(_("Close Tabs to the Left"));
+  g_signal_connect_swapped(item, "activate",
+                           G_CALLBACK(ev_window_close_tabs_to_left),
+                           window->priv->notebook);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+
+  item = gtk_menu_item_new_with_label(_("Close Tabs to the Right"));
+  g_signal_connect_swapped(item, "activate",
+                           G_CALLBACK(ev_window_close_tabs_to_right),
+                           window->priv->notebook);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+
+  item = gtk_menu_item_new_with_label(_("Close All Tabs"));
+  g_signal_connect_swapped(item, "activate",
+                           G_CALLBACK(ev_window_close_all_tabs),
+                           window->priv->notebook);
+  gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
+
+  gtk_widget_show_all(menu);
+  gtk_menu_popup_at_pointer(GTK_MENU(menu), NULL);
+}
+
+static gboolean on_tab_button_press_cb(GtkWidget *widget, GdkEventButton *event,
+                                       EvWindow *window) {
+  if (event->type == GDK_BUTTON_PRESS && event->button == 3) {
+    gint page_num;
+    GtkWidget *page;
+
+    /* Find which tab was clicked */
+    // Note: This is a simplification, GtkNotebook doesn't easily expose tab
+    // coordinates. We use current page if no specific tab is found easily.
+    page_num = gtk_notebook_get_current_page(GTK_NOTEBOOK(widget));
+    page = gtk_notebook_get_nth_page(GTK_NOTEBOOK(widget), page_num);
+    on_tab_menu_cb(page, page_num, window);
+    return TRUE;
+  }
+  return FALSE;
+}
+
 // Tab close requested callback
 static void on_tab_close_requested(GtkNotebook *notebook, GtkWidget *child,
                                    guint page, gpointer user_data) {
@@ -427,6 +506,8 @@ static void on_tab_close_requested(GtkNotebook *notebook, GtkWidget *child,
       g_free(tab_data->uri);
     if (tab_data->document)
       g_object_unref(tab_data->document);
+    if (tab_data->model)
+      g_object_unref(tab_data->model);
     if (tab_data->view) {
       /* Force release of the page cache associated with the view */
       g_object_unref(tab_data->view);
@@ -438,6 +519,9 @@ void ev_window_setup_tab_close(GtkNotebook *notebook,
                                gpointer window_user_data) {
   g_signal_connect(notebook, "page-removed", G_CALLBACK(on_tab_close_requested),
                    window_user_data);
+  g_signal_connect(notebook, "button-press-event",
+                   G_CALLBACK(on_tab_button_press_cb), window_user_data);
+  gtk_widget_add_events(GTK_WIDGET(notebook), GDK_BUTTON_PRESS_MASK);
 }
 
 static EvTabData *ev_window_find_tab_by_uri(GtkNotebook *notebook,
@@ -464,7 +548,8 @@ int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
   GtkWidget *toplevel = gtk_widget_get_toplevel(GTK_WIDGET(notebook));
   if (EV_IS_WINDOW(toplevel)) {
     EvWindow *ev_window = EV_WINDOW(toplevel);
-    ev_view_set_model(EV_VIEW(tab_data->view), ev_window->priv->model);
+    tab_data->model = ev_document_model_new();
+    ev_view_set_model(EV_VIEW(tab_data->view), tab_data->model);
     ev_window_setup_view(ev_window, EV_VIEW(tab_data->view));
   }
 
@@ -502,13 +587,36 @@ EvTabData *ev_window_get_current_tab(GtkNotebook *notebook) {
   return (EvTabData *)g_object_get_data(G_OBJECT(child), "ev-tab-data");
 }
 
+void ev_window_close_tab(GtkNotebook *notebook, gint page_num) {
+  if (page_num >= 0 && page_num < gtk_notebook_get_n_pages(notebook)) {
+    gtk_notebook_remove_page(notebook, page_num);
+  }
+}
+
 void ev_window_close_current_tab(GtkNotebook *notebook) {
-  if (!notebook || !GTK_IS_NOTEBOOK(notebook))
-    return;
-  int page = gtk_notebook_get_current_page(notebook);
-  if (page < 0)
-    return;
-  gtk_notebook_remove_page(notebook, page);
+  gint current_page = gtk_notebook_get_current_page(notebook);
+  ev_window_close_tab(notebook, current_page);
+}
+
+void ev_window_close_tabs_to_right(GtkNotebook *notebook, gint page_num) {
+  int n = gtk_notebook_get_n_pages(notebook);
+  for (int i = n - 1; i > page_num; i--) {
+    ev_window_close_tab(notebook, i);
+  }
+}
+
+void ev_window_close_tabs_to_left(GtkNotebook *notebook, gint page_num) {
+  for (int i = 0; i < page_num; i++) {
+    /* Always remove page 0 because indexes shift */
+    ev_window_close_tab(notebook, 0);
+  }
+}
+
+void ev_window_close_all_tabs(GtkNotebook *notebook) {
+  int n = gtk_notebook_get_n_pages(notebook);
+  for (int i = n - 1; i >= 0; i--) {
+    ev_window_close_tab(notebook, i);
+  }
 }
 
 static gchar *sizing_mode_to_string(EvSizingMode mode) {
@@ -1809,6 +1917,7 @@ static void ev_window_load_job_cb(EvJob *job, gpointer data) {
       if (tab_data->document)
         g_object_unref(tab_data->document);
       tab_data->document = g_object_ref(document);
+      ev_document_model_set_document(tab_data->model, document);
     }
   }
 

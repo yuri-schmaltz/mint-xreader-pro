@@ -11,6 +11,7 @@ typedef struct {
   GtkWidget *scrolled_window;
   GtkWidget *view;
   EvDocument *document;
+  EvDocumentModel *model;
   gchar *uri;
   // Add other necessary fields for the tab state
 } EvTabData;
@@ -22,5 +23,9 @@ void ev_window_setup_tab_close(GtkNotebook *notebook,
 int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri);
 EvTabData *ev_window_get_current_tab(GtkNotebook *notebook);
 void ev_window_close_current_tab(GtkNotebook *notebook);
+void ev_window_close_tab(GtkNotebook *notebook, gint page_num);
+void ev_window_close_tabs_to_right(GtkNotebook *notebook, gint page_num);
+void ev_window_close_tabs_to_left(GtkNotebook *notebook, gint page_num);
+void ev_window_close_all_tabs(GtkNotebook *notebook);
 
 #endif // EV_TABS_H
