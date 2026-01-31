@@ -23,7 +23,6 @@
  */
 
 #include <config.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include <gdk/gdkx.h>
@@ -99,10 +98,10 @@ ev_application_open_uri_in_window(EvApplication *application, const char *uri,
  * Returns: (transfer full): a newly created #EvApplication
  */
 EvApplication *ev_application_new(void) {
-  const GApplicationFlags flags = G_APPLICATION_NON_UNIQUE;
+  const GApplicationFlags flags = G_APPLICATION_HANDLES_OPEN;
 
-  return g_object_new(EV_TYPE_APPLICATION, "application-id", NULL, "flags",
-                      flags, NULL);
+  return g_object_new(EV_TYPE_APPLICATION, "application-id", "org.x.reader",
+                      "flags", flags, NULL);
 }
 
 /* Session */
@@ -815,6 +814,20 @@ static void ev_application_shutdown(GApplication *gapplication) {
   G_APPLICATION_CLASS(ev_application_parent_class)->shutdown(gapplication);
 }
 
+static void ev_application_open(GApplication *gapplication, GFile **files,
+                                gint n_files, const gchar *hint) {
+  EvApplication *application = EV_APPLICATION(gapplication);
+  gint i;
+
+  for (i = 0; i < n_files; i++) {
+    gchar *uri = g_file_get_uri(files[i]);
+    ev_application_open_uri_at_dest(application, uri, gdk_screen_get_default(),
+                                    NULL, EV_WINDOW_MODE_NORMAL, NULL,
+                                    GDK_CURRENT_TIME);
+    g_free(uri);
+  }
+}
+
 static void ev_application_activate(GApplication *gapplication) {
   EvApplication *application = EV_APPLICATION(gapplication);
   GList *windows, *l;
@@ -882,6 +895,7 @@ ev_application_class_init(EvApplicationClass *ev_application_class) {
       G_APPLICATION_CLASS(ev_application_class);
 
   g_application_class->activate = ev_application_activate;
+  g_application_class->open = ev_application_open;
   g_application_class->shutdown = ev_application_shutdown;
 
 #ifdef ENABLE_DBUS
