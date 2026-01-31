@@ -1,12 +1,12 @@
-xreader (4.6.4+advanced-annots) zena; urgency=medium
+xreader (4.6.5+xreader-pro) zena; urgency=medium
 
-  * Advanced Annotations Release (v4.6.4):
-    - Bumped version to ensure upgrade compatibility with Mint backports.
-    - Includes all features from 4.6.2+advanced (Tabs, Ink, FreeText).
+  * Rebranding to Xreader Pro:
+    - Fully updated all package descriptions and UI strings to "Xreader Pro".
+    - Version bumped to ensure clean upgrade and resolve dependency conflicts.
+  * Advanced Annotations and Tabs (Maintenance Release):
+    - Includes all features from 4.6.4 (Advanced Annotations, Notebook Tabs).
 
- -- Yuri Schmaltz <yuri-schmaltz@example.com>  Fri, 30 Jan 2026 20:06:37 -0300
-
-xreader (4.6.4+advanced-annots) zena; urgency=medium\n\n  * Advanced Annotations Release (v4.6.4):\n    - Bumped version to ensure upgrade compatibility with Mint backports.\n    - Includes all features from 4.6.2+advanced (Tabs, Ink, FreeText).\n\n -- Yuri Schmaltz <yuri-schmaltz@example.com>  Fri, 30 Jan 2026 20:06:29 -0300\n
+ -- Yuri Schmaltz <yuri-schmaltz@example.com>  Sat, 31 Jan 2026 13:38:00 -0300
 xreader (4.6.2+advanced-annots) zena; urgency=medium
 
   * Advanced Annotations (Edge-style):
