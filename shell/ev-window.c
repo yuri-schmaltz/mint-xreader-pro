@@ -319,6 +319,26 @@ static void ev_window_zoom_changed_cb(EvDocumentModel *model, GParamSpec *pspec,
                                       EvWindow *ev_window);
 static void view_external_link_cb(EvWindow *window, EvLinkAction *action);
 static void view_handle_link_cb(EvView *view, EvLink *link, EvWindow *window);
+static void ev_window_document_changed_cb(EvDocumentModel *model,
+                                          GParamSpec *pspec, EvWindow *window);
+static void ev_window_rotation_changed_cb(EvDocumentModel *model,
+                                          GParamSpec *pspec, EvWindow *window);
+static void ev_window_continuous_changed_cb(EvDocumentModel *model,
+                                            GParamSpec *pspec,
+                                            EvWindow *window);
+static void ev_window_dual_mode_changed_cb(EvDocumentModel *model,
+                                           GParamSpec *pspec, EvWindow *window);
+static void ev_window_dual_mode_odd_pages_left_changed_cb(
+    EvDocumentModel *model, GParamSpec *pspec, EvWindow *window);
+static void ev_window_direction_changed_cb(EvDocumentModel *model,
+                                           GParamSpec *pspec, EvWindow *window);
+static void ev_window_inverted_colors_changed_cb(EvDocumentModel *model,
+                                                 GParamSpec *pspec,
+                                                 EvWindow *window);
+static void activate_link_cb(GObject *object, EvLink *link, EvWindow *window);
+static void history_changed_cb(EvHistory *history, EvWindow *window);
+static void ev_tab_data_free(EvTabData *tab_data);
+static void ev_window_set_history(EvWindow *ev_window, EvHistory *history);
 
 static void ev_window_setup_view(EvWindow *ev_window, EvView *view) {
   g_signal_connect_object(view, "focus_in_event",
@@ -345,6 +365,108 @@ static void ev_window_setup_view(EvWindow *ev_window, EvView *view) {
 #endif
 }
 
+static void ev_tab_data_free(EvTabData *tab_data) {
+  if (!tab_data)
+    return;
+  if (tab_data->model)
+    g_object_unref(tab_data->model);
+  if (tab_data->history)
+    g_object_unref(tab_data->history);
+  if (tab_data->document)
+    g_object_unref(tab_data->document);
+  g_free(tab_data->uri);
+  g_free(tab_data);
+}
+
+static void ev_window_set_history(EvWindow *ev_window, EvHistory *history) {
+  if (ev_window->priv->history == history)
+    return;
+
+  if (ev_window->priv->history) {
+    g_signal_handlers_disconnect_by_data(ev_window->priv->history, ev_window);
+    g_object_unref(ev_window->priv->history);
+  }
+
+  if (history) {
+    ev_window->priv->history = g_object_ref(history);
+    g_signal_connect(ev_window->priv->history, "activate-link",
+                     G_CALLBACK(activate_link_cb), ev_window);
+    g_signal_connect(ev_window->priv->history, "changed",
+                     G_CALLBACK(history_changed_cb), ev_window);
+  } else {
+    ev_window->priv->history = NULL;
+  }
+}
+
+static void ev_window_set_model(EvWindow *ev_window, EvDocumentModel *model) {
+  if (ev_window->priv->model == model)
+    return;
+
+  if (ev_window->priv->model) {
+    g_signal_handlers_disconnect_by_data(ev_window->priv->model, ev_window);
+    g_object_unref(ev_window->priv->model);
+  }
+
+  if (model) {
+    ev_window->priv->model = g_object_ref(model);
+    ev_window->priv->document = ev_document_model_get_document(model);
+
+    /* Connect to model signals */
+    g_signal_connect_swapped(ev_window->priv->model, "page-changed",
+                             G_CALLBACK(ev_window_page_changed_cb), ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::document",
+                     G_CALLBACK(ev_window_document_changed_cb), ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::scale",
+                     G_CALLBACK(ev_window_zoom_changed_cb), ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::sizing-mode",
+                     G_CALLBACK(ev_window_sizing_mode_changed_cb), ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::rotation",
+                     G_CALLBACK(ev_window_rotation_changed_cb), ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::continuous",
+                     G_CALLBACK(ev_window_continuous_changed_cb), ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::dual-page",
+                     G_CALLBACK(ev_window_dual_mode_changed_cb), ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::dual-odd-left",
+                     G_CALLBACK(ev_window_dual_mode_odd_pages_left_changed_cb),
+                     ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::rtl",
+                     G_CALLBACK(ev_window_direction_changed_cb), ev_window);
+    g_signal_connect(ev_window->priv->model, "notify::inverted-colors",
+                     G_CALLBACK(ev_window_inverted_colors_changed_cb),
+                     ev_window);
+
+    if (ev_window->priv->sidebar)
+      ev_sidebar_set_model(EV_SIDEBAR(ev_window->priv->sidebar), model);
+
+    if (ev_window->priv->view)
+      ev_view_set_model(EV_VIEW(ev_window->priv->view), model);
+
+    if (ev_window->priv->sidebar_thumbs)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_thumbs), model);
+    if (ev_window->priv->sidebar_links)
+      ev_sidebar_page_set_model(EV_SIDEBAR_PAGE(ev_window->priv->sidebar_links),
+                                model);
+    if (ev_window->priv->sidebar_attachments)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_attachments), model);
+    if (ev_window->priv->sidebar_layers)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_layers), model);
+    if (ev_window->priv->sidebar_annots)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_annots), model);
+    if (ev_window->priv->sidebar_bookmarks)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_bookmarks), model);
+  } else {
+    ev_window->priv->model = NULL;
+    ev_window->priv->document = NULL;
+  }
+}
+
+static void ev_window_setup_bookmarks(EvWindow *window);
+
 static void ev_window_switch_page_cb(GtkNotebook *notebook, GtkWidget *page,
                                      guint page_num, EvWindow *ev_window) {
   EvTabData *tab_data =
@@ -353,39 +475,20 @@ static void ev_window_switch_page_cb(GtkNotebook *notebook, GtkWidget *page,
     ev_window->priv->view = tab_data->view;
 
     if (tab_data->model) {
-      /* Update window's model pointer to the current tab's model */
-      g_object_unref(ev_window->priv->model);
-      ev_window->priv->model = g_object_ref(tab_data->model);
-
-      /* Sync window's view and other components with the new model */
-      ev_view_set_model(EV_VIEW(ev_window->priv->view), ev_window->priv->model);
-
-      if (ev_window->priv->sidebar_thumbs)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_thumbs),
-            ev_window->priv->model);
-      if (ev_window->priv->sidebar_links)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_links),
-            ev_window->priv->model);
-      if (ev_window->priv->sidebar_attachments)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_attachments),
-            ev_window->priv->model);
-      if (ev_window->priv->sidebar_layers)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_layers),
-            ev_window->priv->model);
-      if (ev_window->priv->sidebar_annots)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_annots),
-            ev_window->priv->model);
+      ev_window_set_model(ev_window, tab_data->model);
+    }
+    if (tab_data->history) {
+      ev_window_set_history(ev_window, tab_data->history);
     }
 
     if (tab_data->uri) {
       g_free(ev_window->priv->uri);
       ev_window->priv->uri = g_strdup(tab_data->uri);
       ev_window_title_set_uri(ev_window->priv->title, ev_window->priv->uri);
+    } else {
+      g_free(ev_window->priv->uri);
+      ev_window->priv->uri = NULL;
+      ev_window_title_set_uri(ev_window->priv->title, NULL);
     }
 
     update_chrome_actions(ev_window);
@@ -549,6 +652,7 @@ int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
   if (EV_IS_WINDOW(toplevel)) {
     EvWindow *ev_window = EV_WINDOW(toplevel);
     tab_data->model = ev_document_model_new();
+    tab_data->history = ev_history_new(tab_data->model);
     ev_view_set_model(EV_VIEW(tab_data->view), tab_data->model);
     ev_window_setup_view(ev_window, EV_VIEW(tab_data->view));
   }
@@ -565,7 +669,7 @@ int ev_window_add_tab(GtkNotebook *notebook, const gchar *uri) {
 
   // Stores the pointer to tab_data in the tab widget
   g_object_set_data_full(G_OBJECT(tab_data->scrolled_window), "ev-tab-data",
-                         tab_data, (GDestroyNotify)g_free);
+                         tab_data, (GDestroyNotify)ev_tab_data_free);
 
   if (gtk_notebook_get_n_pages(notebook) > 1) {
     gtk_notebook_set_show_tabs(notebook, TRUE);
@@ -1228,6 +1332,10 @@ static const gchar *ev_window_sidebar_get_current_page_id(EvWindow *ev_window) {
 static void ev_window_sidebar_set_current_page(EvWindow *window,
                                                const gchar *page_id) {
   EvDocument *document = window->priv->document;
+
+  if (document == NULL)
+    return;
+
   EvSidebar *sidebar = EV_SIDEBAR(window->priv->sidebar);
   GtkWidget *links = window->priv->sidebar_links;
   GtkWidget *thumbs = window->priv->sidebar_thumbs;
@@ -7366,8 +7474,6 @@ static void ev_window_init(EvWindow *ev_window) {
   gtk_widget_show(ev_window->priv->notebook);
 
   ev_window_setup_tab_close(GTK_NOTEBOOK(ev_window->priv->notebook), ev_window);
-  g_signal_connect(ev_window->priv->notebook, "switch-page",
-                   G_CALLBACK(ev_window_switch_page_cb), ev_window);
 
   ev_window->priv->scrolled_window = gtk_scrolled_window_new(NULL, NULL);
   gtk_notebook_append_page(GTK_NOTEBOOK(ev_window->priv->notebook),
@@ -7380,8 +7486,14 @@ static void ev_window_init(EvWindow *ev_window) {
   EvTabData *initial_tab = g_new0(EvTabData, 1);
   initial_tab->scrolled_window = ev_window->priv->scrolled_window;
   initial_tab->view = ev_window->priv->view;
+  initial_tab->model = ev_window->priv->model;
+  initial_tab->history = ev_window->priv->history;
   g_object_set_data_full(G_OBJECT(ev_window->priv->scrolled_window),
-                         "ev-tab-data", initial_tab, (GDestroyNotify)g_free);
+                         "ev-tab-data", initial_tab,
+                         (GDestroyNotify)ev_tab_data_free);
+
+  g_signal_connect(ev_window->priv->notebook, "switch-page",
+                   G_CALLBACK(ev_window_switch_page_cb), ev_window);
 
   gtk_paned_add2(GTK_PANED(ev_window->priv->hpaned), ev_window->priv->view_box);
   gtk_widget_show(ev_window->priv->view_box);

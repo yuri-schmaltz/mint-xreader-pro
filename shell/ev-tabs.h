@@ -6,12 +6,15 @@
 #include "ev-window.h"
 #include <gtk/gtk.h>
 
+#include "ev-history.h"
+
 // Structure to store tab data
 typedef struct {
   GtkWidget *scrolled_window;
   GtkWidget *view;
   EvDocument *document;
   EvDocumentModel *model;
+  EvHistory *history;
   gchar *uri;
   // Add other necessary fields for the tab state
 } EvTabData;
