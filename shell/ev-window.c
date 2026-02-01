@@ -338,6 +338,7 @@ static void ev_window_inverted_colors_changed_cb(EvDocumentModel *model,
 static void activate_link_cb(GObject *object, EvLink *link, EvWindow *window);
 static void history_changed_cb(EvHistory *history, EvWindow *window);
 static void ev_tab_data_free(EvTabData *tab_data);
+static void ev_window_set_document(EvWindow *ev_window, EvDocument *document);
 static void ev_window_set_history(EvWindow *ev_window, EvHistory *history);
 
 static void ev_window_setup_view(EvWindow *ev_window, EvView *view) {
@@ -409,7 +410,6 @@ static void ev_window_set_model(EvWindow *ev_window, EvDocumentModel *model) {
 
   if (model) {
     ev_window->priv->model = g_object_ref(model);
-    ev_window->priv->document = ev_document_model_get_document(model);
 
     /* Connect to model signals */
     g_signal_connect_swapped(ev_window->priv->model, "page-changed",
@@ -435,36 +435,37 @@ static void ev_window_set_model(EvWindow *ev_window, EvDocumentModel *model) {
                      G_CALLBACK(ev_window_inverted_colors_changed_cb),
                      ev_window);
 
+    /* Use official way to set document and setup components */
+    ev_window_set_document(ev_window, ev_document_model_get_document(model));
+
     if (ev_window->priv->sidebar)
       ev_sidebar_set_model(EV_SIDEBAR(ev_window->priv->sidebar), model);
 
     if (ev_window->priv->view)
       ev_view_set_model(EV_VIEW(ev_window->priv->view), model);
 
-    EvDocument *document = ev_document_model_get_document(model);
-    if (document) {
-      if (ev_window->priv->sidebar_thumbs)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_thumbs), model);
-      if (ev_window->priv->sidebar_links)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_links), model);
-      if (ev_window->priv->sidebar_attachments)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_attachments), model);
-      if (ev_window->priv->sidebar_layers)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_layers), model);
-      if (ev_window->priv->sidebar_annots)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_annots), model);
-      if (ev_window->priv->sidebar_bookmarks)
-        ev_sidebar_page_set_model(
-            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_bookmarks), model);
-    }
+    /* Update sidebar pages unconditionally; they handle NULL documents */
+    if (ev_window->priv->sidebar_thumbs)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_thumbs), model);
+    if (ev_window->priv->sidebar_links)
+      ev_sidebar_page_set_model(EV_SIDEBAR_PAGE(ev_window->priv->sidebar_links),
+                                model);
+    if (ev_window->priv->sidebar_attachments)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_attachments), model);
+    if (ev_window->priv->sidebar_layers)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_layers), model);
+    if (ev_window->priv->sidebar_annots)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_annots), model);
+    if (ev_window->priv->sidebar_bookmarks)
+      ev_sidebar_page_set_model(
+          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_bookmarks), model);
   } else {
     ev_window->priv->model = NULL;
-    ev_window->priv->document = NULL;
+    ev_window_set_document(ev_window, NULL);
   }
 }
 
@@ -475,7 +476,11 @@ static void ev_window_switch_page_cb(GtkNotebook *notebook, GtkWidget *page,
   EvTabData *tab_data =
       (EvTabData *)g_object_get_data(G_OBJECT(page), "ev-tab-data");
   if (tab_data) {
-    ev_window->priv->view = tab_data->view;
+    if (ev_window->priv->view != tab_data->view) {
+      if (ev_window->priv->view)
+        g_object_unref(ev_window->priv->view);
+      ev_window->priv->view = g_object_ref(tab_data->view);
+    }
 
     if (tab_data->model) {
       ev_window_set_model(ev_window, tab_data->model);

@@ -27,15 +27,12 @@
 #include <glib/gstdio.h>
 #include <gtk/gtk.h>
 
+#include "eggsmclient.h"
 #include "ev-application.h"
 #include "ev-debug.h"
 #include "ev-file-helpers.h"
 #include "ev-init.h"
-#include "ev-metadata.h"
 #include "ev-stock-icons.h"
-
-#include "eggdesktopfile.h"
-#include "eggsmclient.h"
 
 /* BASELINE: Timing instrumentation macros */
 #define BASELINE_START(name)                                                   \
