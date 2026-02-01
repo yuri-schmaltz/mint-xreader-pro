@@ -441,24 +441,27 @@ static void ev_window_set_model(EvWindow *ev_window, EvDocumentModel *model) {
     if (ev_window->priv->view)
       ev_view_set_model(EV_VIEW(ev_window->priv->view), model);
 
-    if (ev_window->priv->sidebar_thumbs)
-      ev_sidebar_page_set_model(
-          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_thumbs), model);
-    if (ev_window->priv->sidebar_links)
-      ev_sidebar_page_set_model(EV_SIDEBAR_PAGE(ev_window->priv->sidebar_links),
-                                model);
-    if (ev_window->priv->sidebar_attachments)
-      ev_sidebar_page_set_model(
-          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_attachments), model);
-    if (ev_window->priv->sidebar_layers)
-      ev_sidebar_page_set_model(
-          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_layers), model);
-    if (ev_window->priv->sidebar_annots)
-      ev_sidebar_page_set_model(
-          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_annots), model);
-    if (ev_window->priv->sidebar_bookmarks)
-      ev_sidebar_page_set_model(
-          EV_SIDEBAR_PAGE(ev_window->priv->sidebar_bookmarks), model);
+    EvDocument *document = ev_document_model_get_document(model);
+    if (document) {
+      if (ev_window->priv->sidebar_thumbs)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_thumbs), model);
+      if (ev_window->priv->sidebar_links)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_links), model);
+      if (ev_window->priv->sidebar_attachments)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_attachments), model);
+      if (ev_window->priv->sidebar_layers)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_layers), model);
+      if (ev_window->priv->sidebar_annots)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_annots), model);
+      if (ev_window->priv->sidebar_bookmarks)
+        ev_sidebar_page_set_model(
+            EV_SIDEBAR_PAGE(ev_window->priv->sidebar_bookmarks), model);
+    }
   } else {
     ev_window->priv->model = NULL;
     ev_window->priv->document = NULL;
@@ -7486,8 +7489,10 @@ static void ev_window_init(EvWindow *ev_window) {
   EvTabData *initial_tab = g_new0(EvTabData, 1);
   initial_tab->scrolled_window = ev_window->priv->scrolled_window;
   initial_tab->view = ev_window->priv->view;
-  initial_tab->model = ev_window->priv->model;
-  initial_tab->history = ev_window->priv->history;
+  initial_tab->model =
+      ev_window->priv->model ? g_object_ref(ev_window->priv->model) : NULL;
+  initial_tab->history =
+      ev_window->priv->history ? g_object_ref(ev_window->priv->history) : NULL;
   g_object_set_data_full(G_OBJECT(ev_window->priv->scrolled_window),
                          "ev-tab-data", initial_tab,
                          (GDestroyNotify)ev_tab_data_free);

@@ -187,7 +187,12 @@ static gboolean ev_backends_manager_load(void) {
  * Returns: %TRUE if there were any backends found; %FALSE otherwise
  */
 gboolean _ev_backends_manager_init(void) {
-  g_mutex_init(&ev_backends_mutex);
+  static gsize init_mutex = 0;
+  if (g_once_init_enter(&init_mutex)) {
+    g_mutex_init(&ev_backends_mutex);
+    g_once_init_leave(&init_mutex, 1);
+  }
+
   if (ev_backends_list)
     return TRUE;
 
