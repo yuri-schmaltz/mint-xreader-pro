@@ -10,6 +10,8 @@
 #include "ev-document-model.h"
 #include "ev-zoom-action.h"
 
+#include "ev-page-action-widget.h"
+
 enum
 {
     PROP_0,
@@ -243,7 +245,8 @@ ev_toolbar_constructed (GObject *object)
     /* Page Selector */
     tool_item = gtk_tool_item_new ();
     {
-        GtkWidget *page_selector = ev_page_action_new (ev_toolbar->priv->model);
+        GtkWidget *page_selector = g_object_new (EV_TYPE_PAGE_ACTION_WIDGET, NULL);
+        ev_page_action_widget_set_model (EV_PAGE_ACTION_WIDGET (page_selector), ev_toolbar->priv->model);
         gtk_container_add (GTK_CONTAINER (tool_item), page_selector);
         gtk_widget_show (page_selector);
     }
