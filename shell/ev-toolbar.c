@@ -154,7 +154,7 @@ setup_preset_buttons (EvToolbar *ev_toolbar)
 }
 
 static GtkWidget *
-create_sidepane_button (GtkAction *action)
+create_sidepane_button (EvWindow *window, const gchar *action_name)
 {
     GtkWidget *button;
     GtkWidget *image;
@@ -166,29 +166,29 @@ create_sidepane_button (GtkAction *action)
 
     gtk_button_set_image (GTK_BUTTON (button), image);
     gtk_style_context_add_class (gtk_widget_get_style_context (button), "flat");
-    gtk_activatable_set_related_action (GTK_ACTIVATABLE (button), action);
+    gtk_actionable_set_action_name (GTK_ACTIONABLE (button), action_name);
     gtk_button_set_label (GTK_BUTTON (button), NULL);
-    gtk_widget_set_tooltip_text (button, gtk_action_get_tooltip (action));
     gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
 
     return button;
 }
 
 static GtkWidget *
-create_button (GtkAction *action)
+create_button (EvWindow *window, const gchar *action_name, const gchar *icon_name, const gchar *tooltip)
 {
     GtkWidget *button;
     GtkWidget *image;
 
     button = gtk_button_new ();
     gtk_widget_set_valign (button, GTK_ALIGN_CENTER);
-    image = gtk_image_new ();
+    image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_MENU);
 
     gtk_button_set_image (GTK_BUTTON (button), image);
     gtk_style_context_add_class (gtk_widget_get_style_context (button), "flat");
-    gtk_activatable_set_related_action (GTK_ACTIVATABLE (button), action);
+    gtk_actionable_set_action_name (GTK_ACTIONABLE (button), action_name);
     gtk_button_set_label (GTK_BUTTON (button), NULL);
-    gtk_widget_set_tooltip_text (button, gtk_action_get_tooltip (action));
+    if (tooltip)
+        gtk_widget_set_tooltip_text (button, tooltip);
     gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
 
     return button;
@@ -211,8 +211,6 @@ ev_toolbar_constructed (GObject *object)
 {
     EvToolbar *ev_toolbar = EV_TOOLBAR (object);
     GMenu *zoom_menu;
-    GtkActionGroup *action_group;
-    GtkAction *action;
     GtkToolItem *tool_item;
     GtkWidget *box;
     GtkWidget *button;
@@ -225,8 +223,6 @@ ev_toolbar_constructed (GObject *object)
     ev_toolbar->priv->style_context = gtk_widget_get_style_context (GTK_WIDGET (ev_toolbar));
     gtk_style_context_add_class (ev_toolbar->priv->style_context, "primary-toolbar");
 
-    action_group = ev_window_get_main_action_group (ev_toolbar->priv->window);
-
     /* Go Previous/Next page */
     tool_item = gtk_tool_item_new ();
     gtk_container_add (GTK_CONTAINER (ev_toolbar), GTK_WIDGET (tool_item));
@@ -236,18 +232,21 @@ ev_toolbar_constructed (GObject *object)
     gtk_container_add (GTK_CONTAINER (tool_item), box);
     gtk_widget_show (GTK_WIDGET (box));
 
-    action = gtk_action_group_get_action (action_group, "GoPreviousPage");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.GoPreviousPage", "xsi-go-previous-symbolic", _("Previous Page"));
     gtk_box_pack_start (GTK_BOX (box), button, FALSE, FALSE, 0);
     gtk_widget_show (GTK_WIDGET (button));
 
-    action = gtk_action_group_get_action (action_group, "GoNextPage");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.GoNextPage", "xsi-go-next-symbolic", _("Next Page"));
     gtk_box_pack_start (GTK_BOX (box), button, FALSE, FALSE, 0);
     gtk_widget_show (GTK_WIDGET (button));
 
-    action = gtk_action_group_get_action (action_group, "PageSelector");
-    tool_item = GTK_TOOL_ITEM (gtk_action_create_tool_item (action));
+    /* Page Selector */
+    tool_item = gtk_tool_item_new ();
+    {
+        GtkWidget *page_selector = ev_page_action_new (ev_toolbar->priv->model);
+        gtk_container_add (GTK_CONTAINER (tool_item), page_selector);
+        gtk_widget_show (page_selector);
+    }
     gtk_container_add (GTK_CONTAINER (ev_toolbar), GTK_WIDGET (tool_item));
     gtk_widget_show (GTK_WIDGET (tool_item));
 
@@ -260,13 +259,11 @@ ev_toolbar_constructed (GObject *object)
     gtk_container_add (GTK_CONTAINER (tool_item), ev_toolbar->priv->history_group);
     gtk_widget_show (GTK_WIDGET (ev_toolbar->priv->history_group));
 
-    action = gtk_action_group_get_action (action_group, "GoPreviousHistory");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.GoPreviousHistory", "xsi-go-history-previous-symbolic", _("Previous History Item"));
     gtk_box_pack_start (GTK_BOX (ev_toolbar->priv->history_group), button, FALSE, FALSE, 0);
     gtk_widget_show (GTK_WIDGET (button));
 
-    action = gtk_action_group_get_action (action_group, "GoNextHistory");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.GoNextHistory", "xsi-go-history-next-symbolic", _("Next History Item"));
     gtk_box_pack_start (GTK_BOX (ev_toolbar->priv->history_group), button, FALSE, FALSE, 0);
     gtk_widget_show (GTK_WIDGET (button));
 
@@ -295,29 +292,25 @@ ev_toolbar_constructed (GObject *object)
     gtk_widget_set_margin_start(ev_toolbar->priv->zoom_action, 2);
     gtk_box_pack_end (GTK_BOX (box), ev_toolbar->priv->zoom_action, FALSE, FALSE, 0);
 
-    action = gtk_action_group_get_action (action_group, "ViewExpandWindow");
-    ev_toolbar->priv->expand_window_button = create_button (action);
+    ev_toolbar->priv->expand_window_button = create_button (ev_toolbar->priv->window, "win.ViewExpandWindow", "xsi-zoom-fit-best-symbolic", _("Expand Window to Fit"));
     gtk_box_pack_end (GTK_BOX (box), ev_toolbar->priv->expand_window_button, FALSE, FALSE, 0);
 
-    action = gtk_action_group_get_action (action_group, "ViewZoomReset");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.ViewZoomReset", "xsi-zoom-original-symbolic", _("Original size"));
     gtk_box_pack_end (GTK_BOX (box), button, FALSE, FALSE, 0);
     gtk_widget_show (GTK_WIDGET (button));
 
-    action = gtk_action_group_get_action (action_group, "ViewZoomIn");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.ViewZoomIn", "xsi-zoom-in-symbolic", _("Zoom In"));
     gtk_box_pack_end (GTK_BOX (box), button, FALSE, FALSE, 0);
     gtk_widget_show (GTK_WIDGET (button));
 
-    action = gtk_action_group_get_action (action_group, "ViewZoomOut");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.ViewZoomOut", "xsi-zoom-out-symbolic", _("Zoom Out"));
     gtk_box_pack_end (GTK_BOX (box), button, FALSE, FALSE, 0);
     gtk_widget_show (GTK_WIDGET (button));
 
     /* Side pane button */
-    action = gtk_action_group_get_action (action_group, "ViewSidebar");
-    button = create_sidepane_button (action);
+    button = create_sidepane_button (ev_toolbar->priv->window, "win.ViewSidebar");
     gtk_box_pack_start (GTK_BOX (box), button, FALSE, FALSE, 0);
+    gtk_widget_show (GTK_WIDGET (button));
     gtk_widget_show (GTK_WIDGET (button));
 
     separator = gtk_separator_new (GTK_ORIENTATION_VERTICAL);
@@ -327,8 +320,7 @@ ev_toolbar_constructed (GObject *object)
     gtk_widget_show (GTK_WIDGET (separator));
 
     /* Print button */
-    action = gtk_action_group_get_action (action_group, "FilePrint");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.FilePrint", "xsi-document-print-symbolic", _("Print this document"));
     gtk_box_pack_start (GTK_BOX (box), button, FALSE, FALSE, 0);
     gtk_widget_show (GTK_WIDGET (button));
 
@@ -346,8 +338,7 @@ ev_toolbar_constructed (GObject *object)
     ev_toolbar->priv->fullscreen_group = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
     gtk_container_add (GTK_CONTAINER (tool_item), ev_toolbar->priv->fullscreen_group);
 
-    action = gtk_action_group_get_action (action_group, "LeaveFullscreen");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.LeaveFullscreen", "xsi-view-restore-symbolic", _("Leave Fullscreen"));
     gtk_box_pack_end (GTK_BOX (ev_toolbar->priv->fullscreen_group), button, FALSE, FALSE, 0);
 
     separator = gtk_separator_new (GTK_ORIENTATION_VERTICAL);
@@ -355,8 +346,7 @@ ev_toolbar_constructed (GObject *object)
     gtk_widget_set_margin_end (separator, 6);
     gtk_box_pack_end (GTK_BOX (ev_toolbar->priv->fullscreen_group), separator, FALSE, FALSE, 0);
 
-    action = gtk_action_group_get_action (action_group, "StartPresentation");
-    button = create_button (action);
+    button = create_button (ev_toolbar->priv->window, "win.StartPresentation", "xsi-x-office-presentation-symbolic", _("Start Presentation"));
     gtk_box_pack_end (GTK_BOX (ev_toolbar->priv->fullscreen_group), button, FALSE, FALSE, 0);
 
     g_signal_connect (ev_toolbar->priv->model, "notify::continuous",

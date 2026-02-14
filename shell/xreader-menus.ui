@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <menu id="MainMenu">
+    <submenu>
+      <attribute name="label" translatable="yes">_File</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Open…</attribute>
+          <attribute name="action">win.FileOpen</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Op_en a Copy</attribute>
+          <attribute name="action">win.FileOpenCopy</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Save a Copy…</attribute>
+          <attribute name="action">win.FileSaveAs</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Print…</attribute>
+          <attribute name="action">win.FilePrint</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">P_roperties</attribute>
+          <attribute name="action">win.FileProperties</attribute>
+        </item>
+      </section>
+      <section>
+        <submenu id="FavoritesMenu">
+          <attribute name="label" translatable="yes">Favorites</attribute>
+          <!-- Dynamic items will be added here -->
+        </submenu>
+        <submenu id="RecentsMenu">
+          <attribute name="label" translatable="yes">Recents</attribute>
+          <!-- Dynamic items will be added here -->
+        </submenu>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Close All Windows</attribute>
+          <attribute name="action">win.FileCloseAllWindows</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Close</attribute>
+          <attribute name="action">win.FileCloseWindow</attribute>
+        </item>
+      </section>
+    </submenu>
+
+    <submenu>
+      <attribute name="label" translatable="yes">_Edit</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Copy</attribute>
+          <attribute name="action">win.EditCopy</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Select _All</attribute>
+          <attribute name="action">win.EditSelectAll</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Find…</attribute>
+          <attribute name="action">win.EditFind</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Find Ne_xt</attribute>
+          <attribute name="action">win.EditFindNext</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Find Pre_vious</attribute>
+          <attribute name="action">win.EditFindPrevious</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Rotate _Left</attribute>
+          <attribute name="action">win.EditRotateLeft</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Rotate _Right</attribute>
+          <attribute name="action">win.EditRotateRight</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Save Current Settings as _Default</attribute>
+          <attribute name="action">win.EditSaveSettings</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Preferences</attribute>
+          <attribute name="action">win.EditPreferences</attribute>
+        </item>
+      </section>
+    </submenu>
+
+    <submenu>
+      <attribute name="label" translatable="yes">_View</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Menubar</attribute>
+          <attribute name="action">win.ViewMenubar</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Toolbar</attribute>
+          <attribute name="action">win.ViewToolbar</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Side _Pane</attribute>
+          <attribute name="action">win.ViewSidebar</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Fullscreen</attribute>
+          <attribute name="action">win.ViewFullscreen</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Pre_sentation</attribute>
+          <attribute name="action">win.ViewPresentation</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Continuous</attribute>
+          <attribute name="action">win.ViewContinuous</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Dual (Even pages left)</attribute>
+          <attribute name="action">win.ViewDual</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Dual (_Odd pages left)</attribute>
+          <attribute name="action">win.ViewDualOddLeft</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Right to Left</attribute>
+          <attribute name="action">win.ViewRtl</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Inverted Colors</attribute>
+          <attribute name="action">win.ViewInvertedColors</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Zoom _In</attribute>
+          <attribute name="action">win.ViewZoomIn</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Zoom _Out</attribute>
+          <attribute name="action">win.ViewZoomOut</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Original size</attribute>
+          <attribute name="action">win.ViewZoomReset</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Best Fit</attribute>
+          <attribute name="action">win.ViewBestFit</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Fit Page _Width</attribute>
+          <attribute name="action">win.ViewPageWidth</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Expand Window to Fit</attribute>
+          <attribute name="action">win.ViewExpandWindow</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Reload</attribute>
+          <attribute name="action">win.ViewReload</attribute>
+        </item>
+      </section>
+    </submenu>
+
+    <submenu>
+      <attribute name="label" translatable="yes">_Go</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Previous Page</attribute>
+          <attribute name="action">win.GoPreviousPage</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Next Page</attribute>
+          <attribute name="action">win.GoNextPage</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_First Page</attribute>
+          <attribute name="action">win.GoFirstPage</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_Last Page</attribute>
+          <attribute name="action">win.GoLastPage</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">Previous History Item</attribute>
+          <attribute name="action">win.GoPreviousHistory</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">Next History Item</attribute>
+          <attribute name="action">win.GoNextHistory</attribute>
+        </item>
+      </section>
+    </submenu>
+
+    <submenu>
+      <attribute name="label" translatable="yes">_Bookmarks</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Add Bookmark</attribute>
+          <attribute name="action">win.BookmarksAdd</attribute>
+        </item>
+      </section>
+      <section id="BookmarksPlaceholder">
+        <!-- Dynamic items -->
+      </section>
+    </submenu>
+
+    <submenu>
+      <attribute name="label" translatable="yes">_Help</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Contents</attribute>
+          <attribute name="action">win.HelpContents</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_About</attribute>
+          <attribute name="action">win.HelpAbout</attribute>
+        </item>
+      </section>
+    </submenu>
+  </menu>
+
+  <menu id="DocumentPopup">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Open Link</attribute>
+        <attribute name="action">win.OpenLink</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Copy Link Address</attribute>
+        <attribute name="action">win.CopyLinkAddress</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Go To</attribute>
+        <attribute name="action">win.GoLink</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Open in New _Window</attribute>
+        <attribute name="action">win.OpenLinkNewWindow</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Previous Page</attribute>
+        <attribute name="action">win.GoPreviousPage</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Next Page</attribute>
+        <attribute name="action">win.GoNextPage</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Reload</attribute>
+        <attribute name="action">win.ViewReload</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Auto_scroll</attribute>
+        <attribute name="action">win.ViewAutoscroll</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Copy</attribute>
+        <attribute name="action">win.EditCopy</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Select _All</attribute>
+        <attribute name="action">win.EditSelectAll</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Save Image As…</attribute>
+        <attribute name="action">win.SaveImageAs</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Copy _Image</attribute>
+        <attribute name="action">win.CopyImage</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Open Attachment</attribute>
+        <attribute name="action">win.OpenAttachment</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Save Attachment As…</attribute>
+        <attribute name="action">win.SaveAttachmentAs</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Annotation Properties…</attribute>
+        <attribute name="action">win.AnnotProperties</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Remove Annotation</attribute>
+        <attribute name="action">win.RemoveAnnotation</attribute>
+      </item>
+    </section>
+  </menu>
+
+  <menu id="AttachmentPopup">
+    <item>
+      <attribute name="label" translatable="yes">_Open Attachment</attribute>
+      <attribute name="action">win.OpenAttachment</attribute>
+    </item>
+    <item>
+      <attribute name="label" translatable="yes">_Save Attachment As…</attribute>
+      <attribute name="action">win.SaveAttachmentAs</attribute>
+    </item>
+  </menu>
+</interface>
